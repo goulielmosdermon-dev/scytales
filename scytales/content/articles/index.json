@@ -1,0 +1,236 @@
+{
+  "categories": [
+    {
+      "id": "all",
+      "label": "All Posts"
+    },
+    {
+      "id": "press-releases",
+      "label": "Press Releases"
+    },
+    {
+      "id": "in-the-news",
+      "label": "In the News"
+    },
+    {
+      "id": "product-announcements",
+      "label": "Product Announcements"
+    },
+    {
+      "id": "articles",
+      "label": "Articles"
+    }
+  ],
+  "articles": [
+    {
+      "slug": "deutsche-telekom-and-scytales-awarded-european-digital-identity-initiative-on-age-verification",
+      "title": "Deutsche Telekom and Scytáles to lead pioneering European Digital Identity Initiative",
+      "excerpt": "Scytáles AB, a Swedish-based digital identity specialist, in partnership with Deutsche Telekom AG, via its subsidiary T-Systems International GmbH, has been selected by the European Commission to develop a revolutionary age verification solution. The contract for an Age Verificat…",
+      "category": "press-releases",
+      "categoryLabel": "Press Releases",
+      "date": "2025-02-11",
+      "dateLabel": "Feb 11, 2025",
+      "image": "assets/articles/deutsche-telekom-and-scytales-awarded-european-digital-identity-initiative-on-age-verification.jpg",
+      "topics": [
+        "EUDI Wallet",
+        "Age Verification",
+        "Partnerships"
+      ],
+      "description": "Scytáles in partnership with T-Systems has been selected by the European Commission to develop a revolutionary age verification solution."
+    },
+    {
+      "slug": "performance-optimization-fast-and-efficient-mobile-id-validation",
+      "title": "Performance Optimization: Fast and Efficient Mobile ID Validation",
+      "excerpt": "The validation of Digital ID Wallets and Mobile IDs is gaining momentum and will become an integral part of securing access to all kinds of services, online transactions and secure authentication. Digital ID Wallets store your digital identification documents and credentials such…",
+      "category": "articles",
+      "categoryLabel": "Articles",
+      "date": "2024-04-02",
+      "dateLabel": "Apr 2, 2024",
+      "image": "assets/articles/performance-optimization-fast-and-efficient-mobile-id-validation.jpg",
+      "topics": [
+        "Mobile ID",
+        "SDK & Developers",
+        "Business & ROI"
+      ],
+      "description": "With performance optimization and continuous improvement, your business can maximize the potential of wallets and mobile ID validation systems."
+    },
+    {
+      "slug": "comparing-different-authentication-methods-for-mobile-ids",
+      "title": "Comparing Different Authentication Methods for Mobile IDs",
+      "excerpt": "Our lives are becoming increasingly digital, and mobile IDs are setting the pace across numerous daily activities. This article explores the different validation methods possible with mobile IDs.",
+      "category": "articles",
+      "categoryLabel": "Articles",
+      "date": "2024-03-25",
+      "dateLabel": "Mar 25, 2024",
+      "image": "assets/articles/comparing-different-authentication-methods-for-mobile-ids.jpg",
+      "topics": [
+        "Mobile ID",
+        "Security & Privacy",
+        "SDK & Developers",
+        "Business & ROI"
+      ],
+      "description": "Explore in-person, remote, online and offline authentication methods for mobile IDs and how to choose the right validation approach for your business."
+    },
+    {
+      "slug": "calculating-the-roi-of-implementing-mobile-id-solutions-for-businesses",
+      "title": "Calculating the ROI of Implementing Mobile ID Solutions for Businesses",
+      "excerpt": "The world of identity and authentication is undergoing major changes. Mobile ID adoption is rising worldwide and its features provide not only higher security but is a transformative tool across a wide range of sectors, making traditional ID document processes a thing of the past…",
+      "category": "articles",
+      "categoryLabel": "Articles",
+      "date": "2024-03-20",
+      "dateLabel": "Mar 20, 2024",
+      "image": "assets/articles/calculating-the-roi-of-implementing-mobile-id-solutions-for-businesses.jpg?v=2",
+      "topics": [
+        "Mobile ID",
+        "Business & ROI"
+      ],
+      "description": "Learn the potential Return On Investment (ROI) with a mobile ID implementation for your business."
+    },
+    {
+      "slug": "mobile-validator-sdk-the-tool-powering-digital-identity-wallets",
+      "title": "Mobile Validator SDK: The Tool Powering Digital Identity Wallets",
+      "excerpt": "In today’s data-driven digital era, the security and privacy of online identification are of paramount importance to help us keep our information private and confidential. This is where mobile identification comes into play: a safe way to prove who we are online. This is possible…",
+      "category": "product-announcements",
+      "categoryLabel": "Product Announcements",
+      "date": "2024-03-15",
+      "dateLabel": "Mar 15, 2024",
+      "image": "assets/articles/mobile-validator-sdk-the-tool-powering-digital-identity-wallets.jpg",
+      "topics": [
+        "Mobile ID",
+        "SDK & Developers"
+      ],
+      "description": "The Mobile Validator SDK allows apps, services or systems to connect with digital identity wallets for high-assurance verification."
+    },
+    {
+      "slug": "privacy-security-how-mobile-ids-protect-your-personal-information",
+      "title": "Privacy & Security: How Mobile IDs Protect Your Personal Information",
+      "excerpt": "The increasing use of mobile IDs for identification creates a natural concern: how safe is my personal data? We understand these concerns and want to assure you that mobile ID systems developed by Scytáles are data protection and security-oriented from the start. Our mobile ID so…",
+      "category": "articles",
+      "categoryLabel": "Articles",
+      "date": "2024-03-13",
+      "dateLabel": "Mar 13, 2024",
+      "image": "assets/articles/privacy-security-how-mobile-ids-protect-your-personal-information.jpg",
+      "topics": [
+        "Mobile ID",
+        "Security & Privacy"
+      ],
+      "description": "The increasing use of mobile IDs for identification creates a natural focus on privacy and data minimisation."
+    },
+    {
+      "slug": "the-impact-of-digital-identity-wallets-on-businesses-and-consumers",
+      "title": "The Impact of Digital Identity Wallets on Businesses and Consumers",
+      "excerpt": "Imagine a world where your physical wallet is replaced by a secure digital counterpart that holds not just currency, but your identity. This is the promise of the digital identity wallet – an app or software on your smartphone that acts as a secure interface for your digital cred…",
+      "category": "articles",
+      "categoryLabel": "Articles",
+      "date": "2024-03-07",
+      "dateLabel": "Mar 7, 2024",
+      "image": "assets/articles/the-impact-of-digital-identity-wallets-on-businesses-and-consumers.png",
+      "topics": [
+        "Security & Privacy",
+        "Business & ROI"
+      ],
+      "description": "Imagine a world where your physical wallet is replaced by a secure digital counterpart that holds not just currency, but your identity. This is the promise of the digital identity wallet – an app or software on your smartphone that acts as a secure interface for your digital cred…"
+    },
+    {
+      "slug": "the-future-of-identification-mobile-ids-vs-traditional-ids",
+      "title": "The Future of Identification: Mobile IDs vs Traditional IDs",
+      "excerpt": "In our interconnected world, identification is the bedrock upon which trust, access, and security are built. Whether it’s boarding a flight, accessing financial services, or proving our age at a gambling site, our identity credentials play a pivotal role. However, in the ever-evo…",
+      "category": "articles",
+      "categoryLabel": "Articles",
+      "date": "2024-03-05",
+      "dateLabel": "Mar 5, 2024",
+      "image": "assets/articles/the-future-of-identification-mobile-ids-vs-traditional-ids.png",
+      "topics": [
+        "Mobile ID"
+      ],
+      "description": "The need for secure, convenient, and verifiable identification mechanisms continues to grow across digital and physical channels."
+    },
+    {
+      "slug": "scytales-ab-together-with-netcompany-intrasoft-wins-landmark-eu-digital-id-wallet-contract",
+      "title": "Scytáles AB together with Netcompany-Intrasoft wins landmark EU Digital ID Wallet contract",
+      "excerpt": "Stockholm, Sweden, December 6th, 2022 – Scytáles AB together with Netcompany-Intrasoft, member of NETCOMPANY Group A/S, has been awarded the much-anticipated EU Digital ID Wallet contract, encompassing development, consultancy, and support services.",
+      "category": "press-releases",
+      "categoryLabel": "Press Releases",
+      "date": "2022-12-06",
+      "dateLabel": "Dec 6, 2022",
+      "image": "assets/articles/scytales-ab-together-with-netcompany-intrasoft-wins-landmark-eu-digital-id-wallet-contract.png",
+      "topics": [
+        "EUDI Wallet",
+        "Partnerships"
+      ],
+      "description": "Scytáles AB together with Netcompany-Intrasoft, member of NETCOMPANY GROUP, was selected for a landmark EU Digital ID Wallet contract."
+    },
+    {
+      "slug": "the-iso-mdl-standard-the-diamond-no-longer-in-the-rough",
+      "title": "The ISO mDL standard…the Diamond no longer in the rough",
+      "excerpt": "While many articles, press releases, and reports are rightly celebrating the newly published ISO standard for mobile driver licenses, ISO/IEC 18013-5, and describing the more than six-year journey that it has been to reach this milestone, I maintain that the first steps were actu…",
+      "category": "in-the-news",
+      "categoryLabel": "In the News",
+      "date": "2021-10-14",
+      "dateLabel": "Oct 14, 2021",
+      "image": "assets/articles/the-iso-mdl-standard-the-diamond-no-longer-in-the-rough.png",
+      "topics": [
+        "Mobile ID"
+      ],
+      "description": "While many articles, press releases, and reports are rightly celebrating the newly published ISO standard for mobile driver licenses, ISO/IEC 18013-5, and describing the more than six-year journey that it has been to reach this milestone, I maintain that the first steps were actu…"
+    },
+    {
+      "slug": "mobile-driving-licence-standard-approved-and-published",
+      "title": "Mobile Driving Licence Standard Approved and Published",
+      "excerpt": "Täby, Sweden (October 14, 2021) – The eagerly anticipated ISO/IEC 18013-5 International standard for Mobile Driver’s License (mDL) and Mobile IDs (mID) was unanimously approved for publication on August 18, 2021, and is now available at https://www.iso.org/standard/69084.html. Pu…",
+      "category": "press-releases",
+      "categoryLabel": "Press Releases",
+      "date": "2021-10-14",
+      "dateLabel": "Oct 14, 2021",
+      "image": "assets/articles/mobile-driving-licence-standard-approved-and-published.jpg",
+      "topics": [
+        "Mobile ID"
+      ],
+      "description": "Täby, Sweden (October 14, 2021) – The eagerly anticipated ISO/IEC 18013-5 International standard for Mobile Driver’s License (mDL) and Mobile IDs (mID) was unanimously approved for publication on August 18, 2021, and is now available at https://www.iso.org/standard/69084.html. Pu…"
+    },
+    {
+      "slug": "scytales-get-group-na-aamva-aic-2021",
+      "title": "Scytáles & GET Group NA to Demonstrate Mobile Driver’s License Interoperability at AAMVA’s AIC 2021",
+      "excerpt": "Scytáles AB, the global leader in the ISO 18013-5 mobile ID technology standard, will be demonstrating ISO mDL and ISO mValidator alongside its international technology partner, GET Group North America, at AAMVA’s 2021 International Conference. Together, the companies will be dem…",
+      "category": "press-releases",
+      "categoryLabel": "Press Releases",
+      "date": "2021-08-19",
+      "dateLabel": "Aug 19, 2021",
+      "image": "assets/articles/scytales-get-group-na-aamva-aic-2021.png",
+      "topics": [
+        "Mobile ID"
+      ],
+      "description": "Scytáles and GET Group NA demonstrate mobile driver’s license interoperability at AAMVA’s AIC 2021."
+    },
+    {
+      "slug": "facetec-and-scytales-enter-strategic-partnership",
+      "title": "FaceTec and Scytáles enter strategic partnership",
+      "excerpt": "Scytáles AB and FaceTec announce that the two companies have entered into a strategic partnership based on their diverse but complementary capabilities within mobile user authentication and digital identity verification.",
+      "category": "press-releases",
+      "categoryLabel": "Press Releases",
+      "date": "2021-05-26",
+      "dateLabel": "May 26, 2021",
+      "image": "assets/articles/facetec-and-scytales-enter-strategic-partnership.png",
+      "topics": [
+        "Partnerships",
+        "Security & Privacy"
+      ],
+      "description": "Scytáles and FaceTec announce a strategic collaboration based on their complementary strengths in identity and biometric assurance."
+    },
+    {
+      "slug": "utah-launches-pioneering-pilot-on-mobile-drivers-license",
+      "title": "Utah Launches Pioneering Pilot on Mobile Driver’s License",
+      "excerpt": "The Utah Driver License Division (DLD) has launched a mobile driver license (mDL) pilot for offering driver’s licenses and ID cards on mobile phones. The pilot will demonstrate improvement in citizen privacy and security, while highlighting the convenience and safety of tap and g…",
+      "category": "press-releases",
+      "categoryLabel": "Press Releases",
+      "date": "2021-03-30",
+      "dateLabel": "Mar 30, 2021",
+      "image": "assets/articles/utah-launches-pioneering-pilot-on-mobile-drivers-license.jpg",
+      "topics": [
+        "Mobile ID",
+        "Partnerships"
+      ],
+      "description": "The Utah Driver License Division has launched an mDL pilot for offering residents a modern digital driving credential."
+    }
+  ]
+}

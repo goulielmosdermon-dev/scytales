@@ -1,0 +1,1124 @@
+/* ============================================================
+   SCYTÁLES — PHONE
+   Device frame + in-app screens for the product line section.
+   Scoped under .phone-device / .phone so nothing leaks out.
+   In-app UI uses the system stack — it is a phone, not brand type.
+   ============================================================ */
+
+@property --glass-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 155deg;
+}
+@property --glass-white {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0.12;
+}
+@property --glass-white-at {
+  syntax: "<percentage>";
+  inherits: true;
+  initial-value: 0%;
+}
+@property --glass-highlight {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0.62;
+}
+@property --glass-specular {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0.08;
+}
+@property --hl-t {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0.62;
+}
+@property --hl-r {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0.12;
+}
+@property --hl-b {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0.08;
+}
+@property --hl-l {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0.12;
+}
+
+.phone-device {
+  --phone-muted: #8A94A3;
+  --phone-border: #E6E8EC;
+  --phone-surface: #F5F6F8;
+  --phone-frame: #E8975E;
+
+  /* Glass controls — tweak via style guide or override these vars */
+  --glass-blur: 0;
+  --glass-saturate: 2.45;
+  --glass-white: 0.12;
+  --glass-white-at: 0%;
+  --glass-peach: .42;
+  --glass-tint: 92;
+  --glass-tint-deep: 89;
+  --glass-border: 1;
+  --glass-specular: .08;
+  --glass-inset-glow: 28;
+  --glass-inset-a: 1;
+  --glass-shadow: 0;
+  --glass-highlight: .62;
+  --glass-angle: 155deg;
+  /* Per-edge highlight (inset rim) — animated clockwise */
+  --hl-t: 0.62;
+  --hl-r: 0.12;
+  --hl-b: 0.08;
+  --hl-l: 0.12;
+
+  --phone-glass:
+    linear-gradient(
+      var(--glass-angle),
+      rgba(255, 255, 255, var(--glass-white)) var(--glass-white-at),
+      rgba(255, 214, 180, var(--glass-peach)) calc(var(--glass-white-at) + 22%),
+      color-mix(in srgb, var(--orange-500) calc(var(--glass-tint) * 1%), transparent) 55%,
+      color-mix(in srgb, var(--orange-600) calc(var(--glass-tint-deep) * 1%), transparent) 100%
+    );
+
+  position: relative;
+  isolation: isolate;
+  background: var(--phone-glass);
+  backdrop-filter: blur(calc(var(--glass-blur) * 1px)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(calc(var(--glass-blur) * 1px)) saturate(var(--glass-saturate));
+  border: 1px solid rgba(255, 255, 255, var(--glass-border));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, calc(var(--glass-highlight) * var(--hl-t))),
+    inset -1px 0 0 rgba(255, 255, 255, calc(var(--glass-highlight) * var(--hl-r))),
+    inset 0 -1px 0 rgba(255, 255, 255, calc(var(--glass-highlight) * var(--hl-b))),
+    inset 1px 0 0 rgba(255, 255, 255, calc(var(--glass-highlight) * var(--hl-l))),
+    inset 0 0 calc(var(--glass-inset-glow) * 1px) rgba(255, 200, 150, var(--glass-inset-a)),
+    0 14px 40px color-mix(in srgb, var(--orange-500) calc(var(--glass-shadow) * 1%), transparent),
+    0 2px 8px rgba(16, 49, 84, .08);
+  padding: 16px 14px;
+  border-radius: 58px;
+  width: fit-content;
+  -webkit-tap-highlight-color: transparent;
+  animation: phone-glass-alive 5.5s linear infinite;
+}
+/* Specular streak — glass catching light (tied to white stop / angle) */
+.phone-device::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    linear-gradient(
+      var(--glass-angle),
+      rgba(255, 255, 255, .55) 0%,
+      rgba(255, 255, 255, .12) 28%,
+      transparent 48%
+    );
+  opacity: var(--glass-specular);
+}
+.phone-device > * { position: relative; z-index: 1; }
+
+/*
+  Continuous clockwise orbit (full turn — no reverse).
+  Edge highlight + white wash travel top → right → bottom → left → top.
+*/
+@keyframes phone-glass-alive {
+  0% {
+    --glass-angle: 0turn;
+    --glass-white: 0.22;
+    --glass-white-at: 2%;
+    --glass-highlight: 0.88;
+    --glass-specular: 0.12;
+    --hl-t: 1;
+    --hl-r: 0.16;
+    --hl-b: 0.04;
+    --hl-l: 0.16;
+  }
+  12.5% {
+    --glass-angle: 0.125turn;
+    --glass-white: 0.18;
+    --glass-highlight: 0.82;
+    --glass-specular: 0.1;
+    --hl-t: 0.7;
+    --hl-r: 0.7;
+    --hl-b: 0.08;
+    --hl-l: 0.1;
+  }
+  25% {
+    --glass-angle: 0.25turn;
+    --glass-white: 0.16;
+    --glass-highlight: 0.85;
+    --glass-specular: 0.09;
+    --hl-t: 0.14;
+    --hl-r: 1;
+    --hl-b: 0.18;
+    --hl-l: 0.05;
+  }
+  37.5% {
+    --glass-angle: 0.375turn;
+    --glass-white: 0.14;
+    --glass-highlight: 0.8;
+    --glass-specular: 0.08;
+    --hl-t: 0.08;
+    --hl-r: 0.7;
+    --hl-b: 0.7;
+    --hl-l: 0.1;
+  }
+  50% {
+    --glass-angle: 0.5turn;
+    --glass-white: 0.12;
+    --glass-highlight: 0.9;
+    --glass-specular: 0.06;
+    --hl-t: 0.04;
+    --hl-r: 0.16;
+    --hl-b: 1;
+    --hl-l: 0.16;
+  }
+  62.5% {
+    --glass-angle: 0.625turn;
+    --glass-white: 0.14;
+    --glass-highlight: 0.82;
+    --glass-specular: 0.08;
+    --hl-t: 0.08;
+    --hl-r: 0.1;
+    --hl-b: 0.7;
+    --hl-l: 0.7;
+  }
+  75% {
+    --glass-angle: 0.75turn;
+    --glass-white: 0.17;
+    --glass-highlight: 0.85;
+    --glass-specular: 0.1;
+    --hl-t: 0.18;
+    --hl-r: 0.05;
+    --hl-b: 0.14;
+    --hl-l: 1;
+  }
+  87.5% {
+    --glass-angle: 0.875turn;
+    --glass-white: 0.2;
+    --glass-highlight: 0.86;
+    --glass-specular: 0.11;
+    --hl-t: 0.7;
+    --hl-r: 0.1;
+    --hl-b: 0.08;
+    --hl-l: 0.7;
+  }
+  100% {
+    --glass-angle: 1turn;
+    --glass-white: 0.22;
+    --glass-white-at: 2%;
+    --glass-highlight: 0.88;
+    --glass-specular: 0.12;
+    --hl-t: 1;
+    --hl-r: 0.16;
+    --hl-b: 0.04;
+    --hl-l: 0.16;
+  }
+}
+
+/* Style-guide scrubber phone — keep vars static for live controls */
+.phone-device[data-phone-glass] {
+  animation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .phone-device {
+    animation: none;
+  }
+}
+
+.phone-device__side {
+  position: absolute;
+  background: var(--phone-glass);
+  backdrop-filter:
+    blur(calc(var(--glass-blur) * .55 * 1px))
+    saturate(calc(var(--glass-saturate) * .9));
+  -webkit-backdrop-filter:
+    blur(calc(var(--glass-blur) * .55 * 1px))
+    saturate(calc(var(--glass-saturate) * .9));
+  border: 1px solid rgba(255, 255, 255, calc(var(--glass-border) * .75));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .45);
+  border-radius: 4px;
+  z-index: 2;
+}
+.phone-device__side--s1 { left: -3px; top: 150px; width: 4px; height: 34px; }
+.phone-device__side--s2 { left: -3px; top: 200px; width: 4px; height: 56px; }
+.phone-device__side--s3 { left: -3px; top: 270px; width: 4px; height: 56px; }
+.phone-device__side--s4 { right: -3px; top: 210px; width: 4px; height: 74px; }
+
+.phone {
+  width: 330px;
+  height: 700px;
+  background: var(--white);
+  border-radius: 44px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--navy-800);
+  text-align: left;
+}
+
+.phone__ic {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -.15em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.phone__notch {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0 2px;
+  flex-shrink: 0;
+}
+.phone__speaker {
+  width: 110px;
+  height: 8px;
+  border-radius: 6px;
+  background: #F0E5DA;
+}
+
+.phone__screen {
+  flex: 1;
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 0;
+}
+.phone__screen.is-active { display: flex; }
+
+.phone__scroll {
+  flex: 1;
+  overflow-y: auto;
+  scrollbar-width: none;
+  min-height: 0;
+}
+.phone__scroll::-webkit-scrollbar { display: none; }
+
+.phone__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 24px 6px;
+}
+.phone__title {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--navy-800);
+}
+.phone__bell {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--phone-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--navy-800);
+  font-size: 19px;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  transition: transform .1s;
+}
+.phone__bell:active { transform: scale(.92); }
+
+.phone__profile {
+  margin: 8px 24px 0;
+  padding: 12px 14px;
+  border: 0.5px solid var(--phone-border);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+.phone__avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--navy-800);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 15px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.phone__profile-text { flex: 1; min-width: 0; }
+.phone__profile-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy-800);
+}
+.phone__profile-sub {
+  font-size: 12px;
+  color: var(--phone-muted);
+  margin-top: 2px;
+}
+.phone__chevron {
+  color: #B9C0C9;
+  font-size: 19px;
+  flex-shrink: 0;
+}
+
+.phone__section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px 12px;
+}
+.phone__section-label {
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  color: var(--phone-muted);
+  font-weight: 700;
+}
+.phone__viewall {
+  font-size: 12px;
+  color: var(--navy-800);
+  font-weight: 700;
+  background: var(--phone-surface);
+  padding: 7px 13px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  border: 0;
+  font-family: inherit;
+}
+
+.phone__cards {
+  display: flex;
+  gap: 14px;
+  padding: 0 24px 4px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.phone__cards::-webkit-scrollbar { display: none; }
+
+.phone__card {
+  min-width: 236px;
+  scroll-snap-align: center;
+  height: 262px;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  color: var(--white);
+  cursor: pointer;
+  transition: transform .12s;
+  border: 0;
+  text-align: left;
+  font-family: inherit;
+}
+.phone__card:active { transform: scale(.97); }
+.phone__card--orange { background: var(--orange-500); }
+.phone__card--navy   { background: var(--navy-800); }
+
+.phone__card-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+}
+.phone__card-big {
+  font-size: 26px;
+  font-weight: 800;
+  margin-top: 14px;
+  line-height: 1.15;
+}
+.phone__card-foot { margin-top: auto; }
+.phone__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 13px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  background: rgba(255, 255, 255, .20);
+}
+.phone__card-meta {
+  font-size: 12px;
+  opacity: .9;
+  margin-top: 14px;
+  line-height: 1.5;
+}
+
+.phone__dots {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  padding: 14px 0 6px;
+}
+.phone__dots span {
+  width: 5px;
+  height: 5px;
+  border-radius: 3px;
+  background: #DDE1E6;
+  transition: all .2s;
+}
+.phone__dots span.is-on {
+  width: 20px;
+  background: var(--orange-500);
+}
+
+.phone__add {
+  margin: 6px 24px 4px;
+  width: calc(100% - 48px);
+  border: 0.5px solid var(--phone-border);
+  background: var(--white);
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy-800);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background .15s;
+}
+.phone__add:active { background: var(--phone-surface); }
+
+.phone__nav {
+  display: flex;
+  justify-content: space-around;
+  padding: 14px 24px 20px;
+  border-top: 0.5px solid var(--phone-border);
+  flex-shrink: 0;
+}
+.phone__nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: var(--phone-muted);
+  font-size: 11px;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  padding: 0;
+  font-family: inherit;
+}
+.phone__nav-item.is-active {
+  color: var(--orange-500);
+  font-weight: 700;
+}
+.phone__nav-item .phone__ic {
+  width: 22px;
+  height: 22px;
+}
+
+/* Activity */
+.phone__act {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 24px;
+  border-bottom: 0.5px solid var(--phone-border);
+}
+.phone__act-ico {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.phone__act-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy-800);
+}
+.phone__act-desc {
+  font-size: 12px;
+  color: var(--phone-muted);
+  margin-top: 2px;
+}
+.phone__act-time {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--phone-muted);
+  flex-shrink: 0;
+}
+
+/* Share */
+.phone__screen--share {
+  align-items: center;
+  text-align: center;
+}
+.phone__nfc {
+  font-size: 52px;
+  color: var(--orange-500);
+  margin-top: 18px;
+}
+.phone__share-label {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy-800);
+  margin-top: 8px;
+}
+.phone__or {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 16px auto 4px;
+  width: 150px;
+}
+.phone__or span {
+  font-size: 12px;
+  color: var(--phone-muted);
+  font-weight: 700;
+}
+.phone__or-line {
+  flex: 1;
+  height: 0.5px;
+  background: var(--phone-border);
+}
+.phone__qrbox {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  border: 0.5px solid var(--phone-border);
+  border-radius: 10px;
+  padding: 14px;
+  margin: 8px auto 0;
+}
+.phone__qrbox-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.phone__listening {
+  font-size: 13px;
+  color: var(--phone-muted);
+  margin-top: 14px;
+}
+.phone__listening b { color: var(--navy-800); }
+.phone__timer {
+  margin: 18px auto 0;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.phone__timer-inner {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--navy-800);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 17px;
+  font-weight: 700;
+}
+
+/* Toast + sheet */
+.phone__toast {
+  position: absolute;
+  left: 50%;
+  bottom: 92px;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--navy-800);
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all .25s;
+  white-space: nowrap;
+  z-index: 20;
+}
+.phone__toast.is-show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.phone__sheet-wrap {
+  position: absolute;
+  inset: 0;
+  background: rgba(16, 49, 84, .35);
+  display: flex;
+  align-items: flex-end;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s;
+  z-index: 10;
+}
+.phone__sheet-wrap.is-show {
+  opacity: 1;
+  pointer-events: auto;
+}
+.phone__sheet {
+  width: 100%;
+  background: var(--white);
+  border-radius: 24px 24px 0 0;
+  padding: 20px 24px 28px;
+  transform: translateY(100%);
+  transition: transform .28s cubic-bezier(.2, .8, .2, 1);
+  text-align: left;
+}
+.phone__sheet-wrap.is-show .phone__sheet { transform: translateY(0); }
+.phone__grab {
+  width: 40px;
+  height: 4px;
+  border-radius: 3px;
+  background: #DDE1E6;
+  margin: 0 auto 16px;
+}
+.phone__sheet-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 0.5px solid var(--phone-border);
+  font-size: 14px;
+}
+.phone__sheet-row .k { color: var(--phone-muted); }
+.phone__sheet-row .v { color: var(--navy-800); font-weight: 700; }
+.phone__sheet h3 {
+  margin: 4px 0 12px;
+  font-size: 18px;
+  color: var(--navy-800);
+  font-family: inherit;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+.phone__sheet-cta {
+  margin-top: 18px;
+  width: 100%;
+  border: none;
+  background: var(--orange-500);
+  color: var(--white);
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .phone__bell,
+  .phone__card,
+  .phone__add,
+  .phone__toast,
+  .phone__sheet-wrap,
+  .phone__sheet,
+  .phone__dots span { transition: none; }
+}
+
+/* ============================================================
+   ISO mValidator — Scytáles mValid home
+   ============================================================ */
+.mvalid {
+  --mvalid-border: #E6E8EC;
+  --mvalid-muted: #8A94A3;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  background: var(--white);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+}
+.mvalid__header {
+  padding: 8px 22px 18px;
+}
+.mvalid__statusbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--navy-800);
+  font-weight: 600;
+  padding-top: 2px;
+}
+.mvalid__statusbar-icons {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.mvalid__statusbar-icons svg {
+  width: 15px;
+  height: 15px;
+  display: block;
+}
+.mvalid__titlerow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 16px;
+}
+.mvalid__avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--navy-800);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+.mvalid__brand {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+}
+.mvalid__title {
+  color: var(--orange-500);
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+.mvalid__subtitle {
+  color: var(--mvalid-muted);
+  font-size: 13px;
+  margin-top: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-weight: 500;
+}
+.mvalid__subtitle svg {
+  width: 14px;
+  height: 14px;
+  display: block;
+}
+.mvalid__shield {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--orange-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  flex-shrink: 0;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.mvalid__shield svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+.mvalid__tabs {
+  display: flex;
+  gap: 6px;
+  margin-top: 18px;
+}
+.mvalid__tab {
+  flex: 1;
+  text-align: center;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 10px 0;
+  border: 0;
+  border-radius: 12px;
+  background: #F5F6F8;
+  color: #6B7280;
+  cursor: pointer;
+}
+.mvalid__tab.is-active {
+  background: var(--orange-500);
+  color: #fff;
+  font-weight: 600;
+}
+.mvalid__section {
+  padding: 18px 22px 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--orange-500);
+}
+.mvalid__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  padding: 10px 22px 8px;
+  flex: 1;
+  align-content: start;
+}
+.mvalid__tile {
+  background: var(--orange-500);
+  border: 0;
+  border-radius: 16px;
+  padding: 28px 14px 22px;
+  min-height: 132px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+}
+.mvalid__tile svg {
+  width: 44px;
+  height: 44px;
+  display: block;
+}
+.mvalid__tile span {
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.2;
+}
+.mvalid__footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px 10px;
+}
+.mvalid__fab-help,
+.mvalid__fab-records {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-family: inherit;
+  border: 0;
+  padding: 0;
+}
+.mvalid__fab-help svg,
+.mvalid__fab-records svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+.mvalid__fab-help {
+  border-radius: 50%;
+  border: 1px solid var(--mvalid-border);
+  background: transparent;
+  color: var(--mvalid-muted);
+}
+.mvalid__fab-records {
+  border-radius: 12px;
+  background: var(--orange-500);
+  color: #fff;
+}
+.mvalid__home-bar {
+  width: 120px;
+  height: 4px;
+  border-radius: 999px;
+  background: #1a1a1a;
+  margin: 6px auto 10px;
+}
+
+/* ============================================================
+   ISO mValidator — NFC listening
+   ============================================================ */
+.mvalid--nfc {
+  text-align: center;
+}
+.mvalid__header--nfc {
+  padding-bottom: 8px;
+}
+.mnfc__toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+.mnfc__toolbar-end {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+}
+.mnfc__icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1.5px solid currentColor;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.mnfc__icon-btn svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+.mnfc__icon-btn--navy { color: var(--navy-800); }
+.mnfc__icon-btn--peach { color: #F0A070; }
+.mnfc__icon-btn--sky { color: #7BA3C4; }
+.mnfc__docs {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--navy-800);
+  cursor: pointer;
+}
+.mnfc__docs-ico {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--orange-500);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.mnfc__docs-ico svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+.mnfc__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 28px 22px 8px;
+  min-height: 0;
+}
+.mnfc__nfc {
+  color: var(--orange-500);
+  width: 52px;
+  height: 52px;
+}
+.mnfc__nfc svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.mnfc__label {
+  margin-top: 10px;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--navy-800);
+}
+.mnfc__or {
+  margin: 18px 0 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--mvalid-muted);
+  letter-spacing: 0.02em;
+}
+.mnfc__qr {
+  position: relative;
+  width: 196px;
+  height: 196px;
+  padding: 10px;
+}
+.mnfc__qr > svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.mnfc__qr-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  background: #fff;
+  color: var(--orange-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mnfc__qr-center svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+.mnfc__listening {
+  margin-top: 16px;
+  font-size: 14px;
+  color: var(--mvalid-muted);
+  font-weight: 500;
+}
+.mnfc__listening b {
+  color: var(--navy-800);
+  font-weight: 700;
+}
+.mnfc__timer {
+  margin: 28px auto 8px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mnfc__timer-inner {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--navy-800);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+}

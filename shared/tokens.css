@@ -1,0 +1,258 @@
+/* ============================================================
+   SCYTÁLES — DESIGN TOKENS
+   Single source of truth. Imported by both the style guide and
+   the site. Never redefine these values anywhere else.
+   ============================================================ */
+
+/* ---- Fonts ------------------------------------------------ */
+@font-face {
+  font-family: "PP Agrandir";
+  src: url("../Fonts/PP Agrandir - Free for personal use v4.1 2/PPAgrandir-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PP Agrandir Wide";
+  src: url("../Fonts/PP Agrandir - Free for personal use v4.1 2/agrandir-wide-medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PP Agrandir Grand";
+  src: url("../Fonts/PP Agrandir - Free for personal use v4.1 2/PPAgrandir-GrandLight.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PP Agrandir Grand";
+  src: url("../Fonts/PP Agrandir - Free for personal use v4.1 2/PPAgrandir-GrandHeavy.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro Text";
+  src: url("../Fonts/SF-PRO/SF-Pro-Text-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro Text";
+  src: url("../Fonts/SF-PRO/SF-Pro-Text-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro Text";
+  src: url("../Fonts/SF-PRO/SF-Pro-Text-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro Text";
+  src: url("../Fonts/SF-PRO/SF-Pro-Text-Semibold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro Text";
+  src: url("../Fonts/SF-PRO/SF-Pro-Text-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* ---- Brand — Orange ------------------------------------
+     Frozen from Color Lab (desktop session, Aug 2026).         */
+  --orange-500: #E7411D;   /* primary brand orange */
+  --orange-mark:#E5701D;   /* logo mark + icon strokes */
+  --orange-600: #C26019;   /* hover / pressed */
+  --orange-300: #ECA36F;   /* light accent / frame line */
+  --orange-100: #FAE5D6;   /* tint / surface */
+
+  /* ---- Brand — Navy -------------------------------------- */
+  --navy-900:   #020206;   /* deepest — dark sections, hover */
+  --navy-800:   #080917;   /* primary navy */
+  --navy-600:   #323339;   /* secondary navy */
+
+  /* ---- Neutrals — warm cream family ---------------------- */
+  --cream-50:   #FAF4EC;   /* warm cream */
+  --page-bg:    color-mix(in srgb, var(--cream-50) 40%, #fff); /* white with a warm cream tint */
+  --cream-100:  #F4EBDD;   /* raised surface */
+  --cream-200:  #E9DECC;   /* borders on cream */
+
+  /* ---- Earth band ("The backbone of global digital id") ---
+     Frozen from Color Lab (desktop session, Aug 2026). */
+  --earth-tint:   #FFFFFF;   /* land dots (white = untinted) */
+  --earth-light:  #4194C8;   /* lit side of the globe's body */
+  --earth-dark:   #0B0061;   /* shadowed side */
+
+  /* ---- Syntax palette ------------------------------------
+     Editor colours, used only by the hover-scramble: a character flips to
+     a random symbol in one of these while the cursor is on it. Not part of
+     the brand palette — never use them for site chrome or copy. */
+  --code-yellow: #E5C07B;
+  --code-green:  #98C379;
+  --code-red:    #E06C75;
+  --code-blue:   #61AFEF;
+  --code-purple: #C678DD;
+  --code-cyan:   #56B6C2;
+
+  /* ---- Support ------------------------------------------- */
+  --rust-700:   #7B470F;   /* gradient / accent dark */
+  --neutral-500:#8A8178;   /* muted text, greyed logos */
+  --neutral-300:#D9D5CF;   /* image placeholder grey */
+  --white:      #FFFFFF;
+  --ink:        #080917;   /* default text on light */
+
+  /* ---- Typography ---------------------------------------- */
+  --font-head: "PP Agrandir", "Helvetica Neue", Arial, sans-serif;
+  /* Display-1 runs the same cut as the headings — the Wide optical size was
+     dropped so the hero and "Browse our product line" read as one face. */
+  --font-display: "PP Agrandir", "Helvetica Neue", Arial, sans-serif;
+  /* Body — Cascadia Code Light (frozen from Font Lab). */
+  --font-body: "Cascadia Code", ui-monospace, SFMono-Regular, Menlo, monospace;
+  /* Display-1 outline — off; the Text Bold cut needs no extra weight. */
+  --display-1-stroke: 0;
+  /* Type rhythm — frozen from Font Lab (desktop session, Aug 2026). */
+  --lh-display: 1.12;
+  --lh-hero: 0.92;
+  --ls-display: 0.01em;
+  --ls-hero: 0.003em;
+  --lh-head: 1.1;
+  --ls-head: -0.01em;
+  --fw-display: 400;
+  --fw-head: 400;
+  --fw-body: 300;      /* Cascadia Code Light — all body copy */
+
+  /* ---- Spacing scale (8px base) -------------------------- */
+  --space-1: 4px;  --space-2: 8px;  --space-3: 16px;
+  --space-4: 24px; --space-5: 32px; --space-6: 48px;
+  --space-7: 64px; --space-8: 96px;
+
+  /* ---- Layout & grid -------------------------------------
+     Design base is Standard Desktop 1440.
+     Section side padding is fixed at 2rem at every breakpoint.
+     Container = 1440 − (2 × 2rem) = 1376px.                  */
+  --section-pad-x: 2rem;            /* 32px — fixed rule, never changes */
+  /* Detail pages (product, solution) run a wider gutter: their copy is a
+     single centred column, and 2rem let the display-1 reach the frame line.
+     Scoped onto the page root, so every .container inside inherits it and
+     the full-bleed negative margins still resolve against the same value. */
+  --section-pad-x-wide: 5rem;       /* 80px */
+  --page-margin-x: 0rem;            /* outside the orange frame, L/R */
+  --container-max: 1440px;          /* design width; caps the shell (border-box) */
+  --content-max: 1376px;            /* 1440 − 2 × 2rem — the usable content width */
+  --section-pad-y: var(--space-8);  /* 96px desktop */
+  --nav-h: 80px;
+  --frame-line: var(--orange-300);  /* 1px site outline — vertical shell + section rules */
+
+  /* ---- Proportional scale --------------------------------
+     The Figma frame is 857 wide with 798px of content between
+     the gutters. --u is one frame pixel expressed in our own
+     content width, so any measurement taken off the design can
+     be written as calc(N * var(--u)) and will hold its exact
+     proportion at every viewport up to 1440.                  */
+  --content-w: min(
+    calc(100vw - 2 * var(--section-pad-x) - 2 * var(--page-margin-x)),
+    var(--content-max)
+  );
+  --u: calc(var(--content-w) / 798);
+
+  /* Type sized off the design frame — 80px / 34.5px at 1440.
+     Display 1 runs at 80% of the frame's 58, dialled back by eye. */
+  /* Per-face size correction. 1 for the brand faces; the Font Lab sets a
+     smaller number for wide faces (a monospace sets far wider at the same
+     point size and overflows every measure tuned for Agrandir). */
+  --fs-scale-display: 1;
+  --fs-scale-head: 1;
+  /* Cascadia sets wider than Agrandir/SF at the same size — Font Lab’s
+     body scale for the Cascadia face. */
+  --fs-scale-body: 0.94;
+
+  --fs-display-1:  calc(44 * var(--u) * var(--fs-scale-display));
+  /* One step above Display 1 — the home hero headline only. Same
+     proportional unit, so it holds its ratio at every viewport. */
+  --fs-display-1-xl: calc(58 * var(--u) * var(--fs-scale-display));
+  --fs-hero-lead:  calc(16 * var(--u));
+
+  /* Fixed type defaults (style guide) */
+  --fs-h-2:     calc(50px * var(--fs-scale-head));   /* e.g. “Browse our product line” */
+  --fs-h-3:     calc(22px * var(--fs-scale-head));   /* matches the .h-3 class */
+  --fs-body-md: calc(18px * var(--fs-scale-body));   /* Body Medium */
+  --lh-body-md: 20px;
+  /* Product hero deck — the standfirst under the Display 1 headline. Its
+     own step: larger than Body Medium, well under any heading. */
+  --fs-hero-deck: calc(28px * var(--fs-scale-body));
+  /* The numbered claims on the product pages — a display figure, larger
+     than any heading, set beside its paragraph. */
+  --fs-feature-number: calc(150px * var(--fs-scale-display));
+
+  /* Customer stories run their own two steps: a display figure larger than
+     any heading, and a headline sized between --fs-h-2 and --fs-h-3. The
+     panel's whole job is a three-step hierarchy, and neither step exists
+     elsewhere in the scale. */
+  --fs-story-figure:   calc(86px * var(--fs-scale-display));
+  --fs-story-headline: calc(30px * var(--fs-scale-head));
+
+  /* Breakpoint reference values (media queries use literals) */
+  --bp-mobile-sm: 360px;
+  --bp-mobile-lg: 390px;
+  --bp-tablet:    768px;
+  --bp-desktop:  1366px;
+  --bp-wide:     1920px;
+
+  /* ---- Button padding ------------------------------------ */
+  --btn-pad-y: 9px;
+  --btn-pad-x: 18px;
+
+  /* ---- Radius -------------------------------------------- */
+  --radius-sm: 5px;  --radius-md: 5px;  --radius-lg: 5px; --radius-xl: 5px;
+
+  /* ---- Shadow -------------------------------------------- */
+  --shadow-sm: 0 1px 2px rgba(18,32,59,.08);
+  --shadow-md: 0 6px 20px rgba(18,32,59,.10);
+  --shadow-lg: 0 20px 50px rgba(18,32,59,.16);
+}
+
+/* ---- Rhythm steps down with the breakpoint tiers ----------- */
+@media (max-width: 1365px) { :root { --section-pad-y: var(--space-7); } }  /* tablet + below */
+
+/* Below tablet the frame is too narrow for the proportional scale to
+   stay legible, so type falls back to fixed sizes.
+   --fs-display-1 is owned HERE and nowhere else: change this one line to
+   resize the mobile headline. (It used to be re-declared at the bottom of
+   scytales/css/site.css, which imports this file and therefore won every
+   time — edits made here had no effect at all.) */
+@media (max-width: 767px) {
+  :root {
+    --section-pad-y: var(--space-6);
+    --nav-h: 64px;
+    --section-pad-x: 2rem;
+    --section-pad-x-wide: 2rem;
+    /* Fluid Display 1: fixed 48px overflowed long unbreakable words on
+       ~390–430 phones (14 Pro). 9.2vw tracks the measure; 48px caps
+       larger phones in this band. */
+    --fs-display-1: clamp(2rem, 9.2vw, 48px);
+    --fs-display-1-xl: clamp(2.25rem, 11vw, 60px);
+    --fs-hero-lead: 16px;
+    --fs-story-figure: 56px;
+    --fs-story-headline: 24px;
+  }
+}

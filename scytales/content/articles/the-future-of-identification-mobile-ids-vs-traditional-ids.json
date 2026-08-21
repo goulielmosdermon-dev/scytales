@@ -1,0 +1,150 @@
+{
+  "slug": "the-future-of-identification-mobile-ids-vs-traditional-ids",
+  "title": "The Future of Identification: Mobile IDs vs Traditional IDs",
+  "seoTitle": "The Future of Identification: Mobile IDs vs Traditional IDs | Scytáles Newsroom",
+  "description": "The need for secure, convenient, and verifiable identification mechanisms continues to grow across digital and physical channels.",
+  "excerpt": "In our interconnected world, identification is the bedrock upon which trust, access, and security are built. Whether it’s boarding a flight, accessing financial services, or proving our age at a gambling site, our identity credentials play a pivotal role. However, in the ever-evo…",
+  "category": "articles",
+  "categoryLabel": "Articles",
+  "date": "2024-03-05",
+  "dateLabel": "Mar 5, 2024",
+  "image": "assets/articles/the-future-of-identification-mobile-ids-vs-traditional-ids.png",
+  "topics": [
+    "Mobile ID"
+  ],
+  "body": [
+    {
+      "type": "p",
+      "html": "In our interconnected world, identification is the bedrock upon which trust, access, and security are built. Whether it’s boarding a flight, accessing financial services, or proving our age at a gambling site, our identity credentials play a pivotal role. However, in the ever-evolving digital age, traditional methods of identification are facing new challenges. The need for secure, convenient, and verifiable identification mechanisms is more relevant than ever, as online transactions and interactions become increasingly prevalent. This is where mobile IDs enter the stage, emerging as a potential game-changer in identification, leaving us to wonder – are they the future or simply a passing trend? This article delves into the world of mobile IDs, exploring their capabilities and comparing them to their traditional counterparts to understand their role in shaping the present and future of identification."
+    },
+    {
+      "type": "h2",
+      "text": "Traditional IDs: Strengths and Weaknesses"
+    },
+    {
+      "type": "p",
+      "html": "For centuries, physical forms of identification – from simple paper to today’s documents with security features like national ID cards, passports, and driving licences – have been the primary way we prove who we are, holding a high level of recognition and acceptance. In 1414 King Henry V of England was issued the first ever passport and by the early 20th century the modern passports of today were created. France introduced the first driving licences under the Paris Police Ordinance of 14 August 1893 and today the driver's licence is the most. These physical documents are broadly trusted by government agencies, businesses and individuals for different use cases, such as age verification, travel, and access to different services. Moreover, most adults are accustomed to carrying and using traditional physical ID documents. This familiarity makes them easy to adopt and understand, while the tactile experience lends a sense of security."
+    },
+    {
+      "type": "p",
+      "html": "These traditional IDs serve a vital function, but their limitations are becoming increasingly apparent in the modern world. With advanced technology, the ability to create counterfeit versions of traditional IDs is a growing security concern, raising the risk of identity theft and fraud; whereas since many traditional IDs are paper-based or laminated, they are susceptible to wear and tear, fading, and other damage, reducing their effectiveness and potential lifespan. Misplacing or having a physical ID stolen can be a major inconvenience, hindering many essential transactions until a replacement is obtained, and carrying multiple physical ID cards can be bulky and inconvenient. Additionally, there's always the potential for forgetting or misplacing the needed ID at a critical time."
+    },
+    {
+      "type": "p",
+      "html": "While traditional IDs still have their place, their limitations in security, convenience, and vulnerability highlight the growing need for more advanced identification solutions in our digital world."
+    },
+    {
+      "type": "h2",
+      "text": "Mobile IDs: A New Era"
+    },
+    {
+      "type": "p",
+      "html": "Mobile IDs, and Digital ID Wallets, represent the next generation of identification, leveraging the power and ubiquity of smartphones. They are the digital counterparts to traditional identity documents securely stored and managed on a mobile device."
+    },
+    {
+      "type": "p",
+      "html": "These mobile IDs can be used on smartphones with State-issued applications, like the Mobile Driving Licence app from the State of Utah, US, (of which Scytáles is the technology provider) or even using a Digital ID Wallet that includes multiple ID documents (with Scytáles being the developer of the European Digital ID Wallet - the EUDI Wallet - which is going to be rolled out to more than 400 million citizens). In both cases, a trusted authority (for example, a governmental agency) verifies an individual’s identity and issues their mobile ID credential that is digitally signed and can be accessed on their smartphone. When required, the individual can validate their mobile ID instantly, in online or offline modes, to authenticate and retrieve necessary information, in face-to-face, over-the-counter, or even remote/online interactions. The three main advantages of mobile IDs are:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Convenience:</strong> Mobile IDs offer unmatched ease of use. Since most people always carry their smartphones, they don't need to remember a physical ID, reducing the risk of being caught without proper identification.",
+        "<strong>Security:</strong> Mobile IDs incorporate advanced security features like encryption and biometrics (e.g., fingerprint or facial recognition) and are issued with Level of Assurance High (which makes them have the same value as their physical counterpart), making them significantly more resistant to fraud than traditional IDs.",
+        "<strong>Interoperability:</strong> Mobile IDs are built on standardized frameworks, promoting wider acceptance in varying scenarios, including travel, e-commerce, and interaction with government services."
+      ],
+      "htmlItems": true
+    },
+    {
+      "type": "p",
+      "html": "The European Union's eIDAS 2.0 regulation, approved on February 29, 2024, by the European Parliament, paves the way for secure and seamless cross-border use of digital identity solutions. Compliance with the European Digital Identity Architecture and Reference Framework ensures that mobile IDs issued in one EU member state will be widely recognized throughout the continent. This development marks a turning point, with mobile IDs set to gain greater traction and acceptance across industries in the EU."
+    },
+    {
+      "type": "h2",
+      "text": "Security Comparison"
+    },
+    {
+      "type": "p",
+      "html": "Security plays a crucial role in any identification system. Traditional IDs offer the benefit of physical control over the document itself. If one loses or misplaces a physical ID, it might be easier to track down or recover compared to a stolen smartphone. However, physical IDs are susceptible to loss, theft, or even forgery with advanced technology, potentially leading to identity theft and misuse. Most physical IDs also lack advanced security features like encryption or multi-factor authentication, making them less secure compared to mobile IDs with such functionalities."
+    },
+    {
+      "type": "p",
+      "html": "The overall security of a mobile ID is partially dependent on the security practices of the user and the security features of the smartphone device itself. Like any technology, mobile IDs are not immune to evolving cyber threats. Continuous improvement and adherence to evolving security standards are crucial. Nevertheless, mobile IDs often utilize robust encryption protocols to protect the stored data. Additionally, features like MFA, requiring additional verification factors beyond possession of the ID (e.g., PIN, fingerprint), significantly enhance security compared to easily stolen or forged physical IDs. Unlike physical IDs, in case of loss or theft of the smartphone, the mobile ID can be remotely locked or disabled, minimizing the risk of misuse compared to a lost physical ID."
+    },
+    {
+      "type": "p",
+      "html": "In conclusion, both traditional and mobile IDs have their inherent security advantages and limitations. Mobile IDs offer a significant leap forward in security with encryption, multi-factor authentication, and remote validation and locking capabilities. However, it's equally important to acknowledge that both methods require ongoing security improvements through compliance with evolving standards, high levels of assurance, and a strong focus on user data privacy. This is why we, at Scytáles, strive to be part of regulations and standardization entities, actually representing Sweden as an expert through the Standardization Body (SIS) SIS/TK 448 and Task Force 14 on mDL within ISO/IEC 18013-5 ISO/IEC JTC1/SC17/WG10."
+    },
+    {
+      "type": "h2",
+      "text": "Adoption and Future"
+    },
+    {
+      "type": "p",
+      "html": "The world is witnessing a growing wave of mobile ID adoption across various countries. Governments, businesses, and individuals are recognizing the numerous benefits they offer compared to traditional IDs. Several US States - like Utah, the first US State to implement an ISO 18013-5 compliant mobile ID, of which Scytáles is the technology provider -, have already established state programs or initiated pilots, with mobile IDs gaining traction. In Europe, the emergence of regulatory frameworks like eIDAS 2.0 creates the foundation for the accelerated use of mobile IDs, and the European Digital Identity Wallet (of which Scytáles was contracted by the European Commission as its developer) sets the ground for an interoperable, secure and privacy-centered solution for all Europeans."
+    },
+    {
+      "type": "p",
+      "html": "As digital interactions and online services continue to expand, the need for secure and user-friendly identification solutions will become even more critical, while continuous improvements in mobile technology, including biometrics and secure solutions, will further enhance the security and user experience of mobile IDs."
+    },
+    {
+      "type": "p",
+      "html": "Governments, tech companies, and public institutions are increasingly recognizing the potential of mobile IDs and are working together to overcome adoption hurdles through collaboration and innovation. While government initiatives and regulations play a crucial role in establishing the groundwork for mobile ID adoption, the active participation and use cases developed by the private sector are equally crucial for widespread success. Private companies across different industries can act as catalysts by developing innovative applications that leverage mobile ID functionalities. This could involve seamless age verification for online purchases, secure access to customer accounts, or streamlined onboarding processes within various sectors. By actively engaging and demonstrating the practical value of mobile IDs across diverse applications, the private sector plays a vital role in driving their adoption, acceptance, and ultimately, shaping the future of secure and convenient digital identity."
+    },
+    {
+      "type": "p",
+      "html": "With ongoing advancements in technology, growing awareness, and collaborative efforts, mobile IDs have the potential to become the ubiquitous and secure identification tool of the future, shaping a more convenient and secure digital world."
+    },
+    {
+      "type": "h2",
+      "text": "Scytáles technology available as SDKs"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Can be implemented in just under 6 weeks",
+        "Can be easily integrated with the currently implemented solution and act as an add-on",
+        "By having a high level of assurance validation, you can ensure the identity of your users",
+        "Checking in using the mobile validator ensures the person accessing the services is who they say they are",
+        "Ensure the privacy of your guests by requesting only the data you need",
+        "Compliance with KYC, AML, GDPR and eIDAS 2.0 regulations, as well as with ISO 18013 parts 5 and 7",
+        "Compliant with the European Digital Identity Architecture and Reference Framework (the European Digital Identity Wallet of which Scytáles are the technology developers), ISO 18013 part 5 and part 7 driving licences and mobile IDs",
+        "Compliant with OID4VCI, OID4VP and SIOPv2, where DIF JWT VC Presentation Profile uses OID4VP as the base protocol for the request and verification of W3C JWT VCs, and uses SIOPv2 for user authentication; while NIST (National Cybersecurity Center of Excellence) plans to implement reference implementation for OID4VP to present mdocs/mDL",
+        "Fully certified solutions",
+        "To cater to diverse needs, we offer different pricing solutions and business models. Our transparent policy ensures that you have the flexibility to choose the option that aligns best with your organization's requirements."
+      ]
+    },
+    {
+      "type": "p",
+      "html": "<a href=\"./index.html#contact\"><strong>Contact us now</strong></a> to get your 30-day free trial on our SDKs."
+    },
+    {
+      "type": "h2",
+      "text": "Scytáles, Your Trusted ID Verification Provider"
+    },
+    {
+      "type": "p",
+      "html": "At Scytáles, we are thrilled to share groundbreaking developments in digital identity that are set to revolutionize the way we authenticate and interact remotely online and face-to-face."
+    },
+    {
+      "type": "p",
+      "html": "<strong>Proven track record:</strong> Implementors of the first full ISO 18013-5 compliant Mobile Driver’s License program in the US in the State of Utah and technology providers of the European Digital Identity Wallet (EUDI Wallet) which will soon be rolled out to more than 440 million European citizens, with our technology being broadly used across the globe."
+    },
+    {
+      "type": "p",
+      "html": "<strong>Expert Representation in several standardization bodies:</strong> Scytáles represents Sweden as an expert through the Standardization Body (SIS) SIS/TK 448 and Task Force 14 on mDL within ISO/IEC 18013-5 ISO/IEC JTC1/SC17/WG10."
+    },
+    {
+      "type": "p",
+      "html": "<strong>Global leaders in mobile IDs:</strong> Scytáles is the leading developer of ISO-Mobile Driving Licenses, Mobile IDs and Derived Mobile IDs as a complement to Security Printed Documents and Validation mechanisms."
+    },
+    {
+      "type": "p",
+      "html": "<strong>Providers of the most comprehensive validation solution:</strong> Our Mobile Validator is built focused on privacy, allowing for all validation scenarios, in real-time in online and offline modes, over the counter and over the web/remotely."
+    },
+    {
+      "type": "p",
+      "html": "<strong>High level of Assurance identification at our core:</strong> Our product portfolio showcases the different solutions we offer the market for secure, interoperable and trustworthy identification credentials."
+    }
+  ],
+  "source": "https://www.scytales.com/post/the-future-of-identification-mobile-ids-vs-traditional-ids"
+}

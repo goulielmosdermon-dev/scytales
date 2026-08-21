@@ -1,0 +1,49 @@
+{
+  "slug": "interoperability",
+  "name": "Interoperability",
+  "title": "Interoperability | Scytáles",
+  "hero": {
+    "headline": "Interoperability",
+    "lead": "Cross-border digital identity only works when every Member State, issuer, and relying party speaks the same language. Scytáles builds to harmonised European and international standards so credentials issued in one place are trusted everywhere in the Union.",
+    "cta": { "label": "Request a demo", "href": "#contact" }
+  },
+  "sections": [
+    {
+      "type": "prose",
+      "heading": "What interoperability means",
+      "paragraphs": [
+        "Interoperability is the foundation of the European Digital Identity framework: wallets, validators, and services that can exchange verifiable credentials across borders without proprietary lock-in.",
+        "Scytáles aligns with the EUDI Architecture and Reference Framework, eIDAS 2.0, ISO 18013 parts 5 and 7, OpenID for Verifiable Credentials, and related trust lists so issuers and relying parties can integrate once and operate across the Union.",
+        "The result is a digital identity ecosystem where citizens, businesses, and public services connect with confidence, whether online, over the counter, or offline."
+      ]
+    },
+    {
+      "type": "points",
+      "heading": "Why it matters",
+      "points": [
+        {
+          "title": "Cross-border by default",
+          "body": "Credentials recognised across all 27 EU Member States."
+        },
+        {
+          "title": "Standards, not silos",
+          "body": "Built on EUDI ARF, eIDAS 2.0, ISO 18013, and OpenID."
+        },
+        {
+          "title": "Online and offline",
+          "body": "Real-time validation that works with or without a network."
+        },
+        {
+          "title": "Trusted lists",
+          "body": "Consistent reading across issuers, identity providers, and trust centres."
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "heading": "Why Scytáles",
+      "lead": "As official developers of the EUDI Wallet for the European Commission, Scytáles designs interoperability into every layer of the stack, from holder wallets to validators and service managers.",
+      "cta": { "label": "Partner with the experts", "href": "#contact" }
+    }
+  ]
+}

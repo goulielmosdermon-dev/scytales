@@ -1,0 +1,260 @@
+/* ============================================================
+   SCYTÁLES — STACKED CARDS
+   Stepped wallet stack with glass shader + hover draw-up.
+   ============================================================ */
+
+.card-stack {
+  --stack-w: 200px;
+  --stack-peek: 56px;
+  --stack-h: calc(var(--stack-w) * 1.595);
+  --stack-lift: -112px;
+  --cg-saturate: 1.4;
+  --cg-contrast: 1.13;
+  --cg-frost: .55;
+  --cg-tint: 22;
+  --cg-specular: .58;
+  --cg-sheen: 60;
+  --cg-border: .55;
+  --cg-highlight: .58;
+  --cg-glow: .54;
+  --cg-shadow: 0;
+  --cg-shadow-color: transparent;
+  position: relative;
+  width: var(--stack-w);
+  height: calc(var(--stack-h) + var(--stack-peek) * 2);
+  margin-inline: auto;
+}
+
+.card-stack__pane {
+  --lift: 0px;
+  position: absolute;
+  left: 50%;
+  width: var(--stack-w);
+  height: var(--stack-h);
+  transform: translateX(-50%) translateY(var(--lift));
+  border-radius: 14px;
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid rgba(255, 255, 255, var(--cg-border));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, var(--cg-highlight)),
+    inset 0 -1px 0 rgba(10, 30, 60, .22),
+    inset 0 0 28px rgba(255, 220, 190, var(--cg-glow));
+  user-select: none;
+  pointer-events: none;
+  transition:
+    transform .55s cubic-bezier(.22, 1, .36, 1),
+    box-shadow .55s cubic-bezier(.22, 1, .36, 1);
+  will-change: transform;
+}
+.card-stack__pane--front {
+  pointer-events: auto;
+  cursor: pointer;
+}
+.card-stack__pane--back { top: 0; z-index: 1; }
+.card-stack__pane--mid { top: var(--stack-peek); z-index: 2; }
+.card-stack__pane--front { top: calc(var(--stack-peek) * 2); z-index: 3; }
+
+/* Hover front card — whole stack draws up with even peek gaps */
+.card-stack:has(.card-stack__pane--front:hover) .card-stack__pane--back,
+.card-stack:has(.card-stack__pane--front:hover) .card-stack__pane--mid,
+.card-stack:has(.card-stack__pane--front:hover) .card-stack__pane--front {
+  --lift: var(--stack-lift);
+}
+.card-stack:has(.card-stack__pane--front:hover) .card-stack__pane--back { transition-delay: 0ms; }
+.card-stack:has(.card-stack__pane--front:hover) .card-stack__pane--mid { transition-delay: 45ms; }
+.card-stack:has(.card-stack__pane--front:hover) .card-stack__pane--front {
+  transition-delay: 90ms;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, var(--cg-highlight)),
+    inset 0 -1px 0 rgba(10, 30, 60, .22),
+    inset 0 0 28px rgba(255, 220, 190, var(--cg-glow));
+}
+
+.card-stack__pane img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  filter: saturate(var(--cg-saturate)) contrast(var(--cg-contrast));
+}
+
+.card-stack__pane::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 2;
+  background:
+    linear-gradient(
+      160deg,
+      rgba(255, 255, 255, var(--cg-frost)) 0%,
+      transparent 42%,
+      color-mix(in srgb, var(--orange-500) calc(var(--cg-tint) * 1%), transparent) 100%
+    );
+  mix-blend-mode: soft-light;
+}
+
+.card-stack__pane::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 3;
+  background:
+    linear-gradient(
+      calc(var(--cg-sheen) * 1deg),
+      rgba(255, 255, 255, .7) 0%,
+      rgba(255, 255, 255, .18) 26%,
+      transparent 48%
+    ),
+    conic-gradient(
+      from 200deg at 8% 45%,
+      transparent 0deg,
+      rgba(255, 255, 255, .22) 40deg,
+      transparent 90deg,
+      rgba(180, 220, 255, .12) 200deg,
+      transparent 280deg
+    );
+  opacity: var(--cg-specular);
+  mix-blend-mode: screen;
+}
+
+/* ID reverse — frosted glass over blurred art, sharp type on top */
+.card-stack__pane--id {
+  background:
+    linear-gradient(
+      165deg,
+      rgba(255, 255, 255, .42) 0%,
+      rgba(255, 248, 240, .28) 45%,
+      rgba(255, 230, 210, .22) 100%
+    );
+  backdrop-filter: blur(18px) saturate(1.55);
+  -webkit-backdrop-filter: blur(18px) saturate(1.55);
+  border-color: rgba(255, 255, 255, .78);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .85),
+    inset 0 -1px 0 rgba(10, 30, 60, .12),
+    inset 0 0 36px rgba(255, 230, 200, .45),
+    inset 0 0 1px rgba(255, 255, 255, .55);
+}
+.card-stack__id-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  border-radius: inherit;
+}
+.card-stack__id-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.18);
+  filter:
+    blur(18px)
+    saturate(.85)
+    contrast(1.05)
+    brightness(1.2);
+  opacity: .72;
+}
+.card-stack__pane--id::after {
+  z-index: 1;
+  background:
+    linear-gradient(
+      155deg,
+      rgba(255, 255, 255, .62) 0%,
+      rgba(255, 255, 255, .12) 38%,
+      transparent 58%,
+      color-mix(in srgb, var(--orange-300) 28%, transparent) 100%
+    );
+  mix-blend-mode: soft-light;
+  opacity: 1;
+}
+.card-stack__pane--id::before {
+  z-index: 2;
+  opacity: .85;
+  background:
+    linear-gradient(
+      118deg,
+      rgba(255, 255, 255, .88) 0%,
+      rgba(255, 255, 255, .28) 22%,
+      transparent 46%
+    ),
+    radial-gradient(
+      120% 80% at 12% 8%,
+      rgba(255, 255, 255, .55) 0%,
+      transparent 55%
+    ),
+    conic-gradient(
+      from 200deg at 8% 45%,
+      transparent 0deg,
+      rgba(255, 255, 255, .28) 40deg,
+      transparent 90deg,
+      rgba(180, 220, 255, .16) 200deg,
+      transparent 280deg
+    );
+  mix-blend-mode: screen;
+}
+.card-stack__id-face {
+  position: relative;
+  z-index: 4;
+  height: 100%;
+  padding: 11% 9% 10%;
+  display: flex;
+  flex-direction: column;
+  color: var(--navy-800);
+  font-family: var(--font-body);
+  font-size: calc(var(--stack-w) * .055);
+  -webkit-font-smoothing: antialiased;
+}
+.card-stack__id-block {
+  margin-bottom: auto;
+  padding-top: 4%;
+}
+.card-stack__id-label {
+  font-weight: 500;
+  letter-spacing: .02em;
+  color: color-mix(in srgb, var(--navy-800) 65%, transparent);
+  margin-bottom: 0.45em;
+}
+.card-stack__id-value {
+  line-height: 1.45;
+  font-weight: 500;
+  color: var(--navy-800);
+}
+.card-stack__id-meta {
+  margin: 0;
+  display: grid;
+  gap: 0.45em;
+  line-height: 1.2;
+}
+.card-stack__id-meta > div {
+  display: grid;
+  grid-template-columns: 2.8em 1fr;
+  gap: 0.4em;
+  align-items: baseline;
+}
+.card-stack__id-meta dt {
+  margin: 0;
+  font-weight: 500;
+  color: color-mix(in srgb, var(--navy-800) 60%, transparent);
+}
+.card-stack__id-meta dd {
+  margin: 0;
+  font-weight: 500;
+  color: var(--navy-800);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-stack__pane { transition: none; }
+  .card-stack:has(.card-stack__pane--front:hover) .card-stack__pane--back,
+  .card-stack:has(.card-stack__pane--front:hover) .card-stack__pane--mid,
+  .card-stack:has(.card-stack__pane--front:hover) .card-stack__pane--front {
+    --lift: 0px;
+  }
+}

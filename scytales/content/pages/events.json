@@ -1,0 +1,88 @@
+{
+  "slug": "events",
+  "layout": "events",
+  "seoTitle": "Events | Scytáles",
+  "seoDescription": "Discover exciting opportunities and connect with Scytáles at upcoming events.",
+  "eyebrow": "Events",
+  "title": "Discover exciting opportunities and connect with us at upcoming events",
+  "lead": "Let's meet and explore together!",
+  "cta": {
+    "label": "Schedule a Meeting",
+    "href": "./page.html?slug=contacts"
+  },
+  "image": null,
+  "events": [
+    {
+      "name": "2023 TRUSTECH",
+      "meta": "Booth 5.2 F 055",
+      "dates": "28 – 30 Nov 2023",
+      "location": "Paris, France"
+    },
+    {
+      "name": "2023 AAMVA'S Annual International Conference",
+      "meta": "",
+      "dates": "26 – 28 Sep 2023",
+      "location": "Madison, WI, USA"
+    },
+    {
+      "name": "2023 Identity Week Amsterdam",
+      "meta": "Booth 232",
+      "dates": "13 – 14 Jun 2023",
+      "location": "Amsterdam"
+    },
+    {
+      "name": "Healthcare Automation and Digitalization Congress 2022",
+      "meta": "",
+      "dates": "26 – 27 Sep 2022",
+      "location": "Zurich, Switzerland"
+    },
+    {
+      "name": "2022 AAMVA'S Annual International Conference",
+      "meta": "",
+      "dates": "13 – 15 Sep 2022",
+      "location": "Baltimore, MD, USA"
+    },
+    {
+      "name": "2022 Identity Week London",
+      "meta": "Booth 308",
+      "dates": "28 – 29 Jun 2022",
+      "location": "London, UK"
+    },
+    {
+      "name": "2021 AAMVA'S Annual International Conference",
+      "meta": "",
+      "dates": "31 Aug – 2 Sep 2021",
+      "location": "Denver, CO, USA"
+    },
+    {
+      "name": "Delphi Economic Forum",
+      "meta": "",
+      "dates": "5 – 8 Mar 2021",
+      "location": "Athens, Greece"
+    },
+    {
+      "name": "Connect ID 2020",
+      "meta": "Booth 513 (with our partner GET Group)",
+      "dates": "11 – 12 Mar 2020",
+      "location": "Washington, DC, USA"
+    },
+    {
+      "name": "SDW 2020",
+      "meta": "Booth S28 (with our partner GET Group)",
+      "dates": "9 – 11 Jun 2020",
+      "location": "London, UK"
+    },
+    {
+      "name": "2020 Identity Week Asia",
+      "meta": "",
+      "dates": "14 – 15 Oct 2020",
+      "location": "Singapore"
+    },
+    {
+      "name": "Reconnaissance Digital Document Security",
+      "meta": "",
+      "dates": "5 – 7 Oct 2020",
+      "location": "Vienna, Austria"
+    }
+  ]
+}

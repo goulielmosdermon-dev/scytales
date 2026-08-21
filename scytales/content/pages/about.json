@@ -1,0 +1,349 @@
+{
+  "slug": "about",
+  "layout": "about",
+  "seoTitle": "About Scytáles | Scytáles",
+  "seoDescription": "Discover cutting-edge solutions with Scytáles that redefine security, convenience, trust, and interoperability.",
+  "sections": [
+    {
+      "id": "mission",
+      "heading": "Our Mission",
+      "body": "The Scytále, by nature, is one of the earliest encryption devices in history used in Ancient Greece to communicate securely during military campaigns.\n\nScytáles AB aims to utilise the same ethos to develop technology that eradicates fraud and enables accessible and inclusive digital identity for all."
+    },
+    {
+      "id": "what-we-do",
+      "heading": "What we do",
+      "body": "Scytáles is a frontrunner in the ISO international standardization work that is under development— ISO/IEC 18013-5 ISO/IEC JTC1/SC17/WG10, “Personal Identification – ISO-Compliant Driving Licence – Part 5: Mobile Driving Licence Application”, and Part 7, among other ISO/CEN WGs related to our developments and WG memberships.",
+      "pills": [
+        {
+          "label": "ISO Mobile Driving Licence / Mobile ID",
+          "note": "The ISO 18013-5 driving licence, held and presented on a phone."
+        },
+        {
+          "label": "EU / Digital ID Wallets",
+          "note": "The EUDI Wallet and its national deployments across the Union."
+        },
+        {
+          "label": "Open ID technologies",
+          "note": "OpenID Connect and OpenID4VP for interoperable online presentation."
+        },
+        {
+          "label": "Derived Mobile ID",
+          "note": "A phone credential derived from an existing high-assurance document."
+        },
+        {
+          "label": "National ID",
+          "note": "Citizen identity schemes issued and verified at national scale."
+        },
+        {
+          "label": "Travel Documents",
+          "note": "ePassports and ICAO-compliant credentials, read and validated."
+        },
+        {
+          "label": "Resident Permits",
+          "note": "Residence credentials issued to the same standards as national ID."
+        },
+        {
+          "label": "Tachographs",
+          "note": "Driver and company cards for regulated transport."
+        },
+        {
+          "label": "Voter ID",
+          "note": "Identity assurance for electoral registration and polling."
+        },
+        {
+          "label": "Healthcare ID",
+          "note": "Credentials for patients and health professionals."
+        },
+        {
+          "label": "Corporate ID",
+          "note": "Workforce identity for access, signing and authentication."
+        },
+        {
+          "label": "eMoney",
+          "note": "Identity and consent for regulated payment and wallet services."
+        },
+        {
+          "label": "Digital identification on mobile devices",
+          "note": "Credentials held in the secure element of the holder's phone."
+        },
+        {
+          "label": "Digital identification stored on servers",
+          "note": "Server-retrieval credentials, fetched at the moment of presentation."
+        },
+        {
+          "label": "Object ID",
+          "note": "Identity bound to a thing rather than a person."
+        },
+        {
+          "label": "Authenticity, Traceability & Connectivity",
+          "note": "Proving what something is, where it came from, and that it is genuine."
+        },
+        {
+          "label": "Biometrics",
+          "note": "Face and fingerprint matching, on device and at the border."
+        },
+        {
+          "label": "Public Key Infrastructure (PKI)",
+          "note": "Issuing, distributing and revoking the keys everything else trusts."
+        },
+        {
+          "label": "X.509",
+          "note": "The certificate standard behind document signers and readers."
+        },
+        {
+          "label": "ICAO 9303",
+          "note": "The machine-readable travel document specification."
+        },
+        {
+          "label": "Public Key Directory (PKD)",
+          "note": "Cross-border exchange of the certificates used to verify documents."
+        },
+        {
+          "label": "Applied Cryptography",
+          "note": "Selective disclosure, device binding and the primitives underneath."
+        },
+        {
+          "label": "Credential Service Provider (CSP) solutions",
+          "note": "Running issuance and lifecycle as a managed service."
+        }
+      ]
+    },
+    {
+      "id": "story",
+      "heading": "Our Story",
+      "body": "At the very heart of our Scytáles story is a seasoned team of passionate champions for robust, inclusive, innovative digital/mobile identity solutions that advance sustainable and useful identity ecosystems through global interoperability. We, the founders and key members were united over a strong belief that we could make a significant difference, even sitting in the driving seat for some of this mobile identity transformation at the heart of our digital society.\n\nAt the end of the day, it is about building trust in the digital world and generating social and economic benefits to society. It is about making everyone feel secure while in control of their digital footprint. And we take enormous pride and care that in our journey, we create an absolutely fun and fulfilling place to be part of.\n\nScytáles AB was founded in Stockholm, Sweden, in December 2014."
+    }
+  ],
+  "leadershipHeading": "Our Leadership",
+  "leadership": [
+    {
+      "name": "Konstantin Papaxanthis",
+      "role": "CEO & Founder",
+      "photo": "assets/leadership/konstantin-papaxanthis.jpg"
+    },
+    {
+      "name": "Anna Seddigh",
+      "role": "Chairwoman, Chief Communications Officer & Co-Founder",
+      "photo": "assets/leadership/anna-seddigh.jpg"
+    },
+    {
+      "name": "Vangelis Sakkopoulos (Dr.)",
+      "role": "Chief Technology Officer & Co-Founder",
+      "photo": "assets/leadership/vangelis-sakkopoulos.jpg"
+    },
+    {
+      "name": "Ana Sofia Ferreira",
+      "role": "Chief Marketing Officer",
+      "photo": "assets/leadership/ana-sofia-ferreira.jpg"
+    },
+    {
+      "name": "Jared Hubbard",
+      "role": "VP Operations and General Counsel",
+      "photo": "assets/leadership/jared-hubbard.jpg"
+    },
+    {
+      "name": "Simo Karppinen",
+      "role": "VP Products",
+      "photo": "assets/leadership/simo-karppinen.jpg"
+    },
+    {
+      "name": "Riitta Partala",
+      "role": "VP Wallet ID Solutions",
+      "photo": "assets/leadership/riitta-partala.jpg"
+    },
+    {
+      "name": "John Glykos",
+      "role": "Global Sales Director",
+      "photo": "assets/leadership/john-glykos.jpg"
+    },
+    {
+      "name": "Geoff Slagle",
+      "role": "Advisor",
+      "photo": "assets/leadership/geoff-slagle.jpg"
+    }
+  ],
+  "certificationsHeading": "Our Certifications and Compliances",
+  "certifications": [
+    {
+      "title": "ISO/IEC 18013-5",
+      "body": "ISO/IEC JTC1/SC17/WG10 Mobile Driving Licence Application — UL Certification Program Nov 2020 – Production Ready of ISO mDLs/mIDs. Successful international cross-tests across Japan, USA, Australia, and the EU.",
+      "logo": "assets/certifications/iso-18013.png"
+    },
+    {
+      "title": "ISO/IEC 18013-7",
+      "body": "Mobile driving licence (mDL) add-on functions.",
+      "logo": "assets/certifications/iso-18013.png"
+    },
+    {
+      "title": "ISO/IEC 27001",
+      "body": "Information security management systems for software factory, R&D & hosting centers.",
+      "logo": "assets/certifications/iso-27001.png?v=3"
+    },
+    {
+      "title": "ISO/IEC 9001",
+      "body": "Quality management systems for software factory, R&D & hosting centers.",
+      "logo": "assets/certifications/iso-9001.png?v=3"
+    },
+    {
+      "title": "W3C Verifiable Credentials",
+      "body": "W3C Verifiable Credentials Data Models.",
+      "logo": "assets/certifications/w3c.png"
+    },
+    {
+      "title": "ICAO 9303",
+      "body": "Machine Readable Travel Documents standards.",
+      "logo": "assets/certifications/icao-9303.png"
+    },
+    {
+      "title": "FIPS 140 & FIPS 210",
+      "body": "Cryptographic module and related compliance.",
+      "logo": "assets/certifications/fips.png"
+    },
+    {
+      "title": "OpenID Connect",
+      "body": "Widely adopted identity layer on top of OAuth 2.0.",
+      "logo": "assets/certifications/openid-connect.png"
+    },
+    {
+      "title": "NATO Security Certification Level II",
+      "body": "Security clearance certification.",
+      "logo": "assets/certifications/nato.png"
+    },
+    {
+      "title": "UC Gold",
+      "body": "UC Gold Certification for Highest Creditworthiness.",
+      "logo": "assets/certifications/uc-gold.png"
+    }
+  ],
+  "associatesHeading": "Associate Member",
+  "associates": [
+    {
+      "name": "AAMVA",
+      "logo": "assets/associates/aamva.png?v=2"
+    },
+    {
+      "name": "DSA",
+      "logo": "assets/associates/dsa.png?v=2"
+    },
+    {
+      "name": "OpenID",
+      "logo": "assets/associates/openid.png?v=2"
+    },
+    {
+      "name": "Stockholms Handelskammare",
+      "logo": "assets/associates/stockholms-handelskammare.png?v=2"
+    },
+    {
+      "name": "Hellenic Swedish Chamber of Commerce",
+      "logo": "assets/associates/hellenic-swedish-chamber.png?v=2"
+    }
+  ],
+  "locationsHeading": "Our Locations",
+  "locations": [
+    {
+      "type": "Headquarters",
+      "name": "Scytáles AB",
+      "lines": [
+        "Polygonvägen 53",
+        "187 66 Täby",
+        "SWEDEN"
+      ],
+      "country": "se",
+      "map": "assets/countries/se.svg"
+    },
+    {
+      "type": "Subsidiary",
+      "name": "Scytáles Inc",
+      "lines": [
+        "6 Liberty Square #2291",
+        "Boston, MA 02109",
+        "UNITED STATES"
+      ],
+      "country": "us",
+      "map": "assets/countries/us.svg"
+    },
+    {
+      "type": "Subsidiary",
+      "name": "Scytáles Pty Ltd",
+      "lines": [
+        "Se 902, 50 Berry St North",
+        "Sydney, NSW 2059",
+        "AUSTRALIA"
+      ],
+      "country": "au",
+      "map": "assets/countries/au.svg"
+    },
+    {
+      "type": "Subsidiary",
+      "name": "Scytáles IKE",
+      "lines": [
+        "Vasilissis Sofias 103",
+        "Athens 115 21",
+        "GREECE"
+      ],
+      "links": [
+        {
+          "label": "Legal Information",
+          "href": "./index.html#legal-ike"
+        }
+      ],
+      "country": "gr",
+      "map": "assets/countries/gr.svg"
+    },
+    {
+      "type": "Office Branch",
+      "name": "Porto",
+      "lines": [
+        "PORTUGAL"
+      ],
+      "country": "pt",
+      "map": "assets/countries/pt.svg"
+    },
+    {
+      "type": "Representation",
+      "name": "Castle Rock, Colorado",
+      "lines": [
+        "UNITED STATES"
+      ],
+      "country": "us",
+      "map": "assets/countries/us.svg"
+    },
+    {
+      "type": "Representation",
+      "name": "Helsinki",
+      "lines": [
+        "FINLAND"
+      ],
+      "country": "fi",
+      "map": "assets/countries/fi.svg"
+    },
+    {
+      "type": "Representation",
+      "name": "Barcelona",
+      "lines": [
+        "SPAIN"
+      ],
+      "country": "es",
+      "map": "assets/countries/es.svg"
+    },
+    {
+      "type": "Representation",
+      "name": "Viña del Mar",
+      "lines": [
+        "CHILE"
+      ],
+      "country": "cl",
+      "map": "assets/countries/cl.svg"
+    },
+    {
+      "type": "Representation",
+      "name": "Kuala Lumpur",
+      "lines": [
+        "MALAYSIA"
+      ],
+      "country": "my",
+      "map": "assets/countries/my.svg"
+    }
+  ],
+  "heroRod": true
+}

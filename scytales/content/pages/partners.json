@@ -1,0 +1,87 @@
+{
+  "slug": "partners",
+  "layout": "partners",
+  "seoTitle": "Our Partners | Scytáles",
+  "seoDescription": "Our technology partners are leaders in digital identity, cybersecurity, biometrics, and liveness detection.",
+  "eyebrow": "Company",
+  "title": "Our Valued Partners",
+  "lead": "Our technology partners are leaders in digital identity management, electronic identification, electronic signatures, cybersecurity, biometrics and liveness detection. We all have a common pledge: to comply with the highest security standards and security clearance.",
+  "cta": {
+    "label": "Contact us",
+    "href": "./page.html?slug=contacts"
+  },
+  "partners": [
+    {
+      "name": "ADACOM",
+      "logo": "assets/partners/adacom.png"
+    },
+    {
+      "name": "AVENTRA",
+      "logo": "assets/partners/aventra.png"
+    },
+    {
+      "name": "COMMFIDES",
+      "logo": "assets/partners/commfides.png"
+    },
+    {
+      "name": "Cosmote",
+      "logo": "assets/partners/cosmote.jpg"
+    },
+    {
+      "name": "Deutsche Telekom",
+      "logo": "assets/partners/deutsche-telekom.jpg"
+    },
+    {
+      "name": "FACETEC",
+      "logo": "assets/partners/facetec.png"
+    },
+    {
+      "name": "FAMOCO",
+      "logo": "assets/partners/famoco.png"
+    },
+    {
+      "name": "GET GROUP NA",
+      "logo": "assets/partners/get-group-na.png"
+    },
+    {
+      "name": "GUARDSQUARE",
+      "logo": "assets/partners/guardsquare.png"
+    },
+    {
+      "name": "NEOSOLTEC",
+      "logo": "assets/partners/neosoltec.jpg"
+    },
+    {
+      "name": "NETCOMPANY",
+      "logo": "assets/partners/netcompany.png"
+    },
+    {
+      "name": "NGT",
+      "logo": "assets/partners/ngt.png"
+    },
+    {
+      "name": "SECUREMETRIC",
+      "logo": "assets/partners/securemetric.jpg"
+    },
+    {
+      "name": "SELP",
+      "logo": "assets/partners/selp.png"
+    },
+    {
+      "name": "SIGNE",
+      "logo": "assets/partners/signe.png"
+    },
+    {
+      "name": "T Systems",
+      "logo": "assets/partners/t-systems.jpg"
+    },
+    {
+      "name": "TRUSTSEC",
+      "logo": "assets/partners/trustsec.png"
+    },
+    {
+      "name": "Versent",
+      "logo": "assets/partners/versent.jpg"
+    }
+  ]
+}

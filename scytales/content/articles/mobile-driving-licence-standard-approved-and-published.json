@@ -1,0 +1,70 @@
+{
+  "slug": "mobile-driving-licence-standard-approved-and-published",
+  "title": "Mobile Driving Licence Standard Approved and Published",
+  "seoTitle": "Mobile Driving Licence Standard Approved and Published | Scytáles Newsroom",
+  "description": "Täby, Sweden (October 14, 2021) – The eagerly anticipated ISO/IEC 18013-5 International standard for Mobile Driver’s License (mDL) and Mobile IDs (mID) was unanimously approved for publication on August 18, 2021, and is now available at https://www.iso.org/standard/69084.html. Pu…",
+  "excerpt": "Täby, Sweden (October 14, 2021) – The eagerly anticipated ISO/IEC 18013-5 International standard for Mobile Driver’s License (mDL) and Mobile IDs (mID) was unanimously approved for publication on August 18, 2021, and is now available at https://www.iso.org/standard/69084.html. Pu…",
+  "category": "press-releases",
+  "categoryLabel": "Press Releases",
+  "date": "2021-10-14",
+  "dateLabel": "Oct 14, 2021",
+  "image": "assets/articles/mobile-driving-licence-standard-approved-and-published.jpg",
+  "topics": [
+    "Mobile ID"
+  ],
+  "body": [
+    {
+      "type": "p",
+      "html": "<strong>Täby, Sweden (October 14, 2021)</strong> – The eagerly anticipated ISO/IEC 18013-5 International standard for Mobile Driver’s License (mDL) and Mobile IDs (mID) was unanimously approved for publication on August 18, 2021, and is now available at <a href=\"https://www.iso.org/standard/69084.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.iso.org/standard/69084.html</a>. Publication clears the way for global ID and Driver’s License Issuers to confidently deploy mDL solutions, and for Validators around the world to implement or adopt mDL readers. Businesses, Federal and State Agencies and other public entities verify government-issued ID documents to quickly approve transactions every day. mDL gives the holder control of their ID data on their mobile device while allowing acceptance via a tap or scan."
+    },
+    {
+      "type": "p",
+      "html": "This global mDL standard was the result of over six years of effort through an open collaboration of Issuers, Technology Providers, Regional Authorities (such as AAMVA, EReg, AustRoads, and the African Tripartite), and businesses that accept identity documents to approve transactions. Quarterly meetings were held on every continent during these years to ensure inclusivity and transitioned to fully virtual for 2020 and 2021."
+    },
+    {
+      "type": "p",
+      "html": "ISO/IEC 18013-5 for Mobile IDs and Mobile Driver’s Licenses overcomes the insecurity of showing a card on a phone screen and offers a host of benefits for Cardholders and the Validators who accept ID cards and Driver’s Licenses:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>A comprehensive global standard</strong> for sharing identity document information, matured during several test events held on nearly every continent during the last two years.",
+        "<strong>Multiple Ways to Interact.</strong> A secure device-to-device protocol for sharing identity information that supports multiple transmission technologies, so that mDL Holders can tap or allow a scan to share their information and Validators can accept mDLs quickly according to their customer flows.",
+        "<strong>Increased privacy for mDL users than physical cards:</strong> Share Only Relevant Data; Consent to Share; Phone Stays in Your Control; Know when Your Data is Stored; Resistant to Tracking.",
+        "<strong>Difficult to forge.</strong> Stored and shared documents are cryptographically protected against counterfeit, adding resistance to the creation of fake IDs. Validators can easily check authenticity.",
+        "<strong>Works when devices do not have connection.</strong> When either the mDL device or the Validator device does NOT have a network connection, data can be shared between devices (offline).",
+        "<strong>Provides privacy best practices for Issuing Authorities and Validators</strong> in the accompanying Privacy Annex with requirements for maximizing mDL Holder privacy."
+      ],
+      "htmlItems": true
+    },
+    {
+      "type": "p",
+      "html": "“We are very proud that the ISO/IEC 18013-5 International standard for Mobile Driver’s License (mDL) and Mobile IDs (mID) was unanimously approved for publication, where the Swedish Institute for Standards' (SIS) representatives from Scytáles have been highly committed to the work since the start” said Hanna Axelsson, Project Manager at the Swedish Institute for Standards (<a href=\"https://www.sis.se/en/\" target=\"_blank\" rel=\"noopener noreferrer\">sis.se</a>)."
+    },
+    {
+      "type": "p",
+      "html": "Chrissy Nizer, Chair of the American Association of Motor Vehicle Administrators Board of Directors said, “This standard will provide the necessary components to support mDL security and interoperability across the globe while ensuring the privacy and safety of the mDL holder.”"
+    },
+    {
+      "type": "p",
+      "html": "“TSA considers ISO standards for personal identification documents to be a cornerstone for greater security and privacy,” said TSA Administrator David Pekoske. “The new standard for mobile driver’s licenses represents a significant step forward and will eventually help ensure a more touchless and efficient airport screening experience for all travellers.”"
+    },
+    {
+      "type": "p",
+      "html": "“Austroads would like to commend the International Standards working group for ISO 18013/5 Mobile Driver Licence. This standard was developed through a strong partnership with global industry leaders in identity as well as global issuing authorities of credentials. This standard will create the foundation for not just digital driver’s licences to be trusted and accepted across state and national borders but enables the underlying identity to be used securely by citizens of participating jurisdictions to seamlessly access products and services across business, industry and government entities.”"
+    },
+    {
+      "type": "p",
+      "html": "Servi Beckers, Chairman of the Association of European Vehicle and Driver Registration authorities (EReg) said, “this standard is a good example of industry and public administration cooperating to enhance our citizens lives. It places the driving licences in our modern times where we are already used to use our mobile phones for almost anything. The great advantages I see from a citizen’s perspective are: better privacy protection, up to date driver capabilities (and thus room for tailored solutions), easier travelling (worldwide standard), and room for innovative ideas in digital services where driving licences are used.”"
+    },
+    {
+      "type": "h2",
+      "text": "About Scytáles"
+    },
+    {
+      "type": "p",
+      "html": "Scytáles is the leading developer of ISO-Mobile Driving Licenses and Mobile IDs as a complement to Security Printed Documents and Validation mechanisms. With our fully ISO-compliant technology, we are the global leaders of the new generation of personal credentials using a cell phone while authorizing what data will be shared. We enable going mobile and validating in real-time in online and offline modes, by standardization and using NFC, Bluetooth, QR Codes, Wifi Aware, PDF417 and other technologies as per defined in ICAO 9303 and ISO 18013-5. Scytáles AB represents Sweden as an expert through the Standardization Body (SIS) SIS/TK 448 and Task Force 14 on mDL within ISO/IEC 18013-5 ISO/IEC JTC1/SC17/WG10. In the US, Scytáles serves as technology partner to GET Group NA for ISO-compliant projects. Headquarters in Stockholm, Sweden and offices in the US, Greece and Portugal."
+    }
+  ],
+  "source": null
+}

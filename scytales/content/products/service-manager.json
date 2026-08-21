@@ -1,0 +1,83 @@
+{
+  "slug": "service-manager",
+  "name": "Service Manager",
+  "title": "Service Manager — Scytáles",
+  "description": "Seamless integration, metadata access, and access control for mDLs, mIDs, Derived mIDs, and Digital Identity Wallets.",
+  "listPreview": "blank",
+  "hero": {
+    "headline": "Seamless Integration and Security for Mobile Credentials",
+    "sub": "Enable seamless integration, metadata access, and access control for enhanced mobile identity solutions with the Scytáles Service Manager.",
+    "ctaPrimary": {
+      "label": "Download Product Sheet",
+      "href": "#cta"
+    },
+    "ctaSecondary": {
+      "label": "Request a demo",
+      "href": "#cta"
+    },
+    "bullets": [
+      "Primary interface to metadata for mDL, mID, Derived mID, and wallets",
+      "Access control for authorised personnel only",
+      "Signing service and key management on behalf of the issuer",
+      "Integrates with standalone PKI or Trusted Service Provider / CSP"
+    ]
+  },
+  "showcase": {
+    "phone": "image",
+    "phoneImage": "assets/products/service-manager.jpg",
+    "statValue": "99.99%",
+    "statCopy": "High-availability design for digital identity document issuance",
+    "showActivity": true
+  },
+  "discover": [
+    {
+      "image": "assets/wallet/discover-age.png",
+      "alt": "Digital ID Wallet",
+      "copy": "Carry official physical and digital credentials on your phone with EUDI-ready wallet support.",
+      "linkLabel": "Digital ID Wallet",
+      "linkHref": "#product/digital-id-wallet"
+    },
+    {
+      "image": "assets/wallet/discover-nfc.png",
+      "alt": "Derived mID",
+      "copy": "NFC card authentication that derives credentials from security documents into mobile virtual IDs.",
+      "linkLabel": "Derived mID",
+      "linkHref": "#product/derived-mid"
+    },
+    {
+      "image": "assets/wallet/discover-mvalid.png",
+      "alt": "Authenticated Readers",
+      "copy": "Authenticate a fleet of readers for secure online and offline data transfer from wallets and mIDs.",
+      "linkLabel": "Authenticated Readers",
+      "linkHref": "#product/authenticated-readers"
+    }
+  ],
+  "statement": "The Scytáles Service Manager is the backbone interface for mobile identity ecosystems — pairing with validators, wallets, and CSPs so issuers can control access, metadata, and credential signing at scale.",
+  "cta": {
+    "title": "Get started with Service Manager",
+    "label": "Start your 30 day free trial",
+    "href": "#cta"
+  },
+  "benefits": [
+    {
+      "title": "Signing Service & Key Management",
+      "body": "Signs mDLs, mIDs, Derived mIDs and Digital Identity Wallets on behalf of the issuer, to relay them to consumer devices."
+    },
+    {
+      "title": "Easy and Secure Integration",
+      "body": "Secure API connections that keep data up to date, where wanted, to and from the system of record — a civil register from issuing authorities, or trusted identity providers / CSP at Level 3 Assurance."
+    },
+    {
+      "title": "High Availability for Mobile Identity Document Issuance",
+      "body": "The Service Manager can issue every digital identity document to a mobile, and is designed for high availability of at least 99.99%."
+    },
+    {
+      "title": "Identity & Access Management",
+      "body": "Registration and authentication for validators that need access to online services."
+    },
+    {
+      "title": "Complete Supply Chain with High-Level Security Mechanisms",
+      "body": "Secures the complete supply chain, with the highest level of onboarding and several reading mechanisms over OIDC — Web-PC, local PC and peer-to-peer — in real time, online and offline."
+    }
+  ]
+}

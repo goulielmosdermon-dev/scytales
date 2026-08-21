@@ -1,0 +1,156 @@
+{
+  "slug": "mobile-validator-sdk-the-tool-powering-digital-identity-wallets",
+  "title": "Mobile Validator SDK: The Tool Powering Digital Identity Wallets",
+  "seoTitle": "Mobile Validator SDK: The Tool Powering Digital Identity Wallets | Scytáles Newsroom",
+  "description": "The Mobile Validator SDK allows apps, services or systems to connect with digital identity wallets for high-assurance verification.",
+  "excerpt": "In today’s data-driven digital era, the security and privacy of online identification are of paramount importance to help us keep our information private and confidential. This is where mobile identification comes into play: a safe way to prove who we are online. This is possible…",
+  "category": "product-announcements",
+  "categoryLabel": "Product Announcements",
+  "date": "2024-03-15",
+  "dateLabel": "Mar 15, 2024",
+  "image": "assets/articles/mobile-validator-sdk-the-tool-powering-digital-identity-wallets.jpg",
+  "imageFit": "contain",
+  "topics": [
+    "Mobile ID",
+    "SDK & Developers"
+  ],
+  "body": [
+    {
+      "type": "p",
+      "html": "In today’s data-driven digital era, the security and privacy of online identification are of paramount importance to help us keep our information private and confidential. This is where mobile identification comes into play: a safe way to prove who we are online. This is possible by using our officially issued IDs on our mobile phones, with <strong>Government-issued mobile applications</strong> (like the Mobile Driving Licence app from the State of Utah, US, of which Scytáles is the technology provider) or even by using a <strong>Digital ID Wallet</strong> that includes multiple ID documents (with Scytáles being the developer of the European Digital ID Wallet - the EUDI Wallet - which is going to be rolled out to more than 400 million citizens)."
+    },
+    {
+      "type": "p",
+      "html": "However, how exactly can other apps, services or systems connect with mobile ID/wallet apps to retrieve the necessary information? Scytáles Mobile Validator Software Development Kits (SDKs) provide a secure, compliant, cheaper and with a shorter time-to-market solution."
+    },
+    {
+      "type": "h2",
+      "text": "What is the Mobile Validator SDK?"
+    },
+    {
+      "type": "p",
+      "html": "The Scytáles Mobile Validator SDKs work as embedded tools within applications for interacting with mobile ID systems. They encompass several different tasks and scenarios and have the function of initiating validation requests, securely retrieving data from a mobile ID or wallet, and guaranteeing communication between the user’s mobile ID and your service."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Embedded toolkits:</strong> The Scytáles Mobile Validator SDK is an easy and cost-effective way to make your services communicate with a mobile ID or wallet.",
+        "<strong>Verification request:</strong> When your service needs to validate a user’s identity or some of their attributes, the Mobile Validator SDK sends a secure request to the user’s mobile ID/wallet phone app.",
+        "<strong>Secure data retrieval:</strong> Once the user approves a request, their information is then securely retrieved by the Mobile Validator SDK into your service.",
+        "<strong>Communication bridge:</strong> The Mobile Validator SDK acts as a mediator that handles all the data exchange smoothly and securely between a user’s mobile ID or wallet and your system."
+      ],
+      "htmlItems": true
+    },
+    {
+      "type": "p",
+      "html": "The Mobile Validator SDK simplifies data entry or login process (i.e., electronic forms), and even replaces time-consuming validation methods of physical IDs, ensuring the same level of assurance as officially issued physical IDs (like Citizen Cards, Driving Licences or Passports) just by the tap of a button."
+    },
+    {
+      "type": "h2",
+      "text": "Benefits of the Mobile Validator SDK"
+    },
+    {
+      "type": "p",
+      "html": "Besides the obvious benefits for businesses, the Scytáles Mobile Validator SDK provides developers and their users various benefits, making it a win-win technology."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Simplified Development:</strong> Building mobile IDs/wallet validation features from scratch into an existing system can be challenging and requires great effort and time, which is costly for your business. Scytáles Mobile Validator SDKs make mobile ID integration much easier with the already built-in functionalities. This allows developers to essentially cut a corner hence saving valuable development time and effort. While the SDKs take care of these technological aspects, your developers can concentrate on the core features and components of your systems.",
+        "<strong>Faster Time to Market:</strong> Developers can save a huge amount of time by integrating certified pre-built ID validation mechanisms into their systems. As a result, they can roll out their products quicker to the market and unlock earning opportunities faster.",
+        "<strong>Reduced Maintenance:</strong> The mobile identification technology is evolving continuously, and the management of updates is one of its burdensome parts. The Scytáles Mobile Validator SDKs take care of all updates and compatibility issues on the backend, making them no longer the concern of the developers.",
+        "<strong>Enhanced User Experience (UX):</strong> Features like the ones offered by the Scytáles Mobile Validator, allow you to simplify processes and reduce manual data input by your users, while at the same time ensuring that the personal information you are retrieving is from an official ID document with the same level of assurance as its physical counterpart. As a result, users undergo a faster and more convenient experience when interacting with your business, thus enhancing customer satisfaction.",
+        "<strong>Increased security:</strong> The Scytáles Mobile Validator SDK uses strong encryption when communicating with the user’s mobile ID/wallet and validation servers and operates under the regulations and compliance frameworks which help systems comply with strict data protection and privacy legislations.",
+        "<strong>Greater Control:</strong> With the Scytáles Mobile Validator SDK, you can request user information you actually need and identify which is necessary and which is optional."
+      ],
+      "htmlItems": true
+    },
+    {
+      "type": "h2",
+      "text": "Where can the Scytáles Mobile Validator SDK be used?"
+    },
+    {
+      "type": "p",
+      "html": "Our SDK can make a significant impact across various industries, some examples are:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Financial Services:</strong> Mobile IDs and related validation mechanisms can be used for onboarding new customers, login authentication and secure transactions.",
+        "<strong>Travel and Hospitality:</strong> Speedy airport and hotel check-ins using mobile IDs/wallets (which is already possible in Utah with Scytáles technology, as well as in other US States) is a huge facilitator when travelling.",
+        "<strong>Online Gambling:</strong> Fraud prevention and Anti-Money Laundering (AML) regulatory compliance are crucial for online gambling platforms. The Scytáles Mobile Validator SDK can be used to ensure the official identity and age of users.",
+        "<strong>Retail and e-Commerce:</strong> Verifying a customer’s age in online purchases can be secure and uncomplicated when integrated with a mobile ID/wallet verification process.",
+        "<strong>Government Services:</strong> The Scytáles Mobile Validator SDK can also be used to simplify governmental processes by ensuring secure access to e-government platforms."
+      ],
+      "htmlItems": true
+    },
+    {
+      "type": "p",
+      "html": "Our Mobile Validator SDK allows all validation scenarios, in real-time in online and offline modes, over the counter and over the web/remotely, providing you with tailored options to your exact needs."
+    },
+    {
+      "type": "h2",
+      "text": "Conclusion"
+    },
+    {
+      "type": "p",
+      "html": "Security is the most critical aspect when managing personal information. When looking for a mobile ID/wallet validator solution, you must choose a trustworthy provider with a solid background and ensure the provider adheres to industry standards, regulations, and best practices for data security and privacy. Scytáles offers you a proven track record (see below) and our focus lies in mobile identification, which we are globally renowned for."
+    },
+    {
+      "type": "p",
+      "html": "As mobile IDs and wallets will soon become universal, a secure and seamless identification validation system will definitely bring about improvement in user experience, fostering customer satisfaction and business processes, and enhancing innovation in multiple industries."
+    },
+    {
+      "type": "h2",
+      "text": "Scytáles technology available as SDKs"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Can be implemented in just under 6 weeks",
+        "Can be easily integrated with the currently implemented solution and act as an add-on",
+        "By having a high level of assurance validation, you can ensure the identity of your users",
+        "Checking in using the mobile validator ensures the person accessing the services is who they say they are",
+        "Ensure the privacy of your guests by requesting only the data you need",
+        "Compliance with KYC, AML, GDPR and eIDAS 2.0 regulations, as well as with ISO 18013 parts 5 and 7",
+        "Compliant with the European Digital Identity Architecture and Reference Framework (the European Digital Identity Wallet of which Scytáles are the technology developers), ISO 18013 part 5 and part 7 driving licences and mobile IDs",
+        "Compliant with OID4VCI, OID4VP and SIOPv2, where DIF JWT VC Presentation Profile uses OID4VP as the base protocol for the request and verification of W3C JWT VCs, and uses SIOPv2 for user authentication; while NIST (National Cybersecurity Center of Excellence) plans to implement reference implementation for OID4VP to present mdocs/mDL",
+        "Fully certified solutions",
+        "To cater to diverse needs, we offer different pricing solutions and business models. Our transparent policy ensures that you have the flexibility to choose the option that aligns best with your organization's requirements."
+      ]
+    },
+    {
+      "type": "p",
+      "html": "<a href=\"./index.html#contact\"><strong>Contact us now</strong></a> to get your 30-day free trial on our SDKs."
+    },
+    {
+      "type": "h2",
+      "text": "Scytáles, Your Trusted ID Verification Provider"
+    },
+    {
+      "type": "p",
+      "html": "At Scytáles, we are thrilled to share groundbreaking developments in digital identity that are set to revolutionize the way we authenticate and interact remotely online and face-to-face."
+    },
+    {
+      "type": "p",
+      "html": "<strong>Proven track record:</strong> Implementors of the first full ISO 18013-5 compliant Mobile Driver’s License program in the US in the State of Utah and technology providers of the European Digital Identity Wallet (EUDI Wallet) which will soon be rolled out to more than 440 million European citizens, with our technology being broadly used across the globe."
+    },
+    {
+      "type": "p",
+      "html": "<strong>Expert Representation in several standardization bodies:</strong> Scytáles represents Sweden as an expert through the Standardization Body (SIS) SIS/TK 448 and Task Force 14 on mDL within ISO/IEC 18013-5 ISO/IEC JTC1/SC17/WG10."
+    },
+    {
+      "type": "p",
+      "html": "<strong>Global leaders in mobile IDs:</strong> Scytáles is the leading developer of ISO-Mobile Driving Licenses, Mobile IDs and Derived Mobile IDs as a complement to Security Printed Documents and Validation mechanisms."
+    },
+    {
+      "type": "p",
+      "html": "<strong>Providers of the most comprehensive validation solution:</strong> Our Mobile Validator is built focused on privacy, allowing for all validation scenarios, in real-time in online and offline modes, over the counter and over the web/remotely."
+    },
+    {
+      "type": "p",
+      "html": "<strong>High level of Assurance identification at our core:</strong> Our product portfolio showcases the different solutions we offer the market for secure, interoperable and trustworthy identification credentials."
+    }
+  ],
+  "source": "https://www.scytales.com/post/mobile-validator-sdk-the-tool-powering-digital-identity-wallets"
+}

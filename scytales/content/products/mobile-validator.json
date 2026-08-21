@@ -1,0 +1,148 @@
+{
+  "slug": "mobile-validator",
+  "name": "Mobile Validator for Travel Documents",
+  "title": "Mobile Validator for Travel Documents | Scyt\u00e1les",
+  "description": "ICAO 9303 eDocument reader using NFC, MRZ/OCR, and facial recognition for ePassports, national eIDs, and resident permits.",
+  "listPreview": "passport",
+  "hero": {
+    "headline": "Inspect and Verify ePassports, National eIDs, and More",
+    "sub": "An ICAO 9303 eDocument reader using NFC, photo/MRZ/OCR scan, and facial recognition. Embeddable in any Android or iOS app with a customisable UI and CSCA validation.",
+    "ctaPrimary": {
+      "label": "Download Product Sheet",
+      "href": "#cta"
+    },
+    "ctaSecondary": {
+      "label": "Request a demo",
+      "href": "#cta"
+    },
+    "bullets": [
+      "ICAO 9303 ePassports, eIDs, visas, and resident permits",
+      "NFC, MRZ/OCR, barcode, and 1:1 facial recognition",
+      "On-device processing: data never leaves the device",
+      "KYC-ready data extraction into System of Records"
+    ]
+  },
+  "showcase": {
+    "phone": "passport",
+    "phoneImage": null,
+    "statValue": "9303",
+    "statCopy": "ICAO-standard eDocument reading with offline, privacy-first validation",
+    "showActivity": false,
+    "activity": {
+      "title": "Travel document activity",
+      "primaryLabel": "eDocuments read",
+      "secondaryLabel": "Facial matches",
+      "totalLabel": "Total inspections",
+      "totals": {
+        "primary": 3640,
+        "secondary": 2980,
+        "total": 6620
+      },
+      "months": [
+        {
+          "label": "Jan",
+          "primary": 70,
+          "secondary": 55
+        },
+        {
+          "label": "Feb",
+          "primary": 68,
+          "secondary": 58
+        },
+        {
+          "label": "Mar",
+          "primary": 85,
+          "secondary": 70
+        },
+        {
+          "label": "Apr",
+          "primary": 95,
+          "secondary": 80
+        },
+        {
+          "label": "May",
+          "primary": 90,
+          "secondary": 78
+        },
+        {
+          "label": "Jun",
+          "primary": 110,
+          "secondary": 95
+        },
+        {
+          "label": "Jul",
+          "primary": 120,
+          "secondary": 100
+        },
+        {
+          "label": "Aug",
+          "primary": 130,
+          "secondary": 105
+        },
+        {
+          "label": "Sep",
+          "primary": 100,
+          "secondary": 85
+        },
+        {
+          "label": "Oct",
+          "primary": 88,
+          "secondary": 72
+        },
+        {
+          "label": "Nov",
+          "primary": 75,
+          "secondary": 60
+        },
+        {
+          "label": "Dec",
+          "primary": 80,
+          "secondary": 65
+        }
+      ]
+    }
+  },
+  "features": [
+    {
+      "icon": "chart",
+      "body": "Automate form completion and KYC by extracting photo, name, validity, date of birth, document number, nationality, and gender while validating into a back-end platform."
+    },
+    {
+      "icon": "bulb",
+      "body": "Fully programmable UI/UX for Android 6+ and iOS 13+ (NFC iPhones), with live video or saved images, portrait and landscape modes, and CSCA validation service."
+    },
+    {
+      "icon": "shield",
+      "body": "Deliver on-premises, as SaaS, as managed service, or as a stand-alone SDK/Core API for identity providers, issuing authorities, and trusted providers."
+    }
+  ],
+  "discover": [
+    {
+      "image": "assets/wallet/discover-nfc.png",
+      "alt": "Derived mID",
+      "copy": "NFC card authentication that derives credentials from security documents into mobile virtual IDs.",
+      "linkLabel": "Derived mID",
+      "linkHref": "#product/derived-mid"
+    },
+    {
+      "image": "assets/wallet/discover-age.png",
+      "alt": "Digital ID Wallet",
+      "copy": "Carry official physical and digital credentials on your phone with EUDI-ready wallet support.",
+      "linkLabel": "Digital ID Wallet",
+      "linkHref": "#product/digital-id-wallet"
+    },
+    {
+      "image": "assets/wallet/discover-mvalid.png",
+      "alt": "Authenticated Readers",
+      "copy": "Authenticate a fleet of readers for secure online and offline data transfer from wallets and mIDs.",
+      "linkLabel": "Authenticated Readers",
+      "linkHref": "#product/authenticated-readers"
+    }
+  ],
+  "statement": "Built for the growth in international travel and the need to trust travel documents, Scyt\u00e1les Mobile Validator for Travel Documents brings ICAO 9303 validation to the mobile device: fast, reliable, and secure with offline processing.",
+  "cta": {
+    "title": "Get started with Mobile Validator for Travel Documents",
+    "label": "Start your 30 day free trial",
+    "href": "#cta"
+  }
+}

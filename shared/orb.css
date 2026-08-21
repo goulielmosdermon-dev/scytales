@@ -1,0 +1,136 @@
+/* ---- Orbit -----------------------------------------------------------
+   An armillary sphere, traced off the four reference frames rather than
+   eyeballed: each frame was thresholded and its curves fitted, which
+   showed the drawing is only three shapes, the same three in every state.
+
+     Ring 1  a circle, r = 327.5px on a 655px sphere -> 100% of the box,
+             always centred. It is the sphere's silhouette and never moves.
+     Ring 2  one ellipse, 653 x 267px -> 99.7% x 40.8%, always centred,
+             only its rotation changes: 0deg, -40deg, -40deg, 90deg.
+     Ring 3  a circle, d = 460.8px -> 70.4%, never rotated; its centre
+             rides a circle of radius 14.83% around the sphere's centre.
+
+   Because the shapes are constant and only rotation and offset change,
+   interpolating between states is exactly the sphere turning — there is
+   nothing to fake. Every state below is one set of custom properties;
+   retune a number here and the style guide and the site both follow.
+
+   The tag is a sibling of the rings, never a child, so no rotation reaches
+   it and the label always reads level. It is sized in cqw so the whole
+   assembly scales with the orb.
+   ---------------------------------------------------------------------- */
+.orb {
+  /* Constant across all four states. */
+  --ring1-size: 100%;
+  --ring2-w: 99.7%;
+  --ring2-h: 40.8%;
+  --ring3-size: 70.4%;
+
+  /* State 1 is the default. */
+  --ring2-rot: 0deg;
+  --ring3-x: 50%;      --ring3-y: 35.17%;
+  --tag-x: 50.61%;     --tag-y: 29.45%;
+
+  --orb-ease: 1.5s cubic-bezier(0.65, 0, 0.35, 1);
+
+  position: relative;
+  container-type: inline-size;
+  width: min(34rem, 100%);
+  aspect-ratio: 1 / 1;
+  margin-inline: auto;
+  color: var(--frame-line, var(--orange-300));
+}
+
+.orb__ring {
+  position: absolute;
+  border: 1px solid currentColor;
+  border-radius: 100%;
+  translate: -50% -50%;
+  transition:
+    left var(--orb-ease),
+    top var(--orb-ease),
+    rotate var(--orb-ease);
+}
+.orb__ring--1 {
+  left: 50%; top: 50%;
+  width: var(--ring1-size); height: var(--ring1-size);
+}
+.orb__ring--2 {
+  left: 50%; top: 50%;
+  width: var(--ring2-w); height: var(--ring2-h);
+  rotate: var(--ring2-rot);
+}
+.orb__ring--3 {
+  left: var(--ring3-x); top: var(--ring3-y);
+  width: var(--ring3-size); height: var(--ring3-size);
+}
+
+/* ---- the four traced states ----
+   Ring 3's centre sits 14.83% of the sphere's diameter from the centre,
+   at -90deg, +50deg, -130deg and 180deg respectively. */
+.orb[data-orb-state="1"] {
+  --ring2-rot: 0deg;
+  --ring3-x: 50%;      --ring3-y: 35.17%;
+  --tag-x: 50.61%;     --tag-y: 29.45%;
+}
+.orb[data-orb-state="2"] {
+  --ring2-rot: -40deg;
+  --ring3-x: 59.53%;   --ring3-y: 61.33%;
+  --tag-x: 33.82%;     --tag-y: 33.74%;
+}
+.orb[data-orb-state="3"] {
+  --ring2-rot: -40deg;
+  --ring3-x: 40.47%;   --ring3-y: 38.64%;
+  --tag-x: 53.97%;     --tag-y: 5.63%;
+}
+/* Edge-on: ring 2 stands vertical and ring 3 swings fully to the left. */
+.orb[data-orb-state="4"] {
+  --ring2-rot: 90deg;
+  --ring3-x: 35.18%;   --ring3-y: 50%;
+  --tag-x: 70.14%;     --tag-y: 50%;
+}
+
+/* ---- tag ---- */
+.orb__tag {
+  position: absolute;
+  left: var(--tag-x);
+  top: var(--tag-y);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.46cqw;                 /* 3px on the 655px reference */
+  /* Anchored by the index circle's centre, which is the point the tag
+     marks on the sphere; the pill runs off to its right. */
+  translate: -4.12cqw -50%;
+  transition: left var(--orb-ease), top var(--orb-ease);
+}
+.orb__index,
+.orb__label {
+  font-family: var(--font-body);
+  font-size: 3.05cqw;
+  line-height: 1;
+  color: var(--navy-800);
+  background: var(--white);
+  border: 1px solid var(--navy-800);
+  white-space: nowrap;
+}
+.orb__index {
+  display: grid;
+  place-items: center;
+  width: 8.24cqw;               /* 54px on the reference */
+  height: 8.24cqw;
+  border-radius: 100%;
+  flex: none;
+}
+.orb__label {
+  display: flex;
+  align-items: center;
+  height: 7.18cqw;              /* 47px on the reference */
+  padding-inline: 1.3cqw;
+  border-radius: var(--radius-sm);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orb__ring,
+  .orb__tag { transition: none; }
+}

@@ -1,0 +1,118 @@
+<!-- Shared product sheet template — filled from content/products/{slug}.json -->
+<section class="section wallet-hero" aria-label="" data-bind-aria-label="name">
+  <div class="container wallet-hero__grid">
+    <div class="wallet-hero__lead">
+      <h1 class="wallet-hero__title" id="product-sheet-title" data-bind="hero.headline"></h1>
+      <p class="wallet-hero__sub" data-bind="hero.sub"></p>
+      <div class="wallet-hero__actions">
+        <a class="btn btn-primary" data-bind-href="hero.ctaPrimary.href" data-bind="hero.ctaPrimary.label"></a>
+        <a class="btn btn-secondary" data-bind-href="hero.ctaSecondary.href" data-bind="hero.ctaSecondary.label"></a>
+      </div>
+    </div>
+    <ul class="wallet-hero__bullets" data-bind-list="hero.bullets"></ul>
+  </div>
+</section>
+
+<!-- Benefits rail — a drag/scroll carousel of orange blocks. The intro
+     block is offset from the left so the rail reads as already in motion;
+     the rest are built from `features` by js/product-render.js. -->
+<section class="benefits-rail" aria-label="Product benefits" data-benefits-pin>
+  <div class="benefits-rail__sticky">
+    <div class="benefits-rail__track" data-benefits-rail>
+      <article class="benefits-rail__block benefits-rail__block--intro">
+        <p class="benefits-rail__title">Product Benefits</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Flow diagram. Only rendered for products that declare `flow` in their
+     JSON; js/product-render.js removes the section otherwise. -->
+<section class="section product-flow" aria-labelledby="product-flow-title" data-bind-flow hidden>
+  <div class="container">
+    <h2 class="h-2 product-flow__title" id="product-flow-title" data-flow-heading></h2>
+    <div class="product-flow__nodes" data-flow-nodes></div>
+    <div class="product-flow__bracket" data-flow-bracket aria-hidden="true"></div>
+    <ol class="product-flow__steps" data-flow-steps></ol>
+    <ul class="product-flow__cards" data-flow-cards></ul>
+  </div>
+</section>
+
+<!-- HIDDEN — being redesigned. The markup and its five cards are kept
+     intact; remove the `hidden` attribute below to bring the band back.
+     Its styles are still in site.css under "The claims are cards on a
+     rail". -->
+<section class="wallet-pillars" aria-label="Capabilities" data-pillars hidden>
+  <div class="container">
+    <ul class="claims" data-pillars-rail>
+      <li class="claim-card claim-card--intro">
+        <p class="claim-card__eyebrow">Why Scytáles</p>
+        <p class="claim-card__title">Built on the standards the EU itself runs on</p>
+      </li>
+      <li class="claim-card">
+        <p class="claim-card__eyebrow">Privacy</p>
+        <p class="claim-card__text">Confirm age without oversharing personal data</p>
+        <a class="claim-card__more" href="#cta">Read more</a>
+        <span class="claim-card__index" aria-hidden="true">1</span>
+      </li>
+      <li class="claim-card">
+        <p class="claim-card__eyebrow">Integration</p>
+        <p class="claim-card__text">OpenID Connect for secure, interoperable integration</p>
+        <a class="claim-card__more" href="#cta">Read more</a>
+        <span class="claim-card__index" aria-hidden="true">2</span>
+      </li>
+      <li class="claim-card">
+        <p class="claim-card__eyebrow">Reach</p>
+        <p class="claim-card__text">Pan-European reach for cross-border services</p>
+        <a class="claim-card__more" href="#cta">Read more</a>
+        <span class="claim-card__index" aria-hidden="true">3</span>
+      </li>
+      <li class="claim-card">
+        <p class="claim-card__eyebrow">Mandate</p>
+        <p class="claim-card__text">Official EU Commission age verification mandate</p>
+        <a class="claim-card__more" href="#cta">Read more</a>
+        <span class="claim-card__index" aria-hidden="true">4</span>
+      </li>
+    </ul>
+    <div class="wallet-pillars__dots" data-pillars-dots aria-hidden="true"></div>
+  </div>
+</section>
+
+
+<section class="wallet-showcase" aria-label="Product showcase">
+  <div class="container">
+    <div class="wallet-showcase__stage">
+      <div class="wallet-showcase__phone" data-cursor-stroke data-phone-slot></div>
+      <div class="wallet-showcase__side">
+        <div class="wallet-showcase__stat" data-cursor-stroke>
+          <p class="wallet-showcase__stat-value" data-bind="showcase.statValue"></p>
+          <p class="wallet-showcase__stat-copy" data-bind="showcase.statCopy"></p>
+        </div>
+        <div class="wallet-showcase__chart" data-show-if="showcase.showActivity">
+          <div class="wallet-showcase__chart-frame" data-cursor-stroke>
+            <div class="wallet-activity" data-wallet-activity></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section wallet-features" aria-label="Product features">
+  <div class="container wallet-features__grid" data-bind-features></div>
+</section>
+
+<section class="section wallet-statement" aria-label="Brand statement">
+  <div class="container">
+    <p class="display-1 wallet-statement__text" data-bind="statement"></p>
+    <a class="btn btn-primary wallet-statement__cta" data-bind-href="cta.href" data-bind="cta.label"></a>
+  </div>
+</section>
+
+<section class="section wallet-discover" aria-label="More to discover">
+  <div class="container">
+    <h2 class="h-2 wallet-discover__title">More to discover</h2>
+    <div class="wallet-discover__grid" data-bind-discover></div>
+  </div>
+</section>

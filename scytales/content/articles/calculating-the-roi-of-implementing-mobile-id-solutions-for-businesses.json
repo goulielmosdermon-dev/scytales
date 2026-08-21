@@ -1,0 +1,163 @@
+{
+  "slug": "calculating-the-roi-of-implementing-mobile-id-solutions-for-businesses",
+  "title": "Calculating the ROI of Implementing Mobile ID Solutions for Businesses",
+  "seoTitle": "Calculating the ROI of Implementing Mobile ID Solutions for Businesses | Scytáles Newsroom",
+  "description": "Learn the potential Return On Investment (ROI) with a mobile ID implementation for your business.",
+  "excerpt": "The world of identity and authentication is undergoing major changes. Mobile ID adoption is rising worldwide and its features provide not only higher security but is a transformative tool across a wide range of sectors, making traditional ID document processes a thing of the past…",
+  "category": "articles",
+  "categoryLabel": "Articles",
+  "date": "2024-03-20",
+  "dateLabel": "Mar 20, 2024",
+  "image": "assets/articles/calculating-the-roi-of-implementing-mobile-id-solutions-for-businesses.jpg?v=2",
+  "topics": [
+    "Mobile ID",
+    "Business & ROI"
+  ],
+  "body": [
+    {
+      "type": "p",
+      "html": "The world of identity and authentication is undergoing major changes. Mobile ID adoption is rising worldwide and its features provide not only higher security but is a transformative tool across a wide range of sectors, making traditional ID document processes a thing of the past. Nevertheless, the investment in new technology must be founded and justified on measurable advantages over other solutions. In this article, we focus on the potential Return On Investment (ROI) with a mobile ID implementation, analyzing the financial gains and strategic advantages."
+    },
+    {
+      "type": "h2",
+      "text": "Potential Benefits of Mobile ID Solutions"
+    },
+    {
+      "type": "p",
+      "html": "Businesses across different industries have many advantages when adopting Mobile ID solutions, with an impact on various aspects of operations:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Enhanced security:</strong> Mobile IDs use strong encryption combined with highly secure authentication methods, thus reducing the risk of fraud, data breaches and unauthorized access to information. This creates a safer environment for businesses and their customers.",
+        "<strong>Increased operational efficiency:</strong> Mobile IDs have a huge impact on critical business processes, such as customer onboarding, transaction verification, and access control. By adopting solutions with less manual interference, businesses can automate processes leading to improved operational efficiency and reduced administrative burdens.",
+        "<strong>Improved customer experience:</strong> Convenience and security are highly valued by customers nowadays. A solution that can provide this fosters customer satisfaction and loyalty. Validation of Mobile IDs allows for immediate and user-friendly logins, smoother registration processes and user journeys within apps and online platforms, always with a high level of assurance about the customer’s identification.",
+        "<strong>Cost savings:</strong> A Mobile ID solution can lead to significant cost reductions. Business resources can be freed for other areas by automating processes cutting down or even eliminating manual validations, paper-based documentation and associated administrative costs. Additionally, by reducing fraud incidents, businesses can save money on chargebacks and fraudulent transactions.",
+        "<strong>Brand reputation:</strong> When a business demonstrates a clear commitment to security and that data privacy is taken seriously, it builds trust with its customers and positively impacts its brand reputation."
+      ],
+      "htmlItems": true
+    },
+    {
+      "type": "h2",
+      "text": "Calculating the ROI of Mobile ID Solutions"
+    },
+    {
+      "type": "p",
+      "html": "To determine the ROI of implementing a mobile ID solution, you have to consider a multipoint approach, such as:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Identify relevant cost factors:</strong> Estimate the initial setup costs for a mobile ID system, maintenance fees and potential integration expenses with existing systems.",
+        "<strong>Quantify the potential benefits:</strong> Predict the cost savings derived from higher efficiency (time saved and additional resources available), reduced manual work and potential fraud prevention.",
+        "<strong>Analyze user experience improvements:</strong> Consider the potential impact of user experience improvements. Increased customer satisfaction and loyalty contribute greatly to a higher customer lifetime value and brand advocacy.",
+        "<strong>Calculate the ROI:</strong> Use the ROI formulas (ROI = (Net Benefits / Investment Cost) x 100%) to access the ratio between financial benefits and the initial expenses."
+      ],
+      "htmlItems": true
+    },
+    {
+      "type": "h2",
+      "text": "Other Considerations"
+    },
+    {
+      "type": "p",
+      "html": "In addition to financial ROI, other factors influence the decision to implement a mobile ID solution:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Strategic alignment:</strong> Identify if mobile IDs align with the organizational strategy and mid/long-term goals. Explore whether the solution supports the vision of customer engagement and digital transformation.",
+        "<strong>Competitive advantage:</strong> Mobile ID technology provides your business with a competitive advantage, especially for sectors where security and trust are preponderant.",
+        "<strong>Scalability and future-proofing:</strong> Ensure the mobile ID solution you choose can scale alongside your business needs, with the flexibility to incorporate different technologies as the market space evolves."
+      ],
+      "htmlItems": true
+    },
+    {
+      "type": "p",
+      "html": "Scytáles mobile ID solutions are also available as Software Development Kits (SDKs), working as embedded tools within applications for interacting with mobile ID systems. Experience the next level of security with our SDKs, boasting a robust Level 3 of Assurance for high-security applications. Whether you're developing in New York or Tokyo, our SDKs are accessible worldwide. Explore the full potential with our risk-free 30-day trial, available across all our SDK offerings."
+    },
+    {
+      "type": "h2",
+      "text": "Important Questions to Consider"
+    },
+    {
+      "type": "p",
+      "html": "Since each business context is unique, a thorough evaluation can help make the best decision. We designed a simple flowchart to help you start with the process and evaluate the possibility of a mobile ID solution implementation."
+    },
+    {
+      "type": "roi-flowchart"
+    },
+    {
+      "type": "p",
+      "html": "When conducting such analysis, it is utterly important to also assess the complexity of integrating a mobile ID solution with your existing systems, as well as to consider industry regulations, making sure that the mobile ID solution you have decided upon meets data privacy laws and industry regulations."
+    },
+    {
+      "type": "h2",
+      "text": "Conclusion"
+    },
+    {
+      "type": "p",
+      "html": "We understand that quantifying a mobile ID implementation ROI is imperative to ensure the success of its application in your business."
+    },
+    {
+      "type": "p",
+      "html": "Our team of experts are available to help you analyze the financial impact, taking into account quantitative and qualitative factors to make an informed decision."
+    },
+    {
+      "type": "p",
+      "html": "Notwithstanding, cost savings are not the only point to consider when considering a mobile ID implementation. The potential for competitive differentiation, strategic benefits, innovation, improved security and the creation of a more efficient and customer-centric business model are also crucial to ensure a successful ROI."
+    },
+    {
+      "type": "h2",
+      "text": "Scytáles technology available as SDKs"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Can be implemented in just under 6 weeks",
+        "Can be easily integrated with the currently implemented solution and act as an add-on",
+        "By having a high level of assurance validation, you can ensure the identity of your users",
+        "Checking in using the mobile validator ensures the person accessing the services is who they say they are",
+        "Ensure the privacy of your guests by requesting only the data you need",
+        "Compliance with KYC, AML, GDPR and eIDAS 2.0 regulations, as well as with ISO 18013 parts 5 and 7",
+        "Compliant with the European Digital Identity Architecture and Reference Framework (the European Digital Identity Wallet of which Scytáles are the technology developers), ISO 18013 part 5 and part 7 driving licences and mobile IDs",
+        "Compliant with OID4VCI, OID4VP and SIOPv2, where DIF JWT VC Presentation Profile uses OID4VP as the base protocol for the request and verification of W3C JWT VCs, and uses SIOPv2 for user authentication; while NIST (National Cybersecurity Center of Excellence) plans to implement reference implementation for OID4VP to present mdocs/mDL",
+        "Fully certified solutions",
+        "To cater to diverse needs, we offer different pricing solutions and business models. Our transparent policy ensures that you have the flexibility to choose the option that aligns best with your organization's requirements."
+      ]
+    },
+    {
+      "type": "p",
+      "html": "<a href=\"./index.html#contact\"><strong>Contact us now</strong></a> to get your 30-day free trial on our SDKs."
+    },
+    {
+      "type": "h2",
+      "text": "Scytáles, Your Trusted ID Verification Provider"
+    },
+    {
+      "type": "p",
+      "html": "At Scytáles, we are thrilled to share groundbreaking developments in digital identity that are set to revolutionize the way we authenticate and interact remotely online and face-to-face."
+    },
+    {
+      "type": "p",
+      "html": "<strong>Proven track record:</strong> Implementors of the first full ISO 18013-5 compliant Mobile Driver’s License program in the US in the State of Utah and technology providers of the European Digital Identity Wallet (EUDI Wallet) which will soon be rolled out to more than 440 million European citizens, with our technology being broadly used across the globe."
+    },
+    {
+      "type": "p",
+      "html": "<strong>Expert Representation in several standardization bodies:</strong> Scytáles represents Sweden as an expert through the Standardization Body (SIS) SIS/TK 448 and Task Force 14 on mDL within ISO/IEC 18013-5 ISO/IEC JTC1/SC17/WG10."
+    },
+    {
+      "type": "p",
+      "html": "<strong>Global leaders in mobile IDs:</strong> Scytáles is the leading developer of ISO-Mobile Driving Licenses, Mobile IDs and Derived Mobile IDs as a complement to Security Printed Documents and Validation mechanisms."
+    },
+    {
+      "type": "p",
+      "html": "<strong>Providers of the most comprehensive validation solution:</strong> Our Mobile Validator is built focused on privacy, allowing for all validation scenarios, in real-time in online and offline modes, over the counter and over the web/remotely."
+    },
+    {
+      "type": "p",
+      "html": "<strong>High level of Assurance identification at our core:</strong> Our product portfolio showcases the different solutions we offer the market for secure, interoperable and trustworthy identification credentials."
+    }
+  ],
+  "source": "https://www.scytales.com/post/calculating-the-roi-of-implementing-mobile-id-solutions-for-businesses"
+}

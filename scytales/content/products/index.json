@@ -1,0 +1,52 @@
+{
+  "products": [
+    {
+      "slug": "digital-id-wallet",
+      "name": "Digital ID Wallet",
+      "hasPage": true,
+      "listPreview": "digital-id-wallet"
+    },
+    {
+      "slug": "age-verification",
+      "name": "Age Verification Connector",
+      "hasPage": true,
+      "listPreview": "pos"
+    },
+    {
+      "slug": "iso-mvalidator",
+      "name": "ISO mValidator",
+      "hasPage": true,
+      "listPreview": "iso-mvalidator"
+    },
+    {
+      "slug": "derived-mid",
+      "name": "Derived mID",
+      "hasPage": true,
+      "listPreview": "iso-mvalidator-nfc"
+    },
+    {
+      "slug": "mobile-validator",
+      "name": "Mobile Validator for Travel Documents",
+      "hasPage": true,
+      "listPreview": "passport"
+    },
+    {
+      "slug": "service-manager",
+      "name": "Service Manager",
+      "hasPage": true,
+      "listPreview": "service-manager"
+    },
+    {
+      "slug": "credential-service",
+      "name": "Credential Service Provider",
+      "hasPage": true,
+      "listPreview": "credential-service"
+    },
+    {
+      "slug": "authenticated-readers",
+      "name": "Authenticated Readers",
+      "hasPage": true,
+      "listPreview": "authenticated-readers"
+    }
+  ]
+}

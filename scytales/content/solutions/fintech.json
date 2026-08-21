@@ -1,0 +1,61 @@
+{
+  "slug": "fintech",
+  "eyebrow": "Fintech",
+  "title": "Empowering Secure Identity: Building Value for Fintech and Beyond",
+  "lead": "Passport-level assurance for online banking and fintech — with privacy, consent, and real-time verification.",
+  "seoTitle": "Fintech Solutions | Scytáles",
+  "seoDescription": "Learn how Scytáles improves KYC processes and customer experience with secure mobile identity for fintech.",
+  "sections": [
+    {
+      "heading": "The challenges",
+      "points": [
+        "Secure identification protects customers and financial institutions alike from fraud.",
+        "The financial sector has digitised rapidly over the last decade.",
+        "That growth has brought a sharp rise in identity fraud.",
+        "Fighting fraud demands the most secure verification available.",
+        "Verification has to stay reliable at scale.",
+        "Onboarding must remain fast and frictionless."
+      ]
+    },
+    {
+      "heading": "Our approach",
+      "orbit": [
+        "onboarding",
+        "passport-level assurance",
+        "web services",
+        "gdpr consent"
+      ],
+      "lead": "High-assurance identity derived from security documents — passports, residence permits and national eIDs across more than 130 countries. Passport-level assurance is validated in real time every time a user reaches a bank portal, with full privacy and consent under GDPR."
+    },
+    {
+      "heading": "Why choose Scytáles",
+      "rail": [
+        "The global leader in issuing Mobile IDs.",
+        "Derives high-assurance data from security documents — passports, residence permits and national eIDs.",
+        "Coverage across more than 130 countries.",
+        "A complement to security-printed documents for real-time online business over the web and related web services.",
+        "Passport-level assurance is validated every time a user reaches a bank portal or system.",
+        "Full privacy and consent, in line with GDPR and privacy data acts."
+      ]
+    }
+  ],
+  "demoText": "See how our tailored solutions meet your needs with a personalized product demonstration.",
+  "relatedProducts": [
+    {
+      "slug": "digital-id-wallet",
+      "label": "Digital ID Wallet"
+    },
+    {
+      "slug": "iso-mvalidator",
+      "label": "ISO mValidator"
+    },
+    {
+      "slug": "derived-mid",
+      "label": "Derived mID"
+    },
+    {
+      "slug": "credential-service",
+      "label": "Credential Service Provider"
+    }
+  ]
+}

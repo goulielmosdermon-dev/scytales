@@ -1,0 +1,49 @@
+{
+  "slug": "age-verification",
+  "name": "Age Verification",
+  "title": "Age Verification | Scytáles",
+  "hero": {
+    "headline": "Age Verification",
+    "lead": "Scytáles develops privacy-preserving age verification for a safer digital environment across Europe, appointed by the European Commission alongside the EUDI Wallet mandate.",
+    "cta": { "label": "Request a demo", "href": "#contact" }
+  },
+  "sections": [
+    {
+      "type": "prose",
+      "heading": "What age verification delivers",
+      "paragraphs": [
+        "Age verification lets services confirm that a person meets an age threshold without collecting more personal data than necessary. Prove you are over 18 without revealing your exact birth date, name, or address.",
+        "Scytáles' Age Verification Connector is built on the widely adopted OpenID Connect standard, designed for pan-European deployment and aligned with eIDAS 2.0 privacy principles.",
+        "In partnership with organisations such as T-Systems / Deutsche Telekom, Scytáles is advancing European Commission initiatives for robust, privacy-first age checks that protect both citizens and platforms."
+      ]
+    },
+    {
+      "type": "points",
+      "heading": "Why it matters",
+      "points": [
+        {
+          "title": "Minimal disclosure",
+          "body": "Confirm age without oversharing personal data."
+        },
+        {
+          "title": "OpenID Connect",
+          "body": "Built on a secure, widely adopted standard."
+        },
+        {
+          "title": "Pan-European reach",
+          "body": "Designed for cross-border services and platforms."
+        },
+        {
+          "title": "EU Commission mandate",
+          "body": "Part of Scytáles' official age verification assignment."
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "heading": "Why Scytáles",
+      "lead": "Official technological developers of pan-European Age Verification solutions for the European Commission, with deep expertise in privacy-preserving credentials and high-assurance identity.",
+      "cta": { "label": "Partner with the experts", "href": "#contact" }
+    }
+  ]
+}

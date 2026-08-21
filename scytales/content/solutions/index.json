@@ -1,0 +1,39 @@
+{
+  "solutions": [
+    {
+      "slug": "government",
+      "eyebrow": "Government",
+      "title": "Elevating Government Operations: Empowering Agencies with Secure Solutions",
+      "lead": "Secure, interoperable mobile identity for agencies, ministries, and the citizens they serve.",
+      "seoDescription": "Explore how Scytáles helps governmental and defence agencies with secure mobile identity solutions."
+    },
+    {
+      "slug": "health",
+      "eyebrow": "Health",
+      "title": "Revolutionizing Healthcare: Seamless Access to Patient Information",
+      "lead": "Secure, high-assurance identity for health professionals accessing sensitive patient records — in hospital or on home visits.",
+      "seoDescription": "Discover how Scytáles helps healthcare professionals with secure and convenient mobile identity solutions."
+    },
+    {
+      "slug": "fintech",
+      "eyebrow": "Fintech",
+      "title": "Empowering Secure Identity: Building Value for Fintech and Beyond",
+      "lead": "Passport-level assurance for online banking and fintech — with privacy, consent, and real-time verification.",
+      "seoDescription": "Learn how Scytáles improves KYC processes and customer experience with secure mobile identity for fintech."
+    },
+    {
+      "slug": "retail",
+      "eyebrow": "Retail",
+      "title": "Empowering Retail: Secure Identity Validation Solutions for the Modern Era",
+      "lead": "Stop identity fraud at the point of sale while keeping checkout frictionless for customers.",
+      "seoDescription": "Protect your business and improve customer experience with Scytáles retail identity validation solutions."
+    },
+    {
+      "slug": "transportation",
+      "eyebrow": "Transportation",
+      "title": "Secure Credentials and Mobile Solutions for Users and Connected Vehicles",
+      "lead": "High-assurance identities for connected vehicles, fleets, workshops, and mobility ecosystems.",
+      "seoDescription": "Scytáles solutions for connected vehicles and the transportation sector — secure credentials online and offline."
+    }
+  ]
+}

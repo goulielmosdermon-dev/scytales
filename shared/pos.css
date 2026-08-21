@@ -1,0 +1,67 @@
+/* ============================================================
+   SCYTÁLES — POS TERMINAL (traced + shaded)
+   Traced black-ink geometry with product materials: white shell,
+   charcoal bezel, dark navy slot. Background stays neutral.
+   ============================================================ */
+
+.pos-demo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: var(--space-7);
+}
+
+.pos-panel {
+  flex: 0 1 280px;
+  max-width: 36ch;
+  color: var(--neutral-500);
+}
+
+.pos-panel > p { margin: 0 0 var(--space-3); }
+.pos-panel b { color: var(--ink); font-weight: 600; }
+
+.pos-stage {
+  flex: 1 1 280px;
+  min-height: 560px;
+  display: grid;
+  place-items: center;
+  padding: var(--space-7) var(--space-6);
+  /* Neutral stage only — not part of the product */
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 58%, #ececef 0%, #e4e4e8 55%, #dddde2 100%);
+  border: 1px solid var(--cream-200);
+  border-radius: var(--radius-lg);
+}
+
+.pos-stage svg.pos-device,
+.pos-stage svg {
+  display: block;
+  width: min(100%, 260px);
+  height: auto;
+}
+
+.pos__shell {
+  /* fill set in SVG gradient */
+}
+
+.pos__bezel {
+  /* fill set in SVG gradient */
+}
+
+.pos__screen {
+  /* fill set in SVG gradient */
+}
+
+.pos__slot {
+  /* navy recess */
+}
+
+.pos__screen-layer {
+  isolation: auto;
+}
+
+.pos__screen-art,
+.pos__screen-art image,
+.pos__nfc {
+  mix-blend-mode: multiply;
+}

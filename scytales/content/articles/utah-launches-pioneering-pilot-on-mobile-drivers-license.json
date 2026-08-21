@@ -1,0 +1,67 @@
+{
+  "slug": "utah-launches-pioneering-pilot-on-mobile-drivers-license",
+  "title": "Utah Launches Pioneering Pilot on Mobile Driver’s License",
+  "seoTitle": "Utah Launches Pioneering Pilot on Mobile Driver’s License | Scytáles Newsroom",
+  "description": "The Utah Driver License Division has launched an mDL pilot for offering residents a modern digital driving credential.",
+  "excerpt": "The Utah Driver License Division (DLD) has launched a mobile driver license (mDL) pilot for offering driver’s licenses and ID cards on mobile phones. The pilot will demonstrate improvement in citizen privacy and security, while highlighting the convenience and safety of tap and g…",
+  "category": "press-releases",
+  "categoryLabel": "Press Releases",
+  "date": "2021-03-30",
+  "dateLabel": "Mar 30, 2021",
+  "image": "assets/articles/utah-launches-pioneering-pilot-on-mobile-drivers-license.jpg",
+  "topics": [
+    "Mobile ID",
+    "Partnerships"
+  ],
+  "body": [
+    {
+      "type": "p",
+      "html": "The Utah Driver License Division (DLD) has launched a mobile driver license (mDL) pilot for offering driver’s licenses and ID cards on mobile phones. The pilot will demonstrate improvement in citizen privacy and security, while highlighting the convenience and safety of tap and go transactions. It will use a fully ISO 18013-5-compliant mobile app, following the American Association of Motor Vehicle Administrators (AAMVA) mDL Implementation Guidelines."
+    },
+    {
+      "type": "p",
+      "html": "The new mDLs are a secure, contactless digital form of ID that give citizens control of their identity data. They choose the personal information they share with businesses. The pilot will build public acceptance of mDL in real-world scenarios such as banking, travel, traffic stops, and restaurant and liquor store transactions that require age verification. Building an open ecosystem during the pilot where mDLs are accepted at many businesses will pave the way for making mDLs viable for all of Utah’s more than two million licensed drivers. Utahns may be able to leave their wallet at home soon."
+    },
+    {
+      "type": "p",
+      "html": "Unlike other pilots, Utah pilot on mobile driver's license will fully utilize the ISO 18013-5 standard for mDL, which provides the benefit of cryptographic proof of identity that prevents forgery and cannot be achieved by simply showing your phone screen to a clerk at a business."
+    },
+    {
+      "type": "blockquote",
+      "html": "<p>“Our Driver License Division is committed to working with residents and stakeholders to implement a solution which provides the highest value to Utahns: one which is accepted anywhere and provides enhanced privacy, security and personal control,” said Utah Department of Public Safety Commissioner Jess L. Anderson. “Utahns’ privacy is of the utmost importance to us and the mDL gives them control over their data. They choose what information to share when their identification is requested.”</p>"
+    },
+    {
+      "type": "p",
+      "html": "For mDL, Utah DLD has tapped GET Group North America and its technology partner Scytáles to provide GET Mobile ID, an ISO 18013-5-compliant application that puts an official driver’s license or ID Card on a citizen’s smartphone. The Contactless ID document can be verified with a tap or scan and is accepted worldwide using any ISO 18013-5-compliant reader, such as GET Mobile Verify. The GET/Scytáles mDL technology was the first to pass the formal conformity assessment testing, meant to ensure compliance to the stringent standards that allow for global acceptance."
+    },
+    {
+      "type": "blockquote",
+      "html": "<p>“Utah DLD has incredible foresight and timing to lead the world with standardized mDLs. We are proud to support Utah DLD as they begin launching a full-scale mDL program,” said Alex Kambanis, President and Managing Director of GET Group North America. “COVID has accelerated the importance of Contactless ID for both citizens and the businesses that accept ID. Utah DLD is providing Utah residents a huge benefit with financial, security and health-related impacts.”</p>"
+    },
+    {
+      "type": "blockquote",
+      "html": "<p>“Utahns will now lead the country in having the benefit of a completely secure, privacy-centered, standardized form of mobile ID. Our team looks forward to supporting Utah in its pioneering role in implementing the very first fully ISO-compliant mDL,” said Geoff Slagle, President &amp; Chief Business Development Officer at Scytáles, Inc.</p>"
+    },
+    {
+      "type": "p",
+      "html": "The pilot will begin with approximately 100 select participants and expand to 10,000 participants including the broader public during 2021. Utah businesses can participate in the pilot to accept mDLs now and prepare for when mDL is available to all Utahns."
+    },
+    {
+      "type": "h2",
+      "text": "About Scytáles"
+    },
+    {
+      "type": "p",
+      "html": "Scytáles is breaking new ground by developing and offering ISO-compliant Mobile Driver Licenses, Mobile IDs, derived Mobile IDs and Mobile Vaccination Passports as a complement to Security Printed Documents, and Validation mechanisms in real-time in online and offline modes. The company participates as experts in Mobile Identity through the standardization body (SIS) and participates on the Task Force 14 on Mobile Driving Licences within ISO/IEC JTC1/SC17/WG10. Scytáles is also providing a Credential Service Provider (CSP), an ICAO 9303/PKD PKI, supporting multiple Mobile DLs/IDs and online identity validation providers. Scytáles lays the foundation for a comprehensive lineup of online digital services, serving billions of users, as well as enabling high-security printed documents and banknotes to go digital and mobile."
+    },
+    {
+      "type": "h2",
+      "text": "About GET Group North America"
+    },
+    {
+      "type": "p",
+      "html": "GET Group North America and its partners develop, manufacture, and implement end-to-end solutions for secure physical and mobile credentials that enable government agencies, motor vehicle departments, municipalities law enforcement organizations, and other entities to leverage the latest in secure identity management technologies. From photo ID cards, driver’s licenses and passports, to mDLs and mIDs, GET Group NA delivers advanced issuance, verification and personalization capabilities that prevent identification fraud, accommodate diversified customer needs, and support the future of ID use cases."
+    }
+  ],
+  "source": "https://www.scytales.com/post/utah-launches-pioneering-pilot-on-mobile-drivers-license"
+}

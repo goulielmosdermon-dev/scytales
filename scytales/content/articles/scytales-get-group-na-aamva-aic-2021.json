@@ -1,0 +1,50 @@
+{
+  "slug": "scytales-get-group-na-aamva-aic-2021",
+  "title": "Scytáles & GET Group NA to Demonstrate Mobile Driver’s License Interoperability at AAMVA’s AIC 2021",
+  "seoTitle": "Scytáles & GET Group NA to Demonstrate Mobile Driver’s License Interoperability at AAMVA’s AIC 2021 | Scytáles Newsroom",
+  "description": "Scytáles and GET Group NA demonstrate mobile driver’s license interoperability at AAMVA’s AIC 2021.",
+  "excerpt": "Scytáles AB, the global leader in the ISO 18013-5 mobile ID technology standard, will be demonstrating ISO mDL and ISO mValidator alongside its international technology partner, GET Group North America, at AAMVA’s 2021 International Conference. Together, the companies will be dem…",
+  "category": "press-releases",
+  "categoryLabel": "Press Releases",
+  "date": "2021-08-19",
+  "dateLabel": "Aug 19, 2021",
+  "image": "assets/articles/scytales-get-group-na-aamva-aic-2021.png",
+  "topics": [
+    "Mobile ID"
+  ],
+  "body": [
+    {
+      "type": "p",
+      "html": "Scytáles AB, the global leader in the ISO 18013-5 mobile ID technology standard, will be demonstrating ISO mDL and ISO mValidator alongside its international technology partner, GET Group North America, at AAMVA’s 2021 International Conference. Together, the companies will be demonstrating how a mobile driver’s license (mDL) solution that is fully compliant with the ISO 18013-5 standard allows people to use their Mobile ID worldwide through secure, contactless interactions that also safeguard their privacy. Select attendees will be able to get their personalized mDL and travel between GET’s booth, representing America, and Scytáles’ booth, representing Sweden. These mDL holders will complete mock TSA, banking and age-based purchase transactions and collect giveaway items."
+    },
+    {
+      "type": "blockquote",
+      "html": "<p>“The successful adoption of large-scale mobile driver’s license adoption hinges not only on the ability for an mDL issued in one’s home state to be accepted across the USA, but also to be recognized internationally as a legal form of ID,” said David Kelts, director of product development, mobile ID, GET Group North America. “Creating a truly global mDL ecosystem requires technology that fully complies with the ISO standard for mobile ID, and that’s the full solution GET and Scytáles offer now and will be demonstrating.”</p>"
+    },
+    {
+      "type": "blockquote",
+      "html": "<p>“Many jurisdictions around the world are moving towards a mobile driver’s license offering and should make sure they’re choosing technology that adheres to internationally-recognized security and interoperability standards,” said Geoff Slagle, president &amp; chief business development officer at Scytáles. “North Americans travel extensively. Investing time and resources in the transition to mDL could slow if jurisdictions don’t ensure their digital credentials comply with the larger ecosystem – and we’re very excited to demonstrate how that’s possible at AIC 2021.”</p>"
+    },
+    {
+      "type": "p",
+      "html": "The Utah Driver License Division (DLD) is currently conducting an mDL pilot using GET Group North America’s technology powered by Scytáles, making it the first in the country where both ID Issuer and businesses are <em>fully</em> ISO 18013-5-compliant. Utah Community Credit Union and Harmons Grocery have been among the first to pioneer implementation of verification technology that allows state-issued mDLs to be accepted without the subjectivity of visual inspection. mDL also facilitates totally contactless ID checks that put the citizen in control of the data they share based on the nature of the transaction."
+    },
+    {
+      "type": "p",
+      "html": "Scytáles AB will be in booths 510 &amp; 511 at the AAMVA Annual International Conference taking place August 31-September 2, 2021, in Denver, CO. GET Group will be in neighbouring booths 512 and 513. Representatives from the Utah Driver License Division will be able to share their experience piloting mDL technology. Scytáles will have a delegation from Europe to discuss the significance of global interoperability."
+    },
+    {
+      "type": "p",
+      "html": "For media inquiries contact <a href=\"mailto:info@scytales.com\">info@scytales.com</a>."
+    },
+    {
+      "type": "h2",
+      "text": "About Scytáles"
+    },
+    {
+      "type": "p",
+      "html": "Scytáles is the leading developer of ISO-Mobile Driving Licenses and Mobile IDs as a complement to Security Printed Documents and Validation mechanisms. With our fully ISO-compliant technology, we are the global leaders of the new generation of personal credentials using a cell phone while authorizing what data will be shared. We enable going mobile and validating in real-time in online and offline modes, by standardization and using NFC, Bluetooth, QR Codes, Wifi Aware, PDF417 and other technologies as per defined in ICAO 9303 and ISO 18013-5. Scytáles AB represents Sweden as an expert through the Standardization Body (SIS) SIS/TK 448 and Task Force 14 on mDL within ISO/IEC 18013-5 ISO/IEC JTC1/SC17/WG10. Headquarters in Stockholm, Sweden and offices in the US, Greece and Portugal."
+    }
+  ],
+  "source": null
+}

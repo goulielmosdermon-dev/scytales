@@ -1,0 +1,73 @@
+{
+  "slug": "contacts",
+  "layout": "contacts",
+  "seoTitle": "Contacts | Scytáles",
+  "seoDescription": "Contact Scytáles — sales, marketing, and general inquiries across our global offices.",
+  "eyebrow": "Contact",
+  "title": "Contact us. Uncover the possibilities and see how Scytáles can make a difference for you",
+  "formHeading": "Ready to Elevate Your Success? Submit Your Details for a Sales Representative to Reach Out",
+  "directHeading": "Contact us directly",
+  "direct": [
+    {
+      "label": "For sales",
+      "email": "sales@scytales.com"
+    },
+    {
+      "label": "For marketing and communication",
+      "email": "marketing@scytales.com"
+    },
+    {
+      "label": "For all other inquiries",
+      "email": "info@scytales.com"
+    }
+  ],
+  "offices": [
+    {
+      "region": "European Offices",
+      "items": [
+        {
+          "name": "Scytáles AB (HQ)",
+          "lines": [
+            "Polygonvägen 53",
+            "187 66 Täby",
+            "Sweden"
+          ]
+        },
+        {
+          "name": "Scytáles IKE",
+          "lines": [
+            "Vasilissis Sofias 103",
+            "Athens 115 21",
+            "Greece"
+          ]
+        }
+      ]
+    },
+    {
+      "region": "North American Office",
+      "items": [
+        {
+          "name": "Scytáles Inc.",
+          "lines": [
+            "6 Liberty Square #2291",
+            "Boston, MA 02109",
+            "USA"
+          ]
+        }
+      ]
+    },
+    {
+      "region": "Australian Office",
+      "items": [
+        {
+          "name": "Scytáles Pty Ltd",
+          "lines": [
+            "Se 902, 50 Berry St North",
+            "Sydney, NSW 2059",
+            "Australia"
+          ]
+        }
+      ]
+    }
+  ]
+}

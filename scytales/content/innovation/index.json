@@ -1,0 +1,8 @@
+{
+  "topics": [
+    { "slug": "eudi-wallet", "name": "EUDI Wallet" },
+    { "slug": "interoperability", "name": "Interoperability" },
+    { "slug": "age-verification", "name": "Age Verification" },
+    { "slug": "security-privacy", "name": "Security & Privacy by Design" }
+  ]
+}

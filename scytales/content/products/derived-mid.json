@@ -1,0 +1,148 @@
+{
+  "slug": "derived-mid",
+  "name": "Derived mID",
+  "title": "Derived mID | Scytáles",
+  "description": "NFC card authentication that derives credentials from security documents into mobile virtual IDs at Level of Assurance 3.",
+  "listPreview": "blank",
+  "hero": {
+    "headline": "Go Cardless, Go Mobile: NFC-Based Authentication at Your Fingertips",
+    "sub": "The Scytáles Derived Mobile ID is an NFC card authentication app that derives credentials from security documents into mobile virtual IDs at Level of Assurance 3.",
+    "ctaPrimary": {
+      "label": "Download Product Sheet",
+      "href": "#cta"
+    },
+    "ctaSecondary": {
+      "label": "Request a demo",
+      "href": "#cta"
+    },
+    "bullets": [
+      "Virtual complement to physical smartcards",
+      "PIV / eIDAS NFC card signing toward web services",
+      "Tap-and-go authentication via identity providers",
+      "BYOD or shared-device deployment for organisations"
+    ]
+  },
+  "showcase": {
+    "phone": "iso-mvalidator-nfc",
+    "phoneImage": null,
+    "statValue": "LoA 3",
+    "statCopy": "High-assurance NFC authentication derived from physical security documents",
+    "showActivity": true,
+    "activity": {
+      "title": "NFC activity",
+      "primaryLabel": "Card authentications",
+      "secondaryLabel": "Remote SoR lookups",
+      "totalLabel": "Total tap events",
+      "totals": {
+        "primary": 1920,
+        "secondary": 1540,
+        "total": 3460
+      },
+      "months": [
+        {
+          "label": "Jan",
+          "primary": 45,
+          "secondary": 30
+        },
+        {
+          "label": "Feb",
+          "primary": 50,
+          "secondary": 35
+        },
+        {
+          "label": "Mar",
+          "primary": 55,
+          "secondary": 40
+        },
+        {
+          "label": "Apr",
+          "primary": 62,
+          "secondary": 48
+        },
+        {
+          "label": "May",
+          "primary": 58,
+          "secondary": 42
+        },
+        {
+          "label": "Jun",
+          "primary": 40,
+          "secondary": 28
+        },
+        {
+          "label": "Jul",
+          "primary": 38,
+          "secondary": 26
+        },
+        {
+          "label": "Aug",
+          "primary": 52,
+          "secondary": 45
+        },
+        {
+          "label": "Sep",
+          "primary": 60,
+          "secondary": 50
+        },
+        {
+          "label": "Oct",
+          "primary": 70,
+          "secondary": 55
+        },
+        {
+          "label": "Nov",
+          "primary": 65,
+          "secondary": 48
+        },
+        {
+          "label": "Dec",
+          "primary": 48,
+          "secondary": 36
+        }
+      ]
+    }
+  },
+  "features": [
+    {
+      "icon": "chart",
+      "body": "Read and electronically sign toward web services, and verify contactless derived data from physical smartcards, health cards, loyalty cards, and more, using a mobile device and NFC."
+    },
+    {
+      "icon": "bulb",
+      "body": "Each tap activates authentication and contacts an identity provider to access the System of Records remotely: the right person, right information, right time."
+    },
+    {
+      "icon": "shield",
+      "body": "Deploy on personal devices (BYOD) or shared phones and tablets in organisational infrastructure such as healthcare facilities, for secure access without a desktop."
+    }
+  ],
+  "discover": [
+    {
+      "image": "assets/wallet/discover-mvalid.png",
+      "alt": "ISO mValidator",
+      "copy": "Certified ISO 18013-5 validation for wallets, mobile IDs, and mobile driving licences.",
+      "linkLabel": "ISO mValidator",
+      "linkHref": "#product/iso-mvalidator"
+    },
+    {
+      "image": "assets/wallet/discover-age.png",
+      "alt": "Digital ID Wallet",
+      "copy": "Carry official physical and digital credentials on your phone with EUDI-ready wallet support.",
+      "linkLabel": "Digital ID Wallet",
+      "linkHref": "#product/digital-id-wallet"
+    },
+    {
+      "image": "assets/wallet/discover-nfc.png",
+      "alt": "Credential Service Provider",
+      "copy": "Trusted service establishing authenticity between issuers and mDL, mID, and wallet providers.",
+      "linkLabel": "Credential Service Provider",
+      "linkHref": "#product/credential-service"
+    }
+  ],
+  "statement": "Scytáles delivers Derived Mobile ID as part of a full mobile identity stack, from wallets and validators to service management. It is trusted by governments, healthcare, and enterprises that need high-assurance NFC authentication.",
+  "cta": {
+    "title": "Get started with Derived mID",
+    "label": "Start your 30 day free trial",
+    "href": "#cta"
+  }
+}

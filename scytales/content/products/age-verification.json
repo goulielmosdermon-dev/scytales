@@ -1,0 +1,238 @@
+{
+  "slug": "age-verification",
+  "name": "Age Verification Connector",
+  "title": "Age Verification Connector | Scytáles",
+  "description": "Privacy-preserving age checks built on the OpenID Connect standard — part of Scytáles’ European Commission mandate for safer digital services across Europe.",
+  "listPreview": "pos",
+  "hero": {
+    "headline": "Privacy-Preserving Age Verification for a Safer Digital Europe",
+    "sub": "Scytáles’ Age Verification Connector is built on the secure and widely adopted OpenID Connect standard, designed for pan-European deployment and aligned with eIDAS 2.0 privacy principles.",
+    "ctaPrimary": {
+      "label": "Download Product Sheet",
+      "href": "#cta"
+    },
+    "ctaSecondary": {
+      "label": "Request a demo",
+      "href": "#cta"
+    },
+    "bullets": [
+      "Confirm age without oversharing personal data",
+      "OpenID Connect for secure, interoperable integration",
+      "Pan-European reach for cross-border services",
+      "Official EU Commission age verification mandate"
+    ]
+  },
+  "showcase": {
+    "phone": "none",
+    "statValue": "18+",
+    "statCopy": "Prove an age threshold without revealing birth date, name, or address",
+    "showActivity": true,
+    "activity": {
+      "title": "Age check activity",
+      "primaryLabel": "Age checks",
+      "secondaryLabel": "Selective disclosures",
+      "totalLabel": "Total verifications",
+      "totals": {
+        "primary": 3840,
+        "secondary": 2560,
+        "total": 6400
+      },
+      "months": [
+        {
+          "label": "Jan",
+          "primary": 55,
+          "secondary": 42
+        },
+        {
+          "label": "Feb",
+          "primary": 62,
+          "secondary": 48
+        },
+        {
+          "label": "Mar",
+          "primary": 70,
+          "secondary": 55
+        },
+        {
+          "label": "Apr",
+          "primary": 68,
+          "secondary": 60
+        },
+        {
+          "label": "May",
+          "primary": 75,
+          "secondary": 58
+        },
+        {
+          "label": "Jun",
+          "primary": 80,
+          "secondary": 65
+        },
+        {
+          "label": "Jul",
+          "primary": 72,
+          "secondary": 50
+        },
+        {
+          "label": "Aug",
+          "primary": 88,
+          "secondary": 70
+        },
+        {
+          "label": "Sep",
+          "primary": 82,
+          "secondary": 66
+        },
+        {
+          "label": "Oct",
+          "primary": 90,
+          "secondary": 72
+        },
+        {
+          "label": "Nov",
+          "primary": 85,
+          "secondary": 68
+        },
+        {
+          "label": "Dec",
+          "primary": 78,
+          "secondary": 62
+        }
+      ]
+    }
+  },
+  "statement": "Official technological developers of pan-European Age Verification solutions for the European Commission, with deep expertise in privacy-preserving credentials and high-assurance identity.",
+  "cta": {
+    "title": "Get started with Age Verification Connector",
+    "label": "Request a demo",
+    "href": "#cta"
+  },
+  "benefits": [
+    {
+      "title": "Enterprise-Grade Security",
+      "body": "Trusted by the European Commission. GDPR compliant, privacy-first architecture with OpenID Connect standards.",
+      "tags": [
+        "End-to-end encryption",
+        "Zero data storage",
+        "Full GDPR compliance"
+      ]
+    },
+    {
+      "title": "Delightful User Experience",
+      "body": "Frictionless verification that your users will love. Fast, simple, and works seamlessly across all devices.",
+      "tags": [
+        "Mobile-optimized",
+        "One-click verification",
+        "Multi-language support"
+      ]
+    },
+    {
+      "title": "100% FREE to Start",
+      "body": "No credit card required. Up to 1,000 free verifications per month, forever. Scale as you grow with transparent pricing.",
+      "tags": [
+        "No hidden fees",
+        "Cancel anytime",
+        "Predictable costs"
+      ]
+    },
+    {
+      "title": "Developer-Friendly",
+      "body": "Comprehensive documentation, SDKs for popular frameworks, and responsive support to get you up and running fast.",
+      "tags": [
+        "REST API",
+        "OpenID Connect",
+        "Live examples"
+      ]
+    },
+    {
+      "title": "Scale with Confidence",
+      "body": "Battle-tested infrastructure handling millions of verifications. Auto-scaling, 99.9% uptime, and global CDN delivery.",
+      "tags": [
+        "99.9% uptime SLA",
+        "Auto-scaling",
+        "24/7 monitoring"
+      ]
+    },
+    {
+      "title": "Global Coverage",
+      "body": "Verify users across multiple countries with support for local identity providers and international compliance standards.",
+      "tags": [
+        "EU-wide coverage",
+        "Multiple ID providers",
+        "Expanding globally"
+      ]
+    }
+  ],
+  "stats": [
+    {
+      "value": "5",
+      "label": "Lines of code only"
+    },
+    {
+      "value": "1,000",
+      "label": "Free verifications per month"
+    },
+    {
+      "value": "< 2 min",
+      "label": "Setup time"
+    }
+  ],
+  "flow": {
+    "heading": "How it works",
+    "nodes": [
+      {
+        "icon": "devices",
+        "title": "Your Website/App",
+        "sub": "Relying Party",
+        "tone": "navy"
+      },
+      {
+        "icon": "shield",
+        "title": "Age Verification Connector",
+        "sub": "Secure Verification Service",
+        "tone": "orange"
+      },
+      {
+        "icon": "phone",
+        "title": "User's Digital Wallet",
+        "sub": "Holds Verifiable Credentials",
+        "tone": "navy"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Age Check Needed",
+        "body": "User redirected to the connector using the OpenID Connect flow."
+      },
+      {
+        "title": "Request Age Proof",
+        "body": "The connector requests age, via QR code or deeplink."
+      },
+      {
+        "title": "User Approves & Sends Proof",
+        "body": "Wallet cryptographically sends a verifiable token."
+      },
+      {
+        "title": "Verification & Token Issuance",
+        "body": "The connector validates and returns proof of age attestation to your website or app."
+      }
+    ],
+    "cards": [
+      {
+        "icon": "check",
+        "title": "Simple Integration",
+        "body": "Easy for your website or app to consume."
+      },
+      {
+        "icon": "lock",
+        "title": "Strong Security",
+        "body": "Built on OpenID Connect and OpenID4VP."
+      },
+      {
+        "icon": "privacy",
+        "title": "Enhanced Privacy",
+        "body": "Your website or app never sees personal data."
+      }
+    ]
+  }
+}

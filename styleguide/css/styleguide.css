@@ -1,0 +1,700 @@
+@import url("../../shared/tokens.css");
+@import url("../../shared/components.css");
+@import url("../../shared/phone.css");
+@import url("../../shared/passport.css");
+@import url("../../shared/card-stack.css");
+@import url("../../shared/age-verification.css");
+@import url("../../shared/pos.css");
+@import url("../../shared/earth.css");
+@import url("../../shared/wallet-activity.css");
+@import url("../../shared/orb.css");
+@import url("../../shared/euro-stars.css");
+
+/* ============================================================
+   BASE
+   ============================================================ */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--cream-50);
+  color: var(--ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+h1,h2,h3,h4 { font-family: var(--font-head); font-weight: 400; line-height: 1.05; letter-spacing: -0.01em; }
+
+/* Every section shares this shell: 2rem side padding, 1376px container. */
+.wrap {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding-left: var(--section-pad-x);
+  padding-right: var(--section-pad-x);
+}
+
+/* Header */
+.masthead {
+  background: var(--cream-50);
+  border-bottom: 1px solid var(--cream-200);
+  padding: var(--space-6) 0 var(--space-5);
+  position: sticky; top: 0; z-index: 10;
+  backdrop-filter: blur(6px);
+}
+.brand-mark {
+  display: inline-flex; align-items: center; gap: var(--space-3);
+}
+.logo-badge {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--orange-500); color: var(--white);
+  display: grid; place-items: center; font-family: var(--font-head);
+  font-size: 22px;
+}
+.masthead h1 { font-size: 30px; color: var(--navy-800); }
+.masthead p { color: var(--neutral-500); margin-top: var(--space-2); font-size: 15px; }
+
+/* Section shell */
+section { padding: var(--section-pad-y) 0; border-bottom: 1px solid var(--cream-200); }
+.eyebrow {
+  font-family: var(--font-body); font-size: 13px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--orange-500); font-weight: 600;
+  margin-bottom: var(--space-3);
+}
+.section-title { font-size: 44px; color: var(--orange-500); margin-bottom: var(--space-2); }
+.section-lead { color: var(--navy-600); max-width: 60ch; margin-bottom: var(--space-6); font-size: 17px; }
+
+/* ============================================================
+   LAYOUT & GRID SPECIMENS
+   ============================================================ */
+.bp-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.bp-table th, .bp-table td {
+  text-align: left; padding: var(--space-3);
+  border-bottom: 1px solid var(--cream-200);
+}
+.bp-table th {
+  font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--orange-500); font-weight: 600;
+}
+.bp-table td { color: var(--navy-600); }
+.bp-table td b { color: var(--ink); font-weight: 600; }
+.bp-table tr.is-target td { background: var(--orange-100); }
+.bp-table code { font-size: 13px; color: var(--rust-700); }
+
+/* Container + padding diagram */
+.layout-demo {
+  border: 1px solid var(--cream-200); border-radius: var(--radius-md);
+  background: var(--white); overflow: hidden;
+}
+.layout-demo .viewport {
+  position: relative; padding: var(--space-4) 0;
+  background: repeating-linear-gradient(45deg, var(--cream-100) 0 6px, var(--cream-50) 6px 12px);
+}
+.layout-demo .container {
+  max-width: var(--container-max); margin: 0 auto;
+  padding-left: var(--section-pad-x); padding-right: var(--section-pad-x);
+  position: relative;
+}
+.layout-demo .gutter {
+  position: absolute; top: 0; bottom: 0; width: var(--section-pad-x);
+  background: rgba(232,93,31,.18);
+  border-left: 1px dashed var(--orange-500); border-right: 1px dashed var(--orange-500);
+}
+.layout-demo .gutter.left  { left: 0; }
+.layout-demo .gutter.right { right: 0; }
+.layout-demo .content {
+  background: var(--navy-800); color: var(--white);
+  border-radius: var(--radius-sm); padding: var(--space-4);
+  font-size: 13px; text-align: center;
+}
+.layout-legend {
+  display: flex; gap: var(--space-5); flex-wrap: wrap;
+  font-size: 13px; color: var(--neutral-500); margin-top: var(--space-3);
+}
+.layout-legend span { display: inline-flex; align-items: center; gap: 8px; }
+.layout-legend i {
+  width: 14px; height: 14px; border-radius: 3px; display: block;
+}
+
+/* Site-frame demo — chrome only; .site-frame lives in shared/components.css */
+.frame-demo {
+  background: repeating-linear-gradient(45deg, var(--cream-100) 0 6px, var(--cream-50) 6px 12px);
+  border: 1px solid var(--cream-200);
+  border-radius: var(--radius-md);
+  padding: var(--space-5) var(--space-6);
+}
+.frame-demo__shell {
+  max-width: 520px;
+  background: var(--cream-50);
+}
+.frame-demo__band {
+  padding: var(--space-3) var(--space-4);
+  font-size: 13px;
+  color: var(--neutral-500);
+}
+
+/* ============================================================
+   COLOR SWATCHES
+   ============================================================ */
+.swatch-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(180px,1fr));
+  gap: var(--space-4);
+}
+.swatch {
+  border-radius: var(--radius-lg); overflow: hidden;
+  border: 1px solid var(--cream-200); background: var(--white);
+  box-shadow: var(--shadow-sm);
+}
+.swatch .chip { height: 120px; }
+.swatch .meta { padding: var(--space-3); }
+.swatch .name { font-weight: 600; font-size: 15px; }
+.swatch .hex { color: var(--neutral-500); font-size: 13px; font-variant-numeric: tabular-nums; text-transform: uppercase; }
+.swatch .role { color: var(--neutral-500); font-size: 12px; margin-top: 2px; }
+
+/* ============================================================
+   TYPOGRAPHY SPECIMENS
+   ============================================================ */
+.type-row {
+  display: grid; grid-template-columns: 160px 1fr; gap: var(--space-5);
+  padding: var(--space-4) 0; border-top: 1px solid var(--cream-200);
+  align-items: baseline;
+}
+.type-row:first-of-type { border-top: none; }
+.type-spec { font-size: 13px; color: var(--neutral-500); line-height: 1.5; }
+.type-spec b { color: var(--ink); display: block; font-weight: 600; }
+.display-1 { font-family: "PP Agrandir Grand", var(--font-head); font-weight: 300; font-size: var(--fs-display-1); color: var(--orange-500); line-height: 1; letter-spacing: 2px; -webkit-text-stroke: 5px currentColor; }
+.hero-lead { font-family: var(--font-body); font-size: var(--fs-hero-lead); line-height: 1.05; color: var(--navy-800); }
+.display-2 { font-family: var(--font-head); font-size: 52px; color: var(--navy-800); }
+.display-3 { font-family: var(--font-head); font-size: 36px; line-height: 1.2; color: var(--navy-800); }
+.h-1 { font-family: var(--font-head); font-size: 40px; color: var(--navy-800); }
+.h-2 { font-family: var(--font-head); font-size: var(--fs-h-2); line-height: 1.1; color: var(--navy-800); }
+.h-3 { font-family: var(--font-head); font-size: 22px; color: var(--navy-800); }
+.body-lg { font-family: var(--font-body); font-size: 19px; color: var(--navy-800); }
+.body-md { font-family: var(--font-body); font-size: var(--fs-body-md); line-height: var(--lh-body-md); color: var(--ink); }
+.body-sm { font-family: var(--font-body); font-size: 14px; color: var(--neutral-500); }
+.label { font-family: var(--font-body); font-size: 12px; letter-spacing:.12em; text-transform: uppercase; color: var(--orange-500); font-weight:600; }
+/* Underline accent — a real underline, so the rule sits a fixed distance
+   below the baseline and can never collide with the line beneath it.
+   3px rule, 6px below the baseline, measured at the design's 58px. */
+.u-accent {
+  text-decoration: underline;
+  text-decoration-thickness: 0.0517em;
+  text-underline-offset: 0.118em;
+  text-decoration-skip-ink: none;
+}
+.underline-head {
+  font-family: var(--font-head); font-size: 40px; color: var(--orange-500);
+  text-decoration: underline;
+  text-decoration-thickness: 0.0517em;
+  text-underline-offset: 0.118em;
+  text-decoration-skip-ink: none;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn {
+  font-family: var(--font-body); font-size: 15px; font-weight: 500;
+  line-height: 1;
+  padding: var(--btn-pad-y) var(--btn-pad-x); border-radius: var(--radius-sm); border: none;
+  cursor: pointer; transition: .16s ease; display: inline-flex;
+  align-items: center; gap: 8px; text-decoration: none;
+}
+.btn-primary { background: var(--orange-500); color: var(--white); }
+.btn-primary:hover { background: var(--orange-600); }
+.btn-secondary { background: var(--navy-800); color: var(--white); }
+.btn-secondary:hover { background: var(--navy-900); }
+.btn-ghost { background: transparent; color: var(--navy-800); border: 1.5px solid var(--navy-800); }
+.btn-ghost:hover { background: var(--navy-800); color: var(--white); }
+.btn-link { background: none; color: var(--orange-500); padding: var(--btn-pad-y) 0; border-bottom: 2px solid transparent; border-radius: 0; }
+.btn-link:hover { border-bottom-color: var(--orange-500); }
+.btn-row { display: flex; gap: var(--space-3); flex-wrap: wrap; align-items: center; }
+
+/* Expand button lives in shared/components.css — demo chrome only here */
+.btn-icon-label {
+  display: flex; flex-direction: column; align-items: center; gap: var(--space-2);
+  font-size: 12px; color: var(--neutral-500);
+}
+.btn-icon-demo { display: flex; gap: var(--space-5); flex-wrap: wrap; align-items: flex-end; }
+
+/* ============================================================
+   COMPONENTS
+   ============================================================ */
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(240px,1fr)); gap: var(--space-4); }
+.card {
+  background: var(--white); border: 1px solid var(--cream-200);
+  border-radius: var(--radius-lg); padding: var(--space-5); box-shadow: var(--shadow-sm);
+  position: relative;
+}
+.card h4 { font-size: 20px; color: var(--navy-800); margin-bottom: var(--space-2); }
+.card p { font-size: 14px; color: var(--neutral-500); }
+.card .corner {
+  position: absolute; top: var(--space-4); right: var(--space-4);
+}
+
+/* dark panel demo */
+.dark-panel {
+  background: linear-gradient(160deg, var(--navy-800), var(--navy-900));
+  color: var(--white); border-radius: var(--radius-xl); padding: var(--space-7);
+}
+.dark-panel h3 { color: var(--white); font-size: 40px; margin-bottom: var(--space-5); }
+.stat-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(140px,1fr)); gap: var(--space-4); }
+.stat .num { font-family: var(--font-head); font-size: 44px; }
+.stat .num.hot { color: var(--white); }
+.stat .num.dim { color: rgba(255,255,255,.28); }
+.stat .cap { font-size: 13px; color: rgba(255,255,255,.6); }
+
+/* Card reference row */
+.card-ref-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.card-ref {
+  margin: 0;
+  flex: 0 0 auto;
+}
+.card-ref img {
+  display: block;
+  width: 200px;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: var(--shadow-md, 0 12px 28px rgba(16, 49, 84, .18));
+}
+.card-ref figcaption {
+  margin-top: var(--space-2);
+  font-size: 12px;
+  color: var(--neutral-500);
+  text-align: center;
+}
+
+/* Stacked cards — style-guide demo chrome only (component in shared/card-stack.css) */
+.card-stack-demo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--space-7);
+}
+.card-stack-stage {
+  flex: 0 0 auto;
+  padding: calc(var(--space-7) + 100px) var(--space-8) var(--space-7);
+  background: transparent;
+  overflow: visible;
+}
+.card-stack-spec {
+  flex: 1 1 260px;
+  max-width: 32ch;
+  color: var(--neutral-500);
+}
+.card-stack-spec p { margin: 0 0 var(--space-3); }
+.card-stack-spec b { color: var(--ink); font-weight: 600; }
+.card-stack-spec code { font-size: 12px; color: var(--rust-700); }
+
+/* Traced fingerprint demo */
+.fp-demo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: var(--space-7);
+}
+.fp-panel {
+  flex: 0 1 280px;
+  max-width: 36ch;
+  color: var(--neutral-500);
+}
+.fp-panel > p { margin: 0 0 var(--space-3); }
+.fp-panel b { color: var(--ink); font-weight: 600; }
+.fp-stage {
+  flex: 1 1 280px;
+  min-height: 420px;
+  display: grid;
+  place-items: center;
+  padding: var(--space-6);
+  background: var(--white);
+  border: 1px solid var(--cream-200);
+  border-radius: var(--radius-lg);
+}
+.fp-stage svg {
+  display: block;
+  width: min(100%, 380px);
+  height: auto;
+}
+
+/* Phone glass editor */
+.phone-glass-demo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--space-7);
+}
+.phone-glass-stage {
+  flex: 0 0 auto;
+  padding: var(--space-7);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at 20% 20%, rgba(234, 103, 32, .18), transparent 42%),
+    radial-gradient(circle at 80% 70%, rgba(16, 49, 84, .14), transparent 46%),
+    linear-gradient(160deg, #f7f0e6 0%, #ebe4d8 50%, #e2d8c8 100%);
+  border: 1px solid var(--cream-200);
+}
+.phone-glass-spec {
+  flex: 1 1 260px;
+  max-width: 32ch;
+  color: var(--neutral-500);
+}
+.phone-glass-spec p { margin: 0 0 var(--space-3); }
+.phone-glass-spec b { color: var(--ink); font-weight: 600; }
+.phone-glass-spec code { font-size: 12px; color: var(--rust-700); }
+.phone-glass-control {
+  display: grid;
+  gap: 6px;
+  margin-top: var(--space-3);
+}
+.phone-glass-control span {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+.phone-glass-control input[type="range"] {
+  width: 100%;
+  accent-color: var(--orange-500);
+}
+.phone-glass-pos {
+  margin: var(--space-4) 0 0;
+  padding: var(--space-3);
+  background: var(--white);
+  border: 1px solid var(--cream-200);
+  border-radius: var(--radius-sm);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  line-height: 1.45;
+  color: var(--navy-800);
+  white-space: pre-wrap;
+}
+
+/* spacing scale demo */
+.space-demo { display: flex; align-items: flex-end; gap: var(--space-4); flex-wrap: wrap; }
+.space-demo .bar { background: var(--orange-300); border-radius: var(--radius-sm); width: 40px; }
+.space-demo .cap { text-align: center; font-size: 12px; color: var(--neutral-500); margin-top: 6px; }
+
+/* radius + shadow demo */
+.tile { background: var(--white); border:1px solid var(--cream-200); height: 90px; display:grid; place-items:center; font-size:13px; color: var(--neutral-500); }
+
+/* usage do/dont */
+.rules { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+.rule { border-radius: var(--radius-md); padding: var(--space-4); font-size: 14px; }
+.rule.do { background: #EAF6EC; border:1px solid #BFE3C6; }
+.rule.dont { background: #FBEBE7; border:1px solid #F2C4B7; }
+.rule b { display:block; margin-bottom: 6px; }
+
+.footer { padding: var(--space-6) 0; color: var(--neutral-500); font-size: 13px; }
+
+@media (max-width: 767px){
+  .type-row { grid-template-columns: 1fr; gap: var(--space-2); }
+  .rules { grid-template-columns: 1fr; }
+  .section-title { font-size: 34px; }
+  .avc__nav { grid-template-columns: 1fr; }
+  .avc__stats { gap: 24px; }
+  .avc__title { font-size: 28px; }
+  .avc__stat-value { font-size: 32px; }
+}
+/* ============================================================
+   EUROPEAN SIGN — twelve-star ring
+   Pure vector: one <polygon> reused 12 times via <use>.
+   ============================================================ */
+.eu-sign {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-7);
+}
+.eu-sign__mark {
+  flex: 0 0 auto;
+  width: min(260px, 60vw);
+  height: auto;
+  overflow: visible;
+}
+/* Fill is set on the group so it inherits into each <use> shadow tree —
+   styling the <defs> polygon by id is not reliable across engines. */
+.eu-sign__ring {
+  fill: var(--orange-500);
+}
+/* Rotate about the artwork's own centre; fill-box keeps the origin on the
+   group's geometry rather than the whole SVG viewport. */
+.eu-sign__ring {
+  transform-box: view-box;
+  transform-origin: 50% 50%;
+  animation: eu-sign-spin 60s linear infinite;
+}
+@keyframes eu-sign-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-360deg); }   /* counter-clockwise */
+}
+@media (prefers-reduced-motion: reduce) {
+  .eu-sign__ring { animation: none; }
+}
+.eu-sign__spec {
+  flex: 1 1 22rem;
+  min-width: 0;
+}
+.eu-sign__list {
+  margin: var(--space-2) 0 0;
+  padding-left: 1.15em;
+  display: grid;
+  gap: 0.4em;
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--navy-800);
+}
+
+
+/* ============================================================
+   GRAPHIC ELEMENTS — four full-bleed plates
+   Each is exactly one viewport wide and one tall: a white field with a
+   single black outline centred in it. The artwork inherits `color`, so
+   the stroke follows the plate rather than carrying its own value.
+   ============================================================ */
+#graphic-elements { padding-bottom: 0; }
+.ge-plate {
+  width: 100vw;
+  height: 100vh;
+  margin-left: calc(50% - 50vw);   /* escape the guide's own container */
+  background: var(--white);
+  color: #000;
+  display: grid;
+  place-items: center;
+  padding: 6vmin;
+  box-sizing: border-box;
+}
+.ge-art {
+  display: block;
+  width: min(78vw, 140vh);
+  max-height: 78vh;
+  height: auto;
+}
+/* The type plate is a fixed 600 x 260 box, so it is sized off the height
+   as well or it grows far wider than the other three. */
+/* 18+ is now real glyph outlines rather than a <text>, so it needs no
+   font styling — only a stroke weight that matches the maps. */
+.ge-art--type {
+  width: min(60vw, 120vh);
+}
+.ge-fp {
+  width: min(70vw, 70vh);
+  height: min(70vw, 70vh);
+  display: grid;
+  place-items: center;
+}
+.ge-fp svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Orbit states — the four traced frames, side by side and static, so each
+   can be checked against its reference. The live component animates
+   between exactly these; see shared/orb.css. */
+.orb-states {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-6);
+  margin: var(--space-5) 0 var(--space-6);
+}
+.orb-state {
+  margin: 0;
+  padding: var(--space-5);
+  border: 1px solid var(--frame-line, var(--orange-300));
+}
+.orb-state .orb {
+  width: 100%;
+  margin: 0;
+}
+.orb-state__cap {
+  margin-top: var(--space-4);
+  font-family: var(--font-body);
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--neutral-500);
+}
+@media (max-width: 767px) {
+  .orb-states { grid-template-columns: minmax(0, 1fr); }
+}
+
+
+/* Scytále graph prototype — the rods, plus the controls used to check them. */
+.sg-proto {
+  margin: var(--space-5) 0 var(--space-6);
+  padding: var(--space-6) var(--space-5);
+  border: 1px solid var(--frame-line, var(--orange-300));
+  background: var(--page-bg);
+}
+.sg-proto__controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+.sg-proto__controls label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--neutral-500);
+}
+/* Overlay check: the finished rods on top of the untouched artwork. If the
+   reconstruction is right the two cancel out and nothing doubles. */
+.sg-proto__overlay {
+  position: relative;
+}
+.sg-proto__overlay img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  pointer-events: none;
+  filter: hue-rotate(150deg);
+}
+.sg-proto__overlay.is-checking img { opacity: 1; }
+
+/* Scytále rod — the WebGL canvas sits in a fixed-ratio box so the layout
+   does not jump while the model loads. */
+.scytale-rod {
+  width: 100%;
+  aspect-ratio: 3062 / 571;
+  min-height: 180px;
+}
+.scytale-rod canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* European stars prototype — a dark stage so the fill can be judged at the
+   opacity it will actually run at. */
+.stars-proto {
+  position: relative;
+  margin: var(--space-5) 0 var(--space-6);
+  min-height: 520px;
+  display: grid;
+  place-items: center;
+  padding: var(--space-7) var(--space-5);
+  background: var(--navy-800);
+  overflow: hidden;
+}
+.stars-proto__copy {
+  position: relative;
+  z-index: 1;
+  max-width: 26ch;
+  text-align: center;
+  color: var(--white);
+}
+.stars-proto__copy h4 {
+  margin: 0;
+  font-family: var(--font-head);
+  font-weight: var(--fw-head);
+  font-size: var(--fs-story-headline);
+  line-height: 1.15;
+  color: var(--white);
+}
+
+/* ============================================================
+   CONTENTS MENU
+   Built from the document by js/contents.js. Fixed, so it never
+   affects the page's own layout: docked open on wide screens,
+   a toggle everywhere else.
+   ============================================================ */
+.sg-contents {
+  position: fixed;
+  top: var(--space-4);
+  left: var(--space-4);
+  z-index: 90;
+  font-family: var(--font-body);
+}
+.sg-contents__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 10px 14px;
+  border: 1px solid var(--frame-line, var(--orange-300));
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--navy-800);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+}
+.sg-contents__toggle:hover { border-color: var(--orange-500); color: var(--orange-500); }
+.sg-contents__bars {
+  display: grid;
+  gap: 3px;
+  width: 14px;
+}
+.sg-contents__bars span {
+  display: block;
+  height: 1.5px;
+  background: currentColor;
+}
+
+.sg-contents__panel {
+  display: none;
+  margin-top: var(--space-3);
+  width: 264px;
+  max-height: min(72vh, 720px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: var(--space-4);
+  border: 1px solid var(--frame-line, var(--orange-300));
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  box-shadow: var(--shadow-md);
+}
+.sg-contents.is-open .sg-contents__panel { display: block; }
+
+.sg-contents__list,
+.sg-contents__subs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.sg-contents__item + .sg-contents__item { margin-top: var(--space-2); }
+.sg-contents__link,
+.sg-contents__sub {
+  display: block;
+  padding: 5px 8px;
+  border-radius: 3px;
+  text-decoration: none;
+  line-height: 1.3;
+  color: var(--navy-800);
+}
+.sg-contents__link {
+  font-size: 14px;
+  font-weight: 500;
+}
+.sg-contents__subs { margin: 2px 0 0 10px; }
+.sg-contents__sub {
+  font-size: 13px;
+  color: var(--neutral-500);
+}
+.sg-contents__link:hover,
+.sg-contents__sub:hover { background: var(--cream-100); color: var(--orange-500); }
+/* Where the reader is, marked by js/contents.js. */
+.sg-contents__link.is-on,
+.sg-contents__sub.is-on {
+  background: var(--orange-500);
+  color: var(--white);
+}
+
+/* Wide screens have room in the gutter, so it stays open and the toggle
+   is redundant. Fixed, so the page's own centred layout is untouched. */
+@media (min-width: 1280px) {
+  .sg-contents__toggle { display: none; }
+  .sg-contents__panel { display: block; margin-top: 0; }
+}

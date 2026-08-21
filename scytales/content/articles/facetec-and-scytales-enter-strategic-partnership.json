@@ -1,0 +1,59 @@
+{
+  "slug": "facetec-and-scytales-enter-strategic-partnership",
+  "title": "FaceTec and Scytáles enter strategic partnership",
+  "seoTitle": "FaceTec and Scytáles enter strategic partnership | Scytáles Newsroom",
+  "description": "Scytáles and FaceTec announce a strategic collaboration based on their complementary strengths in identity and biometric assurance.",
+  "excerpt": "Scytáles AB and FaceTec announce that the two companies have entered into a strategic partnership based on their diverse but complementary capabilities within mobile user authentication and digital identity verification.",
+  "category": "press-releases",
+  "categoryLabel": "Press Releases",
+  "date": "2021-05-26",
+  "dateLabel": "May 26, 2021",
+  "image": "assets/articles/facetec-and-scytales-enter-strategic-partnership.png",
+  "topics": [
+    "Partnerships",
+    "Security & Privacy"
+  ],
+  "body": [
+    {
+      "type": "p",
+      "html": "<strong>Scytáles AB</strong> and <strong>FaceTec</strong> announce that the two companies have entered into a strategic partnership based on their diverse but complementary capabilities within mobile user authentication and digital identity verification."
+    },
+    {
+      "type": "p",
+      "html": "Both companies are globally recognized technology leaders and frontrunners with pioneering products and services adhering to the highest standards that, together, will provide an unparalleled secure identity verification foundation for an increasingly interconnected digital economy. With this partnership, FaceTec and Scytáles will provide the most robust, seamless identification process available for billions of users."
+    },
+    {
+      "type": "p",
+      "html": "Scytáles is the leader in the new ISO 18013-5 mobile ID technology standard that can use an official driving license, ID Card, national ID, or vaccination certificate on a citizen’s smartphone for contactless verification with a tap or scan, and that is accepted worldwide. Scytáles also offers CSP (Credentials Service Manager) solutions and Derived Mobile ID for complementary digital identification solutions and travel documents using smart devices and validation mechanisms in real-time, and that can operate in both online and offline modes."
+    },
+    {
+      "type": "p",
+      "html": "FaceTec’s security solutions focus on authenticating an individual, and does not involve surveillance or information mining. Their proprietary 3D AI solution uniquely determines if the individual user is alive and present, and uses exceptionally accurate biometric face matching to verify the individual user’s identity. Within a two-second, simple selfie authentication process, FaceTec’s 3D Liveness detection verifies the user’s identity in real-time, capturing up to 100 video frames, and can then match the user’s 3D FaceMap to their photo ID or the face image captured during enrollment. Each time the user returns, FaceTec’s ongoing authentication proves Liveness and again compares their new 3D FaceMap to the stored image. If matched, access is granted with no password required."
+    },
+    {
+      "type": "blockquote",
+      "html": "<p>“We are thrilled to partner with Scytáles, an internationally recognized leader in mobile ID verification,” said Kevin Alan Tussy, CEO of FaceTec. “Their stellar work in national IDs, travel documents and resident permits, healthcare cards, corporate cards, and smart and loyalty cards in government and enterprise, is an excellent fit for our advanced 3D AI face verification technology. We are looking forward to working with Scytáles on many important mobile ID projects in the years to come.”</p>"
+    },
+    {
+      "type": "blockquote",
+      "html": "<p>“The partnership between our two companies is really exciting since we combine the power of our ISO-technology with FaceTec’s world-class 3D face authentication solution,” says Konstantin Papaxanthis, CEO, Scytáles.</p>"
+    },
+    {
+      "type": "h2",
+      "text": "About Scytáles"
+    },
+    {
+      "type": "p",
+      "html": "Scytáles is the leading developer of ISO-Mobile Driving Licenses and Mobile IDs as a complement to Security Printed Documents and Validation mechanisms. With our fully ISO-compliant technology, we are the global leaders of the new generation of personal credentials using a cell phone while authorizing what data will be shared. We enable going mobile and validating in real-time in online and offline modes, by standardization and using NFC, Bluetooth, QR Codes, Wifi Aware, PDF417 and other technologies as per defined in ICAO 9303 and ISO 18013-5. Scytáles AB represents Sweden as an expert through the Standardization Body (SIS) SIS/TK 448 and Task Force 14 on mDL within ISO/IEC 18013-5 ISO/IEC JTC1/SC17/WG10. Headquarters in Stockholm, Sweden and offices in the US, Greece and Portugal."
+    },
+    {
+      "type": "h2",
+      "text": "About FaceTec"
+    },
+    {
+      "type": "p",
+      "html": "Founded in 2013, with team members in the United States, Brazil, Portugal, and Singapore, FaceTec is fast becoming the global standard in 3D face biometrics, powering remote identity platforms on six continents for government agencies like the U.S. Department of Homeland Security, Canadian Parliament, SmartDubai, DataPrev Brazil; and for private organizations including Mercado Libre, Nubank, BBVA, MeetGroup, Voice.com, and hundreds more. FaceTec’s internationally patented, industry-leading 3D Face Authentication software anchors the chain of trust in mobile digital identity ecosystems with the world’s strongest Certified Liveness Detection, and most accurate 3D Face Matching and Age Estimation."
+    }
+  ],
+  "source": "https://www.scytales.com/post/facetec-and-scytales-enter-strategic-partnership"
+}

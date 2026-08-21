@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scytáles — Mobile Preview</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #f5f3ef;
+    --ink: #0c1a30;
+    --muted: #6b7280;
+    --orange: #e8580c;
+    --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+    /* brushed-metal frame finishes */
+    --metal-natural: linear-gradient(100deg,
+      #4f4f53 0%, #c9c9ce 3%, #ececef 8%, #a3a3a8 24%,
+      #d9d9de 48%, #9a9a9f 70%, #e9e9ec 88%, #c2c2c7 96%, #46464a 100%);
+    --metal-black: linear-gradient(100deg,
+      #0b0b0d 0%, #37373b 3%, #56565b 8%, #202024 24%,
+      #45454a 48%, #1c1c20 70%, #4e4e53 88%, #2a2a2e 96%, #08080a 100%);
+    --metal-silver: linear-gradient(100deg,
+      #6a6a70 0%, #dcdce1 3%, #fafafc 8%, #b4b4b9 24%,
+      #e6e6eb 48%, #adadb2 70%, #f4f4f7 88%, #d0d0d5 96%, #5c5c62 100%);
+  }
+
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--ink);
+    min-height: 100vh;
+  }
+
+  /* ---------- toolbar ---------- */
+  .toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 32px;
+    background: var(--ink);
+    color: #fff;
+  }
+  .toolbar__title {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: .02em;
+    margin-right: auto;
+  }
+  .toolbar select {
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,.2);
+    background: rgba(255,255,255,.1);
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .toolbar select option { color: var(--ink); background: #fff; }
+
+  /* ---------- layout ---------- */
+  .preview-grid {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 56px;
+    padding: 56px 32px 96px;
+    flex-wrap: wrap;
+  }
+
+  .device {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+  }
+  .device__label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+    text-transform: uppercase;
+    letter-spacing: .06em;
+  }
+  .device__dims {
+    font-size: 11.5px;
+    color: var(--muted);
+    letter-spacing: .02em;
+  }
+  .device__dims b { color: var(--orange); font-weight: 600; }
+
+  /* scaled stage: phone is authored at 1px = 1pt, then scaled down to fit */
+  .device__viewport {
+    position: relative;
+    margin-top: 14px;
+  }
+  .phone {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: top left;
+  }
+
+  /* ---------- hardware buttons (sit behind the body) ---------- */
+  .phone__btn {
+    position: absolute;
+    z-index: 1;
+    border-radius: 2px;
+  }
+  .phone__btn--left  { background: linear-gradient(90deg, rgba(0,0,0,.45), transparent 70%), var(--frame); }
+  .phone__btn--right { background: linear-gradient(270deg, rgba(0,0,0,.45), transparent 70%), var(--frame); }
+  .phone__btn--top   { background: var(--frame); }
+
+  /* ---------- body: outer metal band ---------- */
+  .phone__body {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: var(--frame);
+    border-radius: var(--r-outer);
+    padding: var(--band);
+    box-shadow:
+      0 18px 50px rgba(0,0,0,.28),
+      0 3px 10px rgba(0,0,0,.18);
+  }
+  /* glossy chamfer along the band */
+  .phone__body::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background: linear-gradient(180deg,
+      rgba(255,255,255,.30) 0%, rgba(255,255,255,0) 6%,
+      rgba(255,255,255,0) 94%, rgba(0,0,0,.28) 100%);
+    box-shadow:
+      inset 0 0 0 1px rgba(255,255,255,.22),
+      inset 0 0 2px 1px rgba(0,0,0,.35);
+  }
+
+  /* ---------- black bezel ---------- */
+  .phone__bezel {
+    position: relative;
+    height: 100%;
+    background: #050506;
+    border-radius: calc(var(--r-outer) - var(--band));
+    padding: var(--bz-top) var(--bz-side) var(--bz-bottom);
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.06);
+  }
+
+  /* ---------- screen ---------- */
+  .phone__screen {
+    position: relative;
+    height: 100%;
+    background: #fff;
+    border-radius: var(--r-screen);
+    overflow: hidden;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.5);
+  }
+  /* Full-bleed, like a real device in standalone mode: the page gets the whole
+     screen and is responsible for keeping its own chrome clear of the cutout.
+     The island is real hardware — the site pads around it, not the reverse. */
+  .phone__viewport {
+    position: absolute;
+    inset: 0;
+  }
+  .phone__viewport iframe {
+    display: block;
+    border: 0;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* ---------- iOS status bar ---------- */
+  /* Overlays the page rather than displacing it, so the preview shows exactly
+     how much room the site itself is reserving up top. */
+  .phone__status {
+    position: absolute;
+    z-index: 22;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--status-h);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    pointer-events: none;
+    color: #0c1a30;
+    font: 600 15px/1 -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+    letter-spacing: .01em;
+  }
+  .phone__status--compact { padding: 0 14px; font-size: 12px; }
+  .phone__status-right {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .phone__status-right svg { display: block; }
+
+  /* screen glare */
+  .phone__glare {
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+    pointer-events: none;
+    border-radius: inherit;
+    background: linear-gradient(112deg,
+      rgba(255,255,255,.14) 0%, rgba(255,255,255,.05) 22%,
+      rgba(255,255,255,0) 42%, rgba(255,255,255,0) 100%);
+  }
+
+  /* ---------- cutouts ---------- */
+  .phone__island {
+    position: absolute;
+    z-index: 21;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .phone__island i {
+    display: block;
+    border-radius: 50%;
+    background: radial-gradient(circle at 34% 30%, #2f3a4a 0%, #10151d 55%, #05070a 100%);
+    box-shadow: inset 0 0 1px rgba(120,160,220,.6);
+  }
+
+  .phone__notch {
+    position: absolute;
+    z-index: 21;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000;
+    border-radius: 0 0 20px 20px;
+  }
+
+  .phone__indicator {
+    position: absolute;
+    z-index: 21;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,.55);
+    border-radius: 999px;
+  }
+
+  /* SE / iPad front hardware */
+  .phone__speaker {
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #141416;
+    border-radius: 999px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.9);
+  }
+  .phone__frontcam {
+    position: absolute;
+    z-index: 3;
+    border-radius: 50%;
+    background: radial-gradient(circle at 34% 30%, #2f3a4a 0%, #10151d 55%, #05070a 100%);
+  }
+  .phone__home {
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: #0a0a0c;
+    box-shadow:
+      inset 0 0 0 1.5px rgba(190,190,200,.35),
+      inset 0 1px 2px rgba(0,0,0,.8);
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <span class="toolbar__title">Scytáles — Mobile Breakpoint Preview</span>
+  <label>
+    <select id="page-select">
+      <option value="index.html">Home</option>
+      <option value="page.html?slug=about">About</option>
+      <option value="page.html?slug=contacts">Contact</option>
+      <option value="page.html?slug=scy-studios">SCY Studios</option>
+      <option value="page.html?slug=partners">Partners</option>
+      <option value="page.html?slug=events">Events</option>
+      <option value="newsroom.html">Newsroom</option>
+      <option value="solution.html?slug=government">Solution: Government</option>
+    </select>
+  </label>
+  <label>
+    <select id="zoom-select">
+      <option value="fit">Zoom: Fit</option>
+      <option value="1">100%</option>
+      <option value="0.75">75%</option>
+      <option value="0.5">50%</option>
+    </select>
+  </label>
+</div>
+
+<div class="preview-grid" id="preview-grid"></div>
+
+<script>
+/* Every measurement below is in device points (1pt = 1px at author time),
+   derived from each model's physical body size vs. its display size, so the
+   bezel/band thickness and corner radii match the real hardware. */
+const devices = [
+  {
+    name: 'iPhone SE (3rd gen)',
+    mm: '138.4 × 67.3 mm',
+    w: 375, h: 667,
+    band: 8, bezel: { side: 20, top: 102, bottom: 102 },
+    rOuter: 46, rScreen: 0,
+    finish: 'silver',
+    face: 'home',
+    status: 20,
+    buttons: [
+      { side: 'left',  y: 128, h: 30, w: 3 },   // ring / silent switch
+      { side: 'left',  y: 186, h: 56, w: 4 },   // volume up
+      { side: 'left',  y: 254, h: 56, w: 4 },   // volume down
+      { side: 'right', y: 165, h: 82, w: 4 }    // side button
+    ]
+  },
+  {
+    name: 'iPhone 14 Pro',
+    mm: '147.5 × 71.5 mm',
+    w: 393, h: 852,
+    band: 7, bezel: { side: 12, top: 12, bottom: 12 },
+    rOuter: 74, rScreen: 55,
+    finish: 'black',
+    face: 'island',
+    status: 54,
+    buttons: [
+      { side: 'left',  y: 140, h: 32, w: 3 },
+      { side: 'left',  y: 196, h: 60, w: 4 },
+      { side: 'left',  y: 272, h: 60, w: 4 },
+      { side: 'right', y: 232, h: 96, w: 4 }
+    ]
+  },
+  {
+    name: 'iPhone 15 Pro Max',
+    mm: '159.9 × 76.7 mm',
+    w: 430, h: 932,
+    band: 6, bezel: { side: 11, top: 11, bottom: 11 },
+    rOuter: 72, rScreen: 55,
+    finish: 'natural',
+    face: 'island',
+    status: 54,
+    buttons: [
+      { side: 'left',  y: 152, h: 44, w: 4 },   // action button
+      { side: 'left',  y: 218, h: 62, w: 4 },
+      { side: 'left',  y: 296, h: 62, w: 4 },
+      { side: 'right', y: 256, h: 100, w: 4 }
+    ]
+  },
+  {
+    name: 'iPad Mini',
+    mm: '203.2 × 134.8 mm',
+    w: 768, h: 1024,
+    band: 10, bezel: { side: 38, top: 130, bottom: 130 },
+    rOuter: 62, rScreen: 0,
+    finish: 'silver',
+    face: 'home',
+    status: 24,
+    buttons: [
+      { side: 'right', y: 118, h: 54, w: 4 },
+      { side: 'right', y: 186, h: 54, w: 4 },
+      { side: 'top',   x: 120, w: 60, h: 4 }
+    ]
+  },
+];
+
+const FINISH = { natural: 'var(--metal-natural)', black: 'var(--metal-black)', silver: 'var(--metal-silver)' };
+
+const grid = document.getElementById('preview-grid');
+const pageSelect = document.getElementById('page-select');
+const zoomSelect = document.getElementById('zoom-select');
+
+function totalSize(d) {
+  return {
+    w: d.w + 2 * (d.band + d.bezel.side),
+    h: d.h + 2 * d.band + d.bezel.top + d.bezel.bottom
+  };
+}
+
+function getScale(d) {
+  const t = totalSize(d);
+  if (zoomSelect.value !== 'fit') return parseFloat(zoomSelect.value);
+  const available = Math.min(420, window.innerWidth - 80);
+  return Math.min(1, available / t.w);
+}
+
+/* iOS status bar — sits in the strip the browser reserves above the page */
+function statusMarkup(d) {
+  const compact = d.status < 30 ? ' phone__status--compact' : '';
+  return `
+    <div class="phone__status${compact}">
+      <span>9:41</span>
+      <span class="phone__status-right">
+        <svg width="17" height="11" viewBox="0 0 17 11" fill="currentColor" aria-hidden="true">
+          <rect x="0"  y="7.5" width="3" height="3.5" rx="1"/>
+          <rect x="4.5" y="5"  width="3" height="6"   rx="1"/>
+          <rect x="9"  y="2.5" width="3" height="8.5" rx="1"/>
+          <rect x="13.5" y="0" width="3" height="11"  rx="1"/>
+        </svg>
+        <svg width="15" height="11" viewBox="0 0 15 11" fill="currentColor" aria-hidden="true">
+          <path d="M7.5 9.6 5.6 7.7a2.7 2.7 0 0 1 3.8 0zM3.6 5.7 2.2 4.3a7.5 7.5 0 0 1 10.6 0l-1.4 1.4a5.5 5.5 0 0 0-7.8 0z"/>
+        </svg>
+        <svg width="25" height="12" viewBox="0 0 25 12" aria-hidden="true">
+          <rect x=".5" y=".5" width="21" height="11" rx="3.2" fill="none" stroke="currentColor" stroke-opacity=".38"/>
+          <rect x="2"  y="2"  width="15" height="8"  rx="2"   fill="currentColor"/>
+          <path d="M23 4v4a2.2 2.2 0 0 0 0-4z" fill="currentColor" fill-opacity=".38"/>
+        </svg>
+      </span>
+    </div>`;
+}
+
+/* ---- front-face hardware, drawn in device points ---- */
+function faceMarkup(d) {
+  if (d.face === 'island') {
+    const iw = 125, ih = 36, top = 11;
+    return `
+      <div class="phone__island" style="top:${top}px; width:${iw}px; height:${ih}px; padding-right:8px">
+        <i style="width:13px; height:13px"></i>
+      </div>
+      <div class="phone__indicator" style="bottom:8px; width:139px; height:5px"></div>`;
+  }
+  if (d.face === 'notch') {
+    return `
+      <div class="phone__notch" style="width:209px; height:30px"></div>
+      <div class="phone__indicator" style="bottom:8px; width:134px; height:5px"></div>`;
+  }
+  return ''; // home-button devices draw their hardware on the bezel
+}
+
+/* hardware that lives on the bezel (SE / iPad): speaker, camera, home button */
+function bezelMarkup(d) {
+  if (d.face !== 'home') return '';
+  const t = totalSize(d);
+  const speakerW = d.w * 0.16;
+  const camD = 9;
+  const homeD = Math.min(70, d.bezel.bottom * 0.62);
+  const topCenter = d.band + d.bezel.top / 2;
+  return `
+    <div class="phone__speaker" style="top:${topCenter - 3}px; width:${speakerW}px; height:6px"></div>
+    <div class="phone__frontcam" style="top:${topCenter - camD / 2}px; left:${t.w / 2 - speakerW / 2 - 22}px; width:${camD}px; height:${camD}px"></div>
+    <div class="phone__home" style="bottom:${d.bezel.bottom / 2 + d.band - homeD / 2}px; width:${homeD}px; height:${homeD}px"></div>`;
+}
+
+function buttonsMarkup(d) {
+  const t = totalSize(d);
+  return (d.buttons || []).map(b => {
+    if (b.side === 'top') {
+      return `<div class="phone__btn phone__btn--top" style="top:${-b.h + 2}px; left:${b.x}px; width:${b.w}px; height:${b.h}px"></div>`;
+    }
+    const edge = b.side === 'left'
+      ? `left:${-b.w + 2}px`
+      : `left:${t.w - 2}px`;
+    return `<div class="phone__btn phone__btn--${b.side}" style="${edge}; top:${b.y}px; width:${b.w}px; height:${b.h}px"></div>`;
+  }).join('');
+}
+
+/* Same-origin, so we can suppress the preview scrollbar that a real phone
+   never draws — otherwise a grey strip eats the frame's right-hand rule. */
+function hideScrollbars(frame) {
+  if (!frame) return;
+  const inject = () => {
+    try {
+      const doc = frame.contentDocument;
+      if (!doc || !doc.head || doc.head.querySelector('[data-preview-scrollbars]')) return;
+      const style = doc.createElement('style');
+      style.dataset.previewScrollbars = '';
+      style.textContent = '::-webkit-scrollbar{width:0;height:0;display:none}' +
+                          'html{scrollbar-width:none;-ms-overflow-style:none}';
+      doc.head.appendChild(style);
+    } catch { /* cross-origin — leave it be */ }
+  };
+  frame.addEventListener('load', inject);
+  inject();   // the frame may already be complete by the time we get here
+}
+
+function buildDevices(src) {
+  grid.innerHTML = '';
+  devices.forEach(d => {
+    const t = totalSize(d);
+    const scale = getScale(d);
+
+    const col = document.createElement('div');
+    col.className = 'device';
+    col.innerHTML = `
+      <span class="device__label">${d.name}</span>
+      <span class="device__dims">${d.mm} &nbsp;·&nbsp; <b>${d.w} × ${d.h}</b> pt</span>
+      <div class="device__viewport" style="width:${t.w * scale}px; height:${t.h * scale}px">
+        <div class="phone" style="
+              width:${t.w}px; height:${t.h}px;
+              transform:scale(${scale});
+              --frame:${FINISH[d.finish]};
+              --band:${d.band}px;
+              --bz-side:${d.bezel.side}px;
+              --bz-top:${d.bezel.top}px;
+              --bz-bottom:${d.bezel.bottom}px;
+              --r-outer:${d.rOuter}px;
+              --r-screen:${d.rScreen}px;
+              --status-h:${d.status}px;">
+          ${buttonsMarkup(d)}
+          <div class="phone__body">
+            <div class="phone__bezel">
+              ${bezelMarkup(d)}
+              <div class="phone__screen">
+                <div class="phone__viewport">
+                  <iframe src="${src}" loading="lazy" title="${d.name} preview"></iframe>
+                </div>
+                ${statusMarkup(d)}
+                <div class="phone__glare"></div>
+                ${faceMarkup(d)}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+    grid.appendChild(col);
+    hideScrollbars(col.querySelector('iframe'));
+  });
+}
+
+/* Rescale without reloading the iframes */
+function rescale() {
+  devices.forEach((d, i) => {
+    const t = totalSize(d);
+    const scale = getScale(d);
+    const col = grid.children[i];
+    if (!col) return;
+    const vp = col.querySelector('.device__viewport');
+    vp.style.width = (t.w * scale) + 'px';
+    vp.style.height = (t.h * scale) + 'px';
+    vp.querySelector('.phone').style.transform = `scale(${scale})`;
+  });
+}
+
+buildDevices('./' + pageSelect.value);
+
+pageSelect.addEventListener('change', () => buildDevices('./' + pageSelect.value));
+zoomSelect.addEventListener('change', rescale);
+
+let resizeTimer;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(rescale, 120);
+});
+</script>
+
+</body>
+</html>

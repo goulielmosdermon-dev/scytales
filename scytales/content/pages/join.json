@@ -1,0 +1,49 @@
+{
+  "slug": "join",
+  "layout": "join",
+  "seoTitle": "Join Our Team | Scytáles",
+  "seoDescription": "Explore open roles at Scytáles and find where you fit in our dynamic team.",
+  "eyebrow": "Careers",
+  "title": "Join Our Team",
+  "lead": "Scytáles isn't just a workplace. It's a hub where your skills meet challenges, and your ambition meets opportunity. Explore our current openings below and find where you fit in our dynamic team.",
+  "video": {
+    "label": "Life at Scytáles",
+    "src": "https://player.vimeo.com/progressive_redirect/playback/1212308055/rendition/1080p/file.mp4%20%281080p%29.mp4?loc=external&log_user=0&signature=f8a43fee8b136a561c24125bd783cf8793b955b7aa8b3c570f842f4f249cab4d",
+    "poster": "assets/video/intro-poster.jpg"
+  },
+  "cta": {
+    "label": "Contact HR",
+    "href": "mailto:hr@scytales.com"
+  },
+  "openingsHeading": "Open Roles at Scytáles",
+  "regions": [
+    {
+      "name": "Greece",
+      "countLabel": "2 openings",
+      "roles": [
+        {
+          "title": "Senior .NET Developer",
+          "type": "Full-time"
+        },
+        {
+          "title": "Senior Android Developer",
+          "type": "Full-time"
+        }
+      ]
+    },
+    {
+      "name": "USA",
+      "countLabel": "1 opening",
+      "roles": [
+        {
+          "title": "Business Intelligence Analyst",
+          "type": "Full-time"
+        }
+      ]
+    }
+  ],
+  "directContact": {
+    "heading": "Contact us directly",
+    "email": "hr@scytales.com"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "slug": "the-iso-mdl-standard-the-diamond-no-longer-in-the-rough",
+  "title": "The ISO mDL standard…the Diamond no longer in the rough",
+  "seoTitle": "The ISO mDL standard…the Diamond no longer in the rough | Scytáles Newsroom",
+  "description": "While many articles, press releases, and reports are rightly celebrating the newly published ISO standard for mobile driver licenses, ISO/IEC 18013-5, and describing the more than six-year journey that it has been to reach this milestone, I maintain that the first steps were actu…",
+  "excerpt": "While many articles, press releases, and reports are rightly celebrating the newly published ISO standard for mobile driver licenses, ISO/IEC 18013-5, and describing the more than six-year journey that it has been to reach this milestone, I maintain that the first steps were actu…",
+  "category": "in-the-news",
+  "categoryLabel": "In the News",
+  "date": "2021-10-14",
+  "dateLabel": "Oct 14, 2021",
+  "image": "assets/articles/the-iso-mdl-standard-the-diamond-no-longer-in-the-rough.png",
+  "topics": [
+    "Mobile ID"
+  ],
+  "body": [
+    {
+      "type": "p",
+      "html": "While many articles, press releases, and reports are rightly celebrating the newly published ISO standard for mobile driver licenses, ISO/IEC 18013-5, and describing the more than six-year journey that it has been to reach this milestone, I maintain that the first steps were actually taken far longer ago. The original members of the ISO committee (of which I was one) that convened for the first time in Luxembourg in 1999 to tackle the concept of an interoperable and uniformly recognized driving license were by and large governmental authorities that were casting a vision, miners if you will – one where ultimately the license credential would reach a stage of being electronic in nature and not encumbered by the limitations of a physical body. They were the first ones to take practical steps towards standardization and then with the help of industry has the foundation been built (‘cut’ to run with the metaphor) primarily to the benefit of the driving licensing community, although not exclusively for them. A ‘coincidence’ just happens to be that so much of the work that has been done for the driving license (18013-5) transcends just that one application. The work tackled by the ISO committee helps carve the way for other forms of mobile identity credentials that can leverage the same path (standardized mechanisms) that was originally created for those that need to prove that they are authorized to operate a motor vehicle and have a connection to that trusted attribute."
+    },
+    {
+      "type": "p",
+      "html": "As the expression goes, there is tremendous work that goes into making something so technical look so simple and straightforward. It is not simple, it is tremendously hard work. From the beginning, those involved with the standard knew that this was a complete shift away from a traditional model of an identity transaction – I no longer hand over something that someone looks at and then makes a decision. Various communication protocols, security mechanisms and cryptography, data topology, biometrics, privacy requirements, user control and experience, and many other facets make the cutting and polishing of this particular gem so incredibly involved. But the pressure has continued in the form of demand: a demand for a better alternative to a physical card and the inherit limitations that are inescapable for the cards; a demand for better and easier means of verifying credentials and credential holders; a demand for frictionless use; and a demand that it happens now. It is my opinion that pressure helped to produce the “diamond”."
+    },
+    {
+      "type": "p",
+      "html": "The global mDL ecosystem is ever emerging. Both issuers and relying parties alike are discovering daily the benefits that an ISO compliant mDL delivers on. Scytáles is proud to have made significant contributions to this effort through the years and continues to assist in the development of future additions to the standard as well as support for complementary efforts that address the topic of provisioning and other peripheral activities that are further refining the standard like the conformity assessment and interoperability testing. Scytáles was the very first company to pass UL conformity assessment testing for 18013-5 and is committed to maintaining compliance with respect to our software applications for credential management and issuance as well as our software used by relying parties for verifying ISO compliant mDLs."
+    },
+    {
+      "type": "h2",
+      "text": "About The Author"
+    },
+    {
+      "type": "h3",
+      "text": "Geoff Slagle"
+    },
+    {
+      "type": "p",
+      "html": "Geoff Slagle is an Identity Management Expert, AAMVA Veteran and currently the President and CBDO at Scytáles. He is one of the most recognized and highly-regarded champions of mobile driver’s license adoption and has been instrumental in coordinating and publishing AAMVA’s guidelines and model legislation around the subject. As Director at AAMVA, Geoff was responsible for the Identity Management Program, including its mDL activities and managed its Electronic Identity and joint mDL working groups. He chaired the ANSI committee (INCITS DL) responsible for the driver license standardization, including mDL. After spending a decade assisting with the creation and shaping of policies and standards that make possible the implementation of mDL, Geoff now invests in the execution of those in a practical way in his role at Scytáles, the Global Leader in ISO mDL."
+    }
+  ],
+  "source": "https://www.scytales.com/post/the-iso-mdl-standard-the-diamond-no-longer-in-the-rough"
+}

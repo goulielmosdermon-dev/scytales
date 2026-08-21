@@ -1,0 +1,9 @@
+.DS_Store
+**/.DS_Store
+*.dmg
+.claude/
+
+# Design-source dump (~2GB) — not part of the served site
+Assets/
+UI/
+Reference/

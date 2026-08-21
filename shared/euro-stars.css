@@ -1,0 +1,32 @@
+/* European stars, filled with falling code.
+
+   A background layer: it sits behind its section's copy, never in front of
+   it, and never takes a pointer event. The opacity is on the host rather
+   than baked into the canvas, so the same drawing can be dialled up or down
+   per placement without touching the script.
+
+   It fades in with the section rather than being there already — the
+   trickle only reads as an arrival if there was nothing to see first. */
+.euro-stars {
+  --stars-opacity: 0.2;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+.euro-stars.is-in {
+  opacity: var(--stars-opacity);
+}
+.euro-stars canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .euro-stars {
+    transition: none;
+  }
+}

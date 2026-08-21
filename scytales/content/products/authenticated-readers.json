@@ -1,0 +1,90 @@
+{
+  "slug": "authenticated-readers",
+  "name": "Authenticated Readers",
+  "title": "Authenticated Readers — Scytáles",
+  "description": "Authenticate a fleet of readers with high assurance for secure real-time, online and offline data transfer from wallets, mIDs, and mDLs.",
+  "listPreview": "blank",
+  "hero": {
+    "headline": "Elevating Reader Authentication for Seamless Data Transfer",
+    "sub": "Robust authentication of validators and PKI management — enabling secure real-time, online and offline data transfers from holders’ Digital Identity Wallets, Mobile IDs, and Mobile Driving Licences.",
+    "ctaPrimary": {
+      "label": "Download Product Sheet",
+      "href": "#cta"
+    },
+    "ctaSecondary": {
+      "label": "Request a demo",
+      "href": "#cta"
+    },
+    "bullets": [
+      "High Level of Assurance for reader fleets",
+      "Desktops, terminals, kiosks, and display systems",
+      "Real-time transfer online and offline",
+      "Digital seal confirms authenticated-reader status to holders"
+    ]
+  },
+  "showcase": {
+    "phone": "none",
+    "phoneImage": null,
+    "statValue": "LoA",
+    "statCopy": "High-assurance authentication across Android, iOS, Windows, and Linux",
+    "showActivity": true
+  },
+  "discover": [
+    {
+      "image": "assets/wallet/discover-mvalid.png",
+      "alt": "ISO mValidator",
+      "copy": "Certified ISO 18013-5 validation for wallets, mobile IDs, and mobile driving licences.",
+      "linkLabel": "ISO mValidator",
+      "linkHref": "#product/iso-mvalidator"
+    },
+    {
+      "image": "assets/wallet/discover-nfc.png",
+      "alt": "Derived mID",
+      "copy": "NFC card authentication that derives credentials from security documents into mobile virtual IDs.",
+      "linkLabel": "Derived mID",
+      "linkHref": "#product/derived-mid"
+    },
+    {
+      "image": "assets/wallet/discover-age.png",
+      "alt": "Digital ID Wallet",
+      "copy": "Carry official physical and digital credentials on your phone with EUDI-ready wallet support.",
+      "linkLabel": "Digital ID Wallet",
+      "linkHref": "#product/digital-id-wallet"
+    }
+  ],
+  "statement": "Scytáles Authenticated Readers gives relying parties a trusted foundation for reading mobile credentials — with PKI management, privacy-preserving seals, and cross-platform fleet support.",
+  "cta": {
+    "title": "Get started with Authenticated Readers",
+    "label": "Start your 30 day free trial",
+    "href": "#cta"
+  },
+  "benefits": [
+    {
+      "title": "Trusted Foundations for Relying Parties",
+      "body": "A trusted list and registration process that gives every relying party a secure foundation of trust.",
+      "tags": [
+        "Maintained trusted list",
+        "Access on terms that match the issuer's privacy practices",
+        "A digital seal marks an authenticated reader to the holder"
+      ]
+    },
+    {
+      "title": "Universal Compatibility and Seamless Integration",
+      "body": "Works across every major platform, and drops into an existing estate without rebuilding it.",
+      "tags": [
+        "Android, iOS, Windows and Linux",
+        "Integrates with any infrastructure platform",
+        "Straightforward and cost-effective to deploy"
+      ]
+    },
+    {
+      "title": "Level of Assurance High",
+      "body": "Authenticate a whole fleet of readers at a high level of assurance, whatever form they take.",
+      "tags": [
+        "Desktops, terminals, kiosks and online display ordering systems",
+        "Supports Digital Identity Wallets, Mobile IDs and mDLs",
+        "Real-time transfer, online and offline"
+      ]
+    }
+  ]
+}

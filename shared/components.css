@@ -1,0 +1,229 @@
+/* ============================================================
+   SCYTÁLES — SHARED COMPONENTS
+   Components complex enough that a second copy would drift.
+   Imported by both the style guide and the site; every value
+   below comes from tokens.css.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   EXPAND ICON BUTTON
+   Peach rounded square with diagonal corner brackets.
+   Brackets start closed (inward) and open outward on hover.
+   ------------------------------------------------------------ */
+.btn-icon {
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  display: inline-grid;
+  place-items: center;
+  flex-shrink: 0;
+  transition: background .22s ease, transform .22s ease;
+}
+.btn-icon svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+  overflow: visible;
+}
+.btn-icon-expand {
+  background: var(--orange-100);
+  color: var(--orange-mark);
+}
+.btn-icon-expand:hover,
+.btn-icon-expand.is-hover {
+  background: color-mix(in srgb, var(--orange-100) 70%, var(--orange-300));
+}
+.btn-icon-expand .icon-closed,
+.btn-icon-expand .icon-open {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition:
+    opacity .28s cubic-bezier(.22, 1, .36, 1),
+    transform .28s cubic-bezier(.22, 1, .36, 1);
+}
+.btn-icon-expand .icon-closed {
+  opacity: 1;
+  transform: scale(1);
+}
+.btn-icon-expand .icon-open {
+  opacity: 0;
+  transform: scale(.72);
+}
+.btn-icon-expand:hover .icon-closed,
+.btn-icon-expand.is-hover .icon-closed {
+  opacity: 0;
+  transform: scale(1.18);
+}
+.btn-icon-expand:hover .icon-open,
+.btn-icon-expand.is-hover .icon-open {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ------------------------------------------------------------
+   VIDEO PLAYER
+   A poster frame with its own transport, rather than the browser's
+   default chrome — that default bar is the one thing that would make
+   the section look unfinished. The frame holds 16:9 from its own
+   aspect-ratio, so the box reserves its height before the poster
+   arrives and nothing below it jumps on load.
+   ------------------------------------------------------------ */
+.video-player {
+  position: relative;
+  margin: 0;
+  aspect-ratio: 16 / 9;
+  border-radius: 5px;
+  overflow: hidden;
+  background: var(--navy-900);   /* holds the corners while the poster loads */
+}
+
+.video-player__media {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;               /* the whole surface toggles, as a player should */
+}
+
+.video-player__controls {
+  position: absolute;
+  left: var(--space-5);
+  bottom: var(--space-5);
+  display: flex;
+  align-items: center;
+}
+
+/* Padding carries the touch target — 44px tall — while the narrow side
+   padding keeps the pair reading as one transport rather than two
+   separate controls. */
+.video-player__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2) var(--space-1);
+  border: 0;
+  background: none;
+  color: var(--white);
+  cursor: pointer;
+  opacity: .85;
+  transition: opacity .18s ease;
+}
+.video-player__btn svg { height: 28px; width: auto; }
+.video-player__btn:hover { opacity: 1; }
+.video-player__btn:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 4px;
+  border-radius: 5px;
+  opacity: 1;
+}
+
+/* The dimmed glyph is the one that would do nothing — while it plays, play
+   is spent and pause is the live control. Both stay on screen so the pair
+   never shifts position. */
+.video-player[data-state="playing"] [data-video-action="play"],
+.video-player[data-state="paused"]  [data-video-action="pause"] { opacity: .4; }
+
+@media (max-width: 767px) {
+  .video-player {
+    border-radius: 5px;
+  }
+  .video-player__controls {
+    left: var(--space-3);
+    bottom: var(--space-3);
+  }
+  .video-player__btn svg { height: 22px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .video-player__btn { transition: none; }
+}
+
+/* ------------------------------------------------------------
+   PRODUCT LIST
+   Vertical product picker for the "Browse our product line"
+   section. Full-width orange rules, no arrows. The active item
+   is marked by its type colour and a short thick cap on the
+   right of the rule above it — measured off the design frame.
+   ------------------------------------------------------------ */
+/* ------------------------------------------------------------
+   Site frame
+   One continuous column outline (Stripe-style). Vertical lines
+   live on the shell once; horizontal rules sit between bands.
+   Do not stroke every inner div — that doubles borders.
+   ------------------------------------------------------------ */
+.site-frame {
+  max-width: min(var(--container-max), calc(100% - 2 * var(--page-margin-x)));
+  width: 100%;
+  margin-inline: auto;
+  border-left: 1px solid var(--frame-line);
+  border-right: 1px solid var(--frame-line);
+  border-bottom: 1px solid var(--frame-line);
+  overflow: clip; /* keeps full-bleed bands (logo belt) inside the frame */
+}
+.site-frame:not(:has(> .nav)) {
+  border-top: 1px solid var(--frame-line);
+}
+.site-frame > :not(main),
+.site-frame > main > * {
+  border-bottom: 1px solid var(--frame-line);
+}
+.site-frame > main > *:last-child {
+  border-bottom: 0; /* shell’s bottom edge closes the column */
+}
+
+.product-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list-item {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: var(--space-3) 0;
+  border: 0;
+  border-bottom: 1px solid var(--orange-300);
+  border-radius: 5px;
+  background: none;
+  font-family: var(--font-body);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--navy-800);
+  text-align: left;
+  cursor: pointer;
+  transition: color .16s ease;
+}
+.list-item:hover,
+.list-item:focus-visible {
+  color: var(--orange-500);
+}
+.list-item.is-active {
+  color: var(--navy-800);
+}
+.list-item.is-active:hover,
+.list-item.is-active:focus-visible {
+  color: var(--orange-500);
+}
+
+/* Short thick cap on the right of the rule under the active item. */
+.list-item.is-active::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  width: 16%;
+  min-width: 56px;
+  max-width: 80px;
+  height: 3px;
+  background: var(--orange-500);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .list-item { transition: none; }
+}

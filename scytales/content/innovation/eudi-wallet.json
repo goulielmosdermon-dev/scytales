@@ -1,0 +1,49 @@
+{
+  "slug": "eudi-wallet",
+  "name": "EUDI Wallet",
+  "title": "EUDI Wallet | Scytáles",
+  "hero": {
+    "headline": "EUDI Wallet",
+    "lead": "As the European Commission's contracted technological developer, Scytáles is building the digital identity infrastructure that will let every European prove who they are, share only what's needed, and transact with trust across borders, online and in person.",
+    "cta": { "label": "Request a demo", "href": "#contact" }
+  },
+  "sections": [
+    {
+      "type": "prose",
+      "heading": "What the EUDI Wallet is",
+      "paragraphs": [
+        "The European Digital Identity Wallet is the cornerstone of eIDAS 2.0: a single, secure app that gives every EU citizen, resident, and business a trusted way to prove their identity and share verifiable credentials, from national ID and driving licences to diplomas, health data, and payment attestations.",
+        "Instead of scattered logins, photocopies, and physical documents, the EUDI Wallet puts a legally recognized, privacy-preserving identity in every pocket. One wallet, accepted everywhere in the Union.",
+        "Scytáles is the team building it for the European Commission, combining deep expertise in cryptography, secure credential management, and EU regulation to deliver an ecosystem that is interoperable by design and trusted at the highest assurance level."
+      ]
+    },
+    {
+      "type": "points",
+      "heading": "Why it matters",
+      "points": [
+        {
+          "title": "One identity, 27 states",
+          "body": "Issued once, recognised everywhere."
+        },
+        {
+          "title": "Share only what's needed",
+          "body": "Prove you're over 18 without revealing your birth date."
+        },
+        {
+          "title": "Legally binding",
+          "body": "Built to eIDAS 2.0 at High Level of Assurance."
+        },
+        {
+          "title": "Private by design",
+          "body": "Data stays on your device, fully GDPR-aligned."
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "heading": "Why Scytáles",
+      "lead": "Appointed by the European Commission as lead developer of the EUDI Wallet, backed by proven expertise in high-assurance mobile identity and mastery of eIDAS 2.0, GDPR, and NIS2.",
+      "cta": { "label": "Partner with the experts", "href": "#contact" }
+    }
+  ]
+}

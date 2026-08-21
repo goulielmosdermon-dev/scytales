@@ -1,0 +1,147 @@
+/* ============================================================
+   SCYTÁLES — WALLET ACTIVITY STATS
+   Monthly activity waveform (rounded capsule bars) + summary
+   totals. Hover replays count-up and grows the bars.
+   ============================================================ */
+
+.wallet-activity {
+  --wa-bar: var(--orange-500);
+  --wa-creds: var(--orange-500);
+  --wa-verify: var(--navy-800);
+  --wa-muted: var(--neutral-500);
+  background: var(--white);
+  border-radius: 5px;
+  box-shadow: var(--shadow-md);
+  padding: var(--space-5) var(--space-5) var(--space-4);
+  width: 100%;
+  max-width: 720px;
+}
+
+.wallet-activity__title {
+  margin: 0 0 var(--space-4);
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--navy-800);
+}
+
+.wallet-activity__summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.wallet-activity__metric {
+  min-width: 0;
+}
+
+.wallet-activity__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 6px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--wa-muted);
+}
+
+.wallet-activity__swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  flex-shrink: 0;
+}
+.wallet-activity__swatch--creds { background: var(--wa-creds); }
+.wallet-activity__swatch--verify { background: var(--wa-verify); }
+
+.wallet-activity__value {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--navy-800);
+  font-variant-numeric: tabular-nums;
+}
+
+.wallet-activity__chart {
+  position: relative;
+  height: 220px;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  align-items: end;
+  gap: 8px;
+  padding-top: var(--space-2);
+  border: 0;
+}
+
+.wallet-activity__col {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  min-width: 0;
+  gap: 8px;
+}
+
+.wallet-activity__bar {
+  width: 100%;
+  max-width: 12px;
+  height: var(--bar-h, 40%);
+  border-radius: 5px;
+  background: var(--wa-bar);
+  transform-origin: bottom center;
+  transform: scaleY(0);
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.wallet-activity.is-ready .wallet-activity__bar {
+  transform: scaleY(1);
+}
+
+.wallet-activity__col:hover .wallet-activity__bar {
+  transform: scaleY(1.06);
+  filter: brightness(1.06);
+}
+
+.wallet-activity__month {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--wa-muted);
+  line-height: 1;
+}
+
+@media (max-width: 640px) {
+  .wallet-activity {
+    padding: var(--space-4);
+  }
+  .wallet-activity__summary {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+  .wallet-activity__value { font-size: 24px; }
+  .wallet-activity__chart {
+    height: 180px;
+    gap: 5px;
+  }
+  .wallet-activity__bar { max-width: 8px; }
+  .wallet-activity__month { font-size: 9px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wallet-activity__bar {
+    transform: none;
+    transition: none;
+  }
+  .wallet-activity__col:hover .wallet-activity__bar {
+    transform: none;
+  }
+}

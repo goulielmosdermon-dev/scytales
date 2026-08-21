@@ -1,0 +1,110 @@
+{
+  "slug": "deutsche-telekom-and-scytales-awarded-european-digital-identity-initiative-on-age-verification",
+  "title": "Deutsche Telekom and Scytáles to lead pioneering European Digital Identity Initiative",
+  "seoTitle": "Deutsche Telekom and Scytáles to lead pioneering European Digital Identity Initiative | Scytáles Newsroom",
+  "description": "Scytáles in partnership with T-Systems has been selected by the European Commission to develop a revolutionary age verification solution.",
+  "excerpt": "Scytáles AB, a Swedish-based digital identity specialist, in partnership with Deutsche Telekom AG, via its subsidiary T-Systems International GmbH, has been selected by the European Commission to develop a revolutionary age verification solution. The contract for an Age Verificat…",
+  "category": "press-releases",
+  "categoryLabel": "Press Releases",
+  "date": "2025-02-11",
+  "dateLabel": "Feb 11, 2025",
+  "image": "assets/articles/deutsche-telekom-and-scytales-awarded-european-digital-identity-initiative-on-age-verification.jpg",
+  "topics": [
+    "EUDI Wallet",
+    "Age Verification",
+    "Partnerships"
+  ],
+  "body": [
+    {
+      "type": "h2",
+      "text": "EU-Wide Digital Age Verification System Protects Minors and Upholds Privacy"
+    },
+    {
+      "type": "p",
+      "html": "<strong>Scytáles AB</strong>, a Swedish-based digital identity specialist, in partnership with <strong>Deutsche Telekom AG</strong>, via its subsidiary <em>T-Systems International GmbH</em>, has been selected by the <strong>European Commission</strong> to develop a revolutionary age verification solution. The contract for an Age Verification Solution is a landmark project that advances the EU’s Digital Services Act (DSA) initiatives and sets new standards for digital identity management. The solution will encompass a privacy-centric approach that ensures personal data is protected while providing a robust method of age verification."
+    },
+    {
+      "type": "p",
+      "html": "<strong>As the technology provider for the EUDI Wallet, Scytáles</strong> is perfectly positioned to partner with Deutsche Telekom in developing a solution that meets the rigorous standards required for EU-wide age verification. Together, these companies can deliver a secure, scalable, and privacy-compliant age verification system across the EU, ensuring full adherence to the EU’s stringent digital identity management requirements."
+    },
+    {
+      "type": "h3",
+      "text": "Age verification is set to be a cornerstone of the EU’s digital strategy"
+    },
+    {
+      "type": "p",
+      "html": "The solution will seamlessly integrate with the upcoming European Digital Identity Wallet (EUDI Wallet) and allow citizens to verify their age online without revealing personal data. This innovation tackles a critical challenge in online safety: protecting minors while maintaining user privacy."
+    },
+    {
+      "type": "blockquote",
+      "html": "<p>“Secure user identification is critical for digital applications. Additionally, ensuring the safety, security, and privacy of minors is a top priority in the Commission’s Better Internet for Kids (BIK+) strategy. The EUDI wallet will streamline the daily digital interactions of EU citizens and businesses. We’re thrilled to have been awarded the contract for an Age Verification Solution by the EU and are proud to see our technology recognized once again.” <strong>Konstantin Papaxanthis, CEO of Scytáles</strong></p>"
+    },
+    {
+      "type": "blockquote",
+      "html": "<p>“With secure digital identities, we are now restoring digital sovereignty to EU citizens and ensuring greater protection for minors. When we go online, we have little control over how our personal data is used by websites and stores. Now the technology confirms that someone really is who they say they are. An easy logging in without passwords for online citizen services, banking transactions or travel - simple and secure.” <strong>Ferri Abolhassan, CEO of T-Systems and member of the Board of Management of Deutsche Telekom AG</strong></p>"
+    },
+    {
+      "type": "h3",
+      "text": "Key features and benefits:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Enables access to age-restricted online services without sharing additional personal data",
+        "Easy to use and accessible to everyone, including to those with disabilities",
+        "Full compliance with EU privacy standards",
+        "Seamless integration with existing digital services",
+        "User control over personal data sharing"
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Empowering citizens to reclaim control over their digital identities"
+    },
+    {
+      "type": "p",
+      "html": "The project, funded through the Digital Europe Programme, aligns with the EU’s 2026 deadline for member states to implement digital identity wallets. This initiative represents a crucial step toward empowering citizens to regain control of their digital identity while ensuring a safer online environment for all Europeans. EU citizens and residents will be able to securely verify their age with the solution after successful implementations in the Member States."
+    },
+    {
+      "type": "h2",
+      "text": "ABOUT"
+    },
+    {
+      "type": "h3",
+      "text": "Scytáles"
+    },
+    {
+      "type": "p",
+      "html": "Scytáles is actively developing the EUDI Wallet Reference Implementation for the EU Commission and providing support in drafting the EUDI Wallet Architecture and Reference Framework (ARF). This positions Scytáles as an ideal partner for creating a solution that meets the ARF specifications. Scytáles is well-equipped to offer valuable strategic insights to Member States, Issuers and relying partners as they develop their own solutions. Scytáles is a product company and has for 10 years been at the forefront of digital security, pioneering solutions that protect digital identities across the globe, developing and successfully implementing mobile driving licenses, mobile IDs, derived mobile IDs, digital identity wallets and solutions for connected ecosystems."
+    },
+    {
+      "type": "h3",
+      "text": "Deutsche Telekom"
+    },
+    {
+      "type": "p",
+      "html": "Deutsche Telekom is a partner of the EU in the introduction of digital identities. The company is taking part in the EU’s field tests. The activation of mobile phone cards is being tested. The tests are taking place in Germany, France, Austria, Poland, the Netherlands, Greece and Ukraine. Every second health ID for people with statutory health insurance from Deutsche Telekom. The technology is already being used in Germany. More than half of those with statutory health insurance will have a digital identity from Deutsche Telekom in the future. Telekom’s IT division T-Systems has won contracts from AOK and Barmer. Under the Digital Care and Nursing Modernization Act (DVPMG), statutory health insurance companies are obliged to introduce secure digital identities. These are intended to supplement existing ID procedures such as identification using an electronic health card (eGK)."
+    },
+    {
+      "type": "h2",
+      "text": "MEDIA CONTACTS"
+    },
+    {
+      "type": "h3",
+      "text": "About Scytáles AB"
+    },
+    {
+      "type": "p",
+      "html": "www.scytales.com<br><a href=\"https://www.linkedin.com/company/scytales-ab/\" target=\"_blank\" rel=\"noopener noreferrer\">LinkedIn</a><br><strong>E-Mail:</strong> <a href=\"mailto:info@scytales.com\">info@scytales.com</a><br><strong>Tel.:</strong> 0046 (0) 70 988 60 48"
+    },
+    {
+      "type": "h3",
+      "text": "About Deutsche Telekom AG"
+    },
+    {
+      "type": "p",
+      "html": "<a href=\"https://www.telekom.com/companyprofile\" target=\"_blank\" rel=\"noopener noreferrer\">telekom.com/companyprofile</a><br>Deutsche Telekom AG — Corporate Communications<br><strong>Tel.:</strong> +49 228 181 – 49494"
+    }
+  ],
+  "source": "https://www.scytales.com/post/deutsche-telekom-and-scytales-awarded-european-digital-identity-initiative-on-age-verification"
+}

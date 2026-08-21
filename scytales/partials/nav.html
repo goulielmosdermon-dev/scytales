@@ -1,0 +1,93 @@
+<header class="nav" data-nav>
+  <div class="container nav__inner">
+    <!-- Two lockups, one shown at a time: the white one on the dark nav
+         (.page-home), the standard one everywhere else. -->
+    <a class="nav__logo" href="./" aria-label="Scytáles home">
+      <img class="nav__brand nav__brand--default" src="assets/logo/scytales-orange-nav.png?v=1" alt="Scytáles">
+      <img class="nav__brand nav__brand--light" src="assets/logo/scytales-white.png?v=5" alt="Scytáles" hidden>
+    </a>
+
+    <!-- The only control in the bar: a square that turns into an X and
+         slides the menu in from the right. -->
+    <button class="nav__burger" type="button" aria-expanded="false"
+            aria-controls="site-menu" aria-label="Menu" data-menu-toggle>
+      <span class="nav__burger-box" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </span>
+    </button>
+  </div>
+
+  <!-- Slide-in menu. Four rows in the display face; hovering one opens the
+       gap beneath it and reveals that section's links. -->
+  <div class="menu" id="site-menu" data-menu hidden>
+    <button class="menu__scrim" type="button" tabindex="-1" aria-label="Close menu" data-menu-close></button>
+
+    <nav class="menu__panel" aria-label="Main">
+      <ul class="menu__rows">
+        <li class="menu__row" data-menu-row>
+          <button class="menu__label" type="button" aria-expanded="false" aria-controls="menu-products" data-menu-trigger>
+            Products
+          </button>
+          <div class="menu__drawer" id="menu-products" data-menu-drawer>
+            <ul class="menu__list">
+            <li><a class="menu__link" href="./product.html?slug=age-verification">Age Verification Connector</a></li>
+            <li><a class="menu__link" href="./product.html?slug=digital-id-wallet">Digital ID Wallet</a></li>
+            <li><a class="menu__link" href="./product.html?slug=mobile-validator">Mobile Validator for Travel Documents</a></li>
+            <li><a class="menu__link" href="./product.html?slug=iso-mvalidator">ISO mValidator</a></li>
+            <li><a class="menu__link" href="./product.html?slug=credential-service">Credential Service Provider</a></li>
+            <li><a class="menu__link" href="./product.html?slug=authenticated-readers">Authenticated Readers</a></li>
+            <li><a class="menu__link" href="./product.html?slug=derived-mid">Derived mID</a></li>
+            <li><a class="menu__link" href="./product.html?slug=service-manager">Service Manager</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="menu__row" data-menu-row>
+          <button class="menu__label" type="button" aria-expanded="false" aria-controls="menu-solutions" data-menu-trigger>
+            Solutions
+          </button>
+          <div class="menu__drawer" id="menu-solutions" data-menu-drawer>
+            <ul class="menu__list">
+            <li><a class="menu__link" href="./solution.html?slug=government">Government</a></li>
+            <li><a class="menu__link" href="./solution.html?slug=health">Health</a></li>
+            <li><a class="menu__link" href="./solution.html?slug=fintech">Fintech</a></li>
+            <li><a class="menu__link" href="./solution.html?slug=transportation">Transportation</a></li>
+            <li><a class="menu__link" href="./solution.html?slug=retail">Retail</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="menu__row" data-menu-row>
+          <button class="menu__label" type="button" aria-expanded="false" aria-controls="menu-company" data-menu-trigger>
+            Company
+          </button>
+          <div class="menu__drawer" id="menu-company" data-menu-drawer>
+            <ul class="menu__list">
+            <li><a class="menu__link" href="./page.html?slug=about">About Scytáles</a></li>
+            <li><a class="menu__link" href="./page.html?slug=about#mission">Our Mission</a></li>
+            <li><a class="menu__link" href="./page.html?slug=about#certifications">Our Certifications</a></li>
+            <li><a class="menu__link" href="./page.html?slug=about#leadership">Our Leadership</a></li>
+            <li><a class="menu__link" href="./page.html?slug=about#locations">Our Locations</a></li>
+            <li><a class="menu__link" href="./page.html?slug=partners">Our Partners</a></li>
+            <li><a class="menu__link" href="./page.html?slug=join">Join Our Team We&#x27;re hiring</a></li>
+            <li><a class="menu__link" href="./page.html?slug=contacts">Contacts</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="menu__row" data-menu-row>
+          <button class="menu__label" type="button" aria-expanded="false" aria-controls="menu-resources" data-menu-trigger>
+            Resources
+          </button>
+          <div class="menu__drawer" id="menu-resources" data-menu-drawer>
+            <ul class="menu__list">
+            <li><a class="menu__link" href="./newsroom.html">Newsroom</a></li>
+            <li><a class="menu__link" href="./sdks.html">Build with Scytáles SDKs</a></li>
+            <li><a class="menu__link" href="./page.html?slug=scy-studios">SCY Studios</a></li>
+            <li><a class="menu__link" href="./page.html?slug=events">Events</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+
+      <a class="btn btn-primary menu__cta" href="./page.html?slug=contacts">Make the world safer</a>
+    </nav>
+  </div>
+</header>

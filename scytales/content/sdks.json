@@ -1,0 +1,181 @@
+{
+  "slug": "sdks",
+  "seoTitle": "Build with Scytáles SDKs | Scytáles",
+  "seoDescription": "Integrate with Scytáles SDKs, available worldwide, to enhance your product offering and build custom solutions. Level 3 of Assurance, with a risk-free 30-day trial.",
+  "eyebrow": "Developers",
+  "title": "Build with Scytáles SDKs",
+  "sub": "Integrate with Scytáles SDKs, available worldwide, to enhance your product offering and build custom solutions.",
+  "ctaPrimary": {
+    "label": "Start your 30-day free trial now",
+    "href": "#contact"
+  },
+  "ctaSecondary": {
+    "label": "Talk with Sales",
+    "href": "#contact"
+  },
+  "featuresHeading": "Embrace the Power of Scytáles SDKs for Ultimate Flexibility and Control",
+  "features": [
+    {
+      "name": "Flexibility",
+      "body": "Experience the flexibility of our extensive SDK library, empowering your software solutions to evolve alongside your changing needs. Scytáles SDKs function as building blocks, allowing you to get only what you need when you need it.",
+      "icon": "blocks"
+    },
+    {
+      "name": "Time and Cost Efficiency",
+      "body": "Using Scytáles SDKs can save you time and costs associated with building software from scratch or managing on-premises infrastructure.",
+      "icon": "clock"
+    },
+    {
+      "name": "Control",
+      "body": "You have more control over the software implementation, allowing seamless integration into existing systems and workflows.",
+      "icon": "sliders"
+    },
+    {
+      "name": "Performance",
+      "body": "By integrating software through a Scytáles SDK, you can optimize performance, ensuring your applications' smooth and efficient operation.",
+      "icon": "gauge"
+    },
+    {
+      "name": "Product Ecosystem",
+      "body": "A range of solutions designed to work together.",
+      "icon": "ecosystem"
+    },
+    {
+      "name": "Future Updates",
+      "body": "Receive future updates and improvements, ensuring ongoing support and access to new features.",
+      "icon": "refresh"
+    }
+  ],
+  "compareHeading": "When to opt for Scytáles SDKs",
+  "compareLead": "Every Scytáles capability ships in more than one shape. Pick the deployment that matches how much you want to own.",
+  "compare": {
+    "columns": [
+      "SDK",
+      "Ready-made app",
+      "Managed service"
+    ],
+    "rows": [
+      {
+        "label": "Best when",
+        "cells": [
+          "You are building your own product and want our capability inside it",
+          "You need a working app in market quickly, under our branding or yours",
+          "You want the capability run for you, with no infrastructure to keep"
+        ]
+      },
+      {
+        "label": "You control",
+        "cells": [
+          "UX, release cycle, data flow",
+          "Configuration and branding",
+          "Configuration only"
+        ]
+      },
+      {
+        "label": "We control",
+        "cells": [
+          "Cryptography, standards compliance, updates",
+          "The application and its updates",
+          "The application and the infrastructure"
+        ]
+      },
+      {
+        "label": "Time to first integration",
+        "cells": [
+          "Days — start on the 30-day trial",
+          "Immediate",
+          "Immediate"
+        ]
+      },
+      {
+        "label": "Runs on",
+        "cells": [
+          "Android, iOS, MS Windows",
+          "Android, iOS",
+          "Scytáles-hosted"
+        ]
+      }
+    ]
+  },
+  "sdksHeading": "The SDK library",
+  "sdksLead": "Building blocks you can take one at a time. Every SDK below is available on a risk-free 30-day trial.",
+  "sdks": [
+    {
+      "name": "Scytáles Digital Identity Wallet SDK and Service Manager",
+      "body": "The Scytáles Digital Identity Wallet SDK, alongside the Scytáles Service Manager, allows you to create a top-tier ID wallet app that meets stringent security and interoperability criteria and can manage numerous ID credentials and documents.",
+      "platforms": [
+        "Android",
+        "iOS",
+        "Server"
+      ],
+      "href": "./product.html?slug=digital-id-wallet"
+    },
+    {
+      "name": "Scytáles ISO 18013-5 (Part 5) Holder SDK",
+      "body": "The Scytáles ISO 18013-5 mID/mDL Holder SDK, accessible for both Android and iOS platforms, allows you to guarantee that your holder app for mobile driving licenses or other mobile IDs aligns with the ISO 18013-5 standard.",
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "href": "./product.html?slug=digital-id-wallet"
+    },
+    {
+      "name": "Scytáles ISO 18013-5 (Part 5) Mobile Validator SDK",
+      "body": "The Scytáles ISO Mobile Validator SDK contains an accredited mobile ID reader for Android and/or iOS to authenticate digital documents adhering to ISO 18013-5 standards, including mobile driving licences.",
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "href": "./product.html?slug=iso-mvalidator"
+    },
+    {
+      "name": "Scytáles ISO 18013-7 Holder SDK",
+      "body": "The Scytáles ISO 18013-7 Holder SDK is a solution for online identity verification on Android and/or iOS, aligned with the ISO 18013-7 (in draft) standard.",
+      "platforms": [
+        "Android",
+        "iOS"
+      ],
+      "href": "./product.html?slug=digital-id-wallet"
+    },
+    {
+      "name": "Scytáles ISO 18013-7 Reader API",
+      "body": "The Scytáles ISO 18013-7 (Part 7) Reader API allows you to authenticate a holder's identity online from an Android and/or iOS device, aligned with the ISO 18013-7 (in draft) standard.",
+      "platforms": [
+        "API"
+      ],
+      "href": "./product.html?slug=mobile-validator"
+    },
+    {
+      "name": "Scytáles ISO MS Windows Desktop Validator SDK",
+      "body": "The Scytáles ISO MS Windows Desktop Validator SDK allows you to integrate a certified and interoperable MS Windows ID reader to validate digital documents compliant with ISO 18013-5, such as mobile driving licences.",
+      "platforms": [
+        "MS Windows"
+      ],
+      "href": "./product.html?slug=iso-mvalidator"
+    },
+    {
+      "name": "Scytáles Authenticated Readers Service Manager and Holder SDK",
+      "body": "The Scytáles Authenticated Readers Service Manager and Holder SDK provides the ideal solution for managing a fleet of readers requiring authentication and support for the Digital Identity Wallet.",
+      "platforms": [
+        "Android",
+        "iOS",
+        "Server"
+      ],
+      "href": "./product.html?slug=authenticated-readers"
+    }
+  ],
+  "ctaHeading": "Kick-off your project for free",
+  "ctaBody": "Start on the 30-day trial, then talk to us about the licence that fits. Questions? We're here to help.",
+  "ctaActions": [
+    {
+      "label": "Start your 30-day free trial now",
+      "href": "#contact",
+      "variant": "primary"
+    },
+    {
+      "label": "Get a personalized quote",
+      "href": "#contact",
+      "variant": "secondary"
+    }
+  ]
+}

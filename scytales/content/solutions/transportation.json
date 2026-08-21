@@ -1,0 +1,68 @@
+{
+  "slug": "transportation",
+  "eyebrow": "Transportation",
+  "title": "Secure Credentials and Mobile Solutions for Users and Connected Vehicles",
+  "lead": "High-assurance identities for connected vehicles, fleets, workshops, and mobility ecosystems.",
+  "seoTitle": "Transportation Solutions | Scytáles",
+  "seoDescription": "Scytáles solutions for connected vehicles and the transportation sector — secure credentials online and offline.",
+  "sections": [
+    {
+      "heading": "The challenges",
+      "points": [
+        "Consumers expect security, connectivity and convenience.",
+        "Manufacturers face the same rising expectations.",
+        "Sustainability targets are reshaping the industry.",
+        "EU regulations are accelerating the shift.",
+        "Automotive and mobility are moving toward connected vehicles.",
+        "Fleet software must hold vehicle and driver data in one place.",
+        "Connected vehicles join the internet over IoT.",
+        "They share data continuously with other devices and systems."
+      ]
+    },
+    {
+      "heading": "Our approach",
+      "bullets": [
+        "All produced ECUs and diagnostic tools",
+        "All employees and diagnostic tools within the company, its suppliers, customers and affiliated companies",
+        "All workstations and their employees and diagnostic tools",
+        "All produced goods (trucks, buses, etc.)"
+      ],
+      "orbit": [
+        "connected vehicles",
+        "driver identity",
+        "fleet access",
+        "V2X readiness"
+      ],
+      "lead": "Vehicles, drivers and workshops share one verified identity layer. A fleet can prove who is who over any standardized protocol, in the workshop or remotely, and stay ready for connected goods, charging, autonomous operation and V2X as those arrive."
+    },
+    {
+      "heading": "Why choose Scytáles",
+      "rail": [
+        "Compliant with UN and EU regulations and standards — eIDAS, NIST, ETSI, PIV, and EU/UNECE.",
+        "Customers stay independent of deviations in national security laws.",
+        "And of upcoming changes to those laws, across their own factories and workshops globally.",
+        "Enabled-ready for future verification of connected goods.",
+        "Ready for electrical charging, autonomous and V2X scenarios."
+      ]
+    }
+  ],
+  "demoText": "See how our tailored solutions meet your needs with a personalized product demonstration.",
+  "relatedProducts": [
+    {
+      "slug": "digital-id-wallet",
+      "label": "Digital ID Wallet"
+    },
+    {
+      "slug": "iso-mvalidator",
+      "label": "ISO mValidator"
+    },
+    {
+      "slug": "derived-mid",
+      "label": "Derived mID"
+    },
+    {
+      "slug": "service-manager",
+      "label": "Service Manager"
+    }
+  ]
+}

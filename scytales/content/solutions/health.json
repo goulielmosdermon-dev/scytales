@@ -1,0 +1,60 @@
+{
+  "slug": "health",
+  "eyebrow": "Health",
+  "title": "Revolutionizing Healthcare: Seamless Access to Patient Information",
+  "lead": "Secure, high-assurance identity for health professionals accessing sensitive patient records — in hospital or on home visits.",
+  "seoTitle": "Health Solutions | Scytáles",
+  "seoDescription": "Discover how Scytáles helps healthcare professionals with secure and convenient mobile identity solutions.",
+  "sections": [
+    {
+      "heading": "The challenges",
+      "points": [
+        "More people will need healthcare at home.",
+        "Telemedicine makes remote care easier.",
+        "Patients can access healthcare without visiting hospitals.",
+        "Doctors need remote access to patient records.",
+        "Electronic health records contain sensitive information.",
+        "Strong privacy protections are essential.",
+        "Strict security prevents unauthorized access.",
+        "Home healthcare must keep patient data safe."
+      ]
+    },
+    {
+      "heading": "Our approach",
+      "orbit": [
+        "derived mobile id",
+        "nfc tap",
+        "level 4 certificates",
+        "remote records"
+      ],
+      "lead": "The Derived Mobile ID NFC card lets health professionals reach a patient's electronic records by tapping their ID card on an NFC-enabled device. Level 4 digital certificates sit behind every authentication, so sensitive information is reachable 24/7 in the hospital and out on home visits without ever leaving safe hands."
+    },
+    {
+      "heading": "Why choose Scytáles",
+      "rail": [
+        "Health authorities already use the Scytáles Derived Mobile ID.",
+        "Authorised medical staff reach patient information from any device.",
+        "No physical smart card reader required."
+      ]
+    }
+  ],
+  "demoText": "See how our tailored solutions meet your needs with a personalized product demonstration.",
+  "relatedProducts": [
+    {
+      "slug": "derived-mid",
+      "label": "Derived mID"
+    },
+    {
+      "slug": "iso-mvalidator",
+      "label": "ISO mValidator"
+    },
+    {
+      "slug": "digital-id-wallet",
+      "label": "Digital ID Wallet"
+    },
+    {
+      "slug": "service-manager",
+      "label": "Service Manager"
+    }
+  ]
+}

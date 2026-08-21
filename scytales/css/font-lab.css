@@ -1,0 +1,350 @@
+/* Font Lab — preview faces for live display/heading swaps (dev tool)
+   Frozen Aug 2026: panel hidden; values live in shared/tokens.css. */
+[data-font-lab],
+.font-lab {
+  display: none !important;
+}
+
+@font-face {
+  font-family: "Plantin Infant";
+  src: url("../../Fonts/Plantin Infant/Plantin Infant MT Std Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("../../Fonts/PP Neue Montreal/PPNeueMontreal-Book.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("../../Fonts/PP Neue Montreal/PPNeueMontreal-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("../../Fonts/PP Neue Montreal/PPNeueMontreal-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PP Writer";
+  src: url("../../Fonts/PP Writer/PPWriter-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PP Writer";
+  src: url("../../Fonts/PP Writer/PPWriter-Book.otf") format("opentype");
+  font-weight: 450;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PP Writer";
+  src: url("../../Fonts/PP Writer/PPWriter-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PP Kyoto";
+  src: url("../../Fonts/PP Kyoto/PPKyoto-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PP Kyoto";
+  src: url("../../Fonts/PP Kyoto/PPKyoto-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PP Kyoto";
+  src: url("../../Fonts/PP Kyoto/PPKyoto-Extrabold.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PP Eiko";
+  src: url("../../Fonts/PP Eiko/PPEiko-Thin.otf") format("opentype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PP Eiko";
+  src: url("../../Fonts/PP Eiko/PPEiko-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PP Eiko";
+  src: url("../../Fonts/PP Eiko/PPEiko-Heavy.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PP Neue Machina";
+  src: url("../../Fonts/PP Neue Machina/PPNeueMachina-PlainLight.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PP Neue Machina";
+  src: url("../../Fonts/PP Neue Machina/PPNeueMachina-PlainRegular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PP Neue Machina";
+  src: url("../../Fonts/PP Neue Machina/PPNeueMachina-PlainUltrabold.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro Text";
+  src: url("../../Fonts/SF-PRO/SF-Pro-Text-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Text";
+  src: url("../../Fonts/SF-PRO/SF-Pro-Text-Semibold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Text";
+  src: url("../../Fonts/SF-PRO/SF-Pro-Text-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-lab {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  z-index: 10050;
+  transform: translateY(-50%);
+  font-family: var(--font-body);
+  color: var(--navy-800);
+  pointer-events: none;
+}
+.font-lab * { box-sizing: border-box; }
+.font-lab__toggle,
+.font-lab__panel {
+  pointer-events: auto;
+}
+.font-lab__toggle {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  border: 1px solid var(--frame-line, var(--orange-300));
+  border-right: 0;
+  border-radius: 5px;
+  background: #fff;
+  color: var(--orange-500);
+  padding: 1rem 0.55rem;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: -4px 0 18px rgba(0, 15, 46, 0.06);
+}
+.font-lab.is-open .font-lab__toggle { right: 280px; }
+.font-lab__panel {
+  width: 280px;
+  max-height: min(78vh, 640px);
+  overflow: auto;
+  margin-right: -280px;
+  border: 1px solid var(--frame-line, var(--orange-300));
+  border-right: 0;
+  border-radius: 5px;
+  background: color-mix(in srgb, var(--page-bg) 92%, #fff);
+  padding: 1rem 1rem 1.15rem;
+  box-shadow: -8px 0 28px rgba(0, 15, 46, 0.08);
+  transition: margin-right 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.font-lab.is-open .font-lab__panel { margin-right: 0; }
+.font-lab__title {
+  margin: 0 0 0.25rem;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--orange-500);
+}
+.font-lab__hint {
+  margin: 0 0 0.9rem;
+  font-size: 12px;
+  line-height: 1.35;
+  color: var(--neutral-500);
+}
+.font-lab__section {
+  margin: 0 0 0.85rem;
+}
+.font-lab__label {
+  display: block;
+  margin: 0 0 0.4rem;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--navy-800);
+}
+.font-lab__list {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.font-lab__btn {
+  width: 100%;
+  text-align: left;
+  border: 1px solid color-mix(in srgb, var(--navy-800) 12%, transparent);
+  border-radius: 5px;
+  background: #fff;
+  padding: 0.55rem 0.65rem;
+  cursor: pointer;
+  color: var(--navy-800);
+  transition: border-color 140ms ease, background 140ms ease;
+}
+.font-lab__btn:hover {
+  border-color: var(--orange-500);
+}
+.font-lab__btn.is-active {
+  border-color: var(--orange-500);
+  background: color-mix(in srgb, var(--orange-100) 55%, #fff);
+}
+.font-lab__btn-name {
+  display: block;
+  font-size: 14px;
+  line-height: 1.15;
+  font-weight: 600;
+}
+.font-lab__btn-sample {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 18px;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--orange-500);
+}
+.font-lab__weight-block {
+  margin-top: 0.55rem;
+}
+.font-lab__sublabel {
+  display: block;
+  margin: 0 0 0.35rem;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--neutral-500);
+}
+.font-lab__weights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+.font-lab__weight {
+  flex: 1 1 auto;
+  min-width: 0;
+  border: 1px solid color-mix(in srgb, var(--navy-800) 12%, transparent);
+  border-radius: 5px;
+  background: #fff;
+  padding: 0.4rem 0.45rem;
+  font-size: 12px;
+  line-height: 1.1;
+  color: var(--navy-800);
+  cursor: pointer;
+  transition: border-color 140ms ease, background 140ms ease;
+}
+.font-lab__weight:hover {
+  border-color: var(--orange-500);
+}
+.font-lab__weight.is-active {
+  border-color: var(--orange-500);
+  background: color-mix(in srgb, var(--orange-100) 55%, #fff);
+  color: var(--orange-500);
+}
+.font-lab__section--sliders {
+  padding-top: 0.55rem;
+  border-top: 1px solid color-mix(in srgb, var(--navy-800) 10%, transparent);
+}
+.font-lab__slider {
+  display: grid;
+  gap: 0.28rem;
+  margin: 0 0 0.65rem;
+  cursor: pointer;
+}
+.font-lab__slider:last-child { margin-bottom: 0; }
+.font-lab__slider-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-size: 11px;
+  color: var(--navy-800);
+}
+.font-lab__slider-meta span:last-child {
+  font-variant-numeric: tabular-nums;
+  color: var(--orange-500);
+  font-weight: 600;
+}
+.font-lab__slider input[type="range"] {
+  width: 100%;
+  margin: 0;
+  accent-color: var(--orange-500);
+  cursor: pointer;
+}
+.font-lab__reset {
+  width: 100%;
+  margin-top: 0.35rem;
+  border: 0;
+  border-top: 1px solid var(--frame-line, var(--orange-300));
+  background: transparent;
+  padding: 0.75rem 0 0.15rem;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--orange-500);
+  cursor: pointer;
+  text-align: left;
+}
+.font-lab__reset:hover { color: var(--orange-600); }
+
+@media (max-width: 767px) {
+  .font-lab__panel { width: min(280px, 82vw); }
+  .font-lab.is-open .font-lab__toggle { right: min(280px, 82vw); }
+  .font-lab__panel { margin-right: calc(-1 * min(280px, 82vw)); }
+}

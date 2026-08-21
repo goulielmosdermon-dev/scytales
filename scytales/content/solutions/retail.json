@@ -1,0 +1,60 @@
+{
+  "slug": "retail",
+  "eyebrow": "Retail",
+  "title": "Empowering Retail: Secure Identity Validation Solutions for the Modern Era",
+  "lead": "Stop identity fraud at the point of sale while keeping checkout frictionless for customers.",
+  "seoTitle": "Retail Solutions | Scytáles",
+  "seoDescription": "Protect your business and improve customer experience with Scytáles retail identity validation solutions.",
+  "sections": [
+    {
+      "heading": "The challenges",
+      "points": [
+        "Fraudsters use increasingly advanced tactics to make illegal purchases.",
+        "Retailers are left exposed and unprepared.",
+        "Digital identity verification is now essential to retail defences.",
+        "Fraudsters have to be spotted and stopped in their tracks.",
+        "Checks must run fast enough to stay invisible.",
+        "Customers still expect a frictionless purchase."
+      ]
+    },
+    {
+      "heading": "Our approach",
+      "orbit": [
+        "age checks",
+        "instant validation",
+        "any device",
+        "frictionless checkout"
+      ],
+      "lead": "Digital identity verification at the point of purchase — an automated check that spots and stops fraud without adding a step the customer can feel. It runs on the devices retailers already have, from e-gates and workstation terminals to standard NFC and Bluetooth phones and tablets."
+    },
+    {
+      "heading": "Why choose Scytáles",
+      "rail": [
+        "The Scytáles ISO mValidator app lets relying parties inspect a mobile ID or mobile driving licence.",
+        "Instant validation and authentication against the identity provider.",
+        "An automated process, with no manual inspection step.",
+        "Runs on sophisticated e-gates and workstation terminals.",
+        "Runs equally on standard NFC and Bluetooth smartphones and tablets."
+      ]
+    }
+  ],
+  "demoText": "See how our tailored solutions meet your needs with a personalized product demonstration.",
+  "relatedProducts": [
+    {
+      "slug": "iso-mvalidator",
+      "label": "ISO mValidator"
+    },
+    {
+      "slug": "digital-id-wallet",
+      "label": "Digital ID Wallet"
+    },
+    {
+      "slug": "derived-mid",
+      "label": "Derived mID"
+    },
+    {
+      "slug": "authenticated-readers",
+      "label": "Authenticated Readers"
+    }
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "slug": "digital-id-wallet",
+  "name": "Digital ID Wallet",
+  "title": "Digital ID Wallet | Scytáles",
+  "description": "Carry your identity everywhere with the Scytáles Digital ID Wallet, an official EUDI-ready digital identification solution.",
+  "listPreview": "digital-id-wallet",
+  "hero": {
+    "headline": "Carry Your Identity Everywhere: The Ultimate Digital Identification Wallet",
+    "sub": "Scytáles Digital Identity Wallet solution fully supports the European Digital Identity framework and the EU Digital ID Wallet.",
+    "ctaPrimary": {
+      "label": "Download Product Sheet",
+      "href": "#cta"
+    },
+    "ctaSecondary": {
+      "label": "Request a demo",
+      "href": "#cta"
+    },
+    "bullets": [
+      "Official physical & digital credentials and documents",
+      "Identification and authentication services",
+      "eIDAS, NIST, ICAO 9303, ISO 18013-5, ISO 18013-7, OpenID",
+      "Identification and verification schemes towards data sovereignty"
+    ]
+  },
+  "showcase": {
+    "phone": "interactive-wallet",
+    "phoneImage": null,
+    "statValue": "450M+",
+    "statCopy": "EU citizens to be served by the European Digital Identity Wallet Scytáles is building",
+    "showActivity": true,
+    "activity": {
+      "title": "Wallet activity",
+      "primaryLabel": "Credentials shared",
+      "secondaryLabel": "Verifications",
+      "totalLabel": "Total activity",
+      "totals": {
+        "primary": 1240,
+        "secondary": 3180,
+        "total": 4420
+      },
+      "months": [
+        {
+          "label": "Jan",
+          "primary": 48,
+          "secondary": 52
+        },
+        {
+          "label": "Feb",
+          "primary": 42,
+          "secondary": 58
+        },
+        {
+          "label": "Mar",
+          "primary": 40,
+          "secondary": 72
+        },
+        {
+          "label": "Apr",
+          "primary": 55,
+          "secondary": 68
+        },
+        {
+          "label": "May",
+          "primary": 38,
+          "secondary": 55
+        },
+        {
+          "label": "Jun",
+          "primary": 28,
+          "secondary": 32
+        },
+        {
+          "label": "Jul",
+          "primary": 30,
+          "secondary": 35
+        },
+        {
+          "label": "Aug",
+          "primary": 36,
+          "secondary": 88
+        },
+        {
+          "label": "Sep",
+          "primary": 34,
+          "secondary": 70
+        },
+        {
+          "label": "Oct",
+          "primary": 50,
+          "secondary": 48
+        },
+        {
+          "label": "Nov",
+          "primary": 46,
+          "secondary": 54
+        },
+        {
+          "label": "Dec",
+          "primary": 32,
+          "secondary": 58
+        }
+      ]
+    }
+  },
+  "features": [
+    {
+      "body": "Identify online and offline."
+    },
+    {
+      "body": "Store and share information provided by governments — name, surname, date of birth, nationality."
+    },
+    {
+      "body": "Store and share information provided by trusted private sources."
+    }
+  ],
+  "discover": [
+    {
+      "image": "assets/wallet/discover-age.png",
+      "alt": "Age Verification Connector",
+      "copy": "Privacy-preserving age checks built on the OpenID Connect standard, part of Scytáles’ EU Commission mandate.",
+      "linkLabel": "Age Verification Connector",
+      "linkHref": "/scytales/#products"
+    },
+    {
+      "image": "assets/wallet/discover-mvalid.png",
+      "alt": "ISO mValidator",
+      "copy": "Certified ISO 18013-5 validation for wallets, mobile IDs, and mobile driving licences, online and offline.",
+      "linkLabel": "ISO mValidator",
+      "linkHref": "#product/iso-mvalidator"
+    },
+    {
+      "image": "assets/wallet/discover-nfc.png",
+      "alt": "Derived mID",
+      "copy": "NFC card authentication that derives credentials from security documents into mobile virtual IDs.",
+      "linkLabel": "Derived mID",
+      "linkHref": "#product/derived-mid"
+    }
+  ],
+  "statement": "Scytáles is the global leader in the 18013 parts 5 and 7 standardization work for mobile IDs and mobile driving licences, having passed all international interoperability tests and is ready with a fully standardized, tested and certified mobile ID solution. Scytáles runs the world's first ISO-compliant mobile ID pilot in Utah, USA, with its partner GET Group NA.",
+  "cta": {
+    "title": "Get started with Digital ID Wallet",
+    "label": "Start your 30 day free trial",
+    "href": "#cta"
+  },
+  "benefits": [
+    {
+      "body": "Inclusion of your official physical and digital credentials and documents."
+    },
+    {
+      "body": "A trusted and interoperable solution for identification and authentication services."
+    },
+    {
+      "body": "Compliance with the latest emerging ID standards."
+    },
+    {
+      "body": "eIDAS, NIST, ICAO 9303, ISO 18013-5, ISO 18013-7, and OpenID Connect for Verifiable Credentials — for both issuance and presentation."
+    },
+    {
+      "body": "Trustworthy digital identification and verification schemes, towards data sovereignty."
+    }
+  ]
+}

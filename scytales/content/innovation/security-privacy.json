@@ -1,0 +1,49 @@
+{
+  "slug": "security-privacy",
+  "name": "Security & Privacy by Design",
+  "title": "Security & Privacy by Design | Scytáles",
+  "hero": {
+    "headline": "Security & Privacy by Design",
+    "lead": "Scytáles builds digital identity with the highest levels of data protection and user control from day one, not as an afterthought. Citizens decide what to share, when, and with whom.",
+    "cta": { "label": "Request a demo", "href": "#contact" }
+  },
+  "sections": [
+    {
+      "type": "prose",
+      "heading": "What security and privacy by design means",
+      "paragraphs": [
+        "High-assurance mobile identity depends on cryptography, secure credential management, and architectures that keep personal data on the holder's device whenever possible.",
+        "Scytáles solutions are shaped by eIDAS 2.0, GDPR, and NIS2, ensuring compliance readiness while delivering selective disclosure, consent-based sharing, and interoperable trust.",
+        "From wallets and validators to age verification and authenticated readers, every product is engineered so privacy is the default and security is measurable at High Level of Assurance."
+      ]
+    },
+    {
+      "type": "points",
+      "heading": "Why it matters",
+      "points": [
+        {
+          "title": "User consent first",
+          "body": "Share only the attributes a service truly needs."
+        },
+        {
+          "title": "Device-held data",
+          "body": "Credentials stay with the holder, not in a central silo."
+        },
+        {
+          "title": "Regulatory mastery",
+          "body": "Aligned with eIDAS 2.0, GDPR, and NIS2."
+        },
+        {
+          "title": "High Level of Assurance",
+          "body": "Cryptography and controls built for critical use cases."
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "heading": "Why Scytáles",
+      "lead": "Deep expertise in digital identity, cryptography, and regulatory compliance, trusted by the European Commission to build the infrastructure that will serve over 450 million EU citizens.",
+      "cta": { "label": "Partner with the experts", "href": "#contact" }
+    }
+  ]
+}

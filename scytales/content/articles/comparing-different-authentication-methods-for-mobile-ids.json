@@ -1,0 +1,264 @@
+{
+  "slug": "comparing-different-authentication-methods-for-mobile-ids",
+  "title": "Comparing Different Authentication Methods for Mobile IDs",
+  "seoTitle": "Comparing Different Authentication Methods for Mobile IDs | Scytáles Newsroom",
+  "description": "Explore in-person, remote, online and offline authentication methods for mobile IDs and how to choose the right validation approach for your business.",
+  "excerpt": "Our lives are becoming increasingly digital, and mobile IDs are setting the pace across numerous daily activities. This article explores the different validation methods possible with mobile IDs.",
+  "category": "articles",
+  "categoryLabel": "Articles",
+  "date": "2024-03-25",
+  "dateLabel": "Mar 25, 2024",
+  "image": "assets/articles/comparing-different-authentication-methods-for-mobile-ids.jpg",
+  "topics": [
+    "Mobile ID",
+    "Security & Privacy",
+    "SDK & Developers",
+    "Business & ROI"
+  ],
+  "body": [
+    {
+      "type": "p",
+      "html": "Our lives are becoming increasingly digital, and mobile IDs are setting the pace across numerous daily activities. Digital ID wallets are a secure alternative to physical identity cards and their usage is much wider than just to prove our identity during traffic stops. These wallets enable us to access online services, make payments and verify our identity in diverse situations, from logging into social media accounts to proving one’s age in clubs."
+    },
+    {
+      "type": "p",
+      "html": "So the question that imposes itself: how can a service, governmental or otherwise, verify your identity in a Digital ID Wallet? This process relies on authentication which essentially confirms that you are who you claim to be. In this article, we will explore the different validation methods possible with mobile IDs, like the Mobile Driving Licence app from the State of Utah, US, (of which Scytáles is the technology provider) or even using a Digital ID Wallet that includes multiple ID documents (with Scytáles being the developer of the European Digital ID Wallet — the EUDI Wallet — which is going to be rolled out to more than 400 million citizens)."
+    },
+    {
+      "type": "h2",
+      "text": "Authentication Methods for Mobile IDs"
+    },
+    {
+      "type": "p",
+      "html": "There are several ways to validate a mobile ID, depending on the situation:"
+    },
+    {
+      "type": "p",
+      "html": "<strong>In-person authentication:</strong> This is any authentication you need to perform when you are physically present where you need to be identified. This can be done by using your mobile ID at an airport, for example, the Utah Mobile ID at TSA PreCheck for expedited security screening, or validating your age at the cashier to buy age-restricted items. Scytáles validation mechanisms work via BLE, NFC, by reading a QR Code, even if you are not connected to the Internet. Scytáles in-person authentication complies with mDoc, CBOR, BLE and ISO/IEC 18013-5."
+    },
+    {
+      "type": "p",
+      "html": "<strong>Remote authentication:</strong> Nowadays, it is not wise to assume that all ID verifications only happen face-to-face. Many online services have immense benefits when using a remote validation method of Mobile IDs (<a href=\"./article.html?slug=mobile-validator-sdk-the-tool-powering-digital-identity-wallets\">you can read more about it in our article here</a>), such as when applying for a loan online or opening a new account in an online bank. These operations can be done by scanning a QR Code with your phone from a website or by a simple tap on your phone, which shortens and simplifies the process for your users. Scytáles remote authentication is compliant with OpenID4VP draft 19 (mdoc + MSO (CBOR)), SD-JWT library and ISO/IEC 18013-7 (in draft)."
+    },
+    {
+      "type": "p",
+      "html": "Scytáles mobile ID technology was built to work in online and offline authentication scenarios for device engagement and data exchange, as described in the ISO/IEC 18013-5 standard. In the online method, the internet is used to connect the holder’s wallet with the issuing authority to confirm the authenticity of the digital wallet and any associated holder’s information. Online verification of the identity can use OIDC and WebAPI protocols, depending on the situation. However, if a digital wallet needs to be validated without being connected to the internet (offline mode), it communicates through messages encoded in CBOR."
+    },
+    {
+      "type": "h2",
+      "text": "Choosing the Right Authentication Method"
+    },
+    {
+      "type": "p",
+      "html": "When deciding the best user authentication method, or a combination of several, for your business, several factors should be considered:"
+    },
+    {
+      "type": "p",
+      "html": "<strong>Security requirements:</strong> High-value transactions or access to sensitive information might require stronger authentication methods."
+    },
+    {
+      "type": "p",
+      "html": "<strong>User experience:</strong> Although security is important, user experience also plays a major role nowadays. Finding the sweet spot where equally strong authentication and a smooth user experience exist is vital."
+    },
+    {
+      "type": "p",
+      "html": "<strong>Device capabilities:</strong> There are cases when not all devices work with all authentication methods available. The chosen option(s) must be up-to-date with new developments and be compatible with the majority of user devices to ensure accessibility."
+    },
+    {
+      "type": "p",
+      "html": "<strong>Interoperability:</strong> For your service to be truly convenient, it needs to work across different platforms and providers. Choosing a validation method that promotes seamless communication is a crucial aspect to consider."
+    },
+    {
+      "type": "p",
+      "html": "<strong>Regulatory compliance:</strong> The validation of officially issued Mobile IDs can be of immense help to your business to stay compliant with your industry’s applicable laws and regulations since they are issued with a Level of Assurance High (which makes them have the same value as their physical counterpart — you can read more about this in our article <a href=\"./article.html?slug=the-future-of-identification-mobile-ids-vs-traditional-ids\">“The Future of Identification: Mobile IDs vs Traditional IDs”</a>)."
+    },
+    {
+      "type": "p",
+      "html": "<strong>Privacy-centered:</strong> Unlike traditional ID documents that require all of the data to be revealed during an identity validation, mobile IDs give users the control of selecting which information they would like to divulge. Such transparency in data capture and storage fosters trust and satisfaction among users, while also keeping businesses in compliance with data privacy regulations such as GDPR (General Data Protection Regulation)."
+    },
+    {
+      "type": "p",
+      "html": "To better understand the key features, advantages and disadvantages of validating Digital ID Wallets (in-person, remote, online and offline) with the conventional authentication methods such as username and password and physical ID verification, we created a comparison table which might help you compare and understand their different functionalities."
+    },
+    {
+      "type": "compare-table",
+      "caption": "Comparison table of different features per validation type",
+      "columns": [
+        "Feature",
+        "Digital ID Wallet",
+        "Username and password",
+        "Physical ID"
+      ],
+      "rows": [
+        {
+          "feature": "Convenience",
+          "cells": [
+            {
+              "rating": "High",
+              "detail": "Works in various scenarios, in-person, remote, online and offline"
+            },
+            {
+              "rating": "Moderate",
+              "detail": "Requires remembering login credentials"
+            },
+            {
+              "rating": "Low",
+              "detail": "Requires carrying a physical document"
+            }
+          ]
+        },
+        {
+          "feature": "Security",
+          "cells": [
+            {
+              "rating": "High",
+              "detail": "Can be used in conjunction with other validation methods"
+            },
+            {
+              "rating": "Moderate",
+              "detail": "Vulnerable to hacking and phishing"
+            },
+            {
+              "rating": "Moderate",
+              "detail": "Can be lost or stolen"
+            }
+          ]
+        },
+        {
+          "feature": "Privacy",
+          "cells": [
+            {
+              "rating": "High",
+              "detail": "User controls information shared"
+            },
+            {
+              "rating": "Low",
+              "detail": "With storage of login credentials"
+            },
+            {
+              "text": "No control over the information displayed"
+            }
+          ]
+        },
+        {
+          "feature": "Interoperability",
+          "cells": [
+            {
+              "rating": "High",
+              "detail": "Works across platforms and borders"
+            },
+            {
+              "text": "Limited to specific websites or applications"
+            },
+            {
+              "text": "Not applicable"
+            }
+          ]
+        },
+        {
+          "feature": "Offline Functionality",
+          "cells": [
+            {
+              "rating": "Possible",
+              "detail": "Depending on method"
+            },
+            {
+              "text": "Not applicable"
+            },
+            {
+              "text": "Not applicable"
+            }
+          ]
+        },
+        {
+          "feature": "Risk of Fraud",
+          "cells": [
+            {
+              "rating": "Lower",
+              "detail": "User is notified whenever a validation request is initiated"
+            },
+            {
+              "rating": "Higher",
+              "detail": "Susceptible to stolen passwords"
+            },
+            {
+              "rating": "Moderate",
+              "detail": "Can be forged or lost"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Future Trends in Mobile ID Validation"
+    },
+    {
+      "type": "p",
+      "html": "With the widespread use of Digital ID Wallets and as technology evolves, we can expect to see a convergence with different authentication methods, like fingerprint scanners or iris recognition, creating a transparent and abstracted secure user journey, regardless of how the user uses your service."
+    },
+    {
+      "type": "h2",
+      "text": "Conclusion"
+    },
+    {
+      "type": "p",
+      "html": "Secure and reliable identity authentication that builds trust is key for Digital ID Wallets to gain widespread adoption. By understanding the different authentication methods possible, businesses can make the right decisions about how to implement robust mobile ID validation systems that instil trust and generate growth. Staying aware of the fast-evolving digital identity landscape will assist businesses to adapt and adopt as Digital ID Wallets will unlock the value of digital identity and accelerate the use of digital verification."
+    },
+    {
+      "type": "h2",
+      "text": "Scytáles technology available as SDKs"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Can be implemented in just under 6 weeks",
+        "Can be easily integrated with the currently implemented solution and act as an add-on",
+        "By having a high level of assurance validation, you can ensure the identity of your users",
+        "Checking in using the mobile validator ensures the person accessing the services is who they say they are",
+        "Ensure the privacy of your guests by requesting only the data you need",
+        "Compliance with KYC, AML, GDPR and eIDAS 2.0 regulations, as well as with ISO 18013 parts 5 and 7",
+        "Compliant with the European Digital Identity Architecture and Reference Framework (the European Digital Identity Wallet of which Scytáles are the technology developers), ISO 18013 part 5 and part 7 driving licences and mobile IDs",
+        "Compliant with OID4VCI, OID4VP and SIOPv2, where DIF JWT VC Presentation Profile uses OID4VP as the base protocol for the request and verification of W3C JWT VCs, and uses SIOPv2 for user authentication; while NIST (National Cybersecurity Center of Excellence) plans to implement reference implementation for OID4VP to present mdocs/mDL",
+        "Fully certified solutions"
+      ]
+    },
+    {
+      "type": "p",
+      "html": "To cater to diverse needs, we offer different pricing solutions and business models. Our transparent policy ensures that you have the flexibility to choose the option that aligns best with your organization’s requirements."
+    },
+    {
+      "type": "p",
+      "html": "<a href=\"./index.html#contact\">Contact us now</a> to get your 30-day free trial on our SDKs."
+    },
+    {
+      "type": "h2",
+      "text": "Scytáles, Your Trusted ID Verification Provider"
+    },
+    {
+      "type": "p",
+      "html": "At Scytáles, we are thrilled to share groundbreaking developments in digital identity that are set to revolutionize the way we authenticate and interact remotely online and face-to-face."
+    },
+    {
+      "type": "p",
+      "html": "<strong>Proven track record:</strong> Implementors of the first full ISO 18013-5 compliant Mobile Driver’s License program in the US in the State of Utah and technology providers of the European Digital Identity Wallet (EUDI Wallet) which will soon be rolled out to more than 440 million European citizens, with our technology being broadly used across the globe."
+    },
+    {
+      "type": "p",
+      "html": "<strong>Expert Representation in several standardization bodies:</strong> Scytáles represents Sweden as an expert through the Standardization Body (SIS) SIS/TK 448 and Task Force 14 on mDL within ISO/IEC 18013-5 ISO/IEC JTC1/SC17/WG10."
+    },
+    {
+      "type": "p",
+      "html": "<strong>Global leaders in mobile IDs:</strong> Scytáles is the leading developer of ISO-Mobile Driving Licenses, Mobile IDs and Derived Mobile IDs as a complement to Security Printed Documents and Validation mechanisms."
+    },
+    {
+      "type": "p",
+      "html": "<strong>Providers of the most comprehensive validation solution:</strong> Our Mobile Validator is built focused on privacy, allowing for all validation scenarios, in real-time in online and offline modes, over the counter and over the web/remotely."
+    },
+    {
+      "type": "p",
+      "html": "<strong>High level of Assurance identification at our core:</strong> Our product portfolio showcases the different solutions we offer the market for secure, interoperable and trustworthy identification credentials."
+    }
+  ],
+  "source": "https://www.scytales.com/post/comparing-different-authentication-methods-for-mobile-ids"
+}

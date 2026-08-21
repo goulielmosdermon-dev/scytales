@@ -1,0 +1,157 @@
+{
+  "slug": "iso-mvalidator",
+  "name": "ISO mValidator",
+  "title": "ISO mValidator | Scytáles",
+  "description": "Certified ISO 18013-5 validation for Digital ID Wallets, Mobile IDs, and Mobile Driving Licences, online and offline.",
+  "listPreview": "blank",
+  "hero": {
+    "headline": "Streamlined Validation for Mobile Identities and Driving Licences",
+    "sub": "The Scytáles ISO Mobile Validator lets relying parties verify Digital ID Wallets, Mobile IDs, and Mobile Driving Licences compliant with ISO 18013-5.",
+    "ctaPrimary": {
+      "label": "Download Product Sheet",
+      "href": "#cta"
+    },
+    "ctaSecondary": {
+      "label": "Request a demo",
+      "href": "#cta"
+    },
+    "bullets": [
+      "Instant validation of wallets, mIDs, and mDLs",
+      "Full credentials or selective disclosure (age, address, and more)",
+      "Online and offline modes with interoperability",
+      "Trusted-list reading across issuers and identity providers"
+    ]
+  },
+  "showcase": {
+    "phone": "iso-mvalidator",
+    "phoneImage": null,
+    "statValue": "ISO 18013-5",
+    "statCopy": "Certified validation for mobile driving licences and mobile IDs",
+    "showActivity": true,
+    "activity": {
+      "title": "Validation activity",
+      "primaryLabel": "Documents validated",
+      "secondaryLabel": "Selective disclosures",
+      "totalLabel": "Total validations",
+      "totals": {
+        "primary": 2860,
+        "secondary": 4120,
+        "total": 6980
+      },
+      "months": [
+        {
+          "label": "Jan",
+          "primary": 60,
+          "secondary": 70
+        },
+        {
+          "label": "Feb",
+          "primary": 58,
+          "secondary": 75
+        },
+        {
+          "label": "Mar",
+          "primary": 72,
+          "secondary": 88
+        },
+        {
+          "label": "Apr",
+          "primary": 80,
+          "secondary": 90
+        },
+        {
+          "label": "May",
+          "primary": 65,
+          "secondary": 78
+        },
+        {
+          "label": "Jun",
+          "primary": 55,
+          "secondary": 60
+        },
+        {
+          "label": "Jul",
+          "primary": 50,
+          "secondary": 55
+        },
+        {
+          "label": "Aug",
+          "primary": 68,
+          "secondary": 95
+        },
+        {
+          "label": "Sep",
+          "primary": 74,
+          "secondary": 85
+        },
+        {
+          "label": "Oct",
+          "primary": 82,
+          "secondary": 70
+        },
+        {
+          "label": "Nov",
+          "primary": 78,
+          "secondary": 80
+        },
+        {
+          "label": "Dec",
+          "primary": 70,
+          "secondary": 76
+        }
+      ]
+    }
+  },
+  "discover": [
+    {
+      "image": "assets/wallet/discover-nfc.png",
+      "alt": "Derived mID",
+      "copy": "NFC card authentication that derives credentials from security documents into mobile virtual IDs.",
+      "linkLabel": "Derived mID",
+      "linkHref": "#product/derived-mid"
+    },
+    {
+      "image": "assets/wallet/discover-age.png",
+      "alt": "Digital ID Wallet",
+      "copy": "Carry official physical and digital credentials on your phone with EUDI-ready wallet support.",
+      "linkLabel": "Digital ID Wallet",
+      "linkHref": "#product/digital-id-wallet"
+    },
+    {
+      "image": "assets/wallet/discover-mvalid.png",
+      "alt": "Service Manager",
+      "copy": "Seamless integration, metadata access, and access control for mobile identity solutions.",
+      "linkLabel": "Service Manager",
+      "linkHref": "#product/service-manager"
+    }
+  ],
+  "statement": "Scytáles is a global leader in ISO 18013 parts 5 and 7 for mobile IDs and mobile driving licences, with international interoperability testing and certified mobile ID solutions used worldwide, including the pioneering Utah mDL programme.",
+  "cta": {
+    "title": "Get started with ISO mValidator",
+    "label": "Start your 30 day free trial",
+    "href": "#cta"
+  },
+  "benefits": [
+    {
+      "body": "The Validator is enhanced with an automated process that can be performed on a wide variety of devices — from sophisticated e-gates, desktops and workstation terminals reading the ISO QR code, to standard NFC and Bluetooth-enabled smartphones and tablets."
+    },
+    {
+      "body": "The Mobile Validator can do in-person validation over the counter for an ISO mDL/mID registration, and registration can also be done over a video call (Skype, Zoom or equivalent). The holder does not have to collect the driving licence or passport on site or by registered mail, but can download it in seconds via screen — saving both the issuing authority and the holder time and money."
+    },
+    {
+      "body": "The Validator reads all driving licence privileges in the ISO mDL, and ISO mDL/mID QR codes on Apple Watch, with Siri activation and face recognition."
+    }
+  ],
+  "featureList": {
+    "title": "mValidator Integrations",
+    "body": "Scytáles offers the product to customers and partners as a core engine that can be integrated directly with a range of trusted relying parties' interfaces and readers.",
+    "items": [
+      "Desko",
+      "Famoco",
+      "Zebra",
+      "Tablets",
+      "Coppernic",
+      "Datalogic"
+    ]
+  }
+}

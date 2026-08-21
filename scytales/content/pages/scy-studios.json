@@ -1,0 +1,64 @@
+{
+  "slug": "scy-studios",
+  "layout": "scy-studios",
+  "seoTitle": "SCY Studios | Scytáles",
+  "seoDescription": "SCY Studios showcases thought leadership on digital identity, secure credentials, and the future of identification.",
+  "eyebrow": "SCY Studios",
+  "title": "SCY Studios",
+  "lead": "A unique video platform meant to showcase and highlight the world of evolving and improving identification efforts with an unconventional approach.",
+  "cta": {
+    "label": "Submit your application",
+    "href": "./page.html?slug=contacts"
+  },
+  "sections": [
+    {
+      "id": "secure-credentials",
+      "heading": "Secure Credentials for You",
+      "body": "A global pandemic and its widespread effect over the course of the last year, the likes of which haven’t been experienced in anyone’s lifetime, has changed so much of how we live, work, and approach the identity management (IDM) tasks of a 2021 environment. And while for us, an unimaginable situation to find ourselves in, the past points towards an inevitable transformation that will now happen in our world…completely unstoppable. Technology is the guide that will usher us through this change. Pop in and join us as we discuss and explore the ever-emerging world of electronic identity and how it is reshaping how the world transacts around the need for in-person and remote identification."
+    },
+    {
+      "id": "expect",
+      "heading": "What to expect",
+      "bullets": [
+        "Thought leadership from around the world",
+        "Digital identity challenges and opportunities",
+        "Multi-viewpoints across stakeholders"
+      ]
+    },
+    {
+      "id": "about",
+      "heading": "About the SCY Studios",
+      "body": "People have always tried to predict what the future might look like. The guests and thought leaders showcased here on SCY Studios will be sharing their views and opinions on the challenges and opportunities that those of us who work around identity will have to traverse. These subject matter experts will share how they see a future marketplace, the moves that should be made by those most entrenched in the work of IDM, and what a better future might be. Whether you know it or not, you are impacted by these relevant conversations and won’t want to miss them – subscribe and share to our channel and our mutual destination… Secure Credentials for You."
+    }
+  ],
+  "sessionsHeading": "SCY Sessions",
+  "sessions": [
+    {
+      "guest": "Jeremy Grant",
+      "role": "",
+      "date": "August 4, 2022",
+      "summary": "Discussion on the need for government to perform their duties as only they can to realize progress with digital identity efforts.",
+      "thumbnail": "assets/sessions/session-2.jpg",
+      "vimeoId": "1212261798",
+      "vimeoHash": "d78dbee67b"
+    },
+    {
+      "guest": "Gail Hodges",
+      "role": "Founder of the Future Identity Council",
+      "date": "July 20, 2021",
+      "summary": "Discussion on “Filling the gaps and making connections within the ever-growing digital identity universe“",
+      "thumbnail": "assets/sessions/session-3.jpg",
+      "vimeoId": "1212261799",
+      "vimeoHash": "3cd546d219"
+    },
+    {
+      "guest": "Ian Grossman",
+      "role": "from AAMVA",
+      "date": "March 3, 2021",
+      "summary": "Discussion on the membership’s mDL efforts (PKD) and showcase AAMVA’s new educational video on mDL",
+      "thumbnail": "assets/sessions/session-1.jpg",
+      "vimeoId": "1212261800",
+      "vimeoHash": "e66d692af3"
+    }
+  ]
+}

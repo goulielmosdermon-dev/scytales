@@ -1,0 +1,34 @@
+{
+  "pages": [
+    {
+      "slug": "events",
+      "title": "Discover exciting opportunities and connect with us at upcoming events",
+      "seoTitle": "Events | Scytáles"
+    },
+    {
+      "slug": "scy-studios",
+      "title": "SCY Studios",
+      "seoTitle": "SCY Studios | Scytáles"
+    },
+    {
+      "slug": "about",
+      "title": "About Scytáles: Secure Credentials for You",
+      "seoTitle": "About Scytáles | Scytáles"
+    },
+    {
+      "slug": "partners",
+      "title": "Our Valued Partners",
+      "seoTitle": "Our Partners | Scytáles"
+    },
+    {
+      "slug": "join",
+      "title": "Join Our Team",
+      "seoTitle": "Join Our Team | Scytáles"
+    },
+    {
+      "slug": "contacts",
+      "title": "Contact us. Uncover the possibilities and see how Scytáles can make a difference for you",
+      "seoTitle": "Contacts | Scytáles"
+    }
+  ]
+}

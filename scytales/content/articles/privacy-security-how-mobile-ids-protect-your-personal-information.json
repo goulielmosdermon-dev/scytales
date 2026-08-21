@@ -1,0 +1,150 @@
+{
+  "slug": "privacy-security-how-mobile-ids-protect-your-personal-information",
+  "title": "Privacy & Security: How Mobile IDs Protect Your Personal Information",
+  "seoTitle": "Privacy & Security: How Mobile IDs Protect Your Personal Information | Scytáles Newsroom",
+  "description": "The increasing use of mobile IDs for identification creates a natural focus on privacy and data minimisation.",
+  "excerpt": "The increasing use of mobile IDs for identification creates a natural concern: how safe is my personal data? We understand these concerns and want to assure you that mobile ID systems developed by Scytáles are data protection and security-oriented from the start. Our mobile ID so…",
+  "category": "articles",
+  "categoryLabel": "Articles",
+  "date": "2024-03-13",
+  "dateLabel": "Mar 13, 2024",
+  "image": "assets/articles/privacy-security-how-mobile-ids-protect-your-personal-information.jpg",
+  "topics": [
+    "Mobile ID",
+    "Security & Privacy"
+  ],
+  "body": [
+    {
+      "type": "p",
+      "html": "The increasing use of mobile IDs for identification creates a natural concern: how safe is my personal data? We understand these concerns and want to assure you that mobile ID systems developed by Scytáles are data protection and security-oriented from the start. Our mobile ID solutions use advanced security measures to guarantee that your information is secure, and at the same time, it provides better control and transparency than traditional paper IDs."
+    },
+    {
+      "type": "h2",
+      "text": "Addressing Privacy Concerns"
+    },
+    {
+      "type": "p",
+      "html": "When compared to physical IDs, which have all our information on them, mobile IDs typically store only a limited set of data. This lowers the risk of personal data exposure during the validation phase. Furthermore, mobile IDs frequently include “selective disclosure” that allows you to choose specific information to share with a verifier, giving you more control over your privacy."
+    },
+    {
+      "type": "h2",
+      "text": "Security Measures for Mobile IDs"
+    },
+    {
+      "type": "p",
+      "html": "Mobile ID systems use strong encryption to protect your data when saved on your device and when communicating with validation servers. This encryption scrambles your data, making it illegible to unauthorized users who do not have the right decryption key. Additionally, IDs on a mobile device frequently use Multi-Factor Authentication (MFA) which adds more security since the user must provide an extra verification step other than just a password. Ultimately, mobile ID systems are also operated under the regulations and compliance frameworks which help the systems to be in compliance with the strict data protection and privacy legislations."
+    },
+    {
+      "type": "h2",
+      "text": "Comparison to Traditional IDs"
+    },
+    {
+      "type": "p",
+      "html": "Traditional physical IDs can be lost, stolen or tampered with, requiring additional control and security measures. Mobile IDs offer distinct advantages:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Remote lock and disable</strong> — If you lose your phone, you can simply disable your mobile ID remotely. This prevents any unauthorized access and misuse of your personal data.",
+        "<strong>Security:</strong> Mobile IDs incorporate advanced security features like encryption and biometrics (e.g., fingerprint or facial recognition) and are issued with Level of Assurance High (same level as Passports), making them significantly more resistant to fraud than traditional IDs. A digital identity is constantly updated based on the information available from each digital transaction, which makes it dynamic and continually and continuously more secure every time it is used."
+      ],
+      "htmlItems": true
+    },
+    {
+      "type": "p",
+      "html": "For a deeper analysis of the comparison between traditional IDs with Mobile IDs check the post <a href=\"./article.html?slug=the-future-of-identification-mobile-ids-vs-traditional-ids\">The Future of Identification: Mobile IDs vs Traditional IDs</a>."
+    },
+    {
+      "type": "h2",
+      "text": "User Control and Transparency"
+    },
+    {
+      "type": "p",
+      "html": "Mobile IDs, like the ones developed by Scytáles, empower you to have more control over your personal information:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Control over shared information</strong> — You decide which data you want to share during the validation process. Do you need to prove you are an adult? Just share that you are over 18 or 21, no one needs to know when your birthday is unless you want them to.",
+        "<strong>Access to logs and transaction history</strong> — Available logs tell you who has accessed your mobile ID and why, which provides greater transparency and peace of mind."
+      ],
+      "htmlItems": true
+    },
+    {
+      "type": "h2",
+      "text": "The Importance of User Awareness"
+    },
+    {
+      "type": "p",
+      "html": "While mobile IDs are secure, user awareness and responsible practices are crucial for maintaining strong security:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Use strong passwords and keep the phone software up-to-date",
+        "Be careful about providing personal information to people or organizations you do not know",
+        "Report any suspicious activity related to your mobile ID"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Conclusion"
+    },
+    {
+      "type": "p",
+      "html": "Scytáles Mobile ID solutions are designed with user privacy concerns at the forefront and implement strong security measures. Mobile IDs provide secure and convenient ways of identifying ourselves, offering more control over our personal information and the data we disclose."
+    },
+    {
+      "type": "h2",
+      "text": "Scytáles technology available as SDKs"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Can be implemented in just under 6 weeks",
+        "Can be easily integrated with the currently implemented solution and act as an add-on",
+        "By having a high level of assurance validation, you can ensure the identity of your users",
+        "Checking in using the mobile validator ensures the person accessing the services is who they say they are",
+        "Ensure the privacy of your guests by requesting only the data you need",
+        "Compliance with KYC, AML, GDPR and eIDAS 2.0 regulations, as well as with ISO 18013 parts 5 and 7",
+        "Compliant with the European Digital Identity Architecture and Reference Framework (the European Digital Identity Wallet of which Scytáles are the technology developers), ISO 18013 part 5 and part 7 driving licences and mobile IDs",
+        "Compliant with OID4VCI, OID4VP and SIOPv2, where DIF JWT VC Presentation Profile uses OID4VP as the base protocol for the request and verification of W3C JWT VCs, and uses SIOPv2 for user authentication; while NIST (National Cybersecurity Center of Excellence) plans to implement reference implementation for OID4VP to present mdocs/mDL",
+        "Fully certified solutions",
+        "To cater to diverse needs, we offer different pricing solutions and business models. Our transparent policy ensures that you have the flexibility to choose the option that aligns best with your organization's requirements."
+      ]
+    },
+    {
+      "type": "p",
+      "html": "<a href=\"./index.html#contact\"><strong>Contact us now</strong></a> to get your 30-day free trial on our SDKs."
+    },
+    {
+      "type": "h2",
+      "text": "Scytáles, Your Trusted ID Verification Provider"
+    },
+    {
+      "type": "p",
+      "html": "At Scytáles, we are thrilled to share groundbreaking developments in digital identity that are set to revolutionize the way we authenticate and interact remotely online and face-to-face."
+    },
+    {
+      "type": "p",
+      "html": "<strong>Proven track record:</strong> Implementors of the first full ISO 18013-5 compliant Mobile Driver’s License program in the US in the State of Utah and technology providers of the European Digital Identity Wallet (EUDI Wallet) which will soon be rolled out to more than 440 million European citizens, with our technology being broadly used across the globe."
+    },
+    {
+      "type": "p",
+      "html": "<strong>Expert Representation in several standardization bodies:</strong> Scytáles represents Sweden as an expert through the Standardization Body (SIS) SIS/TK 448 and Task Force 14 on mDL within ISO/IEC 18013-5 ISO/IEC JTC1/SC17/WG10."
+    },
+    {
+      "type": "p",
+      "html": "<strong>Global leaders in mobile IDs:</strong> Scytáles is the leading developer of ISO-Mobile Driving Licenses, Mobile IDs and Derived Mobile IDs as a complement to Security Printed Documents and Validation mechanisms."
+    },
+    {
+      "type": "p",
+      "html": "<strong>Providers of the most comprehensive validation solution:</strong> Our Mobile Validator is built focused on privacy, allowing for all validation scenarios, in real-time in online and offline modes, over the counter and over the web/remotely."
+    },
+    {
+      "type": "p",
+      "html": "<strong>High level of Assurance identification at our core:</strong> Our product portfolio showcases the different solutions we offer the market for secure, interoperable and trustworthy identification credentials."
+    }
+  ],
+  "source": "https://www.scytales.com/post/privacy-security-how-mobile-ids-protect-your-personal-information"
+}
