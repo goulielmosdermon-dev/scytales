@@ -6,6 +6,10 @@
 (() => {
   'use strict';
 
+  /* Dev-only tool — hide on deployed hosts */
+  const host = location.hostname;
+  if (host !== 'localhost' && host !== '127.0.0.1') return;
+
   const DB_NAME = 'scytales-image-lab';
   const DB_VERSION = 1;
   const STORE = 'overrides';

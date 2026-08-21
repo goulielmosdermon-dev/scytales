@@ -4,6 +4,7 @@
 .claude/
 
 # Design-source dump (~2GB) — not part of the served site
-Assets/
-UI/
-Reference/
+# Leading / = repo root only (macOS ignorecase would otherwise skip scytales/assets)
+/Assets/
+/UI/
+/Reference/
