@@ -1,9 +1,9 @@
 /* Slide-in menu.
 
    The bar carries one control: a square that turns into an X. Clicking it
-   slides the panel in from the right. Four rows in the display face;
-   pointing at one opens the gap beneath it and reveals that section's
-   links. Choosing a link closes the menu and lets js/page-transition.js
+   slides the panel in from the right. Four labels on the left; hovering one
+   trickles that section's links down in a fixed right column — the labels
+   never reflow. Choosing a link closes the menu and lets js/page-transition.js
    carry the page out.
 
    Hover is the desktop affordance and click is the universal one, so both
@@ -23,8 +23,28 @@
     if (!menu || !toggle) return;
     nav.dataset.menuWired = '1';
 
+    const body = menu.querySelector('[data-menu-body]');
     const rows = [...menu.querySelectorAll(ROW_SELECTOR)];
+    const drawers = [...menu.querySelectorAll('[data-menu-drawer]')];
     const canHover = window.matchMedia('(hover: hover)').matches;
+
+    const drawerFor = (row) => {
+      const id = row?.querySelector('[data-menu-trigger]')?.getAttribute('aria-controls');
+      return id ? menu.querySelector(`#${CSS.escape(id)}`) : null;
+    };
+
+    const positionDrawer = (row, drawer) => {
+      if (!row || !drawer) return;
+      drawer.style.top = `${row.offsetTop}px`;
+    };
+
+    const replayTrickle = (drawer) => {
+      drawer.querySelectorAll('.menu__list li').forEach((item) => {
+        item.style.animation = 'none';
+        item.offsetHeight;
+        item.style.animation = '';
+      });
+    };
 
     const openRow = (row) => {
       rows.forEach((other) => {
@@ -32,6 +52,16 @@
         other.classList.toggle('is-open', on);
         other.querySelector('[data-menu-trigger]')
           ?.setAttribute('aria-expanded', on ? 'true' : 'false');
+      });
+
+      drawers.forEach((drawer) => {
+        const active = row && drawer === drawerFor(row);
+        drawer.classList.toggle('is-open', !!active);
+        drawer.hidden = !active;
+        if (active) {
+          positionDrawer(row, drawer);
+          replayTrickle(drawer);
+        }
       });
     };
 
@@ -90,8 +120,14 @@
     });
 
     if (canHover) {
-      menu.querySelector('.menu__rows')?.addEventListener('pointerleave', closeRows);
+      body?.addEventListener('pointerleave', closeRows);
     }
+
+    window.addEventListener('resize', () => {
+      const open = rows.find((row) => row.classList.contains('is-open'));
+      if (!open) return;
+      positionDrawer(open, drawerFor(open));
+    });
 
     /* A chosen link closes the menu; the page transition does the rest. */
     menu.addEventListener('click', (event) => {

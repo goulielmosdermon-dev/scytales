@@ -217,8 +217,8 @@ html.is-page-leaving {
 /* ============================================================
    SITE MENU — square burger, panel slides in from the right
    The bar holds the logo and one control. Four rows in the display face;
-   pointing at a row opens the gap under it and reveals that section's
-   links (js/site-menu.js).
+   hovering a row reveals that section's links in a fixed right-hand column
+   beside it — labels never reflow (js/site-menu.js).
    ============================================================ */
 .nav__burger {
   --burger-size: 44px;
@@ -322,8 +322,9 @@ html.is-page-leaving {
   top: 0;
   right: 0;
   height: 100%;
-  width: min(34rem, 100%);
-  background: var(--navy-900);
+  /* Wider panel — grows left from the burger while the right edge stays put. */
+  width: min(52rem, 100%);
+  background: #000000;
   color: var(--white);
   padding: calc(var(--nav-h) + var(--space-6)) var(--space-6) var(--space-6);
   overflow-y: auto;
@@ -336,15 +337,25 @@ html.is-page-leaving {
 }
 .nav.is-menu-open .menu__panel { transform: none; }
 
-.menu__rows {
+.menu__body {
+  display: grid;
+  /* max-content so display headings don't bleed into the subs column */
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: calc(var(--section-pad-x) * 1.5);
+  position: relative;
+  align-items: start;
+}
+.menu__labels {
   list-style: none;
   margin: 0;
   padding: 0;
+  grid-column: 1;
+  max-width: 100%;
 }
-.menu__row + .menu__row { margin-top: var(--space-3); }
+.menu__row + .menu__row { margin-top: var(--space-4); }
 .menu__label {
   display: block;
-  width: 100%;
+  width: auto;
   padding: 0;
   border: 0;
   background: none;
@@ -356,29 +367,67 @@ html.is-page-leaving {
   letter-spacing: var(--ls-display);
   color: var(--white);
   cursor: pointer;
+  white-space: nowrap;
   transition: color .2s ease;
 }
 .menu__row.is-open .menu__label,
 .menu__label:hover { color: var(--orange-500); }
-/* The gap opens rather than the list appearing: 0fr → 1fr animates the
-   row's own height, so the rows beneath are pushed down smoothly. */
-.menu__drawer {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows .5s cubic-bezier(.22, 1, .36, 1);
+/* Right column — overlays beside the labels; never pushes them down. */
+.menu__subs {
+  grid-column: 2;
+  position: relative;
+  align-self: stretch;
+  min-height: 100%;
 }
-.menu__row.is-open .menu__drawer { grid-template-rows: 1fr; }
+.menu__drawer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .28s ease, visibility .28s ease;
+}
+.menu__drawer.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
 .menu__list {
-  overflow: hidden;
+  overflow: visible;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0.1rem 0 0;
   display: grid;
   gap: var(--space-2);
 }
-.menu__row.is-open .menu__list {
-  padding: var(--space-3) 0 var(--space-4);
+@keyframes menu-trickle-in {
+  from {
+    opacity: 0;
+    transform: translateY(-0.4rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
+.menu__drawer.is-open .menu__list li {
+  opacity: 0;
+  animation: menu-trickle-in .42s cubic-bezier(.22, 1, .36, 1) forwards;
+}
+.menu__drawer.is-open .menu__list li:nth-child(1)  { animation-delay: 0ms; }
+.menu__drawer.is-open .menu__list li:nth-child(2)  { animation-delay: 45ms; }
+.menu__drawer.is-open .menu__list li:nth-child(3)  { animation-delay: 90ms; }
+.menu__drawer.is-open .menu__list li:nth-child(4)  { animation-delay: 135ms; }
+.menu__drawer.is-open .menu__list li:nth-child(5)  { animation-delay: 180ms; }
+.menu__drawer.is-open .menu__list li:nth-child(6)  { animation-delay: 225ms; }
+.menu__drawer.is-open .menu__list li:nth-child(7)  { animation-delay: 270ms; }
+.menu__drawer.is-open .menu__list li:nth-child(8)  { animation-delay: 315ms; }
+.menu__drawer.is-open .menu__list li:nth-child(9)  { animation-delay: 360ms; }
+.menu__drawer.is-open .menu__list li:nth-child(10) { animation-delay: 405ms; }
+.menu__drawer.is-open .menu__list li:nth-child(11) { animation-delay: 450ms; }
+.menu__drawer.is-open .menu__list li:nth-child(12) { animation-delay: 495ms; }
 .menu__link {
   font-family: var(--font-body);
   font-size: 15px;
@@ -405,7 +454,18 @@ html.is-menu-open body { overflow: hidden; }
   .menu__panel,
   .menu__scrim,
   .menu__drawer,
-  .nav__burger-box span { transition-duration: .01ms; }
+  .menu__drawer.is-open .menu__list li,
+  .nav__burger-box span { transition-duration: .01ms; animation-duration: .01ms; animation-delay: 0ms !important; }
+}
+
+@media (max-width: 640px) {
+  .menu__panel { width: 100%; }
+  .menu__body {
+    grid-template-columns: max-content minmax(0, 1fr);
+    gap: var(--section-pad-x);
+  }
+  .menu__label { font-size: clamp(1.65rem, 7vw, 2.25rem); }
+  .menu__link { font-size: 14px; }
 }
 
 /* ============================================================
