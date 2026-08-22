@@ -11,11 +11,11 @@
     orange: { h: 14, s: -1, l: 0 },
     navy: { h: 14, s: -51, l: -3 },
     line: '',
-    text: { ink: '', head: '', accent: '#E7411D', muted: '' },
+    text: { ink: '', head: '', accent: '#E6411C', muted: '' },
     earth: {
       tint: '#FFFFFF',
       lightCol: '#4194C8',
-      darkCol: '#0B0061',
+      darkCol: '#080917',
       glowInner: '',
       glowOuter: '',
       glowBottom: '',
@@ -26,19 +26,19 @@
 
   /* Resolved hexes — same as shared/tokens.css after the freeze. */
   const TOKENS = {
-    '--orange-500': '#E7411D',
+    '--orange-500': '#E6411C',
     '--orange-mark': '#E5701D',
     '--orange-600': '#C26019',
     '--orange-300': '#ECA36F',
     '--orange-100': '#FAE5D6',
     '--rust-700': '#7B470F',
-    '--navy-900': '#020206',
+    '--navy-900': '#080917',
     '--navy-800': '#080917',
-    '--navy-600': '#323339',
+    '--navy-600': '#080917',
     '--ink': '#080917',
     '--earth-tint': '#FFFFFF',
     '--earth-light': '#4194C8',
-    '--earth-dark': '#0B0061',
+    '--earth-dark': '#080917',
   };
 
   const apply = () => {

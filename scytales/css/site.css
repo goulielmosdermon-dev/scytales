@@ -4,7 +4,7 @@
    that already exist as a token.
    Design base: Standard Desktop 1440.
    ============================================================ */
-@import url("../../shared/tokens.css?v=23");
+@import url("../../shared/tokens.css?v=25");
 @import url("../../shared/components.css");
 @import url("../../shared/phone.css");
 @import url("../../shared/passport.css");
@@ -2222,9 +2222,7 @@ html.is-menu-open body { overflow: hidden; }
      it and only releases once the fourth is reached. */
   --dial-scroll: 100vh;
   position: relative;
-  /* The deepest step in the palette — black with just enough blue in it
-     to stay part of the family. */
-  background: var(--navy-900);
+  background: #000000;
   color: var(--white);
   padding: 0;
 }
@@ -4288,8 +4286,8 @@ body.roi-lightbox-open { overflow: hidden; }
   align-items: center;
   padding: 3px 8px;
   border-radius: 5px;
-  background: var(--orange-500);
-  color: var(--white);
+  background: var(--white);
+  color: var(--orange-500);
   font-family: var(--font-body);
   font-size: 11px;
   font-weight: 600;

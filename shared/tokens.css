@@ -80,16 +80,17 @@
 :root {
   /* ---- Brand — Orange ------------------------------------
      Frozen from Color Lab (desktop session, Aug 2026).         */
-  --orange-500: #E7411D;   /* primary brand orange */
+  --orange-500: #E6411C;   /* primary brand orange */
   --orange-mark:#E5701D;   /* logo mark + icon strokes */
   --orange-600: #C26019;   /* hover / pressed */
   --orange-300: #ECA36F;   /* light accent / frame line */
   --orange-100: #FAE5D6;   /* tint / surface */
 
-  /* ---- Brand — Navy -------------------------------------- */
-  --navy-900:   #020206;   /* deepest — dark sections, hover */
+  /* ---- Brand — Navy --------------------------------------
+     Single brand blue — all navy tokens resolve to #080917. */
+  --navy-900:   #080917;   /* dark sections, hover (same as primary) */
   --navy-800:   #080917;   /* primary navy */
-  --navy-600:   #323339;   /* secondary navy */
+  --navy-600:   #080917;   /* controls (same as primary) */
 
   /* ---- Neutrals — warm cream family ---------------------- */
   --cream-50:   #FAF4EC;   /* warm cream */
@@ -101,7 +102,7 @@
      Frozen from Color Lab (desktop session, Aug 2026). */
   --earth-tint:   #FFFFFF;   /* land dots (white = untinted) */
   --earth-light:  #4194C8;   /* lit side of the globe's body */
-  --earth-dark:   #0B0061;   /* shadowed side */
+  --earth-dark:   #080917;   /* shadowed side */
 
   /* ---- Syntax palette ------------------------------------
      Editor colours, used only by the hover-scramble: a character flips to
