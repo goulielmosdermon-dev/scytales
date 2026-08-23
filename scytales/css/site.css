@@ -1111,12 +1111,12 @@ html.is-menu-open body { overflow: hidden; }
      headline never runs up against the frame line. */
   padding-inline: var(--space-6);
 }
-/* XL step — the home headline is the one place it is used.
+/* Same size as the statement band (.statement__text / --fs-display-1).
    Rhythm falls back to the shared display tokens until the Font Lab's
    "Hero headline" sliders set --hero-lh / --hero-ls. */
 .hero__lead .display-1 {
   margin-bottom: 0;
-  font-size: var(--fs-display-1-xl);
+  font-size: var(--fs-display-1);
   line-height: var(--hero-lh, var(--lh-hero));
   letter-spacing: var(--hero-ls, var(--ls-hero, var(--ls-display)));
   max-width: 20ch;
@@ -2194,11 +2194,10 @@ html.is-menu-open body { overflow: hidden; }
   .hero { min-height: 0; }
   .hero__grid { gap: var(--space-6); }
 
-  /* Real overflow cause: --fs-display-1-xl is a fixed 60px, while the
-     typewriter cycles unbreakable words (inline-block + scramble nowrap)
-     up to “Transportation”. That glyph run is wider than the phone
-     measure, and .hero { overflow:hidden } clips the right edge — which
-     looks like a padding bug. Scale the face to the viewport instead.
+  /* Real overflow cause: long typewriter words (inline-block + scramble
+     nowrap) up to “Transportation” can exceed the phone measure, and
+     .hero { overflow:hidden } clips the right edge — which looks like a
+     padding bug. Scale the face to the viewport instead.
      Drop the extra --space-6 inset too: the container already holds the
      2rem gutter, and doubling it only shrinks the measure further. */
   .hero__lead {
@@ -2208,7 +2207,7 @@ html.is-menu-open body { overflow: hidden; }
     box-sizing: border-box;
   }
   .hero__lead .display-1 {
-    font-size: clamp(1.75rem, 10.5vw, var(--fs-display-1-xl));
+    font-size: clamp(1.75rem, 10.5vw, var(--fs-display-1));
     max-width: 100%;
   }
   .hero__actions {
