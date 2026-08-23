@@ -2,7 +2,7 @@
 (() => {
   'use strict';
 
-  const STORAGE = 'scytales-code-loader-seen-v3';
+  const STORAGE = 'scytales-code-loader-seen-v4';
   const VB_W = 1024;
   const VB_H = 752;
   const PATHS = [
@@ -45,7 +45,7 @@
     const probe = document.createElement('div');
     probe.style.cssText = `position:absolute;visibility:hidden;font-size:${sizeRaw}`;
     document.documentElement.appendChild(probe);
-    const size = (parseFloat(getComputedStyle(probe).fontSize) || 17) * 0.5;
+    const size = (parseFloat(getComputedStyle(probe).fontSize) || 17) * 0.65;
     probe.remove();
     return { family, weight, size };
   };
@@ -138,19 +138,31 @@
     const CHAR_W = fontSize * 0.62;
     const LINE_H = fontSize * 1.2;
 
+    const killWhiteCover = () => {
+      const pt = document.querySelector('[data-page-transition]');
+      if (!pt) return;
+      pt.classList.add('is-revealed');
+      pt.classList.remove('is-covering');
+    };
+
     const finish = () => {
       if (persistSeen) localStorage.setItem(STORAGE, '1');
       delete document.documentElement.dataset.codeLoaderPending;
       if (!host) document.documentElement.dataset.codeLoaderExit = '1';
+      /* White page-transition must never show under the navy fade. */
+      killWhiteCover();
       if (!fadeOut) {
+        if (lockScroll) document.documentElement.classList.remove('is-code-loading');
         options.onDone?.();
         return;
       }
       root.classList.add('is-fading');
-      if (lockScroll) document.documentElement.classList.remove('is-code-loading');
+      /* Keep is-code-loading until navy is gone — removing it early unmasks white. */
       window.setTimeout(() => {
         root.classList.add('is-done');
         root.remove();
+        killWhiteCover();
+        if (lockScroll) document.documentElement.classList.remove('is-code-loading');
         options.onDone?.();
         if (!host) window.dispatchEvent(new CustomEvent('scytales:code-loader-done'));
       }, FADE_MS);

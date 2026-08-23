@@ -85,15 +85,19 @@
     const fromTransition = sessionStorage.getItem(FLAG) === '1';
     sessionStorage.removeItem(FLAG);
 
+    const loaderActive = () =>
+      !!document.documentElement.dataset.codeLoaderPending ||
+      !!document.documentElement.dataset.codeLoaderExit ||
+      !!document.querySelector('[data-code-loader]:not(.is-done)');
+
+    /* While the navy loader owns the screen, never arm the white cover. */
+    if (loaderActive()) {
+      overlay.classList.add('is-revealed');
+      overlay.classList.remove('is-covering');
+    }
+
     const waitLoader = () => new Promise((resolve) => {
-      if (localStorage.getItem('scytales-code-loader-seen-v3')) {
-        resolve();
-        return;
-      }
-      if (
-        !document.documentElement.dataset.codeLoaderPending &&
-        !document.querySelector('[data-code-loader]:not(.is-done)')
-      ) {
+      if (!loaderActive()) {
         resolve();
         return;
       }
@@ -106,7 +110,7 @@
     delete document.documentElement.dataset.codeLoaderExit;
 
     if (fromLoader) {
-      /* Navy already faded — don't flash white over the site. */
+      /* Navy already faded — never run the white cover/reveal. */
       overlay.classList.add('is-revealed');
       overlay.classList.remove('is-covering');
     } else if (fromTransition || !reduceMotion.matches) {

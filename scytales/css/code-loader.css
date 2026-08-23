@@ -42,9 +42,12 @@
 html.is-code-loading {
   overflow: hidden;
 }
-html.is-code-loading .page-transition {
-  opacity: 0;
-  visibility: hidden;
+/* Hide the white page-transition for the whole loader + navy fade. */
+html.is-code-loading .page-transition,
+html[data-code-loader-exit] .page-transition {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
 
 @media (prefers-reduced-motion: reduce) {

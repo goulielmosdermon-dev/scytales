@@ -118,6 +118,7 @@
 
   /* ---- Support ------------------------------------------- */
   --rust-700:   #7B470F;   /* gradient / accent dark */
+  --neutral-900:#1A1816;   /* dark grey panels (innovation dial sheets) */
   --neutral-500:#8A8178;   /* muted text, greyed logos */
   --neutral-300:#D9D5CF;   /* image placeholder grey */
   --white:      #FFFFFF;
