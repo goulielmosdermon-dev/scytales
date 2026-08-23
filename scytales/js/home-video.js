@@ -12,6 +12,7 @@
   if (!figure) return;
 
   const id = figure.dataset.vimeoId;
+  const hash = figure.dataset.vimeoHash;
   const poster = figure.querySelector('[data-home-video-poster]');
   const playBtn = figure.querySelector('[data-video-action="play"]');
   const pauseBtn = figure.querySelector('[data-video-action="pause"]');
@@ -59,6 +60,7 @@
       portrait: '0',
       dnt: '1',
     });
+    if (hash) params.set('h', hash);
 
     const iframe = document.createElement('iframe');
     iframe.className = 'video-player__media video-player__media--embed';
