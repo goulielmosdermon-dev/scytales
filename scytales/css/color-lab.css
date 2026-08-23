@@ -1,12 +1,6 @@
 /* ============================================================
    COLOR LAB — live palette previewer
-   Frozen Aug 2026: panel hidden; values live in shared/tokens.css.
    ============================================================ */
-[data-color-lab],
-.color-lab {
-  display: none !important;
-}
-
 .color-lab {
   position: fixed;
   top: 50%;

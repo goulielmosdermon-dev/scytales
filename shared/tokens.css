@@ -100,6 +100,7 @@
 
   /* ---- Earth band ("The backbone of global digital id") ---
      Frozen from Color Lab (desktop session, Aug 2026). */
+  --earth-band-bg:#000098;   /* impact + globe section background */
   --earth-tint:   #FFFFFF;   /* land dots (white = untinted) */
   --earth-light:  #4194C8;   /* lit side of the globe's body */
   --earth-dark:   #080917;   /* shadowed side */

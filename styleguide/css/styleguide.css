@@ -566,10 +566,64 @@ section { padding: var(--section-pad-y) 0; border-bottom: 1px solid var(--cream-
   aspect-ratio: 3062 / 571;
   min-height: 180px;
 }
+
 .scytale-rod canvas {
   display: block;
   width: 100%;
   height: 100%;
+}
+
+/* Exact mark — pixel-traced from the brand reference outline. */
+.mark-exact-stage {
+  background: #000000;
+  padding: var(--space-7) var(--section-pad-x);
+  display: grid;
+  place-items: center;
+}
+.mark-exact-stage--loader {
+  background: var(--navy-800);
+  min-height: 360px;
+}
+.mark-exact-stage--loader .code-loader-stage {
+  position: relative;
+  width: min(100%, 420px);
+  aspect-ratio: 1024 / 752;
+}
+.mark-exact-stage__svg {
+  display: block;
+  width: min(100%, 720px);
+  height: auto;
+  aspect-ratio: 1024 / 752;
+}
+.mark-exact-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+  margin-top: var(--space-5);
+}
+@media (max-width: 720px) {
+  .mark-exact-compare { grid-template-columns: 1fr; }
+}
+.mark-exact-compare__pane {
+  background: #000000;
+  padding: var(--space-4);
+  display: grid;
+  place-items: center;
+  gap: var(--space-3);
+}
+.mark-exact-compare__pane img,
+.mark-exact-compare__pane svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1024 / 752;
+}
+.mark-exact-compare__label {
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--neutral-500);
 }
 
 

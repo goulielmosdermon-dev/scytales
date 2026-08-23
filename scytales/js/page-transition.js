@@ -80,15 +80,38 @@
     location.href = href;
   };
 
-  const boot = () => {
+  const boot = async () => {
     const overlay = ensureOverlay();
     const fromTransition = sessionStorage.getItem(FLAG) === '1';
     sessionStorage.removeItem(FLAG);
 
-    if (fromTransition || !reduceMotion.matches) {
+    const waitLoader = () => new Promise((resolve) => {
+      if (localStorage.getItem('scytales-code-loader-seen-v3')) {
+        resolve();
+        return;
+      }
+      if (
+        !document.documentElement.dataset.codeLoaderPending &&
+        !document.querySelector('[data-code-loader]:not(.is-done)')
+      ) {
+        resolve();
+        return;
+      }
+      window.addEventListener('scytales:code-loader-done', resolve, { once: true });
+    });
+
+    await waitLoader();
+
+    const fromLoader = document.documentElement.dataset.codeLoaderExit === '1';
+    delete document.documentElement.dataset.codeLoaderExit;
+
+    if (fromLoader) {
+      /* Navy already faded — don't flash white over the site. */
+      overlay.classList.add('is-revealed');
+      overlay.classList.remove('is-covering');
+    } else if (fromTransition || !reduceMotion.matches) {
       overlay.classList.add('is-covering');
       overlay.classList.remove('is-revealed');
-      // Reveal after first paint so the white screen is visible briefly
       requestAnimationFrame(() => {
         requestAnimationFrame(() => reveal(overlay));
       });

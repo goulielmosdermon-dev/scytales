@@ -1,0 +1,52 @@
+/* First-visit code loader — small mark on navy, body-font trickle. */
+.code-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  display: grid;
+  place-items: center;
+  background: var(--navy-800, #080917);
+  opacity: 1;
+  transition: opacity 680ms ease;
+  pointer-events: all;
+}
+.code-loader.is-fading {
+  opacity: 0;
+  pointer-events: none;
+}
+.code-loader.is-done {
+  display: none !important;
+}
+.code-loader__canvas {
+  display: block;
+  width: min(72vw, 420px);
+  height: auto;
+  aspect-ratio: 1024 / 752;
+}
+
+/* Style-guide / embedded stage */
+.code-loader--stage {
+  position: relative;
+  inset: auto;
+  z-index: auto;
+  width: 100%;
+  min-height: 0;
+  background: transparent;
+  pointer-events: none;
+  transition: none;
+}
+.code-loader--stage .code-loader__canvas {
+  width: min(72vw, 420px);
+}
+
+html.is-code-loading {
+  overflow: hidden;
+}
+html.is-code-loading .page-transition {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .code-loader { display: none !important; }
+}

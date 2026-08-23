@@ -18,20 +18,6 @@
     const prev = el.querySelector('img');
     if (prev?.dataset.objectUrl) URL.revokeObjectURL(prev.dataset.objectUrl);
 
-    /* Hand off to the Image Lab where possible: it stores the file and
-       re-applies it on every page load. The object-URL path below is only a
-       fallback, and does not survive a reload. */
-    if (prev && window.ScytalesImageLab?.applyFile) {
-      try {
-        await window.ScytalesImageLab.applyFile(prev, file);
-        el.classList.add('has-image');
-        el.setAttribute('aria-label', 'Replace image, drop or choose a new one');
-        return;
-      } catch (err) {
-        console.error(err);
-      }
-    }
-
     const url = URL.createObjectURL(file);
     let img = prev;
     if (!img) {

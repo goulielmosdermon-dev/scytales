@@ -6,6 +6,10 @@
 <title>Scytáles — Brand Style Guide & UI Rules</title>
 <link rel="stylesheet" href="css/styleguide.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/3.1.0/tabler-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&display=swap">
+<link rel="stylesheet" href="../scytales/css/code-loader.css?v=1">
 </head>
 <body>
 <!-- MASTHEAD -->
@@ -1308,12 +1312,58 @@
   </div>
 </section>
 
+<!-- EXACT MARK / CODE LOADER -->
+<section id="mark-exact" class="code-loader-doc">
+  <div class="wrap">
+    <p class="eyebrow">18 — Motion</p>
+    <h2 class="section-title">First-visit code loader</h2>
+    <p class="section-lead">On first visit, a navy overlay builds the Scytáles mark from trickling body-font code — row by row — then holds and fades out. Mark at original loader scale, <code>var(--navy-800)</code> field, Cascadia Code at half <code>--fs-body-md</code> / <code>--fw-body</code>.</p>
+
+    <table class="bp-table" style="margin-bottom:var(--space-5)">
+      <thead><tr><th>Property</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td>Background</td><td><code>var(--navy-800)</code></td></tr>
+        <tr><td>Mark size</td><td>max 420px wide · viewBox 1024×752</td></tr>
+        <tr><td>Type</td><td><code>var(--font-body)</code> · <code>var(--fw-body)</code> · ½ <code>--fs-body-md</code></td></tr>
+        <tr><td>Build</td><td>1400ms appear · 2000ms hold · 1400ms disappear · navy fade (no white)</td></tr>
+        <tr><td>Mask</td><td>Exact SVG paths · no fill/stroke — letters only</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="mark-exact-stage mark-exact-stage--loader">
+    <div class="code-loader-stage" data-code-loader-preview></div>
+  </div>
+
+  <div class="wrap">
+    <div class="sg-proto__controls" style="margin-top:var(--space-5)">
+      <button class="btn btn-primary" type="button" data-code-loader-replay>Replay</button>
+    </div>
+    <div class="mark-exact-compare">
+      <div class="mark-exact-compare__pane">
+        <img src="assets/logo-mark-reference.png" width="1024" height="752" alt="Brand reference PNG">
+        <span class="mark-exact-compare__label">Reference</span>
+      </div>
+      <div class="mark-exact-compare__pane">
+        <img src="assets/logo-mark-exact.svg?v=2" width="1024" height="752" alt="Smooth SVG outline">
+        <span class="mark-exact-compare__label">Smooth SVG</span>
+      </div>
+    </div>
+    <div class="rules" style="margin:var(--space-5) 0 0">
+      <div class="rule do"><b>✓ Body type in the mark</b>Loader glyphs use the live body tokens — same face, weight, and size as site copy.</div>
+      <div class="rule do"><b>✓ Navy field</b>Full-screen <code>--navy-800</code>, not black.</div>
+      <div class="rule dont"><b>✗ Don't show it again</b>Clear <code>scytales-code-loader-seen-v3</code> in localStorage to replay on the live site.</div>
+    </div>
+  </div>
+</section>
+
 <script src="../shared/age-verification.js"></script>
 <script src="../shared/earth.js"></script>
 <script src="../shared/wallet-activity.js"></script>
 <script src="../scytales/js/innovation-cells.js"></script>
 <script src="../shared/mvalid-ui.js?v=2"></script>
 <script src="js/token-readout.js?v=1"></script>
+<script src="../scytales/js/code-loader.js?v=1"></script>
 <script src="js/contents.js?v=1"></script>
 <script type="module">
   import { init as initStars } from '../shared/euro-stars.js';
