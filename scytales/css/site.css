@@ -2369,6 +2369,37 @@ html.is-menu-open body { overflow: hidden; }
   height: min(150vh, 130vw);
   transform: translate(-50%, -50%);
 }
+/* Security & Privacy only — black fades at the top and bottom of the
+   band, transparent through the middle so the fingerprint softens into
+   the section without washing the copy. */
+.dial__bg:has(.dial__bg-art--fp.is-on)::before,
+.dial__bg:has(.dial__bg-art--fp.is-on)::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  pointer-events: none;
+  height: 38%;
+}
+.dial__bg:has(.dial__bg-art--fp.is-on)::before {
+  top: 0;
+  background: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 28%,
+    transparent 100%
+  );
+}
+.dial__bg:has(.dial__bg-art--fp.is-on)::after {
+  bottom: 0;
+  background: linear-gradient(
+    to top,
+    #000 0%,
+    #000 28%,
+    transparent 100%
+  );
+}
 .dial__bg-art--fp svg {
   width: 100%;
   height: 100%;
