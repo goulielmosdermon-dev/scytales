@@ -1,5 +1,5 @@
 @import url("../../shared/tokens.css");
-@import url("../../shared/components.css");
+@import url("../../shared/components.css?v=2");
 @import url("../../shared/phone.css");
 @import url("../../shared/passport.css");
 @import url("../../shared/card-stack.css");

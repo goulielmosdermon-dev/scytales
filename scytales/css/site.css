@@ -4,8 +4,8 @@
    that already exist as a token.
    Design base: Standard Desktop 1440.
    ============================================================ */
-@import url("../../shared/tokens.css?v=26");
-@import url("../../shared/components.css");
+@import url("../../shared/tokens.css?v=27");
+@import url("../../shared/components.css?v=3");
 @import url("../../shared/phone.css");
 @import url("../../shared/passport.css");
 @import url("../../shared/card-stack.css");
@@ -87,25 +87,47 @@ html.is-page-leaving {
 
 /* Wide screens: the shell stays capped at --container-max, but each band's
    fill continues into the side margins so they match the section instead of
-   sitting as bare page-bg. */
+   sitting as bare page-bg. box-shadow paints behind content (no z-index
+   fight with the body). The old ::before + isolation + z-index:-1 approach
+   was clipped behind the page background, so gutters stayed cream. */
 @media (min-width: 1441px) {
   .site-frame > :not(main),
-  .site-frame > main > * {
-    position: relative;
-    isolation: isolate;
+  .site-frame > main > *,
+  .product-page__content > .wallet-hero,
+  .solution-page > .solution-hero {
+    --band-bleed: var(--page-bg);
+    /* Offsets must be <length> only — % is invalid in box-shadow and
+       the whole declaration was being dropped. Frame is --container-max
+       once the viewport is wider than it. */
+    box-shadow:
+      calc((var(--container-max) - 100vw) / 2) 0 0 0 var(--band-bleed),
+      calc((100vw - var(--container-max)) / 2) 0 0 0 var(--band-bleed);
   }
-  .site-frame > :not(main)::before,
-  .site-frame > main > *::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    width: 100vw;
-    margin-left: -50vw;
-    z-index: -1;
-    pointer-events: none;
-    background: inherit;
+
+  /* Coloured bands — gutters follow the section fill, not --page-bg. */
+  :is(.page-home, .page-dark-nav) .nav,
+  .page-home .hero,
+  .page-home .video-reveal,
+  .page-home .clients,
+  .page-dark-nav .solution-page,
+  .solution-page > .solution-hero {
+    --band-bleed: var(--navy-800);
+  }
+  .page-orange-nav .nav,
+  .product-page__content > .wallet-hero {
+    --band-bleed: var(--orange-500);
+  }
+  .page-home .innovation {
+    --band-bleed: #000000;
+  }
+  .page-home .impact-earth {
+    --band-bleed: var(--earth-band-bg);
+  }
+  .page-home .stories.is-warm {
+    --band-bleed: var(--orange-500);
+  }
+  .site-footer {
+    --band-bleed: var(--orange-500);
   }
 }
 
@@ -260,7 +282,7 @@ html.is-page-leaving {
   cursor: pointer;
   z-index: 62;                   /* above the panel */
 }
-:is(.page-home, .page-dark-nav) .nav__burger { color: var(--white); }
+:is(.page-home, .page-dark-nav, .page-orange-nav) .nav__burger { color: var(--white); }
 /* Past the first section the nav is gone, so the burger lifts out of the
    bar and pins to the top right — the same button, faded in, so the menu
    keeps one trigger and one aria state. js/burger-pin.js sets the class. */
@@ -539,9 +561,9 @@ html.is-menu-open body { overflow: hidden; }
 :is(.page-home, .page-dark-nav) [data-site-nav] {
   background: var(--navy-800);
 }
-/* The dark band (nav → hero → clients) carries no rules of its own: no side
-   lines, no nav underline, no closing line under the hero. The navy runs
-   edge to edge and the frame picks up again at the first cream section. */
+/* The dark band (nav → hero → video → clients) shares one navy fill with
+   no horizontal rules between them. Left/right frame rails stay on for
+   every section — drawn by .site-frame::before/::after above the bleeds. */
 /* How deep the video's top edge sits inside the hero. Read by both the
    video band (its negative top margin) and the hero (the clearance it
    keeps below the buttons), so they can never drift apart. */
@@ -596,6 +618,90 @@ html.is-menu-open body { overflow: hidden; }
 }
 :is(.page-home, .page-dark-nav) .nav__right .btn-primary:hover {
   background: color-mix(in srgb, var(--white) 88%, var(--cream-50));
+}
+/* White left/right rails on dark / warm bands (nav → hero → video →
+   clients, innovation dial, backbone earth, customer-stories once it
+   warms to orange, and the footer). Same construction as .site-frame
+   rails (1px fill strips via --frame-line-width) — not CSS borders,
+   which anti-alias heavier on dark fills and read thicker than orange.
+   Sit above the orange shell (z-index 40). Target .nav (site-nav.js
+   replaces [data-site-nav]). ::after only: ::before paints the
+   wide-screen side bleed. Solutions (.page-dark-nav) already flips
+   --frame-line to white, so its sides come from the shell alone. */
+.page-home .nav::after,
+.page-home .hero::after,
+.page-home .video-reveal::after,
+.page-home .clients::after,
+.page-home .innovation::after,
+.page-home .impact-earth::after,
+.page-home .stories.is-warm::after,
+.page-orange-nav .nav::after,
+.page-orange-nav .wallet-hero::after,
+.site-footer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 41;
+  pointer-events: none;
+  background:
+    linear-gradient(var(--white), var(--white)) left top / var(--frame-line-width, 1px) 100% no-repeat,
+    linear-gradient(var(--white), var(--white)) right top / var(--frame-line-width, 1px) 100% no-repeat;
+}
+/* Solutions + products: white seam under the nav, separating it from the hero.
+   Solutions keeps sides on the shell (already white); products add the
+   side rails above plus this bottom strip. */
+.page-dark-nav .nav::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 41;
+  pointer-events: none;
+  background:
+    linear-gradient(var(--white), var(--white)) left bottom / 100% var(--frame-line-width, 1px) no-repeat;
+}
+.page-orange-nav .nav::after {
+  background:
+    linear-gradient(var(--white), var(--white)) left top / var(--frame-line-width, 1px) 100% no-repeat,
+    linear-gradient(var(--white), var(--white)) right top / var(--frame-line-width, 1px) 100% no-repeat,
+    linear-gradient(var(--white), var(--white)) left bottom / 100% var(--frame-line-width, 1px) no-repeat;
+}
+
+/* ---- Orange nav (individual product pages) -----------------
+   Continues the product hero's orange band: white lockup + white
+   burger. White bottom seam under the bar separates nav from hero. */
+.page-orange-nav .nav,
+.page-orange-nav [data-site-nav] {
+  background: var(--orange-500);
+}
+.page-orange-nav [data-site-nav],
+.page-orange-nav .nav {
+  border-bottom: 0;
+}
+.page-orange-nav .nav__brand--default { display: none; }
+.page-orange-nav .nav__brand--light[hidden] {
+  display: block;
+}
+.page-orange-nav .nav__burger { color: var(--white); }
+.page-orange-nav .nav__toggle span { background: var(--white); }
+.page-orange-nav .nav__links a,
+.page-orange-nav .nav__trigger {
+  color: var(--white);
+}
+.page-orange-nav .nav__links a:hover,
+.page-orange-nav .nav__trigger:hover,
+.page-orange-nav .nav__item--mega.is-open > .nav__trigger {
+  color: var(--navy-800);
+}
+.page-orange-nav .nav__right .btn-primary {
+  background: var(--white);
+  color: var(--orange-500);
+}
+.page-orange-nav .nav__right .btn-primary:hover {
+  background: color-mix(in srgb, var(--white) 88%, var(--cream-50));
+  color: var(--orange-600);
+}
+.page-orange-nav .wallet-hero {
+  position: relative;
 }
 .nav__mark     { height: 23px; width: auto; }
 .nav__wordmark { width: 108px; height: auto; }
@@ -1277,6 +1383,8 @@ html.is-menu-open body { overflow: hidden; }
 .page-home .clients {
   --frame-line: var(--white);
   background: var(--navy-800);
+  /* Same stacking as .video-reveal — keep white rails above the orange shell. */
+  z-index: 41;
 }
 .page-home .clients__belt {
   background: var(--navy-800);
@@ -2686,13 +2794,14 @@ html.is-menu-open body { overflow: hidden; }
     var(--earth-band-bg);
   color: var(--white);
 }
-.impact-earth::after {
+/* Bottom veil lives on the globe band — frees .impact-earth::after for
+   the white side rails (see home dark-band rail rules above). */
+.earth-band::after {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
-  /* Was 78% — this veil sat over most of the globe. */
   height: 28%;
   pointer-events: none;
   z-index: 1;
@@ -2971,6 +3080,7 @@ html.is-menu-open body { overflow: hidden; }
    set and .stories:not(.is-rail) shows all three cases stacked and legible.
    ============================================================ */
 .stories {
+  position: relative;
   background: var(--page-bg);
   color: var(--navy-800);
   padding: calc(var(--section-pad-y) * 1.2) 0 var(--section-pad-y);
@@ -4282,6 +4392,7 @@ body.roi-lightbox-open { overflow: hidden; }
   border-bottom: 0;
 }
 .site-footer {
+  position: relative;
   background: var(--orange-500);
   color: rgba(255, 255, 255, 0.88);
   padding: calc(var(--section-pad-y) * 0.85) 0 calc(var(--space-6));
@@ -4533,7 +4644,10 @@ body.roi-lightbox-open { overflow: hidden; }
 /* Home: the band runs navy from the nav through the clients belt, and the
    video's top slice — --video-bleed deep — is pulled up into the hero. */
 .page-home .video-reveal {
-  z-index: 2;               /* paints over the hero it overlaps */
+  /* Above the orange .site-frame rails (z-index 40) so white side lines
+     on this band and its padding aren’t covered — and still above the
+     hero it overlaps via --video-bleed. */
+  z-index: 41;
   margin-top: calc(-1 * var(--video-bleed));
   padding-top: 0;
   padding-bottom: var(--section-pad-y);

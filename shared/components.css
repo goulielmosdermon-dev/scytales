@@ -153,24 +153,39 @@
    One continuous column outline (Stripe-style). Vertical lines
    live on the shell once; horizontal rules sit between bands.
    Do not stroke every inner div — that doubles borders.
+
+   Left/right rails are absolute overlays (not border-*) so section
+   side-bleeds on wide screens cannot paint over them.
    ------------------------------------------------------------ */
 .site-frame {
+  position: relative;
   max-width: min(var(--container-max), calc(100% - 2 * var(--page-margin-x)));
   width: 100%;
   margin-inline: auto;
-  border-left: 1px solid var(--frame-line);
-  border-right: 1px solid var(--frame-line);
-  border-bottom: 1px solid var(--frame-line);
+  border-bottom: var(--frame-line-width, 1px) solid var(--frame-line);
   /* visible so section fills can bleed into the side margins on wide
      screens (see site.css). Nested bands that need a clip set it locally. */
   overflow: visible;
 }
+.site-frame::before,
+.site-frame::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: var(--frame-line-width, 1px);
+  background: var(--frame-line);
+  z-index: 40;
+  pointer-events: none;
+}
+.site-frame::before { left: 0; }
+.site-frame::after { right: 0; }
 .site-frame:not(:has(> .nav)) {
-  border-top: 1px solid var(--frame-line);
+  border-top: var(--frame-line-width, 1px) solid var(--frame-line);
 }
 .site-frame > :not(main),
 .site-frame > main > * {
-  border-bottom: 1px solid var(--frame-line);
+  border-bottom: var(--frame-line-width, 1px) solid var(--frame-line);
 }
 .site-frame > main > *:last-child {
   border-bottom: 0; /* shell’s bottom edge closes the column */

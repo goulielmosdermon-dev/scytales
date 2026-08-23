@@ -164,7 +164,11 @@
   --content-max: 1376px;            /* 1440 − 2 × 2rem — the usable content width */
   --section-pad-y: var(--space-8);  /* 96px desktop */
   --nav-h: 80px;
-  --frame-line: var(--orange-300);  /* 1px site outline — vertical shell + section rules */
+  --frame-line: var(--orange-300);  /* site outline colour — vertical shell + section rules */
+  /* Shared stroke for every frame rail. 1px on 1× screens; true hairline
+     on retina so white and orange read the same weight (borders used to
+     anti-alias heavier than the orange fill rails). */
+  --frame-line-width: 1px;
 
   /* ---- Proportional scale --------------------------------
      The Figma frame is 857 wide with 798px of content between
@@ -232,6 +236,12 @@
   --shadow-sm: 0 1px 2px rgba(18,32,59,.08);
   --shadow-md: 0 6px 20px rgba(18,32,59,.10);
   --shadow-lg: 0 20px 50px rgba(18,32,59,.16);
+}
+
+/* True hairline on retina — same token the orange shell and white overlays
+   both read, so stroke weight stays matched across colours. */
+@media (min-resolution: 2dppx) {
+  :root { --frame-line-width: 0.5px; }
 }
 
 /* ---- Rhythm steps down with the breakpoint tiers ----------- */
