@@ -250,9 +250,9 @@ scene.add(globe);
 const bodyMat = new THREE.ShaderMaterial({
   toneMapped: false,
   uniforms: {
-    uLight:    { value: new THREE.Vector3(0.7547, -0.6561, 0).normalize() },
+    uLight:    { value: new THREE.Vector3(0.7547, -0.6561, 0).normalize() }, /* angle 319°, elev 0° */
     uLightCol: { value: new THREE.Color('#4194C8') },
-    uDarkCol:  { value: new THREE.Color('#080917') },
+    uDarkCol:  { value: new THREE.Color('#003580') },
     uSoft:     { value: 1.01 },   // terminator width (frozen Color Lab)
   },
   vertexShader: `

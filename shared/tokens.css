@@ -87,10 +87,10 @@
   --orange-100: #FAE5D6;   /* tint / surface */
 
   /* ---- Brand — Navy --------------------------------------
-     Single brand blue — all navy tokens resolve to #080917. */
-  --navy-900:   #080917;   /* dark sections, hover (same as primary) */
-  --navy-800:   #080917;   /* primary navy */
-  --navy-600:   #080917;   /* controls (same as primary) */
+     Single brand blue — all navy tokens resolve to #001c44. */
+  --navy-900:   #001c44;   /* dark sections, hover (same as primary) */
+  --navy-800:   #001c44;   /* primary navy */
+  --navy-600:   #001c44;   /* controls (same as primary) */
 
   /* ---- Neutrals — warm cream family ---------------------- */
   --cream-50:   #FAF4EC;   /* warm cream */
@@ -103,7 +103,7 @@
   --earth-band-bg:#000098;   /* impact + globe section background */
   --earth-tint:   #FFFFFF;   /* land dots (white = untinted) */
   --earth-light:  #4194C8;   /* lit side of the globe's body */
-  --earth-dark:   #080917;   /* shadowed side */
+  --earth-dark:   #003580;   /* shadowed side */
 
   /* ---- Syntax palette ------------------------------------
      Editor colours, used only by the hover-scramble: a character flips to
@@ -121,7 +121,7 @@
   --neutral-500:#8A8178;   /* muted text, greyed logos */
   --neutral-300:#D9D5CF;   /* image placeholder grey */
   --white:      #FFFFFF;
-  --ink:        #080917;   /* default text on light */
+  --ink:        #001c44;   /* default text on light */
 
   /* ---- Typography ---------------------------------------- */
   --font-head: "PP Agrandir", "Helvetica Neue", Arial, sans-serif;

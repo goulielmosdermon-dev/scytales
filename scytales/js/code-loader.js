@@ -104,7 +104,7 @@
   };
 
   const navy = () =>
-    getComputedStyle(document.documentElement).getPropertyValue('--navy-800').trim() || '#080917';
+    getComputedStyle(document.documentElement).getPropertyValue('--navy-800').trim() || '#001c44';
 
   const run = async (options = {}) => {
     const {

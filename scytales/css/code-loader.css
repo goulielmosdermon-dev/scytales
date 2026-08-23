@@ -5,7 +5,7 @@
   z-index: 100000;
   display: grid;
   place-items: center;
-  background: var(--navy-800, #080917);
+  background: var(--navy-800, #001c44);
   opacity: 1;
   transition: opacity 680ms ease;
   pointer-events: all;
