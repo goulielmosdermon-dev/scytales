@@ -161,7 +161,9 @@
   border-left: 1px solid var(--frame-line);
   border-right: 1px solid var(--frame-line);
   border-bottom: 1px solid var(--frame-line);
-  overflow: clip; /* keeps full-bleed bands (logo belt) inside the frame */
+  /* visible so section fills can bleed into the side margins on wide
+     screens (see site.css). Nested bands that need a clip set it locally. */
+  overflow: visible;
 }
 .site-frame:not(:has(> .nav)) {
   border-top: 1px solid var(--frame-line);

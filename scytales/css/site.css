@@ -18,7 +18,7 @@
    BASE
    ============================================================ */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: clip; }
 body {
   font-family: var(--font-body);
   font-weight: var(--fw-body);
@@ -84,6 +84,30 @@ html.is-page-leaving {
   padding-right: var(--section-pad-x);
 }
 .section { padding: var(--section-pad-y) 0; }
+
+/* Wide screens: the shell stays capped at --container-max, but each band's
+   fill continues into the side margins so they match the section instead of
+   sitting as bare page-bg. */
+@media (min-width: 1441px) {
+  .site-frame > :not(main),
+  .site-frame > main > * {
+    position: relative;
+    isolation: isolate;
+  }
+  .site-frame > :not(main)::before,
+  .site-frame > main > *::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 100vw;
+    margin-left: -50vw;
+    z-index: -1;
+    pointer-events: none;
+    background: inherit;
+  }
+}
 
 /* ============================================================
    TYPOGRAPHY  (style guide — 02 Typography)
@@ -525,8 +549,9 @@ html.is-menu-open body { overflow: hidden; }
   --video-bleed: clamp(6rem, 14vw, 13rem);
 }
 .page-home .hero {
-  /* was overflow:hidden, for a star ring that is display:none */
-  overflow: clip;
+  /* was overflow:hidden / clip for a star ring that is display:none —
+     must stay visible so the navy can bleed into the side margins. */
+  overflow: visible;
   /* The band is sized by its own content, not by the viewport. A vh height
      leaves slack that has to go somewhere — centred it split above and below
      the headline (pushing the video away), bottom-anchored it all piled on
@@ -1028,7 +1053,7 @@ html.is-menu-open body { overflow: hidden; }
   /* 0.8 x 0.7 = 56% of the original var(--space-8) rhythm. */
   padding: calc(var(--space-8) * 0.56) 0;
   position: relative;
-  overflow: hidden;   /* the star ring is meant to bleed off the right edge */
+  overflow: visible;   /* side-margin bleed; star ring is display:none */
   /* Full viewport, minus the nav it sits under. min-height, not height,
      so the headline can never be clipped on a short window. */
   min-height: calc(100vh - var(--nav-h));
