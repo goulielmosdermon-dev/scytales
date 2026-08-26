@@ -618,9 +618,9 @@ html.is-menu-open body { overflow: hidden; }
 .page-dark-nav .nav__right .btn-primary:hover {
   background: color-mix(in srgb, var(--white) 88%, var(--cream-50));
 }
-/* Home cream nav sits above the shell rails (z-index 50 > 40), so paint
-   matching L/R frame lines on the bar itself. */
-.page-home .nav::after {
+/* Cream nav sits above the shell rails (z-index 50 > 40), so paint
+   matching L/R frame lines on the bar itself — every page, not only home. */
+.nav::after {
   content: '';
   position: absolute;
   inset: 0;
@@ -639,7 +639,6 @@ html.is-menu-open body { overflow: hidden; }
 .page-home .innovation::after,
 .page-home .impact-earth::after,
 .page-home .stories.is-warm::after,
-.page-orange-nav .nav::after,
 .page-orange-nav .wallet-hero::after,
 .site-footer::after {
   content: '';
