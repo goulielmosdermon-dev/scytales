@@ -590,8 +590,10 @@ html.is-menu-open body { overflow: hidden; }
 .page-home .clients {
   position: relative;
 }
-:is(.page-home, .page-dark-nav) [data-site-nav],
-:is(.page-home, .page-dark-nav) .nav,
+/* Nav bottom seam is painted by .nav::before (full-bleed on wide
+   screens). Zero the shell border so cream / dark / orange don't double. */
+[data-site-nav],
+.nav,
 .page-home .hero,
 .page-home .clients {
   border-bottom: 0;
@@ -617,6 +619,24 @@ html.is-menu-open body { overflow: hidden; }
 }
 .page-dark-nav .nav__right .btn-primary:hover {
   background: color-mix(in srgb, var(--white) 88%, var(--cream-50));
+}
+/* Bottom nav seam — full viewport width so on wide screens it continues
+   through the side bleeds past the L/R frame rails (home included). */
+.nav::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  height: var(--frame-line-width, 1px);
+  margin-left: -50vw;
+  z-index: 41;
+  pointer-events: none;
+  background: var(--frame-line, var(--orange-300));
+}
+.page-dark-nav .nav::before,
+.page-orange-nav .nav::before {
+  background: var(--white);
 }
 /* Cream nav sits above the shell rails (z-index 50 > 40), so paint
    matching L/R frame lines on the bar itself — every page, not only home. */
@@ -650,9 +670,8 @@ html.is-menu-open body { overflow: hidden; }
     linear-gradient(var(--white), var(--white)) left top / var(--frame-line-width, 1px) 100% no-repeat,
     linear-gradient(var(--white), var(--white)) right top / var(--frame-line-width, 1px) 100% no-repeat;
 }
-/* Solutions + products: white seam under the nav, separating it from the
-   hero. Solutions also needs L/R rails here — .nav is z-index 50, so it
-   covers the shell’s white --frame-line rails (z-index 40). */
+/* Solutions + products: white L/R rails on the bar (covers shell rails).
+   Bottom seam is .nav::before (white). */
 .page-dark-nav .nav::after,
 .page-orange-nav .nav::after {
   content: '';
@@ -662,8 +681,7 @@ html.is-menu-open body { overflow: hidden; }
   pointer-events: none;
   background:
     linear-gradient(var(--white), var(--white)) left top / var(--frame-line-width, 1px) 100% no-repeat,
-    linear-gradient(var(--white), var(--white)) right top / var(--frame-line-width, 1px) 100% no-repeat,
-    linear-gradient(var(--white), var(--white)) left bottom / 100% var(--frame-line-width, 1px) no-repeat;
+    linear-gradient(var(--white), var(--white)) right top / var(--frame-line-width, 1px) 100% no-repeat;
 }
 
 /* ---- Orange nav (individual product pages) -----------------
