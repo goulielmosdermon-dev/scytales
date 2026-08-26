@@ -1557,10 +1557,21 @@ html.is-menu-open body { overflow: hidden; }
 
 /* ---- Clients on home — cream belt, original brand colours -----
    Multiply drops the assets’ light plates into --page-bg without
-   recolouring the marks. */
+   recolouring the marks. z-index 41 covers the shell rails, so paint
+   matching L/R frame lines here (same as .page-home .nav::after). */
 .page-home .clients {
   background: var(--page-bg);
   z-index: 41;
+}
+.page-home .clients::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 42;
+  pointer-events: none;
+  background:
+    linear-gradient(var(--frame-line, var(--orange-300)), var(--frame-line, var(--orange-300))) left top / var(--frame-line-width, 1px) 100% no-repeat,
+    linear-gradient(var(--frame-line, var(--orange-300)), var(--frame-line, var(--orange-300))) right top / var(--frame-line-width, 1px) 100% no-repeat;
 }
 .page-home .clients__belt {
   background: var(--page-bg);
