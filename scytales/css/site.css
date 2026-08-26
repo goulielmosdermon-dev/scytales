@@ -591,9 +591,10 @@ html.is-menu-open body { overflow: hidden; }
   position: relative;
 }
 /* Nav bottom seam is painted by .nav::before (full-bleed on wide
-   screens). Zero the shell border so cream / dark / orange don't double. */
-[data-site-nav],
-.nav,
+   screens). Beat .site-frame > :not(main) so the shell border does
+   not stack with ::before (that read as a 2× thick bottom line). */
+.site-frame > [data-site-nav],
+.site-frame > .nav,
 .page-home .hero,
 .page-home .clients {
   border-bottom: 0;
