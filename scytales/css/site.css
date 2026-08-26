@@ -1172,13 +1172,13 @@ html.is-menu-open body { overflow: hidden; }
   grid-template-columns: 1fr;
   gap: var(--space-6);
   align-items: start;
-  justify-items: center;
+  justify-items: start;
 }
 .hero__lead {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
+  text-align: left;
   gap: var(--space-4);
   /* Full content measure — same Display 1 size as .impact__title. */
   max-width: min(40rem, 100%);
@@ -1192,12 +1192,12 @@ html.is-menu-open body { overflow: hidden; }
   line-height: 1;
   letter-spacing: var(--ls-display);
   max-width: 100%;
-  text-align: center;
+  text-align: left;
   color: var(--navy-800);
   /* Flex wrap + forced breaks: desktop = 2 lines, mobile = 4. */
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   column-gap: 0.168em;
   row-gap: 0;
 }
@@ -1210,7 +1210,7 @@ html.is-menu-open body { overflow: hidden; }
 .hero__pair {
   display: inline-flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: baseline;
   column-gap: 0.168em;
   max-width: 100%;
@@ -1247,12 +1247,12 @@ html.is-menu-open body { overflow: hidden; }
   line-height: 1.45;
   color: var(--navy-800);
   text-wrap: pretty;
-  text-align: center;
+  text-align: left;
 }
 .hero__actions {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   gap: var(--space-3);
   margin-top: var(--space-2);
 }
@@ -2540,13 +2540,13 @@ html.is-menu-open body { overflow: hidden; }
   .hero__br--d { display: none; }
   .hero__deck {
     max-width: 34ch;
-    padding-inline: var(--space-2);
+    padding-inline: 0;
   }
   .hero__actions {
     width: 100%;
     max-width: none;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: var(--space-3);
   }
   .hero__actions .btn {
