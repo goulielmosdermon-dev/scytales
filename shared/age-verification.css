@@ -539,7 +539,9 @@
   .avc__welcome { flex-wrap: wrap; align-items: flex-start; }
 }
 
-/* Narrow hero embeds — keep the chrome readable. */
+/* Narrow embeds (any page) — light chrome trim only. Do NOT restyle into
+   a phone dashboard here: that belongs under the phone viewport media
+   query for .hero__compose, or desktop hero gets the mobile stack too. */
 @container avc-stage (max-width: 520px) {
   .avc__topbar {
     grid-template-columns: 1fr auto;

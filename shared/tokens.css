@@ -259,11 +259,9 @@
     --nav-h: 64px;
     --section-pad-x: 2rem;
     --section-pad-x-wide: 2rem;
-    /* Fluid Display 1: fixed 48px overflowed long unbreakable words on
-       ~390–430 phones (14 Pro). 9.2vw tracks the measure; 48px caps
-       larger phones in this band. */
-    --fs-display-1: clamp(2rem, 9.2vw, 48px);
-    --fs-display-1-xl: clamp(2.25rem, 11vw, 60px);
+    /* Larger now that the cycling word sits alone on its own line. */
+    --fs-display-1: clamp(2.35rem, 11vw, 52px);
+    --fs-display-1-xl: clamp(2.5rem, 12vw, 60px);
     --fs-hero-lead: 16px;
     --fs-story-figure: 56px;
     --fs-story-headline: 24px;

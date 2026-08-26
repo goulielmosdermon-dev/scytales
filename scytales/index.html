@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- Cascadia Code — variable, 200..700. Offered in the Font Lab. -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&display=swap">
-<link rel="stylesheet" href="css/site.css?v=mobile444">
+<link rel="stylesheet" href="css/site.css?v=mobile459">
 <link rel="stylesheet" href="css/font-lab.css?v=6">
 <link rel="stylesheet" href="css/color-lab.css?v=3">
 <link rel="stylesheet" href="css/code-loader.css?v=7">
@@ -23,7 +23,7 @@
 <script src="js/display1-reveal.js?v=7"></script>
 <script src="js/line-reveal.js?v=4"></script>
 <script src="js/text-scramble.js?v=7"></script>
-<script src="js/typewriter.js?v=4"></script>
+<script src="js/typewriter.js?v=7"></script>
 <div class="site-frame">
 <div data-site-nav aria-busy="true"></div>
 
@@ -33,18 +33,18 @@
     <div class="container hero__grid">
       <div class="hero__lead">
         <h1 class="display-1 display-1--reveal is-revealed" data-scramble>
-          <span class="hero__line">
-            <span class="display-1__word" style="--word-i:0"><span class="u-accent typewriter" data-typewriter
-                  data-words='["Government","Transportation","Healthcare","Retail","Fintech"]'>Government</span></span>
-            <span class="display-1__word" style="--word-i:1">safety,</span>
-          </span>
-          <span class="hero__line">
-            <span class="display-1__word" style="--word-i:2">one</span>
-            <span class="display-1__word" style="--word-i:3">device</span>
-            <span class="display-1__word" style="--word-i:4">at</span>
-            <span class="display-1__word" style="--word-i:5">a</span>
-            <span class="display-1__word" style="--word-i:6"><span class="u-accent">time.</span></span>
-          </span>
+          <span class="display-1__word" style="--word-i:0"><span class="u-accent typewriter" data-typewriter
+                data-words='["Government","Transportation","Healthcare","Retail","Fintech"]'>Government</span></span>
+          <span class="hero__br hero__br--m" aria-hidden="true"></span>
+          <span class="display-1__word" style="--word-i:1">safety,</span>
+          <span class="hero__br hero__br--d" aria-hidden="true"></span>
+          <span class="display-1__word" style="--word-i:2">one</span>
+          <span class="hero__br hero__br--m" aria-hidden="true"></span>
+          <span class="display-1__word" style="--word-i:3">device</span>
+          <span class="display-1__word" style="--word-i:4">at</span>
+          <span class="hero__br hero__br--m" aria-hidden="true"></span>
+          <span class="display-1__word" style="--word-i:5">a</span>
+          <span class="display-1__word" style="--word-i:6"><span class="u-accent">time.</span></span>
         </h1>
         <p class="hero__deck">Hardware and software that verify identity at the point of use — so every check is faster, safer, and under your control.</p>
         <div class="hero__actions">
@@ -55,42 +55,44 @@
 
       <div class="hero__media hero__compose" data-compose-reveal aria-hidden="true">
         <canvas class="hero__compose-dots" data-compose-dots aria-hidden="true"></canvas>
-        <!-- Framed stage: browser centered, ID bottom-left, POS bottom-right. -->
-        <div class="hero__compose-browser" data-compose-item style="--compose-i:0">
-          <div data-avc data-avc-decorative></div>
-        </div>
+        <!-- Cluster width = browser width. ID/POS pin to its L/R edges (Ramp). -->
+        <div class="hero__compose-cluster">
+          <div class="hero__compose-browser" data-compose-item style="--compose-i:0">
+            <div data-avc data-avc-decorative></div>
+          </div>
 
-        <div class="hero__compose-id" data-compose-item style="--compose-i:2">
-          <div class="card-stack hero__id-stack">
-            <div class="card-stack__pane card-stack__pane--front card-stack__pane--id">
-              <div class="card-stack__id-bg">
-                <img src="assets/cards/ID.png" alt="" width="200" height="318" decoding="async">
-              </div>
-              <div class="card-stack__id-face">
-                <div class="card-stack__id-block">
-                  <div class="card-stack__id-label">Address:</div>
-                  <div class="card-stack__id-value">33 RUE LA FAYETTE 5009<br>PARIS, FRANCE</div>
+          <div class="hero__compose-id" data-compose-item style="--compose-i:2">
+            <div class="card-stack hero__id-stack">
+              <div class="card-stack__pane card-stack__pane--front card-stack__pane--id">
+                <div class="card-stack__id-bg">
+                  <img src="assets/cards/ID.png" alt="" width="200" height="318" decoding="async">
                 </div>
-                <dl class="card-stack__id-meta">
-                  <div><dt>Ph.No</dt><dd>:984296</dd></div>
-                  <div><dt>D.O.B</dt><dd>:16:06</dd></div>
-                  <div><dt>ID</dt><dd>:36</dd></div>
-                  <div><dt>Blood</dt><dd>:A+</dd></div>
-                  <div><dt>Valid</dt><dd>:13.03</dd></div>
-                </dl>
+                <div class="card-stack__id-face">
+                  <div class="card-stack__id-block">
+                    <div class="card-stack__id-label">Address:</div>
+                    <div class="card-stack__id-value">33 RUE LA FAYETTE 5009<br>PARIS, FRANCE</div>
+                  </div>
+                  <dl class="card-stack__id-meta">
+                    <div><dt>Ph.No</dt><dd>:984296</dd></div>
+                    <div><dt>D.O.B</dt><dd>:16:06</dd></div>
+                    <div><dt>ID</dt><dd>:36</dd></div>
+                    <div><dt>Blood</dt><dd>:A+</dd></div>
+                    <div><dt>Valid</dt><dd>:13.03</dd></div>
+                  </dl>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="hero__compose-pos" data-compose-item style="--compose-i:1">
-          <div
-            class="hero__pos"
-            data-pos
-            data-pos-src="../shared/pos-points.json?v=822"
-            data-pos-screen="../shared/assets/pos-nfc.jpg"
-          >
-            <div class="hero__pos-stage" data-pos-stage></div>
+          <div class="hero__compose-pos" data-compose-item style="--compose-i:1">
+            <div
+              class="hero__pos"
+              data-pos
+              data-pos-src="../shared/pos-points.json?v=822"
+              data-pos-screen="../shared/assets/pos-nfc.jpg"
+            >
+              <div class="hero__pos-stage" data-pos-stage></div>
+            </div>
           </div>
         </div>
       </div>
@@ -101,20 +103,44 @@
     <div class="clients__viewport">
       <div class="clients__belt">
         <ul class="clients__track">
-          <li><img class="clients__logo clients__logo--ec"   src="assets/clients/european-commission.jpg" alt="European Commission"></li>
-          <li><img class="clients__logo clients__logo--aventra" src="assets/clients/aventra.png"         alt="Aventra"></li>
-          <li><img class="clients__logo clients__logo--t"    src="assets/clients/t-systems.jpg"           alt="T-Systems"></li>
-          <li><img class="clients__logo clients__logo--versent" src="assets/clients/versent.jpg"         alt="Versent"></li>
-          <li><img class="clients__logo clients__logo--adacom" src="assets/clients/adacom.jpg"           alt="Adacom"></li>
-          <li><img class="clients__logo clients__logo--net"  src="assets/clients/netcompany.jpg"          alt="Netcompany"></li>
+          <li><img class="clients__logo" src="assets/partners/adacom.png" alt="ADACOM"></li>
+          <li><img class="clients__logo" src="assets/partners/aventra.png" alt="AVENTRA"></li>
+          <li><img class="clients__logo" src="assets/partners/commfides.png" alt="COMMFIDES"></li>
+          <li><img class="clients__logo" src="assets/partners/cosmote.jpg" alt="Cosmote"></li>
+          <li><img class="clients__logo" src="assets/partners/deutsche-telekom.jpg" alt="Deutsche Telekom"></li>
+          <li><img class="clients__logo" src="assets/partners/facetec.png" alt="FACETEC"></li>
+          <li><img class="clients__logo" src="assets/partners/famoco.png" alt="FAMOCO"></li>
+          <li><img class="clients__logo" src="assets/partners/get-group-na.png" alt="GET GROUP NA"></li>
+          <li><img class="clients__logo" src="assets/partners/guardsquare.png" alt="GUARDSQUARE"></li>
+          <li><img class="clients__logo" src="assets/partners/neosoltec.jpg" alt="NEOSOLTEC"></li>
+          <li><img class="clients__logo" src="assets/partners/netcompany.png" alt="NETCOMPANY"></li>
+          <li><img class="clients__logo" src="assets/partners/ngt.png" alt="NGT"></li>
+          <li><img class="clients__logo" src="assets/partners/securemetric.jpg" alt="SECUREMETRIC"></li>
+          <li><img class="clients__logo" src="assets/partners/selp.png" alt="SELP"></li>
+          <li><img class="clients__logo" src="assets/partners/signe.png" alt="SIGNE"></li>
+          <li><img class="clients__logo" src="assets/partners/t-systems.jpg" alt="T Systems"></li>
+          <li><img class="clients__logo" src="assets/partners/trustsec.png" alt="TRUSTSEC"></li>
+          <li><img class="clients__logo" src="assets/partners/versent.jpg" alt="Versent"></li>
         </ul>
         <ul class="clients__track" aria-hidden="true">
-          <li><img class="clients__logo clients__logo--ec"   src="assets/clients/european-commission.jpg" alt=""></li>
-          <li><img class="clients__logo clients__logo--aventra" src="assets/clients/aventra.png"         alt=""></li>
-          <li><img class="clients__logo clients__logo--t"    src="assets/clients/t-systems.jpg"           alt=""></li>
-          <li><img class="clients__logo clients__logo--versent" src="assets/clients/versent.jpg"         alt=""></li>
-          <li><img class="clients__logo clients__logo--adacom" src="assets/clients/adacom.jpg"           alt=""></li>
-          <li><img class="clients__logo clients__logo--net"  src="assets/clients/netcompany.jpg"          alt=""></li>
+          <li><img class="clients__logo" src="assets/partners/adacom.png" alt=""></li>
+          <li><img class="clients__logo" src="assets/partners/aventra.png" alt=""></li>
+          <li><img class="clients__logo" src="assets/partners/commfides.png" alt=""></li>
+          <li><img class="clients__logo" src="assets/partners/cosmote.jpg" alt=""></li>
+          <li><img class="clients__logo" src="assets/partners/deutsche-telekom.jpg" alt=""></li>
+          <li><img class="clients__logo" src="assets/partners/facetec.png" alt=""></li>
+          <li><img class="clients__logo" src="assets/partners/famoco.png" alt=""></li>
+          <li><img class="clients__logo" src="assets/partners/get-group-na.png" alt=""></li>
+          <li><img class="clients__logo" src="assets/partners/guardsquare.png" alt=""></li>
+          <li><img class="clients__logo" src="assets/partners/neosoltec.jpg" alt=""></li>
+          <li><img class="clients__logo" src="assets/partners/netcompany.png" alt=""></li>
+          <li><img class="clients__logo" src="assets/partners/ngt.png" alt=""></li>
+          <li><img class="clients__logo" src="assets/partners/securemetric.jpg" alt=""></li>
+          <li><img class="clients__logo" src="assets/partners/selp.png" alt=""></li>
+          <li><img class="clients__logo" src="assets/partners/signe.png" alt=""></li>
+          <li><img class="clients__logo" src="assets/partners/t-systems.jpg" alt=""></li>
+          <li><img class="clients__logo" src="assets/partners/trustsec.png" alt=""></li>
+          <li><img class="clients__logo" src="assets/partners/versent.jpg" alt=""></li>
         </ul>
       </div>
     </div>

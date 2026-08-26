@@ -3,9 +3,10 @@
 
    Markup:  <span data-typewriter data-words='["One","Two"]'></span>
 
-   On the home hero the cycling word shares a nowrap line with “safety,”.
-   We size the headline once for the longest word so the face doesn’t
-   jump as shorter words type in. */
+   On the home hero the cycling word is flex-laid with forced breaks
+   (desktop: 2 lines; mobile: word alone, then 3 stacked lines). We size
+   once for the longest word so the face doesn’t jump as shorter words
+   type in. */
 (() => {
   const TYPE_MS = 78;      /* per character, typing */
   const DELETE_MS = 42;    /* per character, deleting */
@@ -42,15 +43,15 @@
     const live = textEl ? textEl.textContent : '';
 
     h1.style.fontSize = '';
-    const avail = lead.clientWidth;
+    const mobile = window.matchMedia('(max-width: 767px)').matches;
+    const avail = Math.floor(lead.clientWidth * (mobile ? 0.94 : 0.96));
     if (avail <= 0) return;
 
     if (textEl && probe) textEl.textContent = probe;
 
-    let need = 0;
-    h1.querySelectorAll('.hero__line').forEach((line) => {
-      need = Math.max(need, line.scrollWidth);
-    });
+    /* Flex-wrap: scrollWidth tracks the widest row (cycling word alone on
+       mobile; “Transportation safety,” on desktop). */
+    const need = h1.scrollWidth;
 
     if (textEl) textEl.textContent = live;
 

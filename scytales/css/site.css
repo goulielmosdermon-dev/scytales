@@ -4,12 +4,12 @@
    that already exist as a token.
    Design base: Standard Desktop 1440.
    ============================================================ */
-@import url("../../shared/tokens.css?v=27");
+@import url("../../shared/tokens.css?v=28");
 @import url("../../shared/components.css?v=3");
 @import url("../../shared/phone.css");
 @import url("../../shared/passport.css");
 @import url("../../shared/card-stack.css");
-@import url("../../shared/age-verification.css");
+@import url("../../shared/age-verification.css?v=m3");
 @import url("../../shared/pos.css");
 @import url("../../shared/wallet-activity.css");
 @import url("../../shared/orb.css");
@@ -1185,9 +1185,31 @@ html.is-menu-open body { overflow: hidden; }
   max-width: 100%;
   text-align: center;
   color: var(--navy-800);
+  /* Flex wrap + forced breaks: desktop = 2 lines, mobile = 4. */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 0.168em;
+  row-gap: 0;
 }
-/* Each line is a hard unit — long typewriter words must shrink the whole
-   headline (js/typewriter.js), never wrap “safety,” onto its own row. */
+.hero__lead .display-1 .display-1__word {
+  margin-right: 0; /* gap comes from column-gap on the flex parent */
+}
+/* Forced line breaks — .hero__br--d on desktop, .hero__br--m on phones. */
+.hero__br {
+  display: none;
+  flex-basis: 100%;
+  width: 100%;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+@media (min-width: 768px) {
+  .hero__br--d { display: block; }
+}
+/* Each former .hero__line unit — kept for any leftover selectors. */
 .hero__line {
   display: block;
   white-space: nowrap;
@@ -1227,7 +1249,8 @@ html.is-menu-open body { overflow: hidden; }
 .hero__aside { align-self: end; }
 
 /* Support stage — framed Ramp-style compose: browser centered,
-   ID bottom-left, POS bottom-right, all inside one stroked panel. */
+   ID + POS sit on the browser’s bottom corners (not past them into
+   the empty stage). */
 .hero__media.hero__compose,
 .hero__compose {
   position: relative;
@@ -1238,12 +1261,10 @@ html.is-menu-open body { overflow: hidden; }
   background: var(--page-bg);
   border: var(--frame-line-width, 1px) solid var(--cream-200);
   border-radius: 0;
-  /* Cursor tracking for the orange dot field. */
   pointer-events: auto;
   touch-action: none;
-  /* Below this width: left/right stay at 4%. Above it: freeze the inset so
-     ID/POS keep their default spacing instead of marching toward the edges. */
-  --compose-spread-lock: 80rem;
+  /* Shared width of the centered browser cluster (ID/POS pin to its edges). */
+  --compose-browser-w: min(82%, 52rem);
 }
 .hero__compose-dots {
   position: absolute;
@@ -1254,19 +1275,28 @@ html.is-menu-open body { overflow: hidden; }
   display: block;
   pointer-events: none;
 }
-/* Browser — dead center, primary layer. */
-.hero__compose-browser {
+/* One box = browser footprint. Card left:0 / POS right:0 — never past the window. */
+.hero__compose-cluster {
   position: absolute;
   left: 50%;
   top: 46%;
-  width: min(82%, 52rem);
+  width: var(--compose-browser-w);
   height: 74%;
   z-index: 1;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  overflow: visible;
+}
+.hero__compose-browser {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
   filter: drop-shadow(0 16px 36px rgb(0 28 68 / 14%));
-  /* Centering lives in --compose-place so reveal can add a rise without
-     fighting translate(-50%, -50%). */
-  --compose-place: translate(-50%, -50%);
+  --compose-place: translate3d(0, 0, 0);
   transform: var(--compose-place) translate3d(0, 1.35rem, 0);
+  pointer-events: none;
 }
 .hero__compose-browser .avc-window {
   position: absolute;
@@ -1276,18 +1306,18 @@ html.is-menu-open body { overflow: hidden; }
   min-height: 0;
   pointer-events: none;
 }
-/* ID card — default 4% inset; locked past --compose-spread-lock. */
+/* ID — hang past the browser’s left corner. */
 .hero__compose-id {
   position: absolute;
-  left: max(4%, calc(50% - (var(--compose-spread-lock) * 0.46)));
-  bottom: 3.5%;
+  left: -3.5rem;
+  bottom: -10%;
   z-index: 3;
   --compose-place: translate3d(0, 0, 0);
   transform: var(--compose-place) translate3d(0, 1.5rem, 0);
   filter: drop-shadow(0 14px 24px rgb(0 28 68 / 18%));
 }
 .hero__id-stack {
-  --stack-w: 9.75rem;
+  --stack-w: 9.25rem;
   height: calc(var(--stack-w) * 1.595);
   margin: 0;
 }
@@ -1298,13 +1328,13 @@ html.is-menu-open body { overflow: hidden; }
   transform: none;
   pointer-events: none;
 }
-/* POS — same default 4% / 23% sizing as before; spread-locked on wide. */
+/* POS — hang past the browser’s right corner. */
 .hero__compose-pos {
   position: absolute;
-  right: max(4%, calc(50% - (var(--compose-spread-lock) * 0.46)));
-  bottom: 3%;
-  width: 23%;
-  max-width: 11.5rem;
+  right: -3.75rem;
+  bottom: -12%;
+  width: 10.75rem;
+  max-width: 10.75rem;
   height: auto;
   z-index: 2;
   display: block;
@@ -1463,7 +1493,7 @@ html.is-menu-open body { overflow: hidden; }
   display: flex;
   width: max-content;
   background: var(--page-bg);
-  animation: clients-scroll 44s linear infinite;
+  animation: clients-scroll 90s linear infinite;
 }
 /* A track is never narrower than the clients band, and one set of logos
    always fits inside it. 100cqi tracks the frame width (not 100vw), so the
@@ -1479,25 +1509,18 @@ html.is-menu-open body { overflow: hidden; }
   flex: 0 0 auto;
   display: flex;
   align-items: center;
-  padding: 0 var(--space-4);
+  padding: 0 var(--space-6);
 }
-/* Shared optical height, then per-mark scales — equal CSS height made
-   padded wordmarks (Netcompany) look tiny next to filled marks (T). */
+/* Shared optical height — Valued Partners marks keep brand colour via multiply. */
 .clients__logo {
-  --logo-h: 84px;
-  height: calc(var(--logo-h) * var(--logo-scale, 1));
+  --logo-h: 96px;
+  height: var(--logo-h);
   width: auto;
   max-width: 17rem;
   object-fit: contain;
   object-position: center;
   mix-blend-mode: multiply;   /* drops the assets' light backgrounds into the cream */
 }
-.clients__logo--ec      { --logo-scale: 1.05; }
-.clients__logo--aventra { --logo-scale: 1.35; max-width: 19.5rem; }
-.clients__logo--t       { --logo-scale: 0.78; }
-.clients__logo--versent { --logo-scale: 1.2;  max-width: 18.75rem; }
-.clients__logo--adacom  { --logo-scale: 1.3;  max-width: 18.75rem; }
-.clients__logo--net     { --logo-scale: 1.55; max-width: 21rem; }
 
 /* ---- Clients on home — cream belt, original brand colours -----
    Multiply drops the assets’ light plates into --page-bg without
@@ -2440,53 +2463,185 @@ html.is-menu-open body { overflow: hidden; }
   .nav__right .btn-primary { margin-top: var(--space-3); justify-content: center; }
 }
 
-/* Below tablet: type + CTA polish; scale the compose. */
+/* Below tablet: type + CTA polish; rebalance the compose for phones. */
 @media (max-width: 767px) {
   .hero { min-height: 0; }
   .page-home .hero {
     min-height: 0;
-    padding-top: var(--space-5);
-    padding-bottom: var(--space-7);
+    padding-top: var(--space-6);
+    padding-bottom: var(--space-6);
+  }
+  .hero__grid {
+    gap: var(--space-5);
+    width: 100%;
   }
 
-  /* Long typewriter words can exceed the phone measure — scale the face. */
+  /* Keep the headline inside the padded measure — never flush to the
+     frame rails. (max-width:none elsewhere was letting “time.” clip.) */
   .hero__lead {
     padding-inline: 0;
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
+    overflow: hidden;
   }
-  .hero__deck { max-width: 36ch; }
+  .hero__lead .display-1 {
+    width: 100%;
+    line-height: 1.08;
+    row-gap: 0.06em;
+  }
+  /* Mobile stack: cycling word alone, then “safety, one” / “device at” /
+     “a time.” Forced by .hero__br--m. */
+  .hero__br--m { display: block; }
+  .hero__br--d { display: none; }
+  .hero__deck {
+    max-width: 34ch;
+    padding-inline: var(--space-2);
+  }
   .hero__actions {
     width: 100%;
+    max-width: none;
     flex-direction: column;
     align-items: center;
+    gap: var(--space-3);
   }
   .hero__actions .btn {
     width: auto;
     max-width: 100%;
-    align-self: center;
+    justify-content: center;
     box-sizing: border-box;
+    padding-inline: var(--space-5);
   }
+
+  /* Phone: browser fills the stage with a mobile dashboard. ID/POS stay
+     desktop-only — they crush the frame and overlap the UI on small screens. */
+  .hero__compose {
+    aspect-ratio: 9 / 14;
+    min-height: 26rem;
+    max-height: min(72vh, 34rem);
+    margin-top: 0;
+    width: 100%;
+  }
+  .hero__compose-cluster {
+    top: 50%;
+    width: 94%;
+    height: 94%;
+  }
+  .hero__compose-id,
+  .hero__compose-pos {
+    display: none;
+  }
+
+  /* Mobile-form AVC — phone viewport only, never desktop. */
+  .hero__compose .avc {
+    gap: 10px;
+    font-size: 12px;
+  }
+  .hero__compose .avc__topbar {
+    grid-template-columns: 1fr auto;
+    grid-template-areas: none;
+    gap: 8px;
+    padding-bottom: 10px;
+  }
+  .hero__compose .avc__tabs,
+  .hero__compose .avc__account-copy {
+    display: none;
+  }
+  .hero__compose .avc__brand-lockup,
+  .hero__compose .avc__account {
+    grid-area: auto;
+  }
+  .hero__compose .avc__product { font-size: 12px; }
+  .hero__compose .avc__powered { font-size: 10px; }
+  .hero__compose .avc__avatar {
+    width: 32px;
+    height: 32px;
+  }
+  .hero__compose .avc__welcome {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  .hero__compose .avc__title { font-size: 18px; }
+  .hero__compose .avc__subtitle { max-width: none; }
+  .hero__compose .avc__welcome-actions { width: 100%; }
+  .hero__compose .avc__welcome-actions .avc__btn {
+    flex: 1 1 0;
+    padding: 9px 12px;
+  }
+  .hero__compose .avc__kpis {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .hero__compose .avc__kpi:nth-of-type(n + 3) { display: none; }
+  .hero__compose .avc__kpi { padding: 12px 14px; }
+  .hero__compose .avc__kpi-label { font-size: 11px; }
+  .hero__compose .avc__kpi-value { font-size: 22px; }
+  .hero__compose .avc__kpi-delta,
+  .hero__compose .avc__kpi-hint { font-size: 11px; }
+  .hero__compose .avc__split { grid-template-columns: 1fr; }
+  .hero__compose .avc__panel--side { display: none; }
+  .hero__compose .avc__panel { padding: 12px 12px 10px; }
+  .hero__compose .avc__table { font-size: 12px; }
+  .hero__compose .avc__table thead { display: none; }
+  .hero__compose .avc__table tbody tr {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "client result"
+      "event result";
+    column-gap: 10px;
+    row-gap: 2px;
+    align-items: center;
+    padding: 10px 0;
+  }
+  .hero__compose .avc__table tbody tr:first-child { padding-top: 2px; }
+  .hero__compose .avc__table th,
+  .hero__compose .avc__table td {
+    display: block;
+    width: auto;
+    border-bottom: 0;
+    padding: 0;
+    white-space: normal;
+    text-align: left;
+  }
+  .hero__compose .avc__table td:nth-child(1) {
+    grid-area: client;
+    font-weight: 650;
+  }
+  .hero__compose .avc__table td:nth-child(2) {
+    grid-area: event;
+    color: var(--avc-muted);
+    font-size: 11px;
+  }
+  .hero__compose .avc__table td:nth-child(3) {
+    grid-area: result;
+    justify-self: end;
+  }
+  .hero__compose .avc__table td:nth-child(4) { display: none; }
+  .hero__compose .avc__table tbody tr + tr {
+    border-top: 1px solid var(--avc-line);
+  }
+  .hero__compose .avc__toasts {
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+  }
+}
+
+/* Tablet: keep the desktop composition, slightly smaller accents. */
+@media (min-width: 768px) and (max-width: 1023px) {
   .hero__compose {
     aspect-ratio: 5 / 4;
-    margin-top: var(--space-2);
   }
-  .hero__compose-browser {
-    width: 86%;
-    height: 68%;
-    top: 42%;
+  .hero__compose-cluster {
+    width: 84%;
+    height: 72%;
   }
-  .hero__compose-id {
-    left: 4%;
-    bottom: 3%;
-  }
-  .hero__id-stack { --stack-w: 7.5rem; }
+  .hero__id-stack { --stack-w: 7rem; }
   .hero__compose-pos {
-    width: 28%;
-    max-width: 8.5rem;
-    right: 3%;
-    bottom: 2%;
+    width: 22%;
+    max-width: 8rem;
   }
 }
 
@@ -2495,11 +2650,12 @@ html.is-menu-open body { overflow: hidden; }
    aspect ratios total ~21.4, so a set measures height × 21.4 plus the padding:
    1144px at 40/24, and 706px at 24/16, which clears tablet. */
 @media (max-width: 1365px) {
-  .clients__track > li { padding: 0 var(--space-3); }
-  .clients__logo { --logo-h: 72px; }
+  .clients__track > li { padding: 0 var(--space-5); }
+  .clients__logo { --logo-h: 84px; }
 }
 @media (max-width: 767px) {
-  .clients__logo { --logo-h: 60px; }
+  .clients__logo { --logo-h: 72px; }
+  .clients__track > li { padding: 0 var(--space-4); }
 }
 
 @media (max-width: 767px) {
@@ -7786,7 +7942,7 @@ body.newsletter-open {
 
   .hero__lead { gap: var(--space-3); }
   .page-home .hero {
-    padding-top: var(--space-5);
+    padding-top: var(--space-6);
     padding-bottom: var(--space-6);
   }
   .impact__title,
@@ -7797,11 +7953,12 @@ body.newsletter-open {
      does not get cropped away. env(safe-area-inset-top) is the
      right signal but reports 0 in an iframe and in browsers that
      already inset the viewport, so the floor is a real value:
-     11pt island offset + 36pt island + breathing room = 54pt,
-     which is also the iOS status-bar height. Dial --safe-top if
-     the reserved strip is more than you want on plain Safari. */
+     11pt island offset + 36pt island + breathing room. Extra
+     --nav-top-gap keeps the lockup/burger from sitting tight under
+     the status strip. */
   :root {
     --safe-top: max(env(safe-area-inset-top, 0px), 54px);
+    --nav-top-gap: var(--space-4); /* ~24px under the status/island */
   }
   /* Pinned burger must clear the status bar / Dynamic Island — the
      desktop top formula only centres it in --nav-h and sits under the
@@ -7809,22 +7966,28 @@ body.newsletter-open {
   .is-burger-pinned .nav__burger {
     top: calc(
       var(--safe-top)
+      + var(--nav-top-gap)
       + (var(--nav-h) - var(--burger-size)) / 2
     );
   }
   .nav__inner {
     height: auto;
     min-height: var(--nav-h);
-    padding-top: var(--safe-top);
+    padding-top: calc(var(--safe-top) + var(--nav-top-gap));
     /* Clear the frame line under the burger — without this the 44px
        square sits flush on the rule once safe-top pads only the top. */
-    padding-bottom: var(--space-3);
+    padding-bottom: var(--space-4);
+    padding-left: var(--section-pad-x);
+    padding-right: var(--section-pad-x);
+  }
+  .nav__brand {
+    height: 18px;
   }
   [data-site-nav] {
-    min-height: calc(var(--nav-h) + var(--safe-top) + var(--space-3));
+    min-height: calc(var(--nav-h) + var(--safe-top) + var(--nav-top-gap) + var(--space-4));
   }
   .nav__right {
-    padding-top: calc(var(--nav-h) + var(--safe-top) + var(--space-3));
+    padding-top: calc(var(--nav-h) + var(--safe-top) + var(--nav-top-gap) + var(--space-4));
   }
   /* The sheet is fixed to the screen, so it clears the cutout itself; its
      dialog then shrinks by the same amount so it still fits one screen. */
@@ -7835,8 +7998,8 @@ body.newsletter-open {
      56px marks were unreadable on a phone. The belt scrolls, so a
      taller logo costs nothing but loop length. */
   .clients { padding: var(--space-4) 0; }
-  .clients__logo { --logo-h: 60px; }
-  .clients__track > li { padding: 0 var(--space-4); }
+  .clients__logo { --logo-h: 72px; }
+  .clients__track > li { padding: 0 var(--space-5); }
 
   /* ---- Product line ---------------------------------------- */
   .products__intro {
@@ -8062,11 +8225,9 @@ body.newsletter-open {
     justify-self: center;
   }
 
-  /* ---- Side padding: always ~2rem on phones --------------------
-     Detail pages (product / solution / sheet) use --section-pad-x-wide
-     (5rem) on desktop so display type clears the frame. On a ~390px
-     screen that gutter either crushes the measure or fights full-bleed
-     rows — lock everything back to the 2rem rule. */
+  /* ---- Side padding on phones ----------------------------------
+     Detail pages use --section-pad-x-wide (5rem) on desktop. On a ~390px
+     screen that crushes the measure — lock back to the 2rem gutter. */
   :root,
   .product-page,
   .solution-page,
@@ -8101,13 +8262,15 @@ body.newsletter-open {
   .wallet-statement__text {
     line-height: 1.12;
   }
-  /* Hero keeps authored nowrap lines — stay tighter than the wrap floor. */
+  /* Hero authored lines stay nowrap, but lh:1 + display stroke made the
+     two lines collide and long typewriter words clipped the right edge. */
   .hero .display-1,
   .hero__lead .display-1 {
-    line-height: 1;
+    line-height: 1.08;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
   }
-  .hero .display-1,
-  .hero__lead .display-1,
   .solution-hero__title,
   .solution-demo__text,
   .wallet-hero__title,
@@ -8203,7 +8366,7 @@ body.newsletter-open {
    in shared/tokens.css alongside the main one — see the note there. */
 @media (max-width: 389px) {
   .display-2 { font-size: 30px; }
-  .clients__logo { --logo-h: 54px; }
+  .clients__logo { --logo-h: 64px; }
   .wallet-showcase__phone .phone-device { --phone-scale: 0.5; }
 }
 
