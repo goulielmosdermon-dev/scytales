@@ -200,8 +200,8 @@ section { padding: var(--section-pad-y) 0; border-bottom: 1px solid var(--cream-
 }
 .btn-primary { background: var(--orange-500); color: var(--white); }
 .btn-primary:hover { background: var(--orange-600); }
-.btn-secondary { background: var(--navy-800); color: var(--white); }
-.btn-secondary:hover { background: var(--navy-900); }
+.btn-secondary { background: var(--navy-800); color: var(--white); border: 1px solid var(--navy-800); }
+.btn-secondary:hover { background: transparent; color: var(--navy-800); border-color: var(--navy-800); }
 .btn-ghost { background: transparent; color: var(--navy-800); border: 1.5px solid var(--navy-800); }
 .btn-ghost:hover { background: var(--navy-800); color: var(--white); }
 .btn-link { background: none; color: var(--orange-500); padding: var(--btn-pad-y) 0; border-bottom: 2px solid transparent; border-radius: 0; }

@@ -259,8 +259,17 @@ html.is-page-leaving {
 }
 .btn-primary { background: var(--orange-500); color: var(--white); }
 .btn-primary:hover { background: var(--orange-600); }
-.btn-secondary { background: var(--navy-800); color: var(--white); }
-.btn-secondary:hover { background: var(--navy-900); }
+.btn-secondary {
+  background: var(--navy-800);
+  color: var(--white);
+  border: 1px solid var(--navy-800);
+}
+/* navy-900 === navy-800, so darken was invisible — invert to outline instead. */
+.btn-secondary:hover {
+  background: transparent;
+  color: var(--navy-800);
+  border-color: var(--navy-800);
+}
 
 
 /* ============================================================
@@ -1245,6 +1254,14 @@ html.is-menu-open body { overflow: hidden; }
   background: transparent;
   border-color: var(--orange-500);
   color: var(--orange-500);
+}
+.hero__actions .btn-secondary {
+  border: 1px solid var(--navy-800);
+}
+.hero__actions .btn-secondary:hover {
+  background: transparent;
+  border-color: var(--navy-800);
+  color: var(--navy-800);
 }
 .hero__aside { align-self: end; }
 
