@@ -609,6 +609,18 @@ html.is-menu-open body { overflow: hidden; }
 .page-dark-nav .nav__right .btn-primary:hover {
   background: color-mix(in srgb, var(--white) 88%, var(--cream-50));
 }
+/* Home cream nav sits above the shell rails (z-index 50 > 40), so paint
+   matching L/R frame lines on the bar itself. */
+.page-home .nav::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 41;
+  pointer-events: none;
+  background:
+    linear-gradient(var(--frame-line, var(--orange-300)), var(--frame-line, var(--orange-300))) left top / var(--frame-line-width, 1px) 100% no-repeat,
+    linear-gradient(var(--frame-line, var(--orange-300)), var(--frame-line, var(--orange-300))) right top / var(--frame-line-width, 1px) 100% no-repeat;
+}
 /* White left/right rails on dark / warm bands (innovation dial, backbone
    earth, customer-stories once it warms to orange, and the footer). Same
    construction as .site-frame rails (1px fill strips via
@@ -1229,6 +1241,9 @@ html.is-menu-open body { overflow: hidden; }
   /* Cursor tracking for the orange dot field. */
   pointer-events: auto;
   touch-action: none;
+  /* Below this width: left/right stay at 4%. Above it: freeze the inset so
+     ID/POS keep their default spacing instead of marching toward the edges. */
+  --compose-spread-lock: 80rem;
 }
 .hero__compose-dots {
   position: absolute;
@@ -1261,10 +1276,10 @@ html.is-menu-open body { overflow: hidden; }
   min-height: 0;
   pointer-events: none;
 }
-/* ID card — bottom-left, slightly smaller than the POS. */
+/* ID card — default 4% inset; locked past --compose-spread-lock. */
 .hero__compose-id {
   position: absolute;
-  left: 4%;
+  left: max(4%, calc(50% - (var(--compose-spread-lock) * 0.46)));
   bottom: 3.5%;
   z-index: 3;
   --compose-place: translate3d(0, 0, 0);
@@ -1283,10 +1298,10 @@ html.is-menu-open body { overflow: hidden; }
   transform: none;
   pointer-events: none;
 }
-/* POS — bottom-right, smaller than the browser, larger than the card. */
+/* POS — same default 4% / 23% sizing as before; spread-locked on wide. */
 .hero__compose-pos {
   position: absolute;
-  right: 4%;
+  right: max(4%, calc(50% - (var(--compose-spread-lock) * 0.46)));
   bottom: 3%;
   width: 23%;
   max-width: 11.5rem;
