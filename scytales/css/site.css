@@ -1241,12 +1241,18 @@ html.is-menu-open body { overflow: hidden; }
 }
 .hero__deck {
   margin: 0;
+  margin-inline: 0;
+  align-self: flex-start;
+  width: min(42ch, 100%);
   max-width: 42ch;
   font-family: var(--font-body);
   font-size: var(--fs-body-md);
   line-height: 1.45;
   color: var(--navy-800);
   text-wrap: pretty;
+  text-align: left;
+}
+.page-home .hero__deck {
   text-align: left;
 }
 .hero__actions {
