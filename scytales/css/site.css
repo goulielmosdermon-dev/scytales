@@ -581,7 +581,7 @@ html.is-menu-open body { overflow: hidden; }
   min-height: 0;
   height: auto;
   align-items: stretch;
-  padding-top: var(--space-6);
+  padding-top: var(--space-8);
   padding-bottom: var(--space-8);
   background: var(--page-bg);
 }
@@ -2530,7 +2530,7 @@ html.is-menu-open body { overflow: hidden; }
   .hero { min-height: 0; }
   .page-home .hero {
     min-height: 0;
-    padding-top: var(--space-6);
+    padding-top: var(--space-7);
     padding-bottom: var(--space-6);
   }
   .hero__grid {
@@ -8004,7 +8004,7 @@ body.newsletter-open {
 
   .hero__lead { gap: var(--space-3); }
   .page-home .hero {
-    padding-top: var(--space-6);
+    padding-top: var(--space-7);
     padding-bottom: var(--space-6);
   }
   .impact__title,
