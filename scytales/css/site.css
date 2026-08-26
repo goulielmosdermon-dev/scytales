@@ -1204,6 +1204,17 @@ html.is-menu-open body { overflow: hidden; }
 .hero__lead .display-1 .display-1__word {
   margin-right: 0; /* gap comes from column-gap on the flex parent */
 }
+/* Cycling word + “safety,” stay one unit on desktop so “safety,” never
+   orphans under a long word (Transportation). Mobile still breaks via
+   .hero__br--m inside the pair. */
+.hero__pair {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  column-gap: 0.168em;
+  max-width: 100%;
+}
 /* Forced line breaks — .hero__br--d on desktop, .hero__br--m on phones. */
 .hero__br {
   display: none;
@@ -1217,6 +1228,11 @@ html.is-menu-open body { overflow: hidden; }
 }
 @media (min-width: 768px) {
   .hero__br--d { display: block; }
+  .hero__pair {
+    flex-wrap: nowrap;
+    white-space: nowrap;
+  }
+  .hero__pair .hero__br--m { display: none; }
 }
 /* Each former .hero__line unit — kept for any leftover selectors. */
 .hero__line {

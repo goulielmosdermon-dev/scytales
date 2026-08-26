@@ -29,7 +29,10 @@
     words.reduce((best, w) => (w.length > best.length ? w : best), '');
 
   /* Fit against the longest typewriter word, not the live string — otherwise
-     the headline scales up and down as characters appear and vanish. */
+     the headline scales up and down as characters appear and vanish.
+     Measure .hero__pair (word + “safety,”) with nowrap — flex-wrap on the
+     h1 makes scrollWidth report the wrapped width, so “safety,” can drop
+     under on mid-width screens without this. */
   const fitHeroHeadline = () => {
     const h1 = document.querySelector('.hero__lead .display-1');
     if (!h1) return;
@@ -38,6 +41,7 @@
 
     const tw = h1.querySelector('[data-typewriter]');
     const textEl = tw?.querySelector('.typewriter__text');
+    const pair = h1.querySelector('.hero__pair');
     const words = tw ? readWords(tw) : [];
     const probe = longestWord(words);
     const live = textEl ? textEl.textContent : '';
@@ -49,9 +53,18 @@
 
     if (textEl && probe) textEl.textContent = probe;
 
-    /* Flex-wrap: scrollWidth tracks the widest row (cycling word alone on
-       mobile; “Transportation safety,” on desktop). */
-    const need = h1.scrollWidth;
+    let need = 0;
+    if (pair) {
+      const prevWrap = pair.style.flexWrap;
+      const prevWs = pair.style.whiteSpace;
+      pair.style.flexWrap = 'nowrap';
+      pair.style.whiteSpace = 'nowrap';
+      need = pair.scrollWidth;
+      pair.style.flexWrap = prevWrap;
+      pair.style.whiteSpace = prevWs;
+    } else {
+      need = h1.scrollWidth;
+    }
 
     if (textEl) textEl.textContent = live;
 
