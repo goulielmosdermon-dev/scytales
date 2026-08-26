@@ -123,18 +123,12 @@
   mix-blend-mode: screen;
 }
 
-/* ID reverse — frosted glass over blurred art, sharp type on top */
+/* ID reverse — opaque frosted face over blurred art (not see-through). */
 .card-stack__pane--id {
-  background:
-    linear-gradient(
-      165deg,
-      rgba(255, 255, 255, .42) 0%,
-      rgba(255, 248, 240, .28) 45%,
-      rgba(255, 230, 210, .22) 100%
-    );
-  backdrop-filter: blur(18px) saturate(1.55);
-  -webkit-backdrop-filter: blur(18px) saturate(1.55);
-  border-color: rgba(255, 255, 255, .78);
+  background: #f4efe8;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-color: rgba(255, 255, 255, .9);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, .85),
     inset 0 -1px 0 rgba(10, 30, 60, .12),
@@ -147,19 +141,20 @@
   z-index: 0;
   overflow: hidden;
   border-radius: inherit;
+  background: #f4efe8;
 }
 .card-stack__id-bg img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
-  transform: scale(1.18);
+  transform: scale(1.35);
   filter:
-    blur(18px)
-    saturate(.85)
-    contrast(1.05)
-    brightness(1.2);
-  opacity: .72;
+    blur(36px)
+    saturate(.9)
+    contrast(1.06)
+    brightness(1.18);
+  opacity: 1;
 }
 .card-stack__pane--id::after {
   z-index: 1;

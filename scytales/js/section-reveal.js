@@ -6,13 +6,12 @@
    rules key off .display-1--reveal, not .display-1 — so any element can be
    handed to it. This file just decides which ones.
 
-   .impact__title is deliberately NOT in the list: it is a .display-1, so
-   that script picks it up on its own. Passing it again would restart the
-   animation mid-flight. */
+   .impact__title / .stories__title are deliberately NOT in the list: they
+   are .display-1, so that script picks them up on its own. Passing them
+   again would restart the animation mid-flight. */
 (() => {
   const SELECTOR = [
     '.products__title',
-    '.stories__title',
     '.updates__title',
     '.testimonials__title',
   ].join(', ');

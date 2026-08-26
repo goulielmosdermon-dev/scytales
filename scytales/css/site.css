@@ -105,13 +105,15 @@ html.is-page-leaving {
   }
 
   /* Coloured bands — gutters follow the section fill, not --page-bg. */
-  :is(.page-home, .page-dark-nav) .nav,
-  .page-home .hero,
-  .page-home .video-reveal,
-  .page-home .clients,
+  .page-dark-nav .nav,
   .page-dark-nav .solution-page,
   .solution-page > .solution-hero {
     --band-bleed: var(--navy-800);
+  }
+  .page-home .nav,
+  .page-home .hero,
+  .page-home .clients {
+    --band-bleed: var(--page-bg);
   }
   .page-orange-nav .nav,
   .product-page__content > .wallet-hero {
@@ -179,6 +181,7 @@ html.is-page-leaving {
    a bar at display size reads as a letter "l". */
 .typewriter {
   white-space: pre;
+  color: var(--orange-500);
 }
 
 /* One span per character, written by js/text-scramble.js. inline-block so
@@ -282,7 +285,7 @@ html.is-page-leaving {
   cursor: pointer;
   z-index: 62;                   /* above the panel */
 }
-:is(.page-home, .page-dark-nav, .page-orange-nav) .nav__burger { color: var(--white); }
+:is(.page-dark-nav, .page-orange-nav) .nav__burger { color: var(--white); }
 /* Past the first section the nav is gone, so the burger lifts out of the
    bar and pins to the top right — the same button, faded in, so the menu
    keeps one trigger and one aria state. js/burger-pin.js sets the class. */
@@ -355,7 +358,8 @@ html.is-page-leaving {
   inset: 0;
   border: 0;
   padding: 0;
-  background: color-mix(in srgb, var(--navy-900) 55%, transparent);
+  /* Neutral dim — navy tinted the blur blue on cream pages. */
+  background: rgb(0 0 0 / 45%);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   opacity: 0;
@@ -553,37 +557,24 @@ html.is-menu-open body { overflow: hidden; }
 /* display:block above outranks the browser's [hidden] rule, which left the
    white lockup showing beside the orange one on every non-home page. */
 .nav__brand[hidden] { display: none; }
-/* ---- Dark nav (home) -------------------------------------
-   The home hero is a full-height navy band, so the nav above it is navy
-   too. Everything here is scoped to .page-home; every other page keeps
-   the cream nav. Swap the body class to move the dark nav elsewhere. */
-:is(.page-home, .page-dark-nav) .nav,
-:is(.page-home, .page-dark-nav) [data-site-nav] {
+/* ---- Dark nav (solutions) ---------------------------------
+   Home uses the default cream nav (Ramp/Stripe-style light hero).
+   Solutions (.page-dark-nav) keeps the solid navy fill. */
+.page-dark-nav .nav,
+.page-dark-nav [data-site-nav] {
   background: var(--navy-800);
 }
-/* The dark band (nav → hero → video → clients) shares one navy fill with
-   no horizontal rules between them. Left/right frame rails stay on for
-   every section — drawn by .site-frame::before/::after above the bleeds. */
-/* How deep the video's top edge sits inside the hero. Read by both the
-   video band (its negative top margin) and the hero (the clearance it
-   keeps below the buttons), so they can never drift apart. */
-.page-home {
-  --video-bleed: clamp(6rem, 14vw, 13rem);
-}
+/* Left/right frame rails stay on for every section — drawn by
+   .site-frame::before/::after above the bleeds. */
 .page-home .hero {
-  /* was overflow:hidden / clip for a star ring that is display:none —
-     must stay visible so the navy can bleed into the side margins. */
+  /* Cream band under the default nav; product compose can overhang. */
   overflow: visible;
-  /* The band is sized by its own content, not by the viewport. A vh height
-     leaves slack that has to go somewhere — centred it split above and below
-     the headline (pushing the video away), bottom-anchored it all piled on
-     top. Fixed padding at both ends instead: nav-to-headline and buttons-to-
-     video are the same on a laptop and on a 6K display. */
-  height: auto;
   min-height: 0;
-  align-items: center;
-  padding-top: var(--space-8);
-  padding-bottom: calc(var(--video-bleed) + var(--space-7));
+  height: auto;
+  align-items: stretch;
+  padding-top: var(--space-6);
+  padding-bottom: var(--space-8);
+  background: var(--page-bg);
 }
 :is(.page-home, .page-dark-nav) .nav,
 .page-home .hero,
@@ -593,45 +584,37 @@ html.is-menu-open body { overflow: hidden; }
 :is(.page-home, .page-dark-nav) [data-site-nav],
 :is(.page-home, .page-dark-nav) .nav,
 .page-home .hero,
-.page-home .clients,
-.page-home .video-reveal {
+.page-home .clients {
   border-bottom: 0;
 }
-:is(.page-home, .page-dark-nav) .nav__brand--default { display: none; }
-:is(.page-home, .page-dark-nav) .nav__brand--light[hidden] {
+.page-dark-nav .nav__brand--default { display: none; }
+.page-dark-nav .nav__brand--light[hidden] {
   display: block;   /* height comes from .nav__brand — same scale as orange */
 }
-:is(.page-home, .page-dark-nav) .nav__links a,
-:is(.page-home, .page-dark-nav) .nav__trigger {
+.page-dark-nav .nav__links a,
+.page-dark-nav .nav__trigger {
   color: var(--white);
 }
-:is(.page-home, .page-dark-nav) .nav__links a:hover,
-:is(.page-home, .page-dark-nav) .nav__trigger:hover,
-:is(.page-home, .page-dark-nav) .nav__item--mega.is-open > .nav__trigger {
+.page-dark-nav .nav__links a:hover,
+.page-dark-nav .nav__trigger:hover,
+.page-dark-nav .nav__item--mega.is-open > .nav__trigger {
   color: var(--orange-300);
 }
-:is(.page-home, .page-dark-nav) .nav__toggle span { background: var(--white); }
-/* Same inversion as the hero pair: white block, navy text. */
-:is(.page-home, .page-dark-nav) .nav__right .btn-primary {
+.page-dark-nav .nav__toggle span { background: var(--white); }
+/* Same inversion as the old dark hero pair: white block, navy text. */
+.page-dark-nav .nav__right .btn-primary {
   background: var(--white);
   color: var(--navy-800);
 }
-:is(.page-home, .page-dark-nav) .nav__right .btn-primary:hover {
+.page-dark-nav .nav__right .btn-primary:hover {
   background: color-mix(in srgb, var(--white) 88%, var(--cream-50));
 }
-/* White left/right rails on dark / warm bands (nav → hero → video →
-   clients, innovation dial, backbone earth, customer-stories once it
-   warms to orange, and the footer). Same construction as .site-frame
-   rails (1px fill strips via --frame-line-width) — not CSS borders,
-   which anti-alias heavier on dark fills and read thicker than orange.
-   Sit above the orange shell (z-index 40). Target .nav (site-nav.js
-   replaces [data-site-nav]). ::after only: ::before paints the
-   wide-screen side bleed. Solutions (.page-dark-nav) already flips
-   --frame-line to white, so its sides come from the shell alone. */
-.page-home .nav::after,
-.page-home .hero::after,
-.page-home .video-reveal::after,
-.page-home .clients::after,
+/* White left/right rails on dark / warm bands (innovation dial, backbone
+   earth, customer-stories once it warms to orange, and the footer). Same
+   construction as .site-frame rails (1px fill strips via
+   --frame-line-width) — not CSS borders. Sit above the orange shell
+   (z-index 40). Target .nav (site-nav.js replaces [data-site-nav]).
+   ::after only: ::before paints the wide-screen side bleed. */
 .page-home .innovation::after,
 .page-home .impact-earth::after,
 .page-home .stories.is-warm::after,
@@ -647,19 +630,16 @@ html.is-menu-open body { overflow: hidden; }
     linear-gradient(var(--white), var(--white)) left top / var(--frame-line-width, 1px) 100% no-repeat,
     linear-gradient(var(--white), var(--white)) right top / var(--frame-line-width, 1px) 100% no-repeat;
 }
-/* Solutions + products: white seam under the nav, separating it from the hero.
-   Solutions keeps sides on the shell (already white); products add the
-   side rails above plus this bottom strip. */
-.page-dark-nav .nav::after {
+/* Solutions + products: white seam under the nav, separating it from the
+   hero. Solutions also needs L/R rails here — .nav is z-index 50, so it
+   covers the shell’s white --frame-line rails (z-index 40). */
+.page-dark-nav .nav::after,
+.page-orange-nav .nav::after {
   content: '';
   position: absolute;
   inset: 0;
   z-index: 41;
   pointer-events: none;
-  background:
-    linear-gradient(var(--white), var(--white)) left bottom / 100% var(--frame-line-width, 1px) no-repeat;
-}
-.page-orange-nav .nav::after {
   background:
     linear-gradient(var(--white), var(--white)) left top / var(--frame-line-width, 1px) 100% no-repeat,
     linear-gradient(var(--white), var(--white)) right top / var(--frame-line-width, 1px) 100% no-repeat,
@@ -1149,114 +1129,73 @@ html.is-menu-open body { overflow: hidden; }
 }
 
 /* ============================================================
-   HERO
-   Horizontal composition is proportional: the column split and the
-   type both scale with --u, so the three-line headline break and the
-   five-line lead hold at any viewport. Vertical spacing is the style
-   guide's own rhythm, not the frame's.
+   HERO — Ramp/Stripe-style light band
+   Cream ground, left copy + CTAs, film as a square support panel
+   (beside on desktop, under on phone). Not a full-bleed backdrop.
    ============================================================ */
 .hero {
-  /* 0.8 x 0.7 = 56% of the original var(--space-8) rhythm. */
-  padding: calc(var(--space-8) * 0.56) 0;
   position: relative;
-  overflow: visible;   /* side-margin bleed; star ring is display:none */
-  /* Full viewport, minus the nav it sits under. min-height, not height,
-     so the headline can never be clipped on a short window. */
-  min-height: calc(100vh - var(--nav-h));
+  overflow: visible;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--navy-800);
+  align-items: stretch;
+  justify-content: flex-start;
+  background: var(--page-bg);
 }
-.hero .display-1 { color: var(--white); }
-/* On navy the pair inverts: the primary is the white block, the secondary
-   is an outline. Scoped to the hero so the site-wide buttons are untouched. */
-.hero__actions .btn-primary {
-  background: var(--white);
-  color: var(--navy-800);
-}
-.hero__actions .btn-primary:hover {
-  background: color-mix(in srgb, var(--white) 88%, var(--cream-50));
-}
-.hero__actions .btn-secondary {
-  background: transparent;
-  color: var(--white);
-  box-shadow: inset 0 0 0 1.5px var(--white);
-}
-.hero__actions .btn-secondary:hover {
-  background: color-mix(in srgb, var(--white) 14%, transparent);
-}
-/* Decorative twelve-star ring — 3x the style guide's mark, centred on the
-   right edge. Clipping is intended. */
-/* Hidden for now. Delete this one declaration to bring the ring back —
-   the markup and the spin animation are untouched. */
-.hero__stars {
-  display: none;
-  position: absolute;
-  top: 50%;
-  right: 0;
-  translate: 35% -30%;   /* sits below the hero's midline, not centred */
-  width: 1440px;         /* 6 x the 240 viewBox */
-  height: auto;
-  opacity: 0.2;
-  fill: var(--orange-500);
-  pointer-events: none;
-  z-index: 0;
-}
-/* Counter-clockwise, half the style guide's pace (60s -> 120s). */
-.hero__stars-ring {
-  transform-box: view-box;
-  transform-origin: 50% 50%;
-  animation: hero-stars-spin 120s linear infinite;
-}
-@keyframes hero-stars-spin {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(-360deg); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero__stars-ring { animation: none; }
-}
-/* Keep the headline and CTAs above the mark. */
 .hero .container {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   width: 100%;
 }
-
-/* The frame splits 53/47, but SF Pro Text sets ~1.2% wider than the design's
-   rendering, which drops the "&" off the lead's first line. The right column
-   is widened just enough to keep the reference's five-line break; the block
-   still finishes flush with the content edge. */
-/* One centred column since the lead moved out to .statement. */
 .hero__grid {
   display: grid;
   grid-template-columns: 1fr;
+  gap: var(--space-6);
+  align-items: start;
+  justify-items: center;
 }
 .hero__lead {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: var(--space-6);
-  /* Side padding on top of the container's own gutter, so the centred
-     headline never runs up against the frame line. */
-  padding-inline: var(--space-6);
+  gap: var(--space-4);
+  /* Full content measure — same Display 1 size as .impact__title. */
+  max-width: min(40rem, 100%);
+  padding-inline: 0;
+  width: 100%;
 }
-/* Same size as the statement band (.statement__text / --fs-display-1).
-   Rhythm falls back to the shared display tokens until the Font Lab's
-   "Hero headline" sliders set --hero-lh / --hero-ls. */
 .hero__lead .display-1 {
   margin-bottom: 0;
   font-size: var(--fs-display-1);
-  line-height: var(--hero-lh, var(--lh-hero));
-  letter-spacing: var(--hero-ls, var(--ls-hero, var(--ls-display)));
-  max-width: 20ch;
+  /* Tighter than --lh-display so the two authored lines sit closer. */
+  line-height: 1;
+  letter-spacing: var(--ls-display);
+  max-width: 100%;
+  text-align: center;
+  color: var(--navy-800);
+}
+/* Each line is a hard unit — long typewriter words must shrink the whole
+   headline (js/typewriter.js), never wrap “safety,” onto its own row. */
+.hero__line {
+  display: block;
+  white-space: nowrap;
+}
+.hero__deck {
+  margin: 0;
+  max-width: 42ch;
+  font-family: var(--font-body);
+  font-size: var(--fs-body-md);
+  line-height: 1.45;
+  color: var(--navy-800);
+  text-wrap: pretty;
+  text-align: center;
 }
 .hero__actions {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: var(--space-3);
+  margin-top: var(--space-2);
 }
 /* The nav CTA is sized off the hero's buttons, in one rule so the two
    cannot drift apart. Both sit a step below the 15px .btn default. */
@@ -1264,16 +1203,177 @@ html.is-menu-open body { overflow: hidden; }
 .nav__right .btn {
   font-size: 13px;
 }
+/* Primary CTA: fill → ghost outline on hover (no size jump — matching border). */
+.hero__actions .btn-primary {
+  border: 1px solid var(--orange-500);
+}
+.hero__actions .btn-primary:hover {
+  background: transparent;
+  border-color: var(--orange-500);
+  color: var(--orange-500);
+}
 .hero__aside { align-self: end; }
+
+/* Support stage — framed Ramp-style compose: browser centered,
+   ID bottom-left, POS bottom-right, all inside one stroked panel. */
+.hero__media.hero__compose,
+.hero__compose {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  box-sizing: border-box;
+  background: var(--page-bg);
+  border: var(--frame-line-width, 1px) solid var(--cream-200);
+  border-radius: 0;
+  /* Cursor tracking for the orange dot field. */
+  pointer-events: auto;
+  touch-action: none;
+}
+.hero__compose-dots {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+}
+/* Browser — dead center, primary layer. */
+.hero__compose-browser {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  width: min(82%, 52rem);
+  height: 74%;
+  z-index: 1;
+  filter: drop-shadow(0 16px 36px rgb(0 28 68 / 14%));
+  /* Centering lives in --compose-place so reveal can add a rise without
+     fighting translate(-50%, -50%). */
+  --compose-place: translate(-50%, -50%);
+  transform: var(--compose-place) translate3d(0, 1.35rem, 0);
+}
+.hero__compose-browser .avc-window {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  pointer-events: none;
+}
+/* ID card — bottom-left, slightly smaller than the POS. */
+.hero__compose-id {
+  position: absolute;
+  left: 4%;
+  bottom: 3.5%;
+  z-index: 3;
+  --compose-place: translate3d(0, 0, 0);
+  transform: var(--compose-place) translate3d(0, 1.5rem, 0);
+  filter: drop-shadow(0 14px 24px rgb(0 28 68 / 18%));
+}
+.hero__id-stack {
+  --stack-w: 9.75rem;
+  height: calc(var(--stack-w) * 1.595);
+  margin: 0;
+}
+.hero__id-stack .card-stack__pane {
+  position: relative;
+  left: auto;
+  top: auto;
+  transform: none;
+  pointer-events: none;
+}
+/* POS — bottom-right, smaller than the browser, larger than the card. */
+.hero__compose-pos {
+  position: absolute;
+  right: 4%;
+  bottom: 3%;
+  width: 23%;
+  max-width: 11.5rem;
+  height: auto;
+  z-index: 2;
+  display: block;
+  pointer-events: none;
+  --compose-place: translate3d(0, 0, 0);
+  transform: var(--compose-place) translate3d(0, 1.5rem, 0);
+  filter: drop-shadow(0 16px 28px rgb(0 28 68 / 16%));
+}
+
+/* Browser on load; POS + ID on scroll. */
+.hero__compose [data-compose-item] {
+  opacity: 0;
+  will-change: transform, opacity;
+  transition:
+    opacity 720ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 720ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: calc(var(--compose-i, 0) * 140ms);
+}
+.hero__compose.is-browser-in .hero__compose-browser,
+.hero__compose.is-in .hero__compose-pos,
+.hero__compose.is-in .hero__compose-id {
+  opacity: 1;
+  transform: var(--compose-place, none) translate3d(0, 0, 0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero__compose [data-compose-item] {
+    opacity: 1;
+    transform: var(--compose-place, none);
+    transition: none;
+  }
+}
+.hero__pos,
+.hero__pos-stage {
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: 0;
+  display: block;
+}
+.hero__pos-stage svg.pos-device,
+.hero__pos-stage svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: none;
+}
+
+/* Legacy video media rules kept for other pages if reused. */
+.hero__video {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
+}
+.hero__video-poster,
+.hero__video-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 0;
+}
+.hero__video-media {
+  width: 100%;
+  height: 100%;
+  transform: scale(1.2);
+  transform-origin: center center;
+}
 
 /* ============================================================
    STATEMENT — the old hero lead, promoted to Display 1 and
    revealed one line at a time (js/line-reveal.js).
    ============================================================ */
 .statement {
-  /* Doubled lead-in: the band now sits on the same cream as the page, so
-     the space above the first line is what separates it from the belt. */
-  padding: calc(var(--section-pad-y) * 2) 0 var(--section-pad-y);
+  /* Same cream as the clients belt — one section-pad step above the
+     first line (not two) so the statement sits closer to the logos. */
+  padding: var(--section-pad-y) 0;
   background: var(--page-bg);
 }
 /* The shell rules every band; here that line landed over "Browse our product
@@ -1366,32 +1466,36 @@ html.is-menu-open body { overflow: hidden; }
   align-items: center;
   padding: 0 var(--space-4);
 }
-/* One height for every mark, so none can read as taller than another, and
-   align-items centres them all on the same line. Width follows the aspect
-   ratio. */
+/* Shared optical height, then per-mark scales — equal CSS height made
+   padded wordmarks (Netcompany) look tiny next to filled marks (T). */
 .clients__logo {
-  height: 92px;
+  --logo-h: 84px;
+  height: calc(var(--logo-h) * var(--logo-scale, 1));
   width: auto;
+  max-width: 17rem;
+  object-fit: contain;
+  object-position: center;
   mix-blend-mode: multiply;   /* drops the assets' light backgrounds into the cream */
 }
+.clients__logo--ec      { --logo-scale: 1.05; }
+.clients__logo--aventra { --logo-scale: 1.35; max-width: 19.5rem; }
+.clients__logo--t       { --logo-scale: 0.78; }
+.clients__logo--versent { --logo-scale: 1.2;  max-width: 18.75rem; }
+.clients__logo--adacom  { --logo-scale: 1.3;  max-width: 18.75rem; }
+.clients__logo--net     { --logo-scale: 1.55; max-width: 21rem; }
 
-/* ---- Clients on the dark band (home) ---------------------
-   The belt now sits between the navy hero and the cream statement, so it
-   is navy too, with the white frame line. The logo assets are dark marks
-   on white, so they are inverted to white marks on black and the black is
-   screened away — the one way to get white logos out of flat artwork. */
+/* ---- Clients on home — cream belt, original brand colours -----
+   Multiply drops the assets’ light plates into --page-bg without
+   recolouring the marks. */
 .page-home .clients {
-  --frame-line: var(--white);
-  background: var(--navy-800);
-  /* Same stacking as .video-reveal — keep white rails above the orange shell. */
+  background: var(--page-bg);
   z-index: 41;
 }
 .page-home .clients__belt {
-  background: var(--navy-800);
+  background: var(--page-bg);
 }
 .page-home .clients__logo {
-  filter: grayscale(1) invert(1);
-  mix-blend-mode: screen;
+  mix-blend-mode: multiply;
 }
 
 @keyframes clients-scroll {
@@ -2321,28 +2425,23 @@ html.is-menu-open body { overflow: hidden; }
   .nav__right .btn-primary { margin-top: var(--space-3); justify-content: center; }
 }
 
-/* The hero is one centred column at every width now; below tablet it only
-   loses the 70vh floor, which would squeeze the headline on a short phone. */
+/* Below tablet: type + CTA polish; scale the compose. */
 @media (max-width: 767px) {
   .hero { min-height: 0; }
-  .hero__grid { gap: var(--space-6); }
+  .page-home .hero {
+    min-height: 0;
+    padding-top: var(--space-5);
+    padding-bottom: var(--space-7);
+  }
 
-  /* Real overflow cause: long typewriter words (inline-block + scramble
-     nowrap) up to “Transportation” can exceed the phone measure, and
-     .hero { overflow:hidden } clips the right edge — which looks like a
-     padding bug. Scale the face to the viewport instead.
-     Drop the extra --space-6 inset too: the container already holds the
-     2rem gutter, and doubling it only shrinks the measure further. */
+  /* Long typewriter words can exceed the phone measure — scale the face. */
   .hero__lead {
     padding-inline: 0;
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
   }
-  .hero__lead .display-1 {
-    font-size: clamp(1.75rem, 10.5vw, var(--fs-display-1));
-    max-width: 100%;
-  }
+  .hero__deck { max-width: 36ch; }
   .hero__actions {
     width: 100%;
     flex-direction: column;
@@ -2354,6 +2453,26 @@ html.is-menu-open body { overflow: hidden; }
     align-self: center;
     box-sizing: border-box;
   }
+  .hero__compose {
+    aspect-ratio: 5 / 4;
+    margin-top: var(--space-2);
+  }
+  .hero__compose-browser {
+    width: 86%;
+    height: 68%;
+    top: 42%;
+  }
+  .hero__compose-id {
+    left: 4%;
+    bottom: 3%;
+  }
+  .hero__id-stack { --stack-w: 7.5rem; }
+  .hero__compose-pos {
+    width: 28%;
+    max-width: 8.5rem;
+    right: 3%;
+    bottom: 2%;
+  }
 }
 
 /* The belt's height steps down with the tiers so a full set keeps fitting the
@@ -2362,10 +2481,10 @@ html.is-menu-open body { overflow: hidden; }
    1144px at 40/24, and 706px at 24/16, which clears tablet. */
 @media (max-width: 1365px) {
   .clients__track > li { padding: 0 var(--space-3); }
-  .clients__logo { height: 78px; }
+  .clients__logo { --logo-h: 72px; }
 }
 @media (max-width: 767px) {
-  .clients__logo { height: 64px; }
+  .clients__logo { --logo-h: 60px; }
 }
 
 @media (max-width: 767px) {
@@ -7650,8 +7769,11 @@ body.newsletter-open {
   .h-3 { font-size: 20px; }
   .hero-lead { line-height: 1.3; }        /* 1.05 only works when the lead is one or two lines */
 
-  .hero__lead { gap: var(--space-5); }
-  .hero { padding: var(--space-6) 0; }
+  .hero__lead { gap: var(--space-3); }
+  .page-home .hero {
+    padding-top: var(--space-5);
+    padding-bottom: var(--space-6);
+  }
   .impact__title,
   .wallet-hero__title { font-size: var(--fs-display-1); }
 
@@ -7694,25 +7816,11 @@ body.newsletter-open {
   .product-sheet { padding-top: calc(2rem + var(--safe-top)); }
   .product-sheet__dialog { min-height: calc(100dvh - 4rem - var(--safe-top)); }
 
-  /* ---- Video: portrait frame --------------------------------
-     16:9 across 295px left the player only 166px tall. The media
-     already sets object-fit: cover, so the taller frame crops
-     rather than letterboxes. */
-  .video-reveal__mask {
-    border-radius: 5px;
-    aspect-ratio: 4 / 5;
-  }
-  /* Less overlap on a phone — the hero's copy sits lower in a short band. */
-  .page-home { --video-bleed: clamp(2.5rem, 10vw, 5rem); }
-  .video-reveal__mask .video-player {
-    border-radius: inherit;
-  }
-
   /* ---- Clients belt ----------------------------------------
      56px marks were unreadable on a phone. The belt scrolls, so a
      taller logo costs nothing but loop length. */
   .clients { padding: var(--space-4) 0; }
-  .clients__logo { height: 64px; }
+  .clients__logo { --logo-h: 60px; }
   .clients__track > li { padding: 0 var(--space-4); }
 
   /* ---- Product line ---------------------------------------- */
@@ -7978,6 +8086,11 @@ body.newsletter-open {
   .wallet-statement__text {
     line-height: 1.12;
   }
+  /* Hero keeps authored nowrap lines — stay tighter than the wrap floor. */
+  .hero .display-1,
+  .hero__lead .display-1 {
+    line-height: 1;
+  }
   .hero .display-1,
   .hero__lead .display-1,
   .solution-hero__title,
@@ -8075,7 +8188,7 @@ body.newsletter-open {
    in shared/tokens.css alongside the main one — see the note there. */
 @media (max-width: 389px) {
   .display-2 { font-size: 30px; }
-  .clients__logo { height: 54px; }
+  .clients__logo { --logo-h: 54px; }
   .wallet-showcase__phone .phone-device { --phone-scale: 0.5; }
 }
 

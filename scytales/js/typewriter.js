@@ -3,9 +3,9 @@
 
    Markup:  <span data-typewriter data-words='["One","Two"]'></span>
 
-   The element is pinned to the width of its longest word (measured once
-   the display face has loaded), so the line around it never reflows while
-   the word changes. */
+   On the home hero the cycling word shares a nowrap line with “safety,”.
+   We size the headline once for the longest word so the face doesn’t
+   jump as shorter words type in. */
 (() => {
   const TYPE_MS = 78;      /* per character, typing */
   const DELETE_MS = 42;    /* per character, deleting */
@@ -24,10 +24,41 @@
     }
   };
 
-  /* No width is reserved: the word is set at its natural width and the
-     centred headline re-flows around it, so the space before "safety,"
-     is always a normal word space. Reserving the longest word's width
-     instead parks short words against a fixed box and opens a gap. */
+  const longestWord = (words) =>
+    words.reduce((best, w) => (w.length > best.length ? w : best), '');
+
+  /* Fit against the longest typewriter word, not the live string — otherwise
+     the headline scales up and down as characters appear and vanish. */
+  const fitHeroHeadline = () => {
+    const h1 = document.querySelector('.hero__lead .display-1');
+    if (!h1) return;
+    const lead = h1.closest('.hero__lead');
+    if (!lead) return;
+
+    const tw = h1.querySelector('[data-typewriter]');
+    const textEl = tw?.querySelector('.typewriter__text');
+    const words = tw ? readWords(tw) : [];
+    const probe = longestWord(words);
+    const live = textEl ? textEl.textContent : '';
+
+    h1.style.fontSize = '';
+    const avail = lead.clientWidth;
+    if (avail <= 0) return;
+
+    if (textEl && probe) textEl.textContent = probe;
+
+    let need = 0;
+    h1.querySelectorAll('.hero__line').forEach((line) => {
+      need = Math.max(need, line.scrollWidth);
+    });
+
+    if (textEl) textEl.textContent = live;
+
+    if (need > avail) {
+      const current = parseFloat(getComputedStyle(h1).fontSize);
+      h1.style.fontSize = `${(current * avail) / need}px`;
+    }
+  };
 
   const wire = (el) => {
     const words = readWords(el);
@@ -37,8 +68,11 @@
     textEl.className = 'typewriter__text';
     el.replaceChildren(textEl);
 
+    const inHero = !!el.closest('.hero__lead');
+
     if (prefersReduced) {
       textEl.textContent = words[0];
+      if (inHero) fitHeroHeadline();
       return;
     }
 
@@ -66,11 +100,19 @@
       return setTimeout(step, GAP_MS);
     };
 
+    /* Size for the longest word before the first tick paints a short one. */
+    if (inHero) {
+      textEl.textContent = longestWord(words);
+      fitHeroHeadline();
+      textEl.textContent = '';
+    }
+
     setTimeout(step, TYPE_MS);
   };
 
   const init = (scope = document) => {
     scope.querySelectorAll('[data-typewriter]').forEach(wire);
+    fitHeroHeadline();
   };
 
   if (document.readyState === 'loading') {
@@ -79,5 +121,8 @@
     init();
   }
 
-  window.ScytalesTypewriter = { init };
+  window.addEventListener('resize', fitHeroHeadline);
+  document.fonts?.ready?.then?.(fitHeroHeadline);
+
+  window.ScytalesTypewriter = { init, fitHeroHeadline };
 })();

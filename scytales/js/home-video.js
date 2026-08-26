@@ -1,12 +1,6 @@
-/* Homepage video — Vimeo embed behind a poster facade.
-   The old homepage video was a signed progressive .mp4 played by a plain
-   <video>. This one is only available through Vimeo's player, so the figure
-   starts as a poster image and swaps in the iframe on first play. Nothing
-   from Vimeo is fetched until someone asks for it.
-
-   The custom transport is kept: the iframe runs controls=0 and the existing
-   play/pause buttons drive it through the Vimeo Player API, so the section
-   looks and behaves exactly as it did with the <video>. */
+/* Homepage hero film — Vimeo support panel (Ramp/Stripe layout).
+   data-home-video-bg: click-to-play muted loop, no transport UI.
+   Without that attribute the figure needs play/pause controls. */
 (() => {
   const figure = document.querySelector('[data-home-video]');
   if (!figure) return;
@@ -16,7 +10,9 @@
   const poster = figure.querySelector('[data-home-video-poster]');
   const playBtn = figure.querySelector('[data-video-action="play"]');
   const pauseBtn = figure.querySelector('[data-video-action="pause"]');
-  if (!id || !playBtn || !pauseBtn) return;
+  const isBg = figure.hasAttribute('data-home-video-bg');
+  if (!id) return;
+  if (!isBg && (!playBtn || !pauseBtn)) return;
 
   let player = null;
   let loading = false;
@@ -25,8 +21,6 @@
     figure.dataset.state = state;
   };
 
-  /* Mirrors the loader in session-video.js: one <script> for the whole page,
-     however many players end up asking for it. */
   const loadApi = () =>
     new Promise((resolve, reject) => {
       if (window.Vimeo) return resolve(window.Vimeo);
@@ -45,15 +39,15 @@
       document.head.appendChild(script);
     });
 
-  const activate = () => {
+  const mount = ({ autoplay, muted, loop, background }) => {
     if (player || loading) return;
     loading = true;
 
-    /* autoplay=1 is set on the src rather than called afterwards: the iframe
-       is created inside the click handler, which is what lets the browser
-       treat playback as user-initiated across the origin boundary. */
     const params = new URLSearchParams({
-      autoplay: '1',
+      autoplay: autoplay ? '1' : '0',
+      muted: muted ? '1' : '0',
+      loop: loop ? '1' : '0',
+      background: background ? '1' : '0',
       controls: '0',
       title: '0',
       byline: '0',
@@ -63,14 +57,16 @@
     if (hash) params.set('h', hash);
 
     const iframe = document.createElement('iframe');
-    iframe.className = 'video-player__media video-player__media--embed';
+    iframe.className = isBg
+      ? 'hero__video-media'
+      : 'video-player__media video-player__media--embed';
     iframe.src = `https://player.vimeo.com/video/${encodeURIComponent(id)}?${params}`;
     iframe.allow = 'autoplay; fullscreen; picture-in-picture';
     iframe.title = figure.dataset.videoTitle || 'Scytáles';
-    iframe.setAttribute('loading', 'lazy');
+    iframe.setAttribute('loading', isBg ? 'eager' : 'lazy');
 
     poster?.replaceWith(iframe);
-    setState('playing');
+    if (autoplay) setState('playing');
 
     loadApi()
       .then((Vimeo) => {
@@ -78,16 +74,33 @@
         player.on('play', () => setState('playing'));
         player.on('pause', () => setState('paused'));
         player.on('ended', () => setState('paused'));
+        if (muted) player.setVolume(0).catch(() => {});
       })
       .catch(() => {
-        /* The API failed to load. The video is already playing inside the
-           iframe; only our transport is dead, so hand control to Vimeo's. */
-        iframe.src = iframe.src.replace('controls=0', 'controls=1');
+        if (!isBg) {
+          iframe.src = iframe.src.replace('controls=0', 'controls=1');
+        }
       })
       .finally(() => {
         loading = false;
       });
   };
+
+  if (isBg) {
+    /* Poster stays until the user clicks the film — no autoplay. */
+    setState('paused');
+    const activateBg = () => {
+      mount({ autoplay: true, muted: true, loop: true, background: true });
+    };
+    figure.addEventListener('click', () => {
+      if (!player) activateBg();
+      else if (figure.dataset.state === 'playing') player.pause();
+      else player.play().catch(() => setState('paused'));
+    });
+    return;
+  }
+
+  const activate = () => mount({ autoplay: true, muted: false, loop: false, background: false });
 
   playBtn.addEventListener('click', () => {
     if (!player) return activate();
@@ -98,7 +111,6 @@
     player?.pause();
   });
 
-  /* The whole surface toggles, as it did when this was a <video>. */
   figure.addEventListener('click', (e) => {
     if (e.target.closest('.video-player__controls')) return;
     if (!player) return activate();

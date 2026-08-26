@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- Cascadia Code — variable, 200..700. Offered in the Font Lab. -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&display=swap">
-<link rel="stylesheet" href="css/site.css?v=mobile413">
+<link rel="stylesheet" href="css/site.css?v=mobile442">
 <link rel="stylesheet" href="css/font-lab.css?v=6">
 <link rel="stylesheet" href="css/color-lab.css?v=3">
 <link rel="stylesheet" href="css/code-loader.css?v=7">
@@ -23,84 +23,76 @@
 <script src="js/display1-reveal.js?v=7"></script>
 <script src="js/line-reveal.js?v=4"></script>
 <script src="js/text-scramble.js?v=7"></script>
-<script src="js/typewriter.js?v=2"></script>
+<script src="js/typewriter.js?v=4"></script>
 <div class="site-frame">
 <div data-site-nav aria-busy="true"></div>
 
 <main>
 
-  <section class="hero">
-    <!-- Twelve-star ring, decorative. Geometry per the EU flag spec; see the
-         European Sign section of the style guide. -->
-    <svg class="hero__stars" viewBox="0 0 240 240" aria-hidden="true" focusable="false">
-      <defs>
-        <polygon id="hero-eu-star" points="0.00,-14.00 3.14,-4.33 13.31,-4.33 5.09,1.65 8.23,11.33 0.00,5.35 -8.23,11.33 -5.09,1.65 -13.31,-4.33 -3.14,-4.33" />
-      </defs>
-      <g class="hero__stars-ring">
-        <use href="#hero-eu-star" x="120.00" y="36.00" />
-        <use href="#hero-eu-star" x="162.00" y="47.25" />
-        <use href="#hero-eu-star" x="192.75" y="78.00" />
-        <use href="#hero-eu-star" x="204.00" y="120.00" />
-        <use href="#hero-eu-star" x="192.75" y="162.00" />
-        <use href="#hero-eu-star" x="162.00" y="192.75" />
-        <use href="#hero-eu-star" x="120.00" y="204.00" />
-        <use href="#hero-eu-star" x="78.00" y="192.75" />
-        <use href="#hero-eu-star" x="47.25" y="162.00" />
-        <use href="#hero-eu-star" x="36.00" y="120.00" />
-        <use href="#hero-eu-star" x="47.25" y="78.00" />
-        <use href="#hero-eu-star" x="78.00" y="47.25" />
-      </g>
-    </svg>
+  <section class="hero" aria-label="Scytáles">
     <div class="container hero__grid">
-
       <div class="hero__lead">
         <h1 class="display-1 display-1--reveal is-revealed" data-scramble>
-          <span class="display-1__word" style="--word-i:0"><span class="u-accent typewriter" data-typewriter
-                data-words='["Government","Transportation","Healthcare","Retail","Fintech"]'>Government</span></span>
-          <span class="display-1__word" style="--word-i:1">safety,</span>
-          <br>
-          <span class="display-1__word" style="--word-i:2">one</span>
-          <span class="display-1__word" style="--word-i:3">device</span>
-          <span class="display-1__word" style="--word-i:4">at</span>
-          <span class="display-1__word" style="--word-i:5">a</span>
-          <span class="display-1__word" style="--word-i:6"><span class="u-accent">time.</span></span>
+          <span class="hero__line">
+            <span class="display-1__word" style="--word-i:0"><span class="u-accent typewriter" data-typewriter
+                  data-words='["Government","Transportation","Healthcare","Retail","Fintech"]'>Government</span></span>
+            <span class="display-1__word" style="--word-i:1">safety,</span>
+          </span>
+          <span class="hero__line">
+            <span class="display-1__word" style="--word-i:2">one</span>
+            <span class="display-1__word" style="--word-i:3">device</span>
+            <span class="display-1__word" style="--word-i:4">at</span>
+            <span class="display-1__word" style="--word-i:5">a</span>
+            <span class="display-1__word" style="--word-i:6"><span class="u-accent">time.</span></span>
+          </span>
         </h1>
+        <p class="hero__deck">Hardware and software that verify identity at the point of use — so every check is faster, safer, and under your control.</p>
         <div class="hero__actions">
           <a class="btn btn-primary" href="./page.html?slug=contacts">Make the world safer</a>
           <a class="btn btn-secondary" href="#demo">Request a demo</a>
         </div>
       </div>
 
-    </div>
-  </section>
+      <div class="hero__media hero__compose" data-compose-reveal aria-hidden="true">
+        <canvas class="hero__compose-dots" data-compose-dots aria-hidden="true"></canvas>
+        <!-- Framed stage: browser centered, ID bottom-left, POS bottom-right. -->
+        <div class="hero__compose-browser" data-compose-item style="--compose-i:0">
+          <div data-avc data-avc-decorative></div>
+        </div>
 
-  <!-- Video. Its top edge is pulled up into the navy hero band, so the
-       frame starts on the dark and finishes on the cream page. -->
-  <section class="video-reveal" aria-label="Scytáles film">
-    <div class="container video-reveal__frame">
-      <div class="video-reveal__mask">
-        <figure class="video-player"
-                data-home-video
-                data-video-player
-                data-state="paused"
-                data-vimeo-id="1174819047"
-                data-vimeo-hash="730e2ca400"
-                data-video-title="E-wallet">
-          <img class="video-player__media"
-               data-home-video-poster
-               src="assets/video/intro-poster.jpg?v=2"
-               alt=""
-               loading="lazy"
-               decoding="async">
-          <div class="video-player__controls">
-            <button class="video-player__btn" type="button" data-video-action="play" aria-label="Play video">
-              <svg viewBox="0 0 20 24" fill="currentColor" aria-hidden="true"><path d="M0 0 20 12 0 24Z"/></svg>
-            </button>
-            <button class="video-player__btn" type="button" data-video-action="pause" aria-label="Pause video">
-              <svg viewBox="0 0 18 24" fill="currentColor" aria-hidden="true"><path d="M0 0h6v24H0zM12 0h6v24h-6z"/></svg>
-            </button>
+        <div class="hero__compose-id" data-compose-item style="--compose-i:2">
+          <div class="card-stack hero__id-stack">
+            <div class="card-stack__pane card-stack__pane--front card-stack__pane--id">
+              <div class="card-stack__id-bg">
+                <img src="assets/cards/ID.png" alt="" width="200" height="318" decoding="async">
+              </div>
+              <div class="card-stack__id-face">
+                <div class="card-stack__id-block">
+                  <div class="card-stack__id-label">Address:</div>
+                  <div class="card-stack__id-value">33 RUE LA FAYETTE 5009<br>PARIS, FRANCE</div>
+                </div>
+                <dl class="card-stack__id-meta">
+                  <div><dt>Ph.No</dt><dd>:984296</dd></div>
+                  <div><dt>D.O.B</dt><dd>:16:06</dd></div>
+                  <div><dt>ID</dt><dd>:36</dd></div>
+                  <div><dt>Blood</dt><dd>:A+</dd></div>
+                  <div><dt>Valid</dt><dd>:13.03</dd></div>
+                </dl>
+              </div>
+            </div>
           </div>
-        </figure>
+        </div>
+
+        <div class="hero__compose-pos" data-compose-item style="--compose-i:1">
+          <div
+            class="hero__pos"
+            data-pos
+            data-pos-src="../shared/pos-points.json?v=822"
+            data-pos-screen="../shared/assets/pos-nfc.jpg"
+          >
+            <div class="hero__pos-stage" data-pos-stage></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -109,20 +101,20 @@
     <div class="clients__viewport">
       <div class="clients__belt">
         <ul class="clients__track">
-          <li><img class="clients__logo" src="assets/clients/european-commission.jpg" alt="European Commission"></li>
-          <li><img class="clients__logo" src="assets/clients/aventra.png"             alt="Aventra"></li>
-          <li><img class="clients__logo" src="assets/clients/t-systems.jpg"           alt="T-Systems"></li>
-          <li><img class="clients__logo" src="assets/clients/versent.jpg"             alt="Versent"></li>
-          <li><img class="clients__logo" src="assets/clients/adacom.jpg"              alt="Adacom"></li>
-          <li><img class="clients__logo" src="assets/clients/netcompany.jpg"          alt="Netcompany"></li>
+          <li><img class="clients__logo clients__logo--ec"   src="assets/clients/european-commission.jpg" alt="European Commission"></li>
+          <li><img class="clients__logo clients__logo--aventra" src="assets/clients/aventra.png"         alt="Aventra"></li>
+          <li><img class="clients__logo clients__logo--t"    src="assets/clients/t-systems.jpg"           alt="T-Systems"></li>
+          <li><img class="clients__logo clients__logo--versent" src="assets/clients/versent.jpg"         alt="Versent"></li>
+          <li><img class="clients__logo clients__logo--adacom" src="assets/clients/adacom.jpg"           alt="Adacom"></li>
+          <li><img class="clients__logo clients__logo--net"  src="assets/clients/netcompany.jpg"          alt="Netcompany"></li>
         </ul>
         <ul class="clients__track" aria-hidden="true">
-          <li><img class="clients__logo" src="assets/clients/european-commission.jpg" alt=""></li>
-          <li><img class="clients__logo" src="assets/clients/aventra.png"             alt=""></li>
-          <li><img class="clients__logo" src="assets/clients/t-systems.jpg"           alt=""></li>
-          <li><img class="clients__logo" src="assets/clients/versent.jpg"             alt=""></li>
-          <li><img class="clients__logo" src="assets/clients/adacom.jpg"              alt=""></li>
-          <li><img class="clients__logo" src="assets/clients/netcompany.jpg"          alt=""></li>
+          <li><img class="clients__logo clients__logo--ec"   src="assets/clients/european-commission.jpg" alt=""></li>
+          <li><img class="clients__logo clients__logo--aventra" src="assets/clients/aventra.png"         alt=""></li>
+          <li><img class="clients__logo clients__logo--t"    src="assets/clients/t-systems.jpg"           alt=""></li>
+          <li><img class="clients__logo clients__logo--versent" src="assets/clients/versent.jpg"         alt=""></li>
+          <li><img class="clients__logo clients__logo--adacom" src="assets/clients/adacom.jpg"           alt=""></li>
+          <li><img class="clients__logo clients__logo--net"  src="assets/clients/netcompany.jpg"          alt=""></li>
         </ul>
       </div>
     </div>
@@ -396,7 +388,7 @@
         <!-- Beat zero: the section title, centred and alone, held for a
              breath before the first case takes over. -->
         <div class="stories__intro" data-stories-intro>
-          <h2 class="h-2 stories__title" id="stories-title">How partners put digital identity into production</h2>
+          <h2 class="display-1 stories__title" id="stories-title">How partners put digital identity into production</h2>
         </div>
 
         <div class="stories__stack" data-stories-stack>
@@ -869,8 +861,11 @@
   </div>
 </div>
 
-<!-- No <video> left on this page — the hero video is a Vimeo embed now. -->
-<script src="js/home-video.js?v=2"></script>
+<!-- No hero Vimeo — product compose (AVC + ID + POS) instead. -->
+<script src="../shared/age-verification.js?v=live3"></script>
+<script src="../shared/pos.js?v=wave0"></script>
+<script src="js/hero-compose-reveal.js?v=3"></script>
+<script src="js/hero-compose-dots.js?v=4"></script>
 <script src="../shared/phone.js?v=sheet1"></script>
 <script src="../shared/wallet-activity.js?v=cms4"></script>
 <script src="../shared/fingerprint.js?v=smooth2"></script>
@@ -880,7 +875,7 @@
 <script src="js/article-images.js?v=4"></script>
 <script src="js/updates-accordion.js?v=15"></script>
 <script src="js/customer-stories.js?v=11"></script>
-<script src="js/section-reveal.js?v=3"></script>
+<script src="js/section-reveal.js?v=4"></script>
 <script src="js/nav-mega.js?v=10"></script>
 <script src="js/nav-latest-news.js?v=4"></script>
 <script src="js/site-nav.js?v=16"></script>
