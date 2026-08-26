@@ -1171,13 +1171,13 @@ html.is-menu-open body { overflow: hidden; }
   grid-template-columns: 1fr;
   gap: var(--space-6);
   align-items: start;
-  justify-items: start;
+  justify-items: center;
 }
 .hero__lead {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
+  align-items: center;
+  text-align: center;
   gap: var(--space-4);
   /* Full content measure — same Display 1 size as .impact__title. */
   max-width: min(40rem, 100%);
@@ -1191,12 +1191,12 @@ html.is-menu-open body { overflow: hidden; }
   line-height: 1;
   letter-spacing: var(--ls-display);
   max-width: 100%;
-  text-align: left;
+  text-align: center;
   color: var(--navy-800);
   /* Flex wrap + forced breaks: desktop = 2 lines, mobile = 4. */
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
   column-gap: 0.168em;
   row-gap: 0;
 }
@@ -1209,7 +1209,7 @@ html.is-menu-open body { overflow: hidden; }
 .hero__pair {
   display: inline-flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: baseline;
   column-gap: 0.168em;
   max-width: 100%;
@@ -1240,24 +1240,18 @@ html.is-menu-open body { overflow: hidden; }
 }
 .hero__deck {
   margin: 0;
-  margin-inline: 0;
-  align-self: flex-start;
-  width: min(42ch, 100%);
   max-width: 42ch;
   font-family: var(--font-body);
   font-size: var(--fs-body-md);
   line-height: 1.45;
   color: var(--navy-800);
   text-wrap: pretty;
-  text-align: left;
-}
-.page-home .hero__deck {
-  text-align: left;
+  text-align: center;
 }
 .hero__actions {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
   gap: var(--space-3);
   margin-top: var(--space-2);
 }
